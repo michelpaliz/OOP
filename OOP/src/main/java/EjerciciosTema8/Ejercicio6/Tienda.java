@@ -49,7 +49,7 @@ public class Tienda {
         double precion = Double.parseDouble(myInput.nextLine());
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
         /// +Todo metodo para indicar el numero de referencias que hayas
-        
+
 
     }
 
