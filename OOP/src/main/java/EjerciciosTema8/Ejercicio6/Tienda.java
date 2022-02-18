@@ -1,5 +1,6 @@
 package EjerciciosTema8.Ejercicio6;
 
+import java.security.interfaces.RSAKey;
 import java.util.Scanner;
 
 import com.github.javafaker.Faker;
@@ -9,9 +10,9 @@ public class Tienda {
     int userInt;
     String userStr;
     int baseDatos;
+    boolean correct;
 
     public void menu() {
-        boolean correct;
         System.out.println("***GESTION DE BICICLETAS*****");
         do {
             System.out.println("1-Añadir bicicleta");
@@ -44,12 +45,28 @@ public class Tienda {
         System.out.println("INSERTA EL TAMAÑO DE LAS RUEDAS EN PULGADAS");
         Double sizeRuedas = Double.parseDouble(myInput.nextLine());
         System.out.println("TIENE MOTOR (SI/NO)");
+        String motor = myInput.nextLine();
+        validarMotor()
         // +Todo metodo para validar esta respuesta
         System.out.println("QUE PRECIO TIENE");
         double precion = Double.parseDouble(myInput.nextLine());
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
-        /// +Todo metodo para indicar el numero de referencias que hayas
+        // +Todo metodo para indicar el numero de referencias que hayas
 
+    }
+
+    public String validarMotor(String motor) {
+
+        String respuesta = "";
+        if (motor.equalsIgnoreCase("si") || motor.equalsIgnoreCase("no")) {
+            correct = true;
+        } else {
+            correct = false;
+        }
+        if (correct == true) {
+            respuesta = motor;
+        }
+        return respuesta;
 
     }
 
