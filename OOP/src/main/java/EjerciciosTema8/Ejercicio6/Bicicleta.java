@@ -57,12 +57,11 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    public String getFechaFabricacion(int anyo, int mes, int dia) {
-        String fecha = dia + "/" + mes + "/" + anyo;
-        return fecha;
+    public static  GregorianCalendar getFechaFabricacion(int anyo, int mes, int dia) {
+        GregorianCalendar calendar = new GregorianCalendar(dia, mes, anyo);
+        return calendar;
     }
 
-    @Override
     public String toString() {
         return "Bicicleta [dimensionRuedas=" + dimensionRuedas + ", fechaFabricacion=" + fechaFabricacion + ", marca="
                 + marca + ", motor=" + motor + ", numeroExistencias=" + numeroExistencias + ", peso=" + peso
