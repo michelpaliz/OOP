@@ -3,6 +3,8 @@ package EjerciciosTema8.Ejercicio6;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+import util.Bombo;
+import java.time.LocalDate;
 
 import com.github.javafaker.Faker;
 
@@ -45,20 +47,15 @@ public class Tienda {
 
     }
 
-    public static CrearDatosPrueba(){
-
-
-    }
-
     /**
      * 
      * @return clase Bicicleta
      */
 
-    public Bicicleta nuevaBicicleta() {
+    public void nuevaBicicleta() {
         System.out.println("***VAMOS AÑADIR UNA NUEVA BICICLETA********");
         System.out.println("INSERTA EL NUMERO DE REFERENCIA ");
-        String ref = myInput.nextLine();
+        int ref = Integer.parseInt(myInput.nextLine());
         System.out.println("INSERTA LA MARCA DE LA BICICLETA");
         String marca = myInput.nextLine();
         System.out.println("INSERTA EL PESO DE LA BICICLETA");
@@ -88,12 +85,15 @@ public class Tienda {
         GregorianCalendar fecha = new GregorianCalendar();
         do {
             System.out.println("INSERTA EL AÑO ");
-            anyo = fecha.get(GregorianCalendar.YEAR);
-            mes = fecha.get(GregorianCalendar.MONTH);
-            dia = fecha.get(GregorianCalendar.DAY_OF_MONTH);
-            correct = anyo <= fecha.get(Calendar.YEAR);
+            anyo = Integer.parseInt(myInput.nextLine());
+            System.out.println("INSERTA EL MES");
+            mes = Integer.parseInt(myInput.nextLine());
+            System.out.println("INSERTA EL DIA");
+            dia = Integer.parseInt(myInput.nextLine());
+            correct = anyo <= fecha.get(Calendar.YEAR) && mes > 12 && dia > 31;
             if (!correct) {
                 System.out.println("La fecha de fabricacion no puede ser superior a la actual");
+                System.out.println("La fecha es incorrecta");
             }
         } while (!correct);
         fechaStr = dia + "/" + mes + "/" + anyo;
@@ -101,7 +101,13 @@ public class Tienda {
 
     }
 
+    // public boolean checkdate(int anyo, int mes, int dia){
+    // LocalDate fecha;
+    // fecha = LocalDate.of(anyo,mes,dia);
+    // }
+
     /**
+     * SS
      * 
      * @param motor
      * @return una respuesta valida como si o no
@@ -124,6 +130,9 @@ public class Tienda {
 
     public Tienda() {
 
-        menu();
+        // Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle" , 20, 20,
+        // validarMotor("si"), GregorianCalendar(2000,2,12),)
+        System.out.println(validarFecha());
+
     }
 }

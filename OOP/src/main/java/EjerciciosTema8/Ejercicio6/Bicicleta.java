@@ -56,6 +56,11 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
+    // public GregorianCalendar getFechaFabricacion(int anyo, int mes, int dia){
+    // anyo = fecha.get(G)
+
+    // }
+
     @Override
     public String toString() {
         return "Bicicleta [dimensionRuedas=" + dimensionRuedas + ", fechaFabricacion=" + fechaFabricacion + ", marca="
