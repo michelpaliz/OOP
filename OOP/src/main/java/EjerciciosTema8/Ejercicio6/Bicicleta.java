@@ -12,12 +12,12 @@ public class Bicicleta {
     private final String marca;
     private final double peso;
     private final double dimensionRuedas;
-    private final boolean motor;
+    private final String  motor;
     private final GregorianCalendar fechaFabricacion;
     private final double precio;
     private final int numeroExistencias;
 
-    public Bicicleta(String referencia, String marca, double peso, double dimensionRuedas, boolean motor,
+    public Bicicleta(String referencia, String marca, double peso, double dimensionRuedas, String  motor,
             GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
         this.referencia = referencia;
         this.marca = marca;
@@ -45,7 +45,7 @@ public class Bicicleta {
         return dimensionRuedas;
     }
 
-    public boolean isMotor() {
+    public String  isMotor() {
         return motor;
     }
 
@@ -61,20 +61,29 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    public static  LocalDate fechaFabricacion(int day, int month, int year) {
-        day = fechaFabricacion.get(Calendar.DAY_OF_MONTH);
-        month = fechaFabricacion.get(Calendar.MONTH);
-        year = fechaFabricacion.get(Calendar.YEAR);
-        LocalDate fecha;
-        fecha = LocalDate.of(day, month, year);
-        return fecha;
+    public static  GregorianCalendar fechaFabricacion(int day, int month, int year) {
+        day = (Calendar.DAY_OF_MONTH);
+        month = (Calendar.MONTH);
+        year = (Calendar.YEAR);
+//        LocalDate fecha;
+//        fecha = LocalDate.of(day, month, year);
+        return fechaFabricacion(day,month,year);
+
+
     }
+
 
     @Override
     public String toString() {
-        return "Bicicleta [dimensionRuedas=" + dimensionRuedas + ", fechaFabricacion=" + fechaFabricacion + ", marca="
-                + marca + ", motor=" + motor + ", numeroExistencias=" + numeroExistencias + ", peso=" + peso
-                + ", precio=" + precio + ", referencia=" + referencia + "]";
+        return "Bicicleta{" +
+                "referencia='" + referencia + '\'' +
+                ", marca='" + marca + '\'' +
+                ", peso=" + peso +
+                ", dimensionRuedas=" + dimensionRuedas +
+                ", motor='" + motor + '\'' +
+                ", fechaFabricacion=" + fechaFabricacion +
+                ", precio=" + precio +
+                ", numeroExistencias=" + numeroExistencias +
+                '}';
     }
-
 }

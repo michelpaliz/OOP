@@ -102,8 +102,7 @@ public class Tienda {
     }
 
     /**
-     * SS
-     * 
+     *
      * @param motor
      * @return una respuesta valida como si o no
      */
@@ -123,10 +122,11 @@ public class Tienda {
 
     }
 
+
     public Tienda() {
         Faker faker = new Faker();
-        Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle", 20, 20, validarMotor("si"), "FECAHA", 2000, 2);
-        System.out.println(validarFecha());
+        Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle", 20, 20, validarMotor("Si"), Bicicleta.fechaFabricacion(02,12,2000), 2000, 2);
+        System.out.println(bicleta1);
 
     }
 }
