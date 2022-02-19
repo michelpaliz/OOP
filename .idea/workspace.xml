@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Cajero/Cajero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Cajero/Cuenta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Cajero/Tarjeta$Tipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Cajero/Tarjeta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/CajeroGerman/Cajero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/CajeroGerman/Cuenta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/CajeroGerman/Tarjeta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/EjemplosTema8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio1/Coche$Tipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio1/Coche.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio1/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio1/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio1/modalidadSeguro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio3/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Ejercicio3/Ejercicio03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Genero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Principal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Torneo/Equipos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Torneo/Jugadores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjemplosTema8/Torneo/Torneo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio2/Asignatura$CURSO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio2/Asignatura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio2/Ejercicio02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio3/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio3/Ejercicio03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio3/GrupoAlumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio3/dudas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio4/Ejercicio04.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio4/Punto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio5/Circulo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio5/Ejercicio05.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Bicicleta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Tienda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Campeonato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Equipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador$POSICION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Partido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Principal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/TablaPosiciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/util/Bombo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/EjemplosTema8.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/OOP">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25LbIAKuTcalOpeDAb6XLuSfmtO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Gradle.OOP">
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <method v="2" />
+    </configuration>
+    <configuration name="OOP" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.Unnamed" />
+      <item itemvalue="Gradle.OOP" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="" />
+      <created>1645309245275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645309245275</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
