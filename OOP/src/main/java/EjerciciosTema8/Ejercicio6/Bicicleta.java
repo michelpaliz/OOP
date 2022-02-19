@@ -1,7 +1,11 @@
 package EjerciciosTema8.Ejercicio6;
 
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
+
+import org.yaml.snakeyaml.LoaderOptions;
 
 public class Bicicleta {
     private final String referencia;
@@ -57,11 +61,16 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    public static  GregorianCalendar getFechaFabricacion(int anyo, int mes, int dia) {
-        GregorianCalendar calendar = new GregorianCalendar(dia, mes, anyo);
-        return calendar;
+    public static  LocalDate fechaFabricacion(int day, int month, int year) {
+        day = fechaFabricacion.get(Calendar.DAY_OF_MONTH);
+        month = fechaFabricacion.get(Calendar.MONTH);
+        year = fechaFabricacion.get(Calendar.YEAR);
+        LocalDate fecha;
+        fecha = LocalDate.of(day, month, year);
+        return fecha;
     }
 
+    @Override
     public String toString() {
         return "Bicicleta [dimensionRuedas=" + dimensionRuedas + ", fechaFabricacion=" + fechaFabricacion + ", marca="
                 + marca + ", motor=" + motor + ", numeroExistencias=" + numeroExistencias + ", peso=" + peso
