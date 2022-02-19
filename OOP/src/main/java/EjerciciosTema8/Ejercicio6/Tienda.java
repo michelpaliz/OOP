@@ -125,7 +125,7 @@ public class Tienda {
 
     public Tienda() {
         Faker faker = new Faker();
-        Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle", 20, 20, validarMotor("si"), ASDF, 2000, 2);
+        Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle", 20, 20, validarMotor("si"), "FECAHA", 2000, 2);
         System.out.println(validarFecha());
 
     }
