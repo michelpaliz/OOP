@@ -1,5 +1,6 @@
 package EjerciciosTema8.Ejercicio6;
 
+import java.time.LocalDate;
 import java.util.GregorianCalendar;
 
 public class Bicicleta {
@@ -56,10 +57,10 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    // public GregorianCalendar getFechaFabricacion(int anyo, int mes, int dia){
-    // anyo = fecha.get(G)
-
-    // }
+    public String getFechaFabricacion(int anyo, int mes, int dia) {
+        String fecha = dia + "/" + mes + "/" + anyo;
+        return fecha;
+    }
 
     @Override
     public String toString() {

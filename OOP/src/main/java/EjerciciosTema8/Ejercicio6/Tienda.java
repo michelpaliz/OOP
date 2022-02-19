@@ -101,11 +101,6 @@ public class Tienda {
 
     }
 
-    // public boolean checkdate(int anyo, int mes, int dia){
-    // LocalDate fecha;
-    // fecha = LocalDate.of(anyo,mes,dia);
-    // }
-
     /**
      * SS
      * 
