@@ -1,22 +1,25 @@
 package EjerciciosTema8.Ejercicio6;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import com.github.javafaker.DateAndTime;
+
 public class Bicicleta {
-    private final String referencia;
+    private final int referencia;
     private final String marca;
     private final double peso;
     private final double dimensionRuedas;
-    private final String motor;
-    private final LocalDate fechaFabricacion;
+    private final boolean motor;
+    private final GregorianCalendar fechaFabricacion;
     private final double precio;
     private final int numeroExistencias;
 
-    public Bicicleta(String referencia, String marca, double peso, double dimensionRuedas, String motor,
-            LocalDate fechaFabricacion, double precio, int numeroExistencias) {
+    public Bicicleta(int referencia, String marca, double peso, double dimensionRuedas, boolean motor,
+            GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
         this.referencia = referencia;
         this.marca = marca;
         this.peso = peso;
@@ -27,7 +30,7 @@ public class Bicicleta {
         this.numeroExistencias = numeroExistencias;
     }
 
-    public String getReferencia() {
+    public int getReferencia() {
         return referencia;
     }
 
@@ -43,11 +46,11 @@ public class Bicicleta {
         return dimensionRuedas;
     }
 
-    public String isMotor() {
+    public boolean isMotor() {
         return motor;
     }
 
-    public LocalDate getFechaFabricacion() {
+    public GregorianCalendar getFechaFabricacion() {
         return fechaFabricacion;
     }
 
@@ -59,25 +62,16 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    public static GregorianCalendar fechaFabricacion(int day, int month, int year) {
-        day = (Calendar.DAY_OF_MONTH);
-        month = (Calendar.MONTH);
-        year = (Calendar.YEAR);
-        // LocalDate fecha;
-        // fecha = LocalDate.of(day, month, year);
-        return fechaFabricacion(day, month, year);
-
-    }
-
     @Override
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return "Bicicleta{" +
                 "referencia='" + referencia + '\'' +
                 ", marca='" + marca + '\'' +
                 ", peso=" + peso +
                 ", dimensionRuedas=" + dimensionRuedas +
                 ", motor='" + motor + '\'' +
-                ", fechaFabricacion=" + fechaFabricacion +
+                ", fechaFabricacion=" + sdf.format(fechaFabricacion) +
                 ", precio=" + precio +
                 ", numeroExistencias=" + numeroExistencias +
                 '}';

@@ -1,19 +1,23 @@
 package EjerciciosTema8.Ejercicio6;
 
+//*IMPORT PARA OPERACIONES
+import com.github.javafaker.Faker;
+import util.Bombo;
+//*IMPORT DATE
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
-import util.Bombo;
-import java.time.LocalDate;
-
-import com.github.javafaker.Faker;
 
 public class Tienda {
+    // SCANNER
+    Scanner myInput = new Scanner(System.in);
+    // USER RESPUESTA
     int userInt;
     String userStr;
-    int baseDatos;
-    boolean correct;
-    Scanner myInput = new Scanner(System.in);
+    boolean correct; // VALIDACION GENERAL
+    public Bicicleta[] bicicletas; // CREACION DE ARRAY PARA LA BASE DE DATOS
+    public int numBicicleta; // CONTADOR DE BICICLETAS
 
     public void menu() {
         System.out.println("***GESTION DE BICICLETAS*****");
@@ -122,11 +126,37 @@ public class Tienda {
 
     }
 
-
-    public Tienda() {
+    public void crearDatosPrueba(int cantidad) {
+        Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
+        Date fechaMax = new GregorianCalendar().getTime();
+        Bombo bombo = new Bombo(cantidad, 1);
         Faker faker = new Faker();
-        Bicicleta bicleta1 = new Bicicleta("h21", "Giant Bycle", 20, 20, validarMotor("Si"), Bicicleta.fechaFabricacion(02,12,2000), 2000, 2);
-        System.out.println(bicleta1);
+        for (int i = 0; i < cantidad; i++) {
+            int ref = bombo.extraerBola();
+            String marca = faker.business().toString();
+            double peso = faker.number().randomDouble(2, 1, 100);
+            double dimensionRuedas = faker.number().randomDouble(2, 1, 100);
+            boolean motor = faker.random().nextBoolean();
+            Date fecha = faker.date().between(fechaMin, fechaMax);
+            double precio = faker.number().randomDouble(2, 20, 5000);
+            int numeroExistencias = faker.number().randomDigitNotZero();
+
+            GregorianCalendar fechaFabricacion = new GregorianCalendar();
+            fechaFabricacion.setTime(fecha);
+            bicicletas[i] = new Bicicleta(ref, marca, peso, dimensionRuedas, motor, fechaFabricacion, precio,
+                    numeroExistencias);
+            System.out.println(bicicletas[i]);
+            numBicicleta++;
+        }
+    }
+
+    public Tienda(int minBicicletas) {
+        bicicletas = new Bicicleta(minBicicletas);
+        ;
+
+        crearDatosPrueba(5);
+
+        // menu();
 
     }
 }

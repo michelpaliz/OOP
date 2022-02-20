@@ -14,7 +14,7 @@ public class Bombo {
             array[i] = valorMinimo;
             valorMinimo++;
         }
-        validos = cantidadElementos;
+        validos = cantidadElementos - 1;
     }
 
     public int extraerBola() {
@@ -23,6 +23,7 @@ public class Bombo {
             int numero = array[indice];
             array[indice] = array[validos];
             array[validos] = numero;
+            validos--;
             return numero;
         }
         return Integer.MIN_VALUE;

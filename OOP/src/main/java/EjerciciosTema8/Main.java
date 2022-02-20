@@ -6,6 +6,7 @@ import EjerciciosTema8.Ejercicio2.Ejercicio02;
 import EjerciciosTema8.Ejercicio3.Ejercicio03;
 import EjerciciosTema8.Ejercicio4.Ejercicio04;
 import EjerciciosTema8.Ejercicio5.Ejercicio05;
+import EjerciciosTema8.Ejercicio6.Ejercicio06;
 import EjerciciosTema8.Ejercicio6.Tienda;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
         Ejercicio04 ejercicio04 = new Ejercicio04();
         // Ejercicio03 ejercicio03 = new Ejercicio03();
         Ejercicio05 ejercicio05 = new Ejercicio05();
-        Tienda ejercicio06 = new Tienda();
+        Ejercicio06 tienda = new Ejercicio06();
     }
 
 }
