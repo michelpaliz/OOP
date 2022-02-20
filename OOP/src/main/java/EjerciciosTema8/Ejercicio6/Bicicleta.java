@@ -4,7 +4,6 @@ package EjerciciosTema8.Ejercicio6;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-
 public class Bicicleta {
     private final int referencia;
     private final String marca;
@@ -59,18 +58,19 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    @Override
-    public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return "Bicicleta{" +
-                "referencia='" + referencia + '\'' +
-                ", marca='" + marca + '\'' +
-                ", peso=" + peso +
-                ", dimensionRuedas=" + dimensionRuedas +
-                ", motor='" + motor + '\'' +
-                ", fechaFabricacion=" + sdf.format(fechaFabricacion) +
-                ", precio=" + precio +
-                ", numeroExistencias=" + numeroExistencias +
-                '}';
-    }
+
+ @Override
+     public String toString() {
+     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+     return "Bicicleta{" +
+     "referencia='" + referencia + '\'' +
+     ", marca='" + marca + '\'' +
+     ", peso=" + peso +
+     ", dimensionRuedas=" + dimensionRuedas +
+     ", motor='" + motor + '\'' +
+     ", fechaFabricacion=" + sdf.format(fechaFabricacion.getTime()) +
+     ", precio=" + precio +
+     ", numeroExistencias=" + numeroExistencias +
+     '}';
+     }
 }
