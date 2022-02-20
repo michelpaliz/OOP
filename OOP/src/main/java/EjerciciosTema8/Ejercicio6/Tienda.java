@@ -67,6 +67,8 @@ public class Tienda {
         int ref = Integer.parseInt(myInput.nextLine());
         System.out.println("INSERTA LA MARCA DE LA BICICLETA");
         Marca marca = chooseMarca();
+        System.out.println("INSERTA EL MODELO DE LA BICICLETA");
+        Modelo modelo = chooseModelo();
         System.out.println("INSERTA EL PESO DE LA BICICLETA");
         Double peso = Double.parseDouble(myInput.nextLine());
         System.out.println("INSERTA EL TAMAÑO DE LAS RUEDAS EN PULGADAS");
@@ -81,7 +83,7 @@ public class Tienda {
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
         // +Todo metodo para indicar el numero de referencias que hay
         int existencias = Integer.parseInt(myInput.nextLine());
-        Bicicleta bicicletaNueva = Bicicleta (ref, marca, modelo, peso, );
+        Bicicleta bicicletaNueva = Bicicleta (ref, marca, modelo, peso,sizeRuedas, motor, );
     }
 
     /**
@@ -183,6 +185,33 @@ public class Tienda {
 
     }
 
+    // *CREACION DE DATOS RANDOM
+
+    public void crearDatosPrueba(int cantidad) {
+        Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
+        Date fechaMax = new GregorianCalendar().getTime();
+        Bombo bombo = new Bombo(cantidad, 1);
+        Faker faker = new Faker();
+        for (int i = 0; i < cantidad; i++) {
+            int ref = bombo.extraerBola();
+            Marca marca = Marca.getRandom();
+            Modelo modelo = Modelo.getRandom();
+            double peso = faker.number().randomDouble(2, 1, 100);
+            double dimensionRuedas = faker.number().randomDouble(2, 1, 100);
+            String motor = siOno(faker.random().nextBoolean());
+            Date fecha = faker.date().between(fechaMin, fechaMax);
+            double precio = faker.number().randomDouble(2, 20, 5000);
+            int numeroExistencias = faker.number().randomDigitNotZero();
+
+            GregorianCalendar fechaFabricacion = new GregorianCalendar();
+            fechaFabricacion.setTime(fecha);
+            bicicletas[i] = new Bicicleta(ref, marca, modelo, peso, dimensionRuedas, motor, fechaFabricacion, precio,
+                    numeroExistencias);
+            System.out.println(bicicletas[i]);
+            numBicicleta++;
+        }
+    }
+
     /**
      *
      * @param motor
@@ -224,31 +253,6 @@ public class Tienda {
      * 
      * @param cantidad de datos que quieras introducir
      */
-
-    public void crearDatosPrueba(int cantidad) {
-        Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
-        Date fechaMax = new GregorianCalendar().getTime();
-        Bombo bombo = new Bombo(cantidad, 1);
-        Faker faker = new Faker();
-        for (int i = 0; i < cantidad; i++) {
-            int ref = bombo.extraerBola();
-            Marca marca = Marca.getRandom();
-            Modelo modelo = Modelo.getRandom();
-            double peso = faker.number().randomDouble(2, 1, 100);
-            double dimensionRuedas = faker.number().randomDouble(2, 1, 100);
-            String motor = siOno(faker.random().nextBoolean());
-            Date fecha = faker.date().between(fechaMin, fechaMax);
-            double precio = faker.number().randomDouble(2, 20, 5000);
-            int numeroExistencias = faker.number().randomDigitNotZero();
-
-            GregorianCalendar fechaFabricacion = new GregorianCalendar();
-            fechaFabricacion.setTime(fecha);
-            bicicletas[i] = new Bicicleta(ref, marca, modelo, peso, dimensionRuedas, motor, fechaFabricacion, precio,
-                    numeroExistencias);
-            System.out.println(bicicletas[i]);
-            numBicicleta++;
-        }
-    }
 
     public Tienda(int minBicicletas) {
         bicicletas = new Bicicleta[minBicicletas];
