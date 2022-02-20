@@ -45,6 +45,9 @@ public class Tienda {
             case 1:
                 nuevaBicicleta();
             case 2:
+                System.out.println("INTRODUCE EL NUMERO DE REFERENCIA");
+                userInt = Integer.parseInt(myInput.nextLine());
+                eliminarBicicleta(userInt);
 
             case 3:
 
@@ -54,7 +57,7 @@ public class Tienda {
 
     }
 
-    // *CREACION NUEVA BICICLETA
+    // *CREACION NUEVA BICICLETA (OPCION NUMERO 1)
     /**
      * 
      * @return clase Bicicleta
@@ -84,7 +87,9 @@ public class Tienda {
         int existencias = Integer.parseInt(myInput.nextLine());
         Bicicleta bicicletaNueva = new Bicicleta(ref, marca, modelo, peso, sizeRuedas, motor, fechaFabricacion, precio,
                 existencias);
-        System.out.println(bicicletaNueva);
+
+        bicicletas[numBicicleta] = bicicletaNueva;
+        numBicicleta++;
         return bicicletaNueva;
     }
 
@@ -184,6 +189,29 @@ public class Tienda {
         } while (!correct);
         fechaFabricacion = new GregorianCalendar(anyo, mes, dia);
         return fechaFabricacion;
+
+    }
+
+    // *ELIMINAR BICICLETEA (OPCION NUMERO 2)
+
+    public int buscarBicleta(int ref) {
+        for (int i = 0; i < numBicicleta; i++) {
+            if (bicicletas[i].getReferencia() == ref) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public boolean eliminarBicicleta(int ref) {
+        int pos = buscarBicleta(ref);
+        if (pos < 0) {
+            return false;
+        }
+        bicicletas[pos] = bicicletas[numBicicleta - 1];
+        bicicletas[numBicicleta - 1] = null;
+        numBicicleta--;
+        return true;
 
     }
 
