@@ -6,7 +6,7 @@ public class Ejercicio06 {
     public static final double FACTOR_CRECIMIENTO = 2;
 
     public Ejercicio06() {
-        Tienda bicicletas = new Tienda(MIN_BICLETAS);
+        Tienda bicicletas = new Tienda();
     
     }
 }

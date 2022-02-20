@@ -52,6 +52,7 @@ public class Tienda {
             case 3:
 
             case 4:
+                mostrarStock(Ejercicio06.MIN_BICLETAS);
 
         }
 
@@ -63,7 +64,7 @@ public class Tienda {
      * @return clase Bicicleta
      */
 
-    public Bicicleta nuevaBicicleta() {
+    public void nuevaBicicleta() {
         System.out.println("***VAMOS AÑADIR UNA NUEVA BICICLETA********");
         System.out.println("INSERTA EL NUEVO NUMERO DE REFERENCIA ");
         int ref = Integer.parseInt(myInput.nextLine());
@@ -85,11 +86,33 @@ public class Tienda {
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
         // +Todo metodo para indicar el numero de referencias que hay
         int existencias = Integer.parseInt(myInput.nextLine());
-        Bicicleta bicicletaNueva = new Bicicleta(ref, marca, modelo, peso, sizeRuedas, motor, fechaFabricacion, precio,
-                existencias);
+        nuevoEspacio(ref, marca, modelo, peso, sizeRuedas, motor, fechaFabricacion, precio, existencias);
 
+    }
+
+    public Bicicleta nuevoEspacio(int referencia, Marca marca, Modelo modelo, double peso, double dimensionRuedas,
+            String motor,
+            GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
+
+        if (buscarBicicletaPorNia(referencia) != null) {
+            return null;
+        }
+        if (numBicicleta == bicicletas.length) {
+            // creamos un nuevo array el doble del viejo
+            Bicicleta[] bicicletasAmpliado = new Bicicleta[(int) (numBicicleta * Ejercicio06.FACTOR_CRECIMIENTO)];
+            for (int i = 0; i < bicicletas.length; i++) {
+                bicicletasAmpliado[i] = bicicletas[i];
+            }
+            bicicletas = bicicletasAmpliado;
+        }
+
+        Bicicleta bicicletaNueva = new Bicicleta(referencia, marca, modelo, peso, dimensionRuedas, motor,
+                fechaFabricacion, precio,
+                numeroExistencias);
         bicicletas[numBicicleta] = bicicletaNueva;
         numBicicleta++;
+        System.out.println(bicicletaNueva);
+        menu();
         return bicicletaNueva;
     }
 
@@ -203,6 +226,11 @@ public class Tienda {
         return -1;
     }
 
+    public Bicicleta buscarBicicletaPorNia(int ref) {
+        int pos = buscarBicleta(ref);
+        return pos < 0 ? null : bicicletas[pos];
+    }
+
     public boolean eliminarBicicleta(int ref) {
         int pos = buscarBicleta(ref);
         if (pos < 0) {
@@ -281,17 +309,19 @@ public class Tienda {
 
     /**
      * 
-     * @param cantidad de datos que quieras introducir
+     * @param minBicicletas de datos que quieras introducir para mostar datos
+     *                      aleatorios
      */
-
-    public Tienda(int minBicicletas) {
+    public void mostrarStock(int minBicicletas) {
         bicicletas = new Bicicleta[minBicicletas];
         numBicicleta = 0;
         if (Ejercicio06.DEBUG) {
             crearDatosPrueba(minBicicletas / 2);
         }
+    }
 
-        // Comprobacion menu
+    public Tienda() {
+        mostrarStock(Ejercicio06.MIN_BICLETAS);
         menu();
 
     }
