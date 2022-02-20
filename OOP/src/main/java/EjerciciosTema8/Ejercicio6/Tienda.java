@@ -3,7 +3,7 @@ package EjerciciosTema8.Ejercicio6;
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
 import util.Bombo;
-//*IMPORT DATE
+//*IMPORT DATE PACKAGES
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -125,6 +125,11 @@ public class Tienda {
         return respuesta;
 
     }
+
+    /**
+     * 
+     * @param cantidad de datos que quieras introducir
+     */
 
     public void crearDatosPrueba(int cantidad) {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();

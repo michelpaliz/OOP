@@ -1,12 +1,9 @@
 package EjerciciosTema8.Ejercicio6;
 
+//*IMPORT DATE PACKAGES
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
-import com.github.javafaker.DateAndTime;
 
 public class Bicicleta {
     private final int referencia;
