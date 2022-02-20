@@ -128,6 +128,22 @@ public class Tienda {
 
     /**
      * 
+     * @param randomValue (De faker (true/false)
+     * @return si o no
+     */
+
+    public String siOno(boolean randomValue) {
+        String answer = "";
+        if (randomValue == true) {
+            answer = "si";
+        } else {
+            answer = "no";
+        }
+        return answer;
+    }
+
+    /**
+     * 
      * @param cantidad de datos que quieras introducir
      */
 
@@ -138,10 +154,10 @@ public class Tienda {
         Faker faker = new Faker();
         for (int i = 0; i < cantidad; i++) {
             int ref = bombo.extraerBola();
-            String marca = faker.business().toString();
+            String marca = faker.beer().name();
             double peso = faker.number().randomDouble(2, 1, 100);
             double dimensionRuedas = faker.number().randomDouble(2, 1, 100);
-            boolean motor = faker.random().nextBoolean();
+            String motor = siOno(faker.random().nextBoolean());
             Date fecha = faker.date().between(fechaMin, fechaMax);
             double precio = faker.number().randomDouble(2, 20, 5000);
             int numeroExistencias = faker.number().randomDigitNotZero();
