@@ -7,7 +7,6 @@ import EjerciciosTema8.Ejercicio3.Ejercicio03;
 import EjerciciosTema8.Ejercicio4.Ejercicio04;
 import EjerciciosTema8.Ejercicio5.Ejercicio05;
 import EjerciciosTema8.Ejercicio6.Ejercicio06;
-import EjerciciosTema8.Ejercicio6.Tienda;
 
 public class Main {
     public static void main(String[] args) {

@@ -158,7 +158,7 @@ public class Tienda {
     public Tienda(int minBicicletas) {
         bicicletas = new Bicicleta[minBicicletas];
         numBicicleta = 0;
-        if (true) {
+        if (Ejercicio06.DEBUG) {
             crearDatosPrueba(minBicicletas / 2);
         }
 
