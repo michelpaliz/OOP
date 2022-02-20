@@ -3,11 +3,15 @@ package EjerciciosTema8.Ejercicio6;
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
 import util.Bombo;
+
+import java.text.BreakIterator;
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+
+import javax.sound.midi.Soundbank;
 
 public class Tienda {
     // SCANNER
@@ -59,10 +63,10 @@ public class Tienda {
 
     public void nuevaBicicleta() {
         System.out.println("***VAMOS AÑADIR UNA NUEVA BICICLETA********");
-        System.out.println("INSERTA EL NUMERO DE REFERENCIA ");
+        System.out.println("INSERTA EL NUEVO NUMERO DE REFERENCIA ");
         int ref = Integer.parseInt(myInput.nextLine());
         System.out.println("INSERTA LA MARCA DE LA BICICLETA");
-        String marca = myInput.nextLine();
+        Marca marca = chooseMarca();
         System.out.println("INSERTA EL PESO DE LA BICICLETA");
         Double peso = Double.parseDouble(myInput.nextLine());
         System.out.println("INSERTA EL TAMAÑO DE LAS RUEDAS EN PULGADAS");
@@ -76,6 +80,79 @@ public class Tienda {
         validarFecha();
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
         // +Todo metodo para indicar el numero de referencias que hay
+        int existencias = Integer.parseInt(myInput.nextLine());
+        Bicicleta bicicletaNueva = Bicicleta (ref, marca, modelo, peso, );
+    }
+
+    /**
+     * 
+     * @return escoge un modelo de la clase enum
+     */
+    public Marca chooseMarca() {
+        Marca respuesta = Marca.CERVELO;
+        do {
+            System.out.println("*ESCOGE UNA OPCION PARA EL MODELO*");
+            System.out.println("1.SPECIALIZED");
+            System.out.println("2.TRECK");
+            System.out.println("3.SCOTT");
+            System.out.println("4.CERVELO");
+            System.out.println("5.SANTA");
+            userInt = Integer.parseInt(myInput.nextLine());
+            correct = userInt > 0 && userInt <= 5;
+            if (!correct) {
+                System.out.println("Escoge una opcion valida");
+            }
+        } while (!correct);
+
+        switch (userInt) {
+            case 1:
+                respuesta = Marca.SPECIALIZED;
+                break;
+            case 2:
+                respuesta = Marca.TRECK;
+                break;
+            case 3:
+                respuesta = Marca.SCOTT;
+                break;
+            case 4:
+                respuesta = Marca.SANTA;
+                break;
+        }
+        return respuesta;
+
+    }
+
+    /**
+     * 
+     * @return el modelo de eleccion del usuario
+     */
+    public Modelo chooseModelo() {
+        Modelo respuesta = Modelo.CARRETERA;
+        do {
+            System.out.println("*ESCOGE UNA OPCION DEL MODELO*");
+            System.out.println("1.CARRETERA");
+            System.out.println("2.MONTANYA");
+            System.out.println("3.COMPETICION");
+            userInt = Integer.parseInt(myInput.nextLine());
+            correct = userInt > 0 && userInt <= 3;
+            if (!correct) {
+                System.out.println("Escoge una opcion valida");
+            }
+        } while (!correct);
+        switch (userInt) {
+            case 1:
+                respuesta = Modelo.CARRETERA;
+                break;
+            case 2:
+                respuesta = Modelo.MONTANYA;
+                break;
+            case 3:
+                respuesta = Modelo.COMPETICION;
+                break;
+
+        }
+        return respuesta;
+
     }
 
     /**
