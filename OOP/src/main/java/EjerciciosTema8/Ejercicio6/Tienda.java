@@ -156,9 +156,9 @@ public class Tienda {
     }
 
     public Tienda(int minBicicletas) {
-        bicicletas = new Bicicleta(minBicicletas);
-        ;
-
+        bicicletas = new Bicicleta[minBicicletas];
+        numBicicleta = 0;
+        if(E)
         crearDatosPrueba(5);
 
         // menu();
