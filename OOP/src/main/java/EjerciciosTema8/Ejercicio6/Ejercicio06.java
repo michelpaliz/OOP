@@ -7,5 +7,6 @@ public class Ejercicio06 {
 
     public Ejercicio06() {
         Tienda bicicletas = new Tienda(MIN_BICLETAS);
+    
     }
 }

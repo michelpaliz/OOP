@@ -4,14 +4,11 @@ package EjerciciosTema8.Ejercicio6;
 import com.github.javafaker.Faker;
 import util.Bombo;
 
-import java.text.BreakIterator;
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
-
-import javax.sound.midi.Soundbank;
 
 public class Tienda {
     // SCANNER
@@ -20,10 +17,11 @@ public class Tienda {
     int userInt;
     String userStr;
     boolean correct; // VALIDACION GENERAL
+    GregorianCalendar fechaFabricacion; // Fecha general para uso
     public Bicicleta[] bicicletas; // CREACION DE ARRAY PARA LA BASE DE DATOS
     public int numBicicleta; // CONTADOR DE BICICLETAS
-    // CREACION DEL STOCK MEDIANTE MATRICES
 
+    // *MENU PRINCIPAL
     public void menu() {
         System.out.println("***GESTION DE BICICLETAS*****");
         do {
@@ -56,12 +54,13 @@ public class Tienda {
 
     }
 
+    // *CREACION NUEVA BICICLETA
     /**
      * 
      * @return clase Bicicleta
      */
 
-    public void nuevaBicicleta() {
+    public Bicicleta nuevaBicicleta() {
         System.out.println("***VAMOS AÑADIR UNA NUEVA BICICLETA********");
         System.out.println("INSERTA EL NUEVO NUMERO DE REFERENCIA ");
         int ref = Integer.parseInt(myInput.nextLine());
@@ -76,14 +75,17 @@ public class Tienda {
         System.out.println("TIENE MOTOR (SI/NO)");
         String motor = myInput.nextLine();
         validarMotor(motor);
-        System.out.println("QUE PRECIO TIENE");
-        double precion = Double.parseDouble(myInput.nextLine());
         System.out.println("INDICA LA FECHA DE FABRICACION");
-        validarFecha();
+        fechaFabricacion = validarFecha();
+        System.out.println("INDICA EL PRECIO DE LA BICICLETA");
+        double precio = Double.parseDouble(myInput.nextLine());
         System.out.println("INDICA EL NUMERO DE EXISTENCIAS QUE TIENEN DE ESA REFERENCIAS");
         // +Todo metodo para indicar el numero de referencias que hay
         int existencias = Integer.parseInt(myInput.nextLine());
-        Bicicleta bicicletaNueva = Bicicleta (ref, marca, modelo, peso,sizeRuedas, motor, );
+        Bicicleta bicicletaNueva = new Bicicleta(ref, marca, modelo, peso, sizeRuedas, motor, fechaFabricacion, precio,
+                existencias);
+        System.out.println(bicicletaNueva);
+        return bicicletaNueva;
     }
 
     /**
@@ -161,12 +163,12 @@ public class Tienda {
      * 
      * @return fecha del usuario
      */
-    public String validarFecha() {
+
+    public GregorianCalendar validarFecha() {
         int anyo;
         int mes;
         int dia;
-        String fechaStr = "";
-        GregorianCalendar fecha = new GregorianCalendar();
+        GregorianCalendar fechaFabricacion = new GregorianCalendar();
         do {
             System.out.println("INSERTA EL AÑO ");
             anyo = Integer.parseInt(myInput.nextLine());
@@ -174,14 +176,14 @@ public class Tienda {
             mes = Integer.parseInt(myInput.nextLine());
             System.out.println("INSERTA EL DIA");
             dia = Integer.parseInt(myInput.nextLine());
-            correct = anyo <= fecha.get(Calendar.YEAR) && mes > 12 && dia > 31;
+            correct = anyo <= fechaFabricacion.get(Calendar.YEAR) && mes <= 12 && dia <= 31;
             if (!correct) {
                 System.out.println("La fecha de fabricacion no puede ser superior a la actual");
                 System.out.println("La fecha es incorrecta");
             }
         } while (!correct);
-        fechaStr = dia + "/" + mes + "/" + anyo;
-        return fechaStr;
+        fechaFabricacion = new GregorianCalendar(anyo, mes, dia);
+        return fechaFabricacion;
 
     }
 
@@ -260,6 +262,9 @@ public class Tienda {
         if (Ejercicio06.DEBUG) {
             crearDatosPrueba(minBicicletas / 2);
         }
+
+        // Comprobacion menu
+        menu();
 
     }
 }
