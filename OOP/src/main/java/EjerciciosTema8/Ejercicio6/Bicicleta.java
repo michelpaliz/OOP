@@ -5,20 +5,18 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import org.yaml.snakeyaml.LoaderOptions;
-
 public class Bicicleta {
     private final String referencia;
     private final String marca;
     private final double peso;
     private final double dimensionRuedas;
-    private final String  motor;
-    private final GregorianCalendar fechaFabricacion;
+    private final String motor;
+    private final LocalDate fechaFabricacion;
     private final double precio;
     private final int numeroExistencias;
 
-    public Bicicleta(String referencia, String marca, double peso, double dimensionRuedas, String  motor,
-            GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
+    public Bicicleta(String referencia, String marca, double peso, double dimensionRuedas, String motor,
+            LocalDate fechaFabricacion, double precio, int numeroExistencias) {
         this.referencia = referencia;
         this.marca = marca;
         this.peso = peso;
@@ -45,11 +43,11 @@ public class Bicicleta {
         return dimensionRuedas;
     }
 
-    public String  isMotor() {
+    public String isMotor() {
         return motor;
     }
 
-    public GregorianCalendar getFechaFabricacion() {
+    public LocalDate getFechaFabricacion() {
         return fechaFabricacion;
     }
 
@@ -61,16 +59,16 @@ public class Bicicleta {
         return numeroExistencias;
     }
 
-    public static  GregorianCalendar fechaFabricacion(int day, int month, int year) {
+    public static GregorianCalendar fechaFabricacion(int day, int month, int year) {
         day = (Calendar.DAY_OF_MONTH);
         month = (Calendar.MONTH);
         year = (Calendar.YEAR);
-//        LocalDate fecha;
-//        fecha = LocalDate.of(day, month, year);
-        return fechaFabricacion(day,month,year);
-
+        // LocalDate fecha;
+        // fecha = LocalDate.of(day, month, year);
+        return fechaFabricacion(day, month, year);
 
     }
+
     @Override
     public String toString() {
         return "Bicicleta{" +
