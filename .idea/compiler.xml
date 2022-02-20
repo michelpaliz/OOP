@@ -5,9 +5,6 @@
       <module name="EjemplosTema8" target="16" />
       <module name="EjemplosTema8.main" target="16" />
       <module name="EjemplosTema8.test" target="16" />
-      <module name="OOP" target="16" />
-      <module name="OOP.main" target="16" />
-      <module name="OOP.test" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
