@@ -42,17 +42,21 @@ public class Tienda {
         switch (userInt) {
             case 0:
                 System.out.println("Hasta luego");
+                break;
             case 1:
                 nuevaBicicleta();
+                break;
             case 2:
                 System.out.println("INTRODUCE EL NUMERO DE REFERENCIA");
                 userInt = Integer.parseInt(myInput.nextLine());
                 eliminarBicicleta(userInt);
+                break;
 
             case 3:
 
             case 4:
                 mostrarStock(Ejercicio06.MIN_BICLETAS);
+                break;
 
         }
 
@@ -239,6 +243,7 @@ public class Tienda {
         bicicletas[pos] = bicicletas[numBicicleta - 1];
         bicicletas[numBicicleta - 1] = null;
         numBicicleta--;
+        menu();
         return true;
 
     }
