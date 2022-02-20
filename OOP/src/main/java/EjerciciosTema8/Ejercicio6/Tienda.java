@@ -18,6 +18,7 @@ public class Tienda {
     boolean correct; // VALIDACION GENERAL
     public Bicicleta[] bicicletas; // CREACION DE ARRAY PARA LA BASE DE DATOS
     public int numBicicleta; // CONTADOR DE BICICLETAS
+    // CREACION DEL STOCK MEDIANTE MATRICES
 
     public void menu() {
         System.out.println("***GESTION DE BICICLETAS*****");
@@ -154,7 +155,8 @@ public class Tienda {
         Faker faker = new Faker();
         for (int i = 0; i < cantidad; i++) {
             int ref = bombo.extraerBola();
-            String marca = faker.beer().name();
+            Marca marca = Marca.getRandom();
+            Modelo modelo = Modelo.getRandom();
             double peso = faker.number().randomDouble(2, 1, 100);
             double dimensionRuedas = faker.number().randomDouble(2, 1, 100);
             String motor = siOno(faker.random().nextBoolean());
@@ -164,7 +166,7 @@ public class Tienda {
 
             GregorianCalendar fechaFabricacion = new GregorianCalendar();
             fechaFabricacion.setTime(fecha);
-            bicicletas[i] = new Bicicleta(ref, marca, peso, dimensionRuedas, motor, fechaFabricacion, precio,
+            bicicletas[i] = new Bicicleta(ref, marca, modelo, peso, dimensionRuedas, motor, fechaFabricacion, precio,
                     numeroExistencias);
             System.out.println(bicicletas[i]);
             numBicicleta++;

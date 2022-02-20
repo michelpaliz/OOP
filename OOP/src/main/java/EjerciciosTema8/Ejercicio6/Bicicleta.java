@@ -6,7 +6,8 @@ import java.util.GregorianCalendar;
 
 public class Bicicleta {
     private final int referencia;
-    private final String marca;
+    private final Marca marca;
+    private final Modelo modelo;
     private final double peso;
     private final double dimensionRuedas;
     private final String motor;
@@ -14,10 +15,11 @@ public class Bicicleta {
     private final double precio;
     private final int numeroExistencias;
 
-    public Bicicleta(int referencia, String marca, double peso, double dimensionRuedas, String motor,
+    public Bicicleta(int referencia, Marca marca, Modelo modelo, double peso, double dimensionRuedas, String motor,
             GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
         this.referencia = referencia;
         this.marca = marca;
+        this.modelo = modelo;
         this.peso = peso;
         this.dimensionRuedas = dimensionRuedas;
         this.motor = motor;
@@ -30,8 +32,12 @@ public class Bicicleta {
         return referencia;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
     }
 
     public double getPeso() {
@@ -64,6 +70,7 @@ public class Bicicleta {
         return "Bicicleta{" +
                 "referencia='" + referencia + '\'' +
                 ", marca='" + marca + '\'' +
+                ", modelo ='" + modelo + '\'' +
                 ", peso=" + peso +
                 ", dimensionRuedas=" + dimensionRuedas +
                 ", motor='" + motor + '\'' +
