@@ -1,2 +1,4 @@
-package EjerciciosTema8.Ejercicio7;public class Ejercicio07 {
+package EjerciciosTema8.Ejercicio7;
+
+public class Ejercicio07 {
 }

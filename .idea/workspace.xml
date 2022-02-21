@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Ejercicio07.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Pacientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +30,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="OOP" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
