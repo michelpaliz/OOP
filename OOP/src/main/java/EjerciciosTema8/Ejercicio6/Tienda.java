@@ -16,7 +16,7 @@ public class Tienda {
     Scanner myInput = new Scanner(System.in);
     // USER RESPUESTA
     int userInt;
-    String userStr;
+    // String userStr;
     boolean correct; // VALIDACION GENERAL
     GregorianCalendar fechaFabricacion; // Fecha general para uso
     public Bicicleta[] bicicletas; // CREACION DE ARRAY PARA LA BASE DE DATOS
