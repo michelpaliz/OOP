@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Ejercicio06.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Ejercicio06.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Tienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Tienda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio6/Ejercicio06.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio6/Ejercicio06.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio6/Tienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio6/Tienda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

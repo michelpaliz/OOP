@@ -35,6 +35,7 @@ public class Tienda {
             correct = userInt <= 4;
             if (!correct) {
                 System.out.println("Introduce un numero valido");
+                
             }
 
         } while (!correct);
