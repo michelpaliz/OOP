@@ -3,7 +3,8 @@ package EjerciciosTema8.Ejercicio6;
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
 import util.Bombo;
-import java.util.Arrays;
+import util.Lib;
+
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;
 import java.util.Date;
@@ -221,6 +222,12 @@ public class Tienda {
 
     // *ELIMINAR BICICLETEA (OPCION NUMERO 2)
 
+    /**
+     * 
+     * @param ref
+     * @return un numero positivo o si es negativo que significa que el indice de la
+     *         referencia no existe en el array
+     */
     public int buscarBicleta(int ref) {
         for (int i = 0; i < numBicicleta; i++) {
             if (bicicletas[i].getReferencia() == ref) {
@@ -229,6 +236,12 @@ public class Tienda {
         }
         return -1;
     }
+
+    /**
+     * 
+     * @param ref
+     * @return la posicion o indice de la refencia introducida anteriormente
+     */
 
     public Bicicleta buscarBicicletaPorNia(int ref) {
         int pos = buscarBicleta(ref);
@@ -243,12 +256,17 @@ public class Tienda {
         bicicletas[pos] = bicicletas[numBicicleta - 1];
         bicicletas[numBicicleta - 1] = null;
         numBicicleta--;
+        Lib.pausa();
         menu();
         return true;
 
     }
 
     // *CREACION DE DATOS RANDOM
+    /**
+     * 
+     * @param cantidad que deseamos generar de stock
+     */
 
     public void crearDatosPrueba(int cantidad) {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
@@ -335,6 +353,7 @@ public class Tienda {
         for (int i = 0; i < numBicicleta; i++) {
             System.out.println(bicicletas[i]);
         }
+        Lib.pausa();
         menu();
     }
     // *TIENDA
