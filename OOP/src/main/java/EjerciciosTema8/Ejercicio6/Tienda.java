@@ -56,10 +56,7 @@ public class Tienda {
             case 3:
 
             case 4:
-                for (int i = 0; i < numBicicleta; i++) {
-                    System.out.println(bicicletas[i]);
-                }
-
+                mostarStock();
                 break;
 
         }
@@ -315,12 +312,14 @@ public class Tienda {
         return answer;
     }
 
+    // *MOSTRACION DEL STOCK
     /**
      * 
      * @param minBicicletas de datos que quieras introducir para mostar datos
      *                      aleatorios
      */
-    public void mostrarStock(int minBicicletas) {
+    public void mostrarStockPrueba(int minBicicletas) {
+        System.out.println("GENERACION DE STOCK RANDOM");
         bicicletas = new Bicicleta[minBicicletas];
         numBicicleta = 0;
         if (Ejercicio06.DEBUG) {
@@ -328,15 +327,20 @@ public class Tienda {
         }
     }
 
-    public void anyadirBicicleta(Bicicleta nuevaBicicleta) {
-        numBicicleta++;
+    /**
+     * muestra el stock actual
+     */
+
+    public void mostarStock() {
         for (int i = 0; i < numBicicleta; i++) {
             System.out.println(bicicletas[i]);
         }
+        menu();
     }
+    // *TIENDA
 
     public Tienda() {
-        mostrarStock(Ejercicio06.MIN_BICLETAS);
+        mostrarStockPrueba(Ejercicio06.MIN_BICLETAS);
         menu();
 
     }
