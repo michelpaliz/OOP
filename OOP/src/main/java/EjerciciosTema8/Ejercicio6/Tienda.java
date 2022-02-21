@@ -3,7 +3,7 @@ package EjerciciosTema8.Ejercicio6;
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
 import util.Bombo;
-
+import java.util.Arrays;
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;
 import java.util.Date;
@@ -35,7 +35,7 @@ public class Tienda {
             correct = userInt <= 4;
             if (!correct) {
                 System.out.println("Introduce un numero valido");
-                
+
             }
 
         } while (!correct);
@@ -56,7 +56,10 @@ public class Tienda {
             case 3:
 
             case 4:
-                mostrarStock(Ejercicio06.MIN_BICLETAS);
+                for (int i = 0; i < numBicicleta; i++) {
+                    System.out.println(bicicletas[i]);
+                }
+
                 break;
 
         }
@@ -95,7 +98,7 @@ public class Tienda {
 
     }
 
-    public Bicicleta nuevoEspacio(int referencia, Marca marca, Modelo modelo, double peso, double dimensionRuedas,
+    public Bicicleta[] nuevoEspacio(int referencia, Marca marca, Modelo modelo, double peso, double dimensionRuedas,
             String motor,
             GregorianCalendar fechaFabricacion, double precio, int numeroExistencias) {
 
@@ -116,9 +119,8 @@ public class Tienda {
                 numeroExistencias);
         bicicletas[numBicicleta] = bicicletaNueva;
         numBicicleta++;
-        System.out.println(bicicletaNueva);
         menu();
-        return bicicletaNueva;
+        return bicicletas;
     }
 
     /**
@@ -323,6 +325,13 @@ public class Tienda {
         numBicicleta = 0;
         if (Ejercicio06.DEBUG) {
             crearDatosPrueba(minBicicletas / 2);
+        }
+    }
+
+    public void anyadirBicicleta(Bicicleta nuevaBicicleta) {
+        numBicicleta++;
+        for (int i = 0; i < numBicicleta; i++) {
+            System.out.println(bicicletas[i]);
         }
     }
 
