@@ -2,16 +2,16 @@ package EjerciciosTema8.Ejercicio7;
 
 import java.util.GregorianCalendar;
 
-public class Pacientes {
+public class Paciente {
     //Creacion de atributos
-    private long sip;
+    private  int  sip;
     private String nombre;
     private Genero genero;
     private GregorianCalendar edad;
     private GregorianCalendar fechaEntrada;
     private String sintomalogia;
 
-    public long getSip() {
+    public int getSip() {
         return sip;
     }
 
