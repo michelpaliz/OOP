@@ -64,6 +64,7 @@ public class Registro {
 
     }
 
+    // *CREACION DATOS PRUEBA
     public void crearDatosPrueba(int cantidad) {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
         Date fechaMax = new GregorianCalendar().getTime();
@@ -88,23 +89,7 @@ public class Registro {
         }
     }
 
-    // /**
-    // *
-    // * @param edad convertir la fecha de naciemento a edad
-    // * @return edad del paciente segun su fecha de nacimiento
-    // */
-    // public int getEdad2(GregorianCalendar edad) {
-    // LocalDate fechaActual = LocalDate.now();
-    // int anyoNacimiento = edad.get(Calendar.YEAR);
-    // int mesNacimiento = edad.get(Calendar.MONTH) + 1; //
-    // int diaNacimiento = edad.get(Calendar.DAY_OF_MONTH);
-    // LocalDate fechaNacimiento = LocalDate.of(diaNacimiento, mesNacimiento,
-    // anyoNacimiento);
-    // Period periodo = Period.between(fechaActual, fechaNacimiento);
-    // return periodo.getYears();
-    // }
-
-    // *MOSTRACION DEL STOCK
+    // *MOSTRACION DE LOS DATOS DE PRUEBA
     /**
      * 
      * @param minBicicletas de datos que quieras introducir para mostar datos
