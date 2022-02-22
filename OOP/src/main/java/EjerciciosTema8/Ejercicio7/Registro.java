@@ -24,10 +24,10 @@ public class Registro {
 
     // *MENU PRINCIPAL
     public void menu() {
-        System.out.println("***GESTION DE BICICLETAS*****");
+        System.out.println("***URGENCIAS*****");
         do {
             System.out.println("1-Nuevo Paciente");
-            System.out.println("2-Atendier Paciente");
+            System.out.println("2-Atender Paciente");
             System.out.println("3-Consultas");
             System.out.println("4.Alta Medica");
             System.out.println("-------------------------");
@@ -49,7 +49,7 @@ public class Registro {
 
                 break;
             case 2:
-                System.out.println("INTRODUCE EL NUMERO DE REFERENCIA");
+                System.out.println("INTRODUCE EL NUMERO SIP");
                 userInt = Integer.parseInt(myInput.nextLine());
 
                 break;
@@ -62,6 +62,37 @@ public class Registro {
 
         }
 
+    }
+
+    // *CREACION DE PACIENTE (ELECCION 1)
+    public Paciente creacionPaciente() {
+        System.out.println("INTRODUCE EL NUMERO SIP");
+        // +Todo existe o no existe el paciente
+    }
+
+    /**
+     * 
+     * @param sip
+     * @return positivo si existe negativo si no existe
+     */
+
+    public int buscarPaciente(int sip) {
+        for (int i = 0; i < numPaciente; i++) {
+            if (pacientes[i].getSip() == sip) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 
+     * @param sip
+     * @return la posicion del paciente
+     */
+    public Paciente buscarBicicletaPorNia(int sip) {
+        int pos = buscarPaciente(sip);
+        return pos < 0 ? null : pacientes[pos];
     }
 
     // *CREACION DATOS PRUEBA
