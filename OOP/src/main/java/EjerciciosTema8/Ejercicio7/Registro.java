@@ -1,18 +1,24 @@
 package EjerciciosTema8.Ejercicio7;
 
 //*IMPORT DATE
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Calendar;
-//*IMPORT PARA OPERACIONES
-import java.util.Scanner;
+//*IMPORT PARA OPERACIONES PRIMARIAS
 import util.*;
+//*IMPORT PARA OPERACIONES SECUNDARIAS
+import java.util.Scanner;
+import com.github.javafaker.Faker;
 
 public class Registro {
     // *IMPORT SCANNER
     Scanner myInput = new Scanner(System.in);
     // *USER RESPUESTA
     int userInt;
+    // *VARIABLES GLOBALES
     boolean correct;
+    private Paciente pacientes[];
+    int numPaciente;
 
     // *MENU PRINCIPAL
     public void menu() {
@@ -61,24 +67,42 @@ public class Registro {
         Date fechaMax = new GregorianCalendar().getTime();
         Bombo bombo = new Bombo(cantidad, 1);
         Faker faker = new Faker();
-        for (int i = 0; i  cantidad; i++) {
-            int sip = bom .extraerBola();
+        for (int i = 0; i < cantidad; i++) {
+            int sip = bombo.extraerBola();
+            String nombre = faker.name().firstName();
             Genero genero = Genero.getRandom();
+            Date edad = faker.date().birthday(18, 40);
             Date fecha = faker.date().between(fechaMin, fechaMax);
-            double precio = faker.number().randomDouble(2, 20, 5000);
-            int numeroExistencias = faker.number().randomDigitNotZero();
+            String sintomalogia = faker.animal().name();
 
-            GregorianCalendar fechaFabricacion = new GregorianCalendar();
-            fechaFabricacion.setTime(fecha);
-            bicicletas[i] = new Bicicleta(ref, marca, modelo, peso, dimensionRuedas, motor, fechaFabricacion, precio,
-                    numeroExistencias);
-            System.out.println(bicicletas[i]);
-            numBicicleta++;
+            GregorianCalendar fechaAlta = new GregorianCalendar();
+            fechaAlta.setTime(fecha);
+            GregorianCalendar edadPaciente = new GregorianCalendar();
+            edadPaciente.setTime(edad);
+
+            pacientes[i] = new Paciente(sip, nombre, genero, edadPaciente, fechaAlta, sintomalogia);
+            System.out.println(pacientes[i]);
+            numPaciente++;
+        }
+    }
+
+    // *MOSTRACION DEL STOCK
+    /**
+     * 
+     * @param minBicicletas de datos que quieras introducir para mostar datos
+     *                      aleatorios
+     */
+    public void mostrarStockPrueba(int minPacientes) {
+        System.out.println("GENERACION DE STOCK RANDOM");
+        pacientes = new Paciente[minPacientes];
+        numPaciente = 0;
+        if (Ejercicio07.DEBUG) {
+            crearDatosPrueba(minPacientes / 2);
         }
     }
 
     public Registro() {
-
+        mostrarStockPrueba(Ejercicio07.MIN_PACIENTES);
     }
 
 }

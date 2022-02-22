@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Paciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio6/Config.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Ejercicio07.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Ejercicio07.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Pacientes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Sintomatologia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Paciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Registro.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Registro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio6/Config.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Ejercicio07.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Ejercicio07.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Pacientes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Sintomatologia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Paciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Registro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/util/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/util/Gestion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
