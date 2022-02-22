@@ -3,6 +3,8 @@ package EjerciciosTema8.Ejercicio7;
 //*IMPORT DATE
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 //*IMPORT PARA OPERACIONES PRIMARIAS
 import util.*;
@@ -85,6 +87,22 @@ public class Registro {
             numPaciente++;
         }
     }
+
+    // /**
+    // *
+    // * @param edad convertir la fecha de naciemento a edad
+    // * @return edad del paciente segun su fecha de nacimiento
+    // */
+    // public int getEdad2(GregorianCalendar edad) {
+    // LocalDate fechaActual = LocalDate.now();
+    // int anyoNacimiento = edad.get(Calendar.YEAR);
+    // int mesNacimiento = edad.get(Calendar.MONTH) + 1; //
+    // int diaNacimiento = edad.get(Calendar.DAY_OF_MONTH);
+    // LocalDate fechaNacimiento = LocalDate.of(diaNacimiento, mesNacimiento,
+    // anyoNacimiento);
+    // Period periodo = Period.between(fechaActual, fechaNacimiento);
+    // return periodo.getYears();
+    // }
 
     // *MOSTRACION DEL STOCK
     /**
