@@ -1,8 +1,7 @@
 package EjerciciosTema8.Ejercicio7;
 
+//*IMPORT DATES PACKAGES
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -14,15 +13,17 @@ public class Paciente {
     private final GregorianCalendar edad;
     private final GregorianCalendar fechaEntrada;
     private final String sintomalogia;
+    private final PrevRevison prevRevison;
 
     public Paciente(int sip, String nombre, Genero genero, GregorianCalendar edad, GregorianCalendar fechaEntrada,
-            String sintomalogia) {
+            String sintomalogia, PrevRevison prevRevison) {
         this.sip = sip;
         this.nombre = nombre;
         this.genero = genero;
         this.edad = edad;
         this.fechaEntrada = fechaEntrada;
         this.sintomalogia = sintomalogia;
+        this.prevRevison = prevRevison;
     }
 
     public int getSip() {
@@ -77,7 +78,7 @@ public class Paciente {
 
     @Override
     public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy hh:mm:ss");
 
         return "Paciente{" +
                 "sip=" + sip +
@@ -86,6 +87,8 @@ public class Paciente {
                 ", edad=" + (getEdad1()) +
                 ", fechaEntrada=" + sdf.format(fechaEntrada.getTime()) +
                 ", sintomalogia='" + sintomalogia + '\'' +
+                ", prevRevison=" + prevRevison +
                 '}';
     }
+
 }

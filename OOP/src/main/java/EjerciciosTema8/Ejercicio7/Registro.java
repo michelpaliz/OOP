@@ -5,11 +5,14 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
 import java.util.Calendar;
 //*IMPORT PARA OPERACIONES PRIMARIAS
 import util.*;
 //*IMPORT PARA OPERACIONES SECUNDARIAS
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+
 import com.github.javafaker.Faker;
 
 public class Registro {
@@ -65,10 +68,10 @@ public class Registro {
     }
 
     // *CREACION DE PACIENTE (ELECCION 1)
-    public Paciente creacionPaciente() {
-        System.out.println("INTRODUCE EL NUMERO SIP");
-        // +Todo existe o no existe el paciente
-    }
+    // public Paciente creacionPaciente() {
+    // System.out.println("INTRODUCE EL NUMERO SIP");
+    // // +Todo existe o no existe el paciente
+    // }
 
     /**
      * 
@@ -107,14 +110,37 @@ public class Registro {
             Genero genero = Genero.getRandom();
             Date edad = faker.date().birthday(18, 40);
             Date fecha = faker.date().between(fechaMin, fechaMax);
-            String sintomalogia = faker.animal().name();
 
-            GregorianCalendar fechaAlta = new GregorianCalendar();
-            fechaAlta.setTime(fecha);
+            String sintomalogia = faker.animal().name();
+            // Config.anyo = Lib.random(Config.MIN_ANYO, Config.MAX_ANYO);
+            // Config.mes = Lib.random(Config.MES_MIN, Config.MES_MAX);
+            // Config.dia = Lib.random(Config.MIN)
+
+            long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
+            long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
+            Config.hora = Lib.random(Config.MIN_HOUR, Config.MAX_HOUR);
+            Config.minuto = Lib.random(Config.MIN_MIN, Config.MAX_MIN);
+            Config.segundo = Lib.random(Config.MIN_SEGUNDO, Config.MAX_SEGUNDO);
+            long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+            LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+            GregorianCalendar fechaEntrada = GregorianCalendar.from(randomDate.atStartOfDay(ZoneId.systemDefault()));
+
+            fechaEntrada.set(GregorianCalendar.MINUTE, (int) Config.minuto);
+            fechaEntrada.set(GregorianCalendar.SECOND, (int) Config.segundo);
+            fechaEntrada.set(GregorianCalendar.HOUR, (int) Config.hora);
+
             GregorianCalendar edadPaciente = new GregorianCalendar();
             edadPaciente.setTime(edad);
 
-            pacientes[i] = new Paciente(sip, nombre, genero, edadPaciente, fechaAlta, sintomalogia);
+            // Estos pacientes ya has estado atendidos asi que generamos valores aleatorios
+            Config.temp = Lib.random(Config.MIN_TEMP, Config.MAX_TEMP);
+            Config.ppm = Lib.random(Config.MIN_PPM, Config.MAX_PPM);
+            Config.tens = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
+            Config.temp = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
+
+            PrevRevison revisonPrevia = new PrevRevison(Config.temp, Config.ppm, Config.tens, Config.temp);
+
+            pacientes[i] = new Paciente(sip, nombre, genero, edadPaciente, fechaEntrada, sintomalogia, revisonPrevia);
             System.out.println(pacientes[i]);
             numPaciente++;
         }
