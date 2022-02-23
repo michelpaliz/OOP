@@ -1,6 +1,7 @@
 package EjerciciosTema8.Ejercicio7;
 
 public class Config {
+    
     public static long anyo, mes, dia, hora, minuto, segundo;
     public static int temp, ppm, tens;
     public static final int MAX_HOUR = 23;

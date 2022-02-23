@@ -26,6 +26,27 @@ public class Paciente {
         this.prevRevison = prevRevison;
     }
 
+    public Paciente(int sip, String nombre, Genero genero, GregorianCalendar edad, GregorianCalendar fechaEntrada,
+            String sintomalogia) {
+        this.sip = sip;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.edad = edad;
+        this.fechaEntrada = fechaEntrada;
+        this.sintomalogia = sintomalogia;
+        this.prevRevison = getPrevRevison();
+    }
+
+    public Paciente() {
+        this.sip = getSip();
+        this.nombre = getNombre();
+        this.genero = Genero.MASCULINO;
+        this.edad = getEdad();
+        this.fechaEntrada = getFechaEntrada();
+        this.sintomalogia = getSintomalogia();
+        this.prevRevison = getPrevRevison();
+    }
+
     public int getSip() {
         return sip;
     }
@@ -48,6 +69,10 @@ public class Paciente {
 
     public String getSintomalogia() {
         return sintomalogia;
+    }
+
+    public PrevRevison getPrevRevison() {
+        return prevRevison;
     }
 
     /**

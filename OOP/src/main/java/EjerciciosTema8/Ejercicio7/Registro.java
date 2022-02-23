@@ -1,12 +1,11 @@
 package EjerciciosTema8.Ejercicio7;
 
+import java.util.Calendar;
 //*IMPORT DATE
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.ZoneId;
-import java.util.Calendar;
 //*IMPORT PARA OPERACIONES PRIMARIAS
 import util.*;
 //*IMPORT PARA OPERACIONES SECUNDARIAS
@@ -16,11 +15,13 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.github.javafaker.Faker;
 
 public class Registro {
-    // *IMPORT SCANNER
-    Scanner myInput = new Scanner(System.in);
-    // *USER RESPUESTA
-    int userInt;
     // *VARIABLES GLOBALES
+    // IMPORT SCANNER
+    Scanner myInput = new Scanner(System.in);
+    // USER RESPUESTA
+    int userInt;
+    GregorianCalendar edadPaciente = new GregorianCalendar(); // FECHA
+
     boolean correct;
     private Paciente pacientes[];
     int numPaciente;
@@ -49,7 +50,7 @@ public class Registro {
                 System.out.println("Hasta luego");
                 break;
             case 1:
-
+                creacionPaciente();
                 break;
             case 2:
                 System.out.println("INTRODUCE EL NUMERO SIP");
@@ -68,10 +69,109 @@ public class Registro {
     }
 
     // *CREACION DE PACIENTE (ELECCION 1)
-    // public Paciente creacionPaciente() {
-    // System.out.println("INTRODUCE EL NUMERO SIP");
-    // // +Todo existe o no existe el paciente
-    // }
+    public Paciente creacionPaciente() {
+        Paciente nuevoPaciente = new Paciente();
+        System.out.println("INTRODUCE EL NUMERO SIP");
+        userInt = Integer.parseInt(myInput.nextLine());
+
+        if (buscarPaciente(userInt) < 0) {
+            System.out.println("El paciente no esta registrado");
+            int sip = userInt;
+            System.out.println("Inserta nombre del paciente");
+            String nombre = myInput.nextLine();
+            System.out.println("Inserta el genero del paciente");
+            Genero genero = genero();
+            System.out.println("Inserta la edad del paciente");
+            edadPaciente = validarFecha();
+            System.out.println("Introduce tu sintomalogia");
+            String sintomalogia = myInput.nextLine();
+            Date date = new GregorianCalendar().getTime();
+            GregorianCalendar fechaEntrada = new GregorianCalendar();
+            fechaEntrada.setTime(date);
+
+            nuevoPaciente = new Paciente(sip, nombre, genero, edadPaciente, fechaEntrada, sintomalogia);
+
+        } else {
+            System.out.println("El paciente esta registrado");
+            buscarPacientePorSip(userInt);
+        }
+
+        System.out.println(nuevoPaciente);
+        return nuevoPaciente;
+
+        // +Todo existe o no existe el paciente
+    }
+
+    /**
+     * 
+     * @return fecha de nacimiento
+     */
+    public GregorianCalendar validarFecha() {
+        int anyo;
+        int mes;
+        int dia;
+        GregorianCalendar fechaFabricacion = new GregorianCalendar();
+        do {
+            System.out.println("INSERTA EL AÑO NACIMIENTO ");
+            anyo = Integer.parseInt(myInput.nextLine());
+            System.out.println("INSERTA EL MES NACIMIENTO");
+            mes = Integer.parseInt(myInput.nextLine());
+            System.out.println("INSERTA EL DIA NACIMIENTO");
+            dia = Integer.parseInt(myInput.nextLine());
+            correct = anyo <= fechaFabricacion.get(Calendar.YEAR) && mes <= 12 && dia <= 31;
+            if (!correct) {
+                System.out.println("Tu edad no puede ser mayor que la fecha actual");
+                System.out.println("La fecha es incorrecta");
+            }
+        } while (!correct);
+        fechaFabricacion = new GregorianCalendar(anyo, mes, dia);
+        return fechaFabricacion;
+
+    }
+
+    /**
+     * 
+     * @return el genero que ul usuario ha escogido
+     */
+    public Genero genero() {
+
+        Genero genero = Genero.MASCULINO;
+
+        do {
+            System.out.println("Escoge tu genero");
+            System.out.println("1.Maculino");
+            System.out.println("2.Femenino");
+            System.out.println("3.Transexual");
+            userInt = Integer.parseInt(myInput.nextLine());
+            correct = userInt > 0 && userInt < 3;
+            if (!correct) {
+                System.out.println("Introduce una respuesta correcta");
+            }
+        } while (!correct);
+
+        switch (userInt) {
+            case 1:
+                genero = Genero.MASCULINO;
+                break;
+            case 2:
+                genero = Genero.FEMENINO;
+                break;
+            case 3:
+                genero = Genero.TRANSEXUAL;
+                break;
+        }
+        return genero;
+    }
+
+    /**
+     * 
+     * @param sip
+     * @return la posicion del paciente
+     */
+    public Paciente buscarPacientePorSip(int sip) {
+        int pos = buscarPaciente(sip);
+        return pos < 0 ? null : pacientes[pos];
+    }
 
     /**
      * 
@@ -88,23 +188,12 @@ public class Registro {
         return -1;
     }
 
-    /**
-     * 
-     * @param sip
-     * @return la posicion del paciente
-     */
-    public Paciente buscarBicicletaPorNia(int sip) {
-        int pos = buscarPaciente(sip);
-        return pos < 0 ? null : pacientes[pos];
-    }
-
     // *CREACION DATOS PRUEBA
     public void crearDatosPrueba(int cantidad) {
         Bombo bombo = new Bombo(cantidad, 1);
         Faker faker = new Faker();
         for (int i = 0; i < cantidad; i++) {
             int sip = bombo.extraerBola();
-            // principilaes atributos pacientes
             String nombre = faker.name().firstName();
             Genero genero = Genero.getRandom();
             Date edad = faker.date().birthday(18, 40);
@@ -128,7 +217,7 @@ public class Registro {
             fechaEntrada.set(GregorianCalendar.HOUR, (int) Config.hora);
 
             // edad
-            GregorianCalendar edadPaciente = new GregorianCalendar();
+            // GregorianCalendar edadPaciente = new GregorianCalendar();
             edadPaciente.setTime(edad);
 
             // Estos pacientes ya has estado atendidos asi que generamos valores aleatorios
@@ -162,6 +251,7 @@ public class Registro {
 
     public Registro() {
         mostrarStockPrueba(Ejercicio07.MIN_PACIENTES);
+        menu();
     }
 
 }
