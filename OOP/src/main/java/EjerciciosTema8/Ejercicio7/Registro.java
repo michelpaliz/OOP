@@ -112,9 +112,6 @@ public class Registro {
             Date fecha = faker.date().between(fechaMin, fechaMax);
 
             String sintomalogia = faker.animal().name();
-            // Config.anyo = Lib.random(Config.MIN_ANYO, Config.MAX_ANYO);
-            // Config.mes = Lib.random(Config.MES_MIN, Config.MES_MAX);
-            // Config.dia = Lib.random(Config.MIN)
 
             long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
             long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
