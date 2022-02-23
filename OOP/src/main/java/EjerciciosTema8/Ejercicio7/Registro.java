@@ -104,13 +104,15 @@ public class Registro {
         Faker faker = new Faker();
         for (int i = 0; i < cantidad; i++) {
             int sip = bombo.extraerBola();
+            // principilaes atributos pacientes
             String nombre = faker.name().firstName();
             Genero genero = Genero.getRandom();
             Date edad = faker.date().birthday(18, 40);
             String sintomalogia = faker.animal().name();
 
-            // Inserccion de valores
-            long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
+            // Inserccion de valores para la fecha de entrada
+            // long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
+            long minDay = LocalDate.of(2002, 1, 1).toEpochDay();
             long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
             Config.hora = Lib.random(Config.MIN_HOUR, Config.MAX_HOUR);
             Config.minuto = Lib.random(Config.MIN_MIN, Config.MAX_MIN);
@@ -120,11 +122,12 @@ public class Registro {
             long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
             LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
             GregorianCalendar fechaEntrada = GregorianCalendar.from(randomDate.atStartOfDay(ZoneId.systemDefault()));
-
+            // setters for time
             fechaEntrada.set(GregorianCalendar.MINUTE, (int) Config.minuto);
             fechaEntrada.set(GregorianCalendar.SECOND, (int) Config.segundo);
             fechaEntrada.set(GregorianCalendar.HOUR, (int) Config.hora);
 
+            // edad
             GregorianCalendar edadPaciente = new GregorianCalendar();
             edadPaciente.setTime(edad);
 
@@ -133,9 +136,9 @@ public class Registro {
             Config.ppm = Lib.random(Config.MIN_PPM, Config.MAX_PPM);
             Config.tens = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
             Config.temp = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
-
+            // Creacion revision objeto del paciente
             PrevRevison revisonPrevia = new PrevRevison(Config.temp, Config.ppm, Config.tens, Config.temp);
-
+            // Creacion de objeto paciente
             pacientes[i] = new Paciente(sip, nombre, genero, edadPaciente, fechaEntrada, sintomalogia, revisonPrevia);
             System.out.println(pacientes[i]);
             numPaciente++;
