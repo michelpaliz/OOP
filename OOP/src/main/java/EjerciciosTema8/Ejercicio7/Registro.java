@@ -100,8 +100,6 @@ public class Registro {
 
     // *CREACION DATOS PRUEBA
     public void crearDatosPrueba(int cantidad) {
-        Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
-        Date fechaMax = new GregorianCalendar().getTime();
         Bombo bombo = new Bombo(cantidad, 1);
         Faker faker = new Faker();
         for (int i = 0; i < cantidad; i++) {
@@ -109,15 +107,16 @@ public class Registro {
             String nombre = faker.name().firstName();
             Genero genero = Genero.getRandom();
             Date edad = faker.date().birthday(18, 40);
-            Date fecha = faker.date().between(fechaMin, fechaMax);
-
             String sintomalogia = faker.animal().name();
 
+            // Inserccion de valores
             long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
             long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
             Config.hora = Lib.random(Config.MIN_HOUR, Config.MAX_HOUR);
             Config.minuto = Lib.random(Config.MIN_MIN, Config.MAX_MIN);
             Config.segundo = Lib.random(Config.MIN_SEGUNDO, Config.MAX_SEGUNDO);
+
+            // Conversion LocalDate to GregorianCalendar
             long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
             LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
             GregorianCalendar fechaEntrada = GregorianCalendar.from(randomDate.atStartOfDay(ZoneId.systemDefault()));
