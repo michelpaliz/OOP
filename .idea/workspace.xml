@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Registro.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Registro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Registro.java" afterDir="false" />
-    </list>
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
