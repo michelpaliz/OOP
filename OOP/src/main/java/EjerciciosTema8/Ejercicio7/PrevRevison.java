@@ -7,6 +7,7 @@ public class PrevRevison {
     private final int pulsacion;
     private final int tensionSis;
     private final int tensionDias;
+    // public PrevRevison prevRevison;
 
     public PrevRevison(double temperatura, int pulsacion, int tensionSis, int tensionDias) {
         this.temperatura = temperatura;
@@ -14,6 +15,8 @@ public class PrevRevison {
         this.tensionSis = tensionSis;
         this.tensionDias = tensionDias;
     }
+
+
 
     public double getTemperatura() {
         return temperatura;

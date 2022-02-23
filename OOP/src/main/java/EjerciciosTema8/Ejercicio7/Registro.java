@@ -53,12 +53,12 @@ public class Registro {
                 creacionPaciente();
                 break;
             case 2:
-                System.out.println("INTRODUCE EL NUMERO SIP");
-                userInt = Integer.parseInt(myInput.nextLine());
-
+                atenderPaciente();
                 break;
 
             case 3:
+                mostarStock();
+                break;
 
             case 4:
 
@@ -90,6 +90,7 @@ public class Registro {
             fechaEntrada.setTime(date);
 
             nuevoPaciente = new Paciente(sip, nombre, genero, edadPaciente, fechaEntrada, sintomalogia);
+            nuevoEspacio(sip, nombre, genero, edadPaciente, fechaEntrada, sintomalogia);
 
         } else {
             System.out.println("El paciente esta registrado");
@@ -97,9 +98,46 @@ public class Registro {
         }
 
         System.out.println(nuevoPaciente);
+        menu();
         return nuevoPaciente;
 
         // +Todo existe o no existe el paciente
+    }
+
+    /**
+     * 
+     * @param sip
+     * @param nombre
+     * @param genero
+     * @param edad
+     * @param fechaEntrada
+     * @param sintomalogia
+     * @return El paciente anyadido en el array pacientes
+     */
+
+    public Paciente[] nuevoEspacio(int sip, String nombre, Genero genero, GregorianCalendar edad,
+            GregorianCalendar fechaEntrada,
+            String sintomalogia) {
+
+        if (buscarPacientePorSip(sip) != null) {
+            return null;
+        }
+
+        if (numPaciente == pacientes.length) {
+            // creamos un nuevo array el doble del viejo
+            Paciente[] bicicletasAmpliado = new Paciente[(int) (numPaciente * Ejercicio07.FACTOR_CRECIMIENTO)];
+            for (int i = 0; i < pacientes.length; i++) {
+                bicicletasAmpliado[i] = pacientes[i];
+            }
+            pacientes = bicicletasAmpliado;
+        }
+
+        Paciente pacienteNuevo = new Paciente(sip, nombre, genero, edad, fechaEntrada, sintomalogia);
+        pacientes[numPaciente] = pacienteNuevo;
+        numPaciente++;
+        menu();
+        return pacientes;
+
     }
 
     /**
@@ -188,6 +226,48 @@ public class Registro {
         return -1;
     }
 
+    // *ATENDER PACIENTE (ELECCION 2)
+    public Paciente atenderPaciente() {
+        Paciente paciente = new Paciente();
+        System.out.println("Introduzca el sip del paciente");
+        userInt = Integer.parseInt(myInput.nextLine());
+        if (buscarPaciente(userInt) < 0) {
+            System.out.println(
+                    "El paciente no esta todavia registrado tienes que registrarlo primero para poder atenderlo");
+        } else {
+            System.out.println(
+                    "El paciente esta registrado. Ahora vamos a verificar si este paciente ha sido atendido alguna vez");
+            paciente = verificarAtencion(buscarPacientePorSip(userInt));
+
+        }
+        return paciente;
+
+    }
+
+    public Paciente verificarAtencion(Paciente paciente) {
+        Paciente pacienteAtendido = new Paciente();
+        if (paciente.getPrevRevison() == null) {
+            System.out.println("El paciente no ha sido atendido por ningun medico");
+            System.out.println("Introduce la pulsacion ");
+            int pulsacion = Integer.parseInt(myInput.nextLine());
+            System.out.println("Introduce la temperatura");
+            int temperatura = Integer.parseInt(myInput.nextLine());
+            System.out.println("Introduce la tension sistolica  del paciente");
+            int tensionSis = Integer.parseInt(myInput.nextLine());
+            System.out.println("Introduce la tension diastolica del paciente");
+            int tensionDias = Integer.parseInt(myInput.nextLine());
+            PrevRevison revision = new PrevRevison(temperatura, pulsacion, tensionSis, tensionDias);
+            paciente.getPrevRevison().equals(revision);
+            paciente.getPrevRevison().replace(revision);
+            pacienteAtendido = (paciente);
+        } else {
+            System.out.println("El paciente ha sido atendido por un medico");
+            return pacienteAtendido;
+        }
+        return pacienteAtendido;
+
+    }
+
     // *CREACION DATOS PRUEBA
     public void crearDatosPrueba(int cantidad) {
         Bombo bombo = new Bombo(cantidad, 1);
@@ -247,6 +327,14 @@ public class Registro {
         if (Ejercicio07.DEBUG) {
             crearDatosPrueba(minPacientes / 2);
         }
+    }
+
+    public void mostarStock() {
+        for (int i = 0; i < numPaciente; i++) {
+            System.out.println(pacientes[i]);
+        }
+        Lib.pausa();
+        menu();
     }
 
     public Registro() {

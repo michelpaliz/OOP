@@ -47,6 +47,10 @@ public class Paciente {
         this.prevRevison = getPrevRevison();
     }
 
+    public Paciente(Paciente p ){
+        this(p.sip,p.nombre,p.genero,p.edad,p.fechaEntrada,p.sintomalogia,p.prevRevison);
+    }
+
     public int getSip() {
         return sip;
     }
