@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij" />
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primitiva/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
