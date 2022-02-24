@@ -45,6 +45,7 @@ public class Paciente {
         this.fechaEntrada = getFechaEntrada();
         this.sintomalogia = getSintomalogia();
         this.prevRevison = getPrevRevison();
+
     }
 
     public Paciente(Paciente p) {
