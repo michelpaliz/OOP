@@ -13,7 +13,7 @@ public class Paciente {
     private final GregorianCalendar edad;
     private final GregorianCalendar fechaEntrada;
     private final String sintomalogia;
-    private final PrevRevison prevRevison;
+    private PrevRevison prevRevison;
 
     public Paciente(int sip, String nombre, Genero genero, GregorianCalendar edad, GregorianCalendar fechaEntrada,
             String sintomalogia, PrevRevison prevRevison) {
@@ -47,8 +47,8 @@ public class Paciente {
         this.prevRevison = getPrevRevison();
     }
 
-    public Paciente(Paciente p ){
-        this(p.sip,p.nombre,p.genero,p.edad,p.fechaEntrada,p.sintomalogia,p.prevRevison);
+    public Paciente(Paciente p) {
+        this(p.sip, p.nombre, p.genero, p.edad, p.fechaEntrada, p.sintomalogia, p.prevRevison);
     }
 
     public int getSip() {
@@ -118,6 +118,11 @@ public class Paciente {
                 ", sintomalogia='" + sintomalogia + '\'' +
                 ", prevRevison=" + prevRevison +
                 '}';
+    }
+
+    public PrevRevison setPrevResion(PrevRevison revision) {
+        this.prevRevison = revision;
+        return prevRevison;
     }
 
 }

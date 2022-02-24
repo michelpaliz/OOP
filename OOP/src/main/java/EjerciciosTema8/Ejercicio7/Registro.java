@@ -245,7 +245,7 @@ public class Registro {
     }
 
     public Paciente verificarAtencion(Paciente paciente) {
-        Paciente pacienteAtendido = new Paciente();
+        Paciente pacienteAtendido = paciente;
         if (paciente.getPrevRevison() == null) {
             System.out.println("El paciente no ha sido atendido por ningun medico");
             System.out.println("Introduce la pulsacion ");
@@ -257,9 +257,9 @@ public class Registro {
             System.out.println("Introduce la tension diastolica del paciente");
             int tensionDias = Integer.parseInt(myInput.nextLine());
             PrevRevison revision = new PrevRevison(temperatura, pulsacion, tensionSis, tensionDias);
-            paciente.getPrevRevison().equals(revision);
-            paciente.getPrevRevison().replace(revision);
-            pacienteAtendido = (paciente);
+            PrevRevison revison = paciente.setPrevResion(revision); // !importante;
+            pacienteAtendido = new Paciente(paciente);
+            System.out.println(pacienteAtendido);
         } else {
             System.out.println("El paciente ha sido atendido por un medico");
             return pacienteAtendido;
