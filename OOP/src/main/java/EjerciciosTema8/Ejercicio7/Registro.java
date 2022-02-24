@@ -53,11 +53,13 @@ public class Registro {
                 creacionPaciente();
                 break;
             case 2:
-                atenderPaciente();
+                // atenderPaciente();
+                System.out.println(atenderPaciente());
                 break;
 
             case 3:
                 mostarStock();
+
                 break;
 
             case 4:
@@ -97,7 +99,7 @@ public class Registro {
             buscarPacientePorSip(userInt);
         }
 
-        System.out.println(nuevoPaciente);
+        // System.out.println(nuevoPaciente);
         menu();
         return nuevoPaciente;
 
@@ -240,6 +242,7 @@ public class Registro {
             paciente = verificarAtencion(buscarPacientePorSip(userInt));
 
         }
+        // System.out.println(paciente);
         return paciente;
 
     }
@@ -259,11 +262,11 @@ public class Registro {
             PrevRevison revision = new PrevRevison(temperatura, pulsacion, tensionSis, tensionDias);
             PrevRevison revison = paciente.setPrevResion(revision); // !importante;
             pacienteAtendido = new Paciente(paciente);
-            System.out.println(pacienteAtendido);
         } else {
             System.out.println("El paciente ha sido atendido por un medico");
             return pacienteAtendido;
         }
+        // System.out.println(pacienteAtendido);
         return pacienteAtendido;
 
     }
