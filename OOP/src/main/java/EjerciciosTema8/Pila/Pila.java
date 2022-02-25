@@ -26,7 +26,7 @@ public class Pila {
 
     // creamos un tipo pila int
     public boolean push(int elemento) {
-        // como se yo que la pila esta llena
+        // para saber si la pila esta llena
         if (!isFull()) {
             // datos[tope + 1] = elemento; este no incrementa el tope
             // datos[++tope] = elemento; // incrementa el tope
@@ -68,7 +68,25 @@ public class Pila {
         return newArray;
     }
 
-    
+    // otra fforma de hacerlo
+    private int[] resize2(int[] a) {
+        int[] newArray = new int[a.length * GROWFACTOR];
+        for (int i = 0; i < a.length; i++) {
+            newArray[i] = a[i];
+        }
+
+        return newArray;
+    }
+
+    private void resize3(int[] a) {
+        int[] newArray = new int[a.length * GROWFACTOR];
+        for (int i = 0; i < a.length; i++) {
+            newArray[i] = a[i];
+        }
+
+        datos = newArray;
+    }
+
     @Override
     public String toString() {
         return "Pila{" +
