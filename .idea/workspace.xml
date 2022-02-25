@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change afterPath="$PROJECT_DIR$/Primitiva/src/main/java/Primitiva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Ejercicio7/Paciente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Bicicleta.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Bicicleta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Ejercicio06.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Ejercicio06.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Tienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Ejercicio6/Tienda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/build/classes/java/main/EjerciciosTema8/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Ejercicio7/Paciente.java" afterDir="false" />
-    </list>
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +69,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive/2.DESKTOP/Tbjo_Grupal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
