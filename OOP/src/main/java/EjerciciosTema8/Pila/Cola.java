@@ -1,6 +1,5 @@
 package EjerciciosTema8.Pila;
 
-
 public class Cola {
     // Creacion de atributos
     private final static int GROWFACTOR = 2;
@@ -23,8 +22,8 @@ public class Cola {
         return lastData == datos.length - 1;
     }
 
-    // public int[] add(){
-
+    // public int[] add(int numElmentos){
+    // return
     // }
 
 }
