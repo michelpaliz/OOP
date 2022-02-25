@@ -1,9 +1,12 @@
 package EjerciciosTema8.Pila;
 
+import java.util.Arrays;
+
 public class Pila {
 
     // la pila tiene que ser private para que se maneja autamicamente como abstracto
-    private final int[] datos;
+    private final static int GROWFACTOR = 2;
+    private int[] datos;
     private int tope;
 
     public Pila(int initialSize) {
@@ -25,12 +28,52 @@ public class Pila {
     public boolean push(int elemento) {
         // como se yo que la pila esta llena
         if (!isFull()) {
-            datos[tope + 1] = elemento;
-            return true;
+            // datos[tope + 1] = elemento; este no incrementa el tope
+            // datos[++tope] = elemento; // incrementa el tope
+            datos = resize();
+            // return true;
         }
-        return false;
+        datos[++tope] = elemento;
+        return true;
     }
 
     // +Todo EJERCICIO..
 
+    public int size() {
+        return tope + 1;
+    }
+
+    public Integer top() {
+        if (!isEmpty()) {
+            return datos[tope]; // esto funcionara si el tope no es -1 que significa que estara vacia
+        }
+        return null;
+    }
+
+    // devolver el elemento y borrar la pila
+    public Integer pop() {
+        if (!isEmpty()) {
+            return datos[tope--]; // se hace despues de devolver el dato
+        }
+        return null;
+    }
+
+    // yo lo que quiero es que la pila se gestione si mismo
+    // dos formas de hacerlo
+    public int[] resize() {
+        int[] newArray = new int[datos.length * GROWFACTOR];
+        for (int i = 0; i < datos.length; i++) {
+            newArray[i] = datos[i];
+        }
+        return newArray;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Pila{" +
+                "datos=" + Arrays.toString(datos) +
+                ", tope=" + tope +
+                '}';
+    }
 }
