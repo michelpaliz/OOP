@@ -48,7 +48,6 @@ public class JuegoPrimitiva {
     }
 
     public Set<Integer> generatorRandom() {
-
         Set<Integer> set = new LinkedHashSet<Integer>();
         while (set.size() < Config.MAX_NUMERO_SUERTE) {
             set.add(r.nextInt(49) + 1);
