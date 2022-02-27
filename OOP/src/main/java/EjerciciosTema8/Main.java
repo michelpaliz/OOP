@@ -4,6 +4,8 @@ package EjerciciosTema8;
 
 import EjerciciosTema8.Pila.EjercicioPila;
 import EjerciciosTema8.Pila.Pila;
+import EjerciciosTema8.Primitiva.JuegoPrimitiva;
+
 import java.util.Random;
 
 public class Main {
@@ -19,7 +21,10 @@ public class Main {
         // // Ejercicio06 tienda = new Ejercicio06();
         // System.out.println("EJERCICIO NUMERO 7");
         // Ejercicio07 registro = new Ejercicio07();
-        EjercicioPila pila = new EjercicioPila();
+        // EjercicioPila pila = new EjercicioPila();
+
+        System.out.println("Juego de la Primitiva");
+        JuegoPrimitiva sorteo = new JuegoPrimitiva();
 
     }
 

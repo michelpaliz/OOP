@@ -5,34 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71b428df-bc2b-431e-ac8f-0219789ad626" name="Changes" comment="changes">
-      <change beforePath="$PROJECT_DIR$/../OOP/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Primitiva.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Primitiva/Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Primitiva/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Primitiva/JuegoPrimitiva.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Primitiva/JuegoPrimitiva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Primitiva/Primitiva.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/bin/main/EjerciciosTema8/Primitiva/Primitiva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/bin/main/util/Lib.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/bin/main/util/Lib.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Primitiva/JuegoPrimitiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Primitiva/JuegoPrimitiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Primitiva/Primitiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/src/main/java/EjerciciosTema8/Primitiva/Primitiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP/src/main/java/util/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP/src/main/java/util/Lib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
