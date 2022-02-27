@@ -21,6 +21,7 @@ public class JuegoPrimitiva {
     int userInt;
     boolean correct;
     int primerNumero, segundoNumero, tercerNumero, cuartoNumero, quintoNumero, sextoNumero;
+    // +Todo variable para contar los numeros de intentos
 
     public void menu() {
         do {
@@ -48,8 +49,6 @@ public class JuegoPrimitiva {
         }
 
     }
-
-    
 
     public void subMenu() {
 

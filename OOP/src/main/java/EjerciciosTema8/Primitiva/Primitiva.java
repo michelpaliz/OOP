@@ -7,6 +7,9 @@ public class Primitiva {
     // Creacion de atributos
     private int[] numerosElegidos;
     private String modalidadJuego;
+    // +Todo generar los tipos de datos para estos dos arrays
+    private int[] numReintegro;
+    private int[] numeroComp;
 
     // Generacion de constructores
     public Primitiva(int[] numerosElegidos, String modalidadJuego) {
