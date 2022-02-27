@@ -1,6 +1,7 @@
 package EjerciciosTema8.Primitiva;
 
 import java.util.Arrays;
+import java.util.Set;
 
 public class Primitiva {
     // Creacion de atributos
@@ -15,6 +16,14 @@ public class Primitiva {
 
     public Primitiva(int[] validarNumeros) {
         this.numerosSuerte = validarNumeros;
+    }
+
+    public Primitiva(Set<Integer> generatorRandom) {
+        this.numerosSuerte = JuegoPrimitiva.numeros; // para inicializar el atributo con una variable
+        int j = 0;
+        for (Integer i : generatorRandom) {
+            this.numerosSuerte[j++] = i;
+        }
     }
 
     @Override

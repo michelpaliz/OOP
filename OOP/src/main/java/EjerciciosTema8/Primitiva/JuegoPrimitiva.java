@@ -5,13 +5,19 @@ import util.Lib;
 
 //*IMPORTS PARA OPERACIONES
 import java.util.Scanner;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import java.util.Random;
 
 public class JuegoPrimitiva {
     // Variables Globales
+    // Variable de la clase primitiva
+    Primitiva numerosElegidos;
     // Scanner & Random
     Scanner myInput = new Scanner(System.in);
-    // Operaciones
-    int[] numeros = new int[Config.MAX_NUMERO_SUERTE];
+    Random r = new Random();
+    // Para uso de Operaciones
+    static int[] numeros = new int[Config.MAX_NUMERO_SUERTE];
     int userInt;
     boolean correct;
     int primerNumero, segundoNumero, tercerNumero, cuartoNumero, quintoNumero, sextoNumero;
@@ -31,14 +37,30 @@ public class JuegoPrimitiva {
         switch (userInt) {
             case 1:
                 System.out.println("Seleccion de numeros");
-                Primitiva numeros = new Primitiva(validarNumeros());
-                System.out.println(numeros);
+                numerosElegidos = new Primitiva(validarNumeros());
+                System.out.println(numerosElegidos);
                 break;
             case 2:
                 System.out.println("El sistema generara 6 numero automaticamente para ti");
-
+                numerosElegidos = new Primitiva(generatorRandom());
+                System.out.println(numerosElegidos);
         }
     }
+
+    public Set<Integer> generatorRandom() {
+
+        Set<Integer> set = new LinkedHashSet<Integer>();
+        while (set.size() < Config.MAX_NUMERO_SUERTE) {
+            set.add(r.nextInt(49) + 1);
+        }
+        // System.out.println("Random numbers with no duplicates = " + set);
+        return set;
+    }
+
+    /**
+     * 
+     * @return numeros que el jugador a optado
+     */
 
     public int[] validarNumeros() {
         for (int i = 0; i < Config.MAX_NUMERO_SUERTE; i++) {
