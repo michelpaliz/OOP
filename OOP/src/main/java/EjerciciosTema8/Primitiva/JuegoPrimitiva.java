@@ -53,7 +53,7 @@ public class JuegoPrimitiva {
     public void subMenu() {
 
         do {
-            System.out.println("***Elige una modalidad de Juego");
+            System.out.println("****ELIGE UNA MODALIDAD DE JUEGO *****");
             System.out.println("1. Juego Unico");
             System.out.println("2.Jugar hasta obtener un premio(con reintegro)");
             System.out.println("3.Jugar hasta obtener un premio (Sin reintegro)");
