@@ -44,8 +44,44 @@ public class JuegoPrimitiva {
                 System.out.println("El sistema generara 6 numero automaticamente para ti");
                 numerosElegidos = new Primitiva(generatorRandom());
                 System.out.println(numerosElegidos);
+                break;
+        }
+
+    }
+
+    
+
+    public void subMenu() {
+
+        do {
+            System.out.println("***Elige una modalidad de Juego");
+            System.out.println("1. Juego Unico");
+            System.out.println("2.Jugar hasta obtener un premio(con reintegro)");
+            System.out.println("3.Jugar hasta obtener un premio (Sin reintegro)");
+            System.out.println("4.Ciclo de 1000 sorteos");
+            System.out.println("5.Jugar hasta obtener premio categoria especial");
+            userInt = Integer.parseInt(myInput.nextLine());
+            correct = userInt > 0 && userInt >= 5;
+        } while (!correct);
+
+        switch (userInt) {
+            case 1:
+                System.out.println("");
+            case 2:
+
+            case 3:
+
+            case 4:
+
+            case 5:
         }
     }
+
+    /**
+     * 
+     * @return a set object which stores group of elements, it grows dynamically and
+     *         it does not allow duplicate elements.
+     */
 
     public Set<Integer> generatorRandom() {
         Set<Integer> set = new LinkedHashSet<Integer>();
