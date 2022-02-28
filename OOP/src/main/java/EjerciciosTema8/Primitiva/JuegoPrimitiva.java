@@ -61,6 +61,7 @@ public class JuegoPrimitiva {
             System.out.println("5.Jugar hasta obtener premio categoria especial");
             userInt = Integer.parseInt(myInput.nextLine());
             correct = userInt > 0 && userInt >= 5;
+
         } while (!correct);
 
         switch (userInt) {
