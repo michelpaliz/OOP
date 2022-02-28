@@ -25,6 +25,9 @@ public class Main {
         System.out.println("PILA");
         EjercicioPila pila = new EjercicioPila();
 
+        // Cola<String> cola = new Cola<>();
+        // cola.add
+
         // System.out.println("Juego de la Primitiva");
         // JuegoPrimitiva sorteo = new JuegoPrimitiva();
 

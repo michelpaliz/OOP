@@ -28,7 +28,7 @@ public class Cola {
     }
 
     // redimensionar el array
-    public int[] resize() {
+    private int[] resize() {
         int[] newArray = new int[data.length * GROWFACTOR];
         int count = 0;
         for (int i = firstData; i <= lastData; i++) {
@@ -36,8 +36,45 @@ public class Cola {
             count++;
         }
         this.firstData = 0;
-        this.lastData = count;
+        this.lastData = count - 1; // para que apunte al que corresponde no a uno mas
         return newArray;
+    }
+
+    public Integer remove() {
+        Integer element = null;
+
+        if (!isEmpty()) {
+
+            // element = data[firstData];
+            // if(firstData == lastData){
+            // if(firstData == lastData){
+            // firstData = -1;
+            // lastData = -1;
+            // }else{
+            // firstData++;
+            // }
+            // }
+
+            // comprobar si es el ultimo elemento
+            if (firstData == lastData) {
+                element = data[firstData];
+                firstData = lastData = -1; // eso significa que los dos punteros no puntan a ninguno
+            } else {
+                element = data[firstData];
+                firstData++;
+            }
+
+        }
+        return element;
+
+    }
+
+    public Integer peek(){
+        Integer element = null;
+        if(!isEmpty()){
+            element = data[firstData];
+        }
+        return element;
     }
 
     // vamos a implementar de izquierda a derecha
