@@ -7,7 +7,8 @@ import EjerciciosTema8.Pila.CircularQueue;
 import EjerciciosTema8.Pila.EjercicioPila;
 import EjerciciosTema8.Pila.Pila;
 import EjerciciosTema8.Primitiva.JuegoPrimitiva;
-
+import util.Test;
+import util.userInput;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,14 +23,23 @@ public class Main {
         // // Ejercicio06 tienda = new Ejercicio06();
         // System.out.println("EJERCICIO NUMERO 7");
         // Ejercicio07 registro = new Ejercicio07();
-        System.out.println("PILA");
-        EjercicioPila pila = new EjercicioPila();
+        // System.out.println("PILA");
+        // EjercicioPila pila = new EjercicioPila();
 
         // Cola<String> cola = new Cola<>();
         // cola.add
 
         // System.out.println("Juego de la Primitiva");
         // JuegoPrimitiva sorteo = new JuegoPrimitiva();
+
+        // Test
+        // String messageInt = "Introduce un int";
+        // userInput.validarInt(messageInt);
+        //
+        // Test test = new Test();
+        // System.out.println(test);
+
+        Test.main();
 
     }
 
