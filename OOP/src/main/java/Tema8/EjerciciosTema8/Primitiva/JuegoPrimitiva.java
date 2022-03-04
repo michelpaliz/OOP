@@ -1,11 +1,11 @@
 package Tema8.EjerciciosTema8.Primitiva;
 
-//*IMPORTS LIBRERIAS
-import util.Lib;
-
 //*IMPORTS PARA OPERACIONES
 import java.util.Scanner;
 import java.util.Set;
+
+import Util.Lib;
+
 import java.util.LinkedHashSet;
 import java.util.Random;
 

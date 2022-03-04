@@ -6,13 +6,13 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.time.LocalDate;
 import java.time.ZoneId;
-//*IMPORT PARA OPERACIONES PRIMARIAS
-import util.*;
 //*IMPORT PARA OPERACIONES SECUNDARIAS
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.github.javafaker.Faker;
+
+import Util.*;
 
 public class Registro {
     // *VARIABLES GLOBALES

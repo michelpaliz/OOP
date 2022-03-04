@@ -2,8 +2,9 @@ package Tema8.EjerciciosTema8.Ejercicio6;
 
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
-import util.Bombo;
-import util.Lib;
+
+import Util.Bombo;
+import Util.Lib;
 
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;

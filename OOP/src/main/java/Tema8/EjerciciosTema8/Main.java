@@ -7,7 +7,7 @@ import Tema8.EjerciciosTema8.Pila.CircularQueue;
 import Tema8.EjerciciosTema8.Pila.EjercicioPila;
 import Tema8.EjerciciosTema8.Pila.Pila;
 import Tema8.EjerciciosTema8.Primitiva.JuegoPrimitiva;
-import util.Test;
+import Util.Test;
 
 
 public class Main {

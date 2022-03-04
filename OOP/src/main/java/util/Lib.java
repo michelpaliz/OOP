@@ -1,4 +1,4 @@
-package util;
+package Util;
 
 import java.util.Scanner;
 import java.io.IOException;
