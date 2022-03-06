@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Pila/Pila.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/EjerciciosTema8/Pila/Pila.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/util/Lib.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/util/Lib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Pila/Pila.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Pila/Pila.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Primitiva/JuegoPrimitiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/EjerciciosTema8/Primitiva/JuegoPrimitiva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/util/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/util/Lib.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

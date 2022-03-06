@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Principal",
+            "request": "launch",
+            "mainClass": "OtrosEjercicios.Campeonato.Principal",
+            "projectName": "OOP"
+        },
+          {
+            "type": "java",
+            "name": "Launch MainOtros",
+            "request": "launch",
+            "mainClass": "OtrosEjercicios.Main",
+            "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch Principal(1)",
+            "request": "launch",
+            "mainClass": "Tema8.EjemplosTema8.Principal",
+            "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Tema8.EjerciciosTema8.Main",
+            "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch CircularQueue",
+            "request": "launch",
+            "mainClass": "Tema8.EjerciciosTema8.Pila.CircularQueue",
+            "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainTm9",
+            "request": "launch",
+            "mainClass": "Tema9.MainTm9",
+            "projectName": "OOP"
+        }
+      
+    ]
+}

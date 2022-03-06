@@ -23,7 +23,7 @@ public class Coche {
         modalidadSeguro = modalidadSeguro.TERCERO;
     }
 
-    public Coche(String modelo, Color color, boolean metalizado, String matricula, Tipo tipoCoche, int anyoFabricacion, EjemplosTema8.Ejercicio1.modalidadSeguro modalidadSeguro) {
+    public Coche(String modelo, Color color, boolean metalizado, String matricula, Tipo tipoCoche, int anyoFabricacion, modalidadSeguro modalidadSeguro) {
         this.modelo = modelo;
         this.color = color;
         this.metalizado = metalizado;
@@ -99,7 +99,7 @@ public class Coche {
         return anyoFabricacion;
     }
 
-    public EjemplosTema8.Ejercicio1.modalidadSeguro getModalidadSeguro() {
+    public modalidadSeguro getModalidadSeguro() {
         return modalidadSeguro;
     }
 

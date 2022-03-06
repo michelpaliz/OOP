@@ -1,4 +1,4 @@
-package EjemplosTema8.Ejercicio3;
+package Tema8.EjemplosTema8.Ejercicio3;
 
 //public class Alumno {
 //    private final long nia;

@@ -1,44 +1,68 @@
 package Tema8.EjemplosTema8.Cajero;
 
+import Tema8.EjemplosTema8.Cajero.config.Config;
+
+import java.util.Random;
+
 public class Cuenta {
-    //Creamos los atributos
-    private int numeroSeguridad;
-    private int pin;
-    private String numeroTarjeta;
+    private final String numero;
+    private final String propietario;
+    private double saldo;
+    private Tarjeta tarjeta;
 
-    //**crearemos construtores
-    public Cuenta() {
-        numeroTarjeta = "*******";
-        pin = 123456;
-        numeroSeguridad = 123;
+    public Cuenta(String numero, String propietario) {
+        this.numero = numero;
+        this.propietario = propietario;
+        // Las siguientes asignaciones no son necesarias en Java
+        saldo = 0;
+        tarjeta = null;
     }
 
-    public Cuenta(String numeroTarjeta, int pin, int numeroSeguridad) {
-        this.numeroTarjeta = numeroTarjeta;
-        this.pin = pin;
-        this.numeroSeguridad = numeroSeguridad;
+    public Tarjeta crearTarjeta(String codigoBanco, int numeroSegmentoPropietario) {
+        if(tarjeta == null) {
+            Random r = new Random();
+            tarjeta = new Tarjeta(
+                    "0" + codigoBanco + String.format("%09d", numeroSegmentoPropietario),
+                    String.valueOf(r.nextInt(Config.MAX_NUMERO_TARJETA - Config.MIN_NUMERO_TARJETA + 1) + Config.MIN_NUMERO_TARJETA),
+                    String.valueOf(r.nextInt(Config.MAX_CODIGO_SEGURIDAD - Config.MIN_CODIGO_SEGURIDAD + 1) + Config.MIN_CODIGO_SEGURIDAD));
+            return tarjeta;
+        }
+        return null;
     }
 
-    //*METODOS**/
-    //**Generamos el metodo toString\
+    public boolean ingresar(double cantidad) {
+        if(cantidad > 0) {
+            saldo += cantidad;
+            return true;
+        }
+        return false;
+    }
+
+    public double retirar(double cantidad) {
+        if(cantidad > 0 && saldo >= cantidad) {
+            saldo -= cantidad;
+            return cantidad;
+        }
+        return 0;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public Tarjeta getTarjeta() {
+        return tarjeta;
+    }
+
     @Override
     public String toString() {
         return "Cuenta{" +
-                "numeroTarjeta='" + numeroTarjeta + '\'' +
-                ", pin=" + pin +
-                ", numeroSeguridad=" + numeroSeguridad +
+                "numero='" + numero + '\'' +
+                ", propietario='" + propietario + '\'' +
+                ", saldo=" + saldo +
+                ", tarjeta=" + tarjeta +
                 '}';
     }
 
-    public int getPin() {
-        return pin;
-    }
 
-    public int getNumeroSeguridad() {
-        return numeroSeguridad;
-    }
-
-    public String getNumeroTarjeta() {
-        return numeroTarjeta;
-    }
 }
