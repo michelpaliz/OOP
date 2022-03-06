@@ -7,6 +7,7 @@ public class Pila {
 
     Scanner myInput = new Scanner(System.in);
     Stack pila = new Stack();
+    public final static int GROW_FACTOR = 2;
     public static int size;
 
     public void size() {
@@ -36,6 +37,8 @@ public class Pila {
         }
         System.out.println(pila);
     }
+
+    
 
     public void contains() {
         System.out.println("Ingrese el dato a validar");
