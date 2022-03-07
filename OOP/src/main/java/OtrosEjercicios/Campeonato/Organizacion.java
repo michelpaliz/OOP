@@ -1,5 +1,6 @@
 package OtrosEjercicios.Campeonato;
 
+
 import java.util.Scanner;
 
 public class Organizacion {
@@ -10,6 +11,7 @@ public class Organizacion {
     private boolean correct;
 
     public void menu() {
+
 
         do {
             System.out.println("******MENU******");
@@ -29,14 +31,14 @@ public class Organizacion {
             case 2:
                 break;
             case 3:
-                break;
-            case 4:
+                Equipo equipo = new
                 break;
 
         }
     }
 
     public Organizacion() {
+        menu();
 
     }
 

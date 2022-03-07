@@ -39,7 +39,7 @@ public class Entrenador {
      * @return devuelve la edad del paciente
      */
 
-    public int getEdad1() {
+    public int getEdad() {
         int anyoNacimiento = edad.get(Calendar.YEAR);
         int mesNacimiento = edad.get(Calendar.MONTH) + 1; //
         int diaNacimiento = edad.get(Calendar.DAY_OF_MONTH);
@@ -66,7 +66,7 @@ public class Entrenador {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", edad=" + getEdad1() +
+                ", edad=" + getEdad() +
                 '}';
     }
 }

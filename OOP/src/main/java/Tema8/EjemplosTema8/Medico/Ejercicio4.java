@@ -125,8 +125,6 @@ public class Ejercicio4 {
 
     private void consultas() {
         int opcion;
-        int i;
-        boolean validado = false;
         do {
             opcion = menuConsultas();
             switch (opcion) {

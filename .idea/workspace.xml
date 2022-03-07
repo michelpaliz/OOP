@@ -5,28 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Entrenador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Posicion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/app.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Entrenador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Organizacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Posicion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/app.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Campeonato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Entrenador.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Entrenador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Equipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador$POSICION.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Partido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/utils/Lib.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/utils/Lib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Campeonato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Organizacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Organizacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Posicion.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Posicion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Medico/Ejercicio4.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Medico/Ejercicio4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Entrenador.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Entrenador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Equipo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Partido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/utils/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/utils/Lib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Organizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Organizacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Posicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Posicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Medico/Ejercicio4.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Medico/Ejercicio4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

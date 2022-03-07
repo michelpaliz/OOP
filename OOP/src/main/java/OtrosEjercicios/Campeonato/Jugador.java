@@ -1,14 +1,17 @@
 package OtrosEjercicios.Campeonato;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Jugador {
     // creacion de atributos
-    private final String id;
+    private final long id;
     private final String nombre;
     private final String apellido;
-    private final int edad;
+    private final GregorianCalendar edad;
     private Posicion posicion;
 
-    public Jugador(String id, String nombre, String apellido, int edad, Posicion posicion) {
+    public Jugador(long id, String nombre, String apellido, GregorianCalendar edad, Posicion posicion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -16,7 +19,7 @@ public class Jugador {
         this.posicion = posicion;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
@@ -28,10 +31,6 @@ public class Jugador {
         return apellido;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
     public Posicion getPosicion() {
         return posicion;
     }
@@ -40,9 +39,31 @@ public class Jugador {
         this.posicion = posicion;
     }
 
+    public int getEdad() {
+        int anyoNacimiento = edad.get(Calendar.YEAR);
+        int mesNacimiento = edad.get(Calendar.MONTH) + 1; //
+        int diaNacimiento = edad.get(Calendar.DAY_OF_MONTH);
+
+        GregorianCalendar fecha = new GregorianCalendar();
+        int anyoActual = fecha.get(Calendar.YEAR);
+        int mesActual = fecha.get(Calendar.MONTH) + 1;
+        int diaActual = fecha.get(Calendar.DAY_OF_MONTH);
+
+        int edad = anyoActual - anyoNacimiento;
+        if (mesActual < mesNacimiento) {
+            edad--;
+        } else if (mesActual == mesNacimiento) {
+            if (diaActual < diaNacimiento) {
+                edad--;
+            }
+        }
+        return edad;
+    }
+
     @Override
     public String toString() {
-        return "Jugador [apellido=" + apellido + ", edad=" + edad + ", id=" + id + ", nombre=" + nombre + ", posicion="
+        return "Jugador [apellido=" + apellido + ", edad=" + getEdad() + ", id=" + id + ", nombre=" + nombre
+                + ", posicion="
                 + posicion + "]";
     }
 
