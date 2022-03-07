@@ -24,30 +24,6 @@ public class Lib {
         System.out.println("\u000C");
     }
 
-    // public static byte[] readFile(String filePath) throws IOException,
-    // InputMismatchException {
-    // int fileSize = getFileSize();
-    // byte[] data = new byte[fileSize];
-    // try {
-    // // Abrir archivo
-    // // leerlo
-
-    // } catch (Exception e) {
-    // // TODO: CERRAR ARCHIVO
-    // throw new IOException(ioe.getMessage()); // la he capturado pero quiero que
-    // continue elevandose,
-    // } finally {
-    // // Cerrar archivo
-    // }
-
-    // return data;
-
-    // }
-
-    // public static <T> T readInt(Class<T> dataType){
-    // return dataType;
-    // }
-
     //*VALIDAR USER INPUT
     /**
      * 
