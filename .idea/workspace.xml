@@ -5,15 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
+      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Entrenador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Posicion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/app.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Entrenador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Organizacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Posicion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/app.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Examen/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/bin/main/Examen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Examen/src/main/java/Examen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Campeonato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Equipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador$POSICION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Jugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/OtrosEjercicios/Campeonato/Partido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/utils/Lib.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Tema8/EjemplosTema8/utils/Lib.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Campeonato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/OtrosEjercicios/Campeonato/Partido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/utils/Lib.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Tema8/EjemplosTema8/utils/Lib.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

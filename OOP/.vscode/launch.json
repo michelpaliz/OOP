@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "java",
             "name": "Launch Current File",
@@ -12,7 +13,7 @@
         },
         {
             "type": "java",
-            "name": "Launch Principal",
+            "name": "Launch Principal Campeonato",
             "request": "launch",
             "mainClass": "OtrosEjercicios.Campeonato.Principal",
             "projectName": "OOP"
@@ -26,7 +27,7 @@
         },
         {
             "type": "java",
-            "name": "Launch Principal(1)",
+            "name": "Launch Principal Ejemplos",
             "request": "launch",
             "mainClass": "Tema8.EjemplosTema8.Principal",
             "projectName": "OOP"
