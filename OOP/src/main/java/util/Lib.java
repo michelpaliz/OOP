@@ -24,7 +24,7 @@ public class Lib {
         System.out.println("\u000C");
     }
 
-    //*VALIDAR USER INPUT
+    // *VALIDAR USER INPUT
     /**
      * 
      * @param userInt
@@ -42,6 +42,33 @@ public class Lib {
                 System.out.println("Error: El input no es un integer");
                 Lib.pausa();
                 correct = false;
+            }
+
+        } while (!correct);
+        return userInt;
+    }
+
+    /**
+     * 
+     * @param message
+     * @param max
+     * @param min
+     * @return
+     */
+
+    public static int validarInt(String message, int min, int max) {
+        int userInt = 0;
+        do {
+            try {
+                System.out.print(message);
+                userInt = Integer.parseInt(Lib.myInput.nextLine());
+                correct = userInt >= min && userInt <= max;
+                if (!correct) {
+                    System.out.println("El numero debe estar entre" + min + " y " + max);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error");
+                Lib.pausa();
             }
 
         } while (!correct);
