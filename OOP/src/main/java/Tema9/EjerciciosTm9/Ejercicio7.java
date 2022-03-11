@@ -4,7 +4,7 @@ public class Ejercicio7 {
 
     public static void Ejercicio7() {
 
-        String array[] = { "hola", "buenas", "tardes" };
+        String array[] = { "hola", "buenas", "tardes", null };
         mostrarCadenasArray(array);
     }
 
