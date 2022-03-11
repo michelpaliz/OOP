@@ -15,7 +15,7 @@ public class Ejercicio7 {
         }
         for (int i = 0; i < array.length; i++) {
             // con esto evitamos que se produzca un nullpointerexecption
-            if (array[i] != null)
+            if (array[i] != null && array[i] != "")
                 System.out.println(array[i].charAt(0));
         }
 
