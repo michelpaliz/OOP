@@ -12,7 +12,9 @@ public class MainTm9 {
         // Ejercicio2.Ejercicio2();
         // Ejercicio3.Ejercicio03();
         // Ejercicio4.Ejercicio4();
-        Ejercicio5.Ejercicio5();
-
+        // Ejercicio5 ejercicio5 = new Ejercicio5();
+        // ejercicio5.Ejercicio5();
+        Ejercicio6.Ejercicio6();
+        // Ejercicio7.Ejercicio7();
     }
 }

@@ -1,8 +1,6 @@
 package Util;
 
 import java.util.Scanner;
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Random;
 
 public class Lib {
@@ -34,10 +32,11 @@ public class Lib {
     public static int validarInt(String message) {
         int userInt = 0;
         do {
+            System.out.print(message);
             try {
-                System.out.print(message);
                 userInt = Integer.parseInt(Lib.myInput.nextLine());
                 correct = true;
+                Lib.pausa();
             } catch (NumberFormatException e) {
                 System.out.println("Error: El input no es un integer");
                 Lib.pausa();
@@ -80,24 +79,21 @@ public class Lib {
      * @param userDb
      * @return DOUBLE
      */
-
-    public double validarDouble(double userDb) {
-        userDb = 0;
+    public static double validarDouble(String message) {
+        double userInt = 0;
         do {
-            System.out.print("Introduce un numero decimal ");
             try {
-                userDb = Double.parseDouble(Lib.myInput.nextLine());
+                System.out.print(message);
+                userInt = Double.parseDouble(Lib.myInput.nextLine());
                 correct = true;
-
             } catch (NumberFormatException e) {
-                System.out.println("Error: El input no es un integer");
+                System.out.println("Error");
+                Lib.pausa();
                 correct = false;
             }
 
         } while (!correct);
-
-        return userDb;
-
+        return userInt;
     }
 
     public String validarString1(String userStr) {
@@ -141,6 +137,32 @@ public class Lib {
 
         } while (!correct);
         return userStr;
+    }
+
+    /**
+     * 
+     * @return
+     */
+
+    public static int[] validarArray() {
+        System.out.println("***VALIDACION DE UN ARRAY DE ENTEROS***");
+        System.out.println("Introduce la longitud  del array");
+        int userInt;
+        int array[] = new int[myInput.nextInt()];
+
+        try {
+            String message = ("Introduce un numero para el array ");
+            for (int i = 0; i < array.length; i++) {
+                userInt = Lib.validarInt(message);
+                array[i] = (userInt + (i + 1));
+            }
+
+            // estos errores no tendrian que estar controlados porque son evitables
+
+        } catch (Exception e) {
+            System.out.println("El dato tiene que ser de tipo integer");
+        }
+        return array;
     }
 
 }

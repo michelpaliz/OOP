@@ -7,7 +7,7 @@ import Util.Lib;
 public class Ejercicio4 {
     public static Scanner myInput = new Scanner(System.in);
 
-    public void validarArrayCorregido(int size) {
+    public void validarArrayCorregido() {
         System.out.println("Validacion de un array de enteros");
         System.out.println("Introduce la longitud  del array");
         int array[] = new int[myInput.nextInt()];

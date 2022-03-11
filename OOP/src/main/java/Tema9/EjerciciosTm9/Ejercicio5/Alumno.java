@@ -24,4 +24,9 @@ public class Alumno {
         return altura;
     }
 
+    @Override
+    public String toString() {
+        return "Alumno [altura=" + altura + ", edad=" + edad + ", nombre=" + nombre + "]";
+    }
+
 }

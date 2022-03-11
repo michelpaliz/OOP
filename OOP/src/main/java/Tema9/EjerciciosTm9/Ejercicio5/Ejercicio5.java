@@ -4,29 +4,30 @@ import Util.Lib;
 
 public class Ejercicio5 {
 
-    
-    public static void Ejercicio5() {
+    public void Ejercicio5() {
         String mgInt = "Introduce un numero";
-        Alumno alumno1 = new Alumno(Lib.validarStr0("", 1, 100),);
+        String mgStr = "Introduce el nombre del alumno";
+        String mgDouble = "Introduce la altura del alumno";
+        Alumno alumno1 = new Alumno(Lib.validarStr0(mgStr, 1, 10), Lib.validarInt(mgInt, 1, 100),
+                Lib.validarDouble(mgDouble));
+
+        Alumno alumno2 = new Alumno(Lib.validarStr0(mgStr, 1, 10), Lib.validarInt(mgInt, 1, 100),
+                Lib.validarDouble(mgDouble));
+        System.out.println("Sacamos el alumno mayor");
+        System.out.println(compararObj(alumno1, alumno2));
+
     }
-    
 
-    public int  creacionDatos(){
+    public Alumno compararObj(Alumno alumno1, Alumno alumno2) {
+        Alumno alumno = (null);
 
-        System.out.println("Creacion de datos");
-        String message = "Introduce un numero edad del alumno";
-        try{
-            Lib.validarInt(message);
-        
-        }catch(Exception e){
-     
+        if (alumno1.getEdad() > alumno2.getEdad()) {
+            alumno = alumno1;
+        } else {
+            alumno = alumno2;
         }
 
-        return 
-
+        return alumno;
     }
-
-
-
 
 }
