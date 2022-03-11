@@ -12,25 +12,24 @@ public class Ejercicio6 {
     }
 
     public static void dividirEntreArray(int[] array, int divisor) {
-        boolean correct = divisor > 0;
-        do {
+        for (int i = 0; i < array.length; i++) {
             try {
-                if (!correct) {
-                    System.out.println("El divisor no puede ser menor que 0");
-                    System.out.println("Introduce un nuevo divisor");
-                    int userInt = Integer.parseInt(Lib.myInput.nextLine());
-                    divisor = userInt;
-                }
-
-                for (int i = 0; i < array.length; i++) {
-                    array[i] /= divisor;
+                if(array[i]!=0){
+                    array[i] /= (double) divisor;
                     System.out.println(array[i]);
                 }
-            } catch (Exception e) {
-                System.out.println("Error");
-            }
-        } while (!correct);
 
+            } catch (ArithmeticException ae) {
+                System.out.println(ae.getMessage());
+                System.out.println(ae.toString());
+                ae.printStackTrace();
+                if (array[i] == 0) {
+                    System.out.println("Division por cero");
+                } else {
+                    System.out.println("Exepcion aritmetica");
+                }
+            }
+        }
     }
 
 }

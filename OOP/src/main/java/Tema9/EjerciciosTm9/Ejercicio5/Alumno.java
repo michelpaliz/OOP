@@ -5,6 +5,7 @@ public class Alumno {
     private final String nombre;
     private final double edad;
     private final double altura;
+   
 
     public Alumno(String nombre, double edad, double altura) {
         this.nombre = nombre;
