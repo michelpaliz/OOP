@@ -17,12 +17,10 @@ public class ColeccionLibros {
     private int autoresCount;
 
     public ColeccionLibros() {
-         libros[INITIAL_BOOK_COUNT];
-         autores[INITIAL_AUTHOR_COUNT];
-
+        this(INITIAL_BOOK_COUNT, INITIAL_AUTHOR_COUNT);
     }
 
-    private void ColeccionLibros(int numLibros, int numAutores) {
+    private ColeccionLibros(int numLibros, int numAutores) {
         libros = new Libro[numLibros];
         autores = new Autor[numAutores];
         if (Config.DEBUG) {
@@ -72,7 +70,7 @@ public class ColeccionLibros {
             Libro libroMasActual = libros[0];
             // Para comprobar que no salge los null en los arrays.
             for (int i = 1; i < librosCount; i++) {
-                if (libros[i].getFecha() > libroMasActual.getFecha()) {
+                if (libros[i].getFecha().getTimeMillis() > libroMasActual.getFecha().getTimeMillis()) {
                     libroMasActual = libros[i];
                 }
             }
