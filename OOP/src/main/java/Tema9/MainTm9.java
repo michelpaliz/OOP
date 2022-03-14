@@ -1,7 +1,6 @@
 package Tema9;
 
 import Tema9.EjerciciosTm9.*;
-import Tema9.EjerciciosTm9.Ejercicio5.Ejercicio5;
 
 public class MainTm9 {
 
@@ -14,7 +13,9 @@ public class MainTm9 {
         // Ejercicio4.Ejercicio4();
         // Ejercicio5 ejercicio5 = new Ejercicio5();
         // ejercicio5.Ejercicio5();
-        Ejercicio6.Ejercicio6();
+        // Ejercicio6.Ejercicio6();
         // Ejercicio7.Ejercicio7();
+        Ejercicio8.Ejercicio8();
+
     }
 }
