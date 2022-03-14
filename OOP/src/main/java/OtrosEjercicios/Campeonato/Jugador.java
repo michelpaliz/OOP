@@ -1,5 +1,6 @@
 package OtrosEjercicios.Campeonato;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -62,9 +63,13 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador [apellido=" + apellido + ", edad=" + getEdad() + ", id=" + id + ", nombre=" + nombre
-                + ", posicion="
-                + posicion + "]";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "Jugador{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + getEdad() +
+                ", posicion=" + posicion +
+                '}';
     }
-
 }

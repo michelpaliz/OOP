@@ -62,6 +62,7 @@ public class Entrenador {
 
     @Override
     public String toString() {
+        
         return "Entrenador{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
