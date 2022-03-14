@@ -17,8 +17,8 @@ public class ColeccionLibros {
     private int autoresCount;
 
     public ColeccionLibros() {
-         this.libros[INITIAL_BOOK_COUNT];
-         this.autores[INITIAL_BOOK_COUNT];
+         libros[INITIAL_BOOK_COUNT];
+         autores[INITIAL_AUTHOR_COUNT];
 
     }
 
@@ -32,13 +32,13 @@ public class ColeccionLibros {
         }
     }
 
-    public void crearDatosPrueba(int numLibros, int numAutores){
+    public void crearDatosPrueba(int numLibros, int numAutores) {
         StringBuilder sb = new StringBuilder();
-        assert numAutores >= INITIAL_AUTHOR_COUNT:
-        //crear autores
-        for(int i = 0; i < numAutores; i++) {
+        assert numAutores >= INITIAL_AUTHOR_COUNT;
+        // crear autores
+        for (int i = 0; i < numAutores; i++) {
             sb.append("Nombre ").append(i);
-            String nombre = "Autor" + i ;
+            String nombre = "Autor" + i;
             sb.setLength(0);
             sb.append("Apellido").append(i);
             sb.setLength(0);
@@ -47,23 +47,22 @@ public class ColeccionLibros {
             autoresCount++;
         }
 
-
-        for(int i = 0; i < numLibros ; i++) {
-            String isbn = String.format("%013d",i);
+        for (int i = 0; i < numLibros; i++) {
+            String isbn = String.format("%013d", i);
             sb.append("Titulo").append(i);
             String titulo = sb.toString();
             sb.setLength(0);
-            int anyo = Lib.aleatorio(1950,2000);
-            int mes = Lib.aleatorio(0,11);
-            int dia = Lib.aleatorio(1,28);
-            GregorianCalendar fechaPublicacion = new GregorianCalendar(anyo,mes,dia);
-        //    Libro.Genero[] generos= Libro.Genero.values();
-        //    Libro.Genero generos = generos[Lib.random(0,generos.length-1)];
-                Genero genero = Genero.getRandom();
+            int anyo = Lib.aleatorio(1950, 2000);
+            int mes = Lib.aleatorio(0, 11);
+            int dia = Lib.aleatorio(1, 28);
+            GregorianCalendar fechaPublicacion = new GregorianCalendar(anyo, mes, dia);
+            // Libro.Genero[] generos= Libro.Genero.values();
+            // Libro.Genero generos = generos[Lib.random(0,generos.length-1)];
+            Genero genero = Genero.getRandom();
 
-            int paginas = Lib.random(250,800);
-            Autor autor = autores[Lib.random(0,numAutores -1)];
-            libros[i] = new Libro(isbn,titulo,fechaPublicacion,genero,paginas,autor);
+            int paginas = Lib.random(250, 800);
+            Autor autor = autores[Lib.random(0, numAutores - 1)];
+            libros[i] = new Libro(isbn, titulo, fechaPublicacion, genero, paginas, autor);
             librosCount++;
         }
     }
@@ -73,8 +72,7 @@ public class ColeccionLibros {
             Libro libroMasActual = libros[0];
             // Para comprobar que no salge los null en los arrays.
             for (int i = 1; i < librosCount; i++) {
-                if (libros[i].getFechaPublicacion().getTimeInMillis() > librosMasActual.getFechaPublicacion()
-                        .getTimeInMillis()) {
+                if (libros[i].getFecha() > libroMasActual.getFecha()) {
                     libroMasActual = libros[i];
                 }
             }
@@ -88,8 +86,7 @@ public class ColeccionLibros {
             Libro libroMasPaginas = libros[0];
             // Para comprobar que no salge los null en los arrays.
             for (int i = 1; i < librosCount; i++) {
-                if (libros[i].getPaginas() > libroMasPaginas.getNumPaginas()
-                        .getTimeInMillis()) {
+                if (libros[i].getPaginas() > libroMasPaginas.getNumPaginas()) {
                     libroMasPaginas = libros[i];
                 }
             }
@@ -103,7 +100,8 @@ public class ColeccionLibros {
 
         if (libros.length > 0) {
             for (int i = 0; i < librosCount; i++) {
-                if(libros[i].getAutor().getId() == autor.getId()))
+                if (libros[i].getAutor().getId() == autor.getId())
+                    ;
             }
 
         }

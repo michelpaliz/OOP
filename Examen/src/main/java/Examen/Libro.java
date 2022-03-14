@@ -23,7 +23,7 @@ public class Libro {
         this.autor = autor2;
     }
 
-    public long getIsb() {
+    public String getIsb() {
         return isb;
     }
 
