@@ -8,7 +8,7 @@ public class App {
     // Creacion de variables static
     public static Scanner myInput = new Scanner(System.in);
     // User response
-    private int userInt;
+    private static int userInt;
     private String userStr;
 
     // Constructor
@@ -17,7 +17,7 @@ public class App {
     }
 
     // ENU DEL JUEGO
-    public void menu() {
+    public static void menu() {
         System.out.println("*******MENU DATOS******");
         System.out.println("Elige una opcion");
         System.out.println("1.  Nuevo Equipo");

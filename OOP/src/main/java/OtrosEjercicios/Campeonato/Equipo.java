@@ -13,12 +13,12 @@ import Tema8.EjemplosTema8.utils.Lib;
 
 public class Equipo {
 
-    public static final int MAX_ENTRENADORES = 1;
+    public static final int MAX_ENTRENADORES = 2;
     public static final int MIN_ENTRENADORES = 0;
     public static final int MAX_JUGADORES = 14;
-    public static final int MIN_JUGADORES = 10;
+    public static final int MIN_JUGADORES = 9;
     public static final int MAX_EQUIPOS = 9;
-    public static final int MIN_EQUIPOS = 4;
+    public static final int MIN_EQUIPOS = 0;
 
     // *Atributos de la clase equipo
     private final long id;
@@ -38,7 +38,6 @@ public class Equipo {
     private int numEquipos = 0;
 
     // *Variables
-    GregorianCalendar edad = new GregorianCalendar();
 
     /**
      * CONSTRUCTOR PRINCIPAL
@@ -77,11 +76,14 @@ public class Equipo {
     public void generarDatosAleatorios() {
 
         generarEquipo();
+        App.menu();
 
     }
 
     public void mostrarDatosPrueba() {
-        System.out.println(Arrays.toString(equipos));
+        for (int i = 0; i < equipos.length; i++) {
+            System.out.println(equipos[i] + "\n");
+        }
         Lib.pausa();
     }
 
@@ -95,46 +97,57 @@ public class Equipo {
 
     public void generarEquipo() {
         System.out.println("Creacion de equipos");
+        GregorianCalendar edad = new GregorianCalendar();
+        GregorianCalendar edad1 = new GregorianCalendar();
         Faker faker = new Faker(new Locale("es"));
         Bombo bomboEntrenador = new Bombo(MAX_ENTRENADORES, MIN_ENTRENADORES);
         Bombo bomboJugadores = new Bombo(MAX_JUGADORES, MIN_ENTRENADORES);
         Bombo bomboEquipos = new Bombo(MAX_EQUIPOS, MIN_EQUIPOS);
 
-        for (int i = 0; i < MAX_ENTRENADORES; i++) {
+        for (int i = 0; i < entrenadores.length; i++) {
             long id = bomboEntrenador.extraerBola();// va extraer 15 entrenadores del bombo
             String nombre = faker.name().firstName();
-            String apellido = faker.name().firstName();
+            String apellido = faker.name().lastName();
             Date edadEntrenadores = faker.date().birthday(40, 65);
-            edad.setTime(edadEntrenadores);
-            entrenadores[i] = new Entrenador(id, nombre, apellido, edad); // esto printara la clase con el toString
+            edad1.setTime(edadEntrenadores);
+            entrenadores[i] = new Entrenador(id, nombre, apellido, edad1); // esto printara la clase con el toString
             numEntrenadores++;
-
         }
 
-        for (int i = 0; i < MAX_JUGADORES; i++) {
+        for (int i = 0; i < jugadores.length; i++) {
             long id = bomboJugadores.extraerBola();
             String nombre = faker.name().firstName();
-            String apellido = faker.name().firstName();
-            Date edadJugadores = faker.date().birthday(18, 90);
+            String apellido = faker.name().lastName();
+            Date edadJugadores = faker.date().birthday(18, 30);
             edad.setTime(edadJugadores);
             Posicion posicion = Posicion.getRandom();
             jugadores[i] = new Jugador(id, nombre, apellido, edad, posicion);
             numJugadores++;
         }
 
-        for (int i = 0; i < MAX_EQUIPOS; i++) {
+        for (int i = 0; i < equipos.length; i++) {
             // Datos de para llenar el constructor de equipos
             long id = bomboEquipos.extraerBola();
             String nombre = faker.team().name();
             String ciudad = faker.country().capital();
             // Samos los objetos de lo arrays de entrenador y jugador y se lo asignamos a
             // otras referencias que apuntaran a los punteros de los objetos
-            Entrenador entrenador = entrenadores[Lib.aleatorio(MIN_ENTRENADORES, MAX_ENTRENADORES)];
-            Jugador jugador = jugadores[Lib.aleatorio(MIN_JUGADORES, MAX_JUGADORES)];
+            entrenador = entrenadores[Lib.aleatorio(MIN_ENTRENADORES, numEntrenadores - 1)];
+            jugador = jugadores[Lib.aleatorio(MIN_JUGADORES, numJugadores - 1)];
             equipos[i] = new Equipo(id, nombre, ciudad, entrenador, jugador);
             numEquipos++;
         }
 
     }
 
+    @Override
+    public String toString() {
+        return "Equipo{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", jugador=" + jugador +
+                ", entrenador=" + entrenador +
+                '}';
+    }
 }
