@@ -1,6 +1,6 @@
 package OtrosEjercicios.Campeonato;
 
-import java.util.Arrays;
+
 //*Date
 import java.util.Date;
 import java.util.GregorianCalendar;
