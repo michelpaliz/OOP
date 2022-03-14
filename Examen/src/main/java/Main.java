@@ -3,7 +3,7 @@ import Examen.ColeccionLibros;
 import Examen.Libro;
 
 public class Main {
-    public static final boolean DEBUG = true;
+ 
     public static void main(String[] args) {
 
         ColeccionLibros coleccionesLibros = new ColeccionLibros();

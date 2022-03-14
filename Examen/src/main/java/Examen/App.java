@@ -37,11 +37,9 @@ public class App {
             Genero genero = Genero.getRandom();
             int numPaginas = Lib.aleatorio(150, 500);
             // Autor
-            int autoIdentificador = bombo1.extraerBola();
             String nombre = faker.artist().name();
             String apellidos = faker.name().lastName();
-
-            autor = new Autor(nombre, apellidos, autoIdentificador);
+            autor = new Autor(nombre, apellidos);
             libro[i] = new Libro(isb, titulo, fechaEntrada, genero, numPaginas, autor);
             numLibro++;
             System.out.println(libro[i]);

@@ -1,15 +1,17 @@
 package Examen;
 
 public class Autor {
+
+    public static int contID = 0;
     // Atributos de la clase autor
     private String nombre;
     private String apellidos;
     private int autoIdentificador;
 
-    public Autor(String nombre, String apellidos, int autoIdentificador) {
+    public Autor(String nombre, String apellidos) {
+        this.autoIdentificador++;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.autoIdentificador = autoIdentificador;
     }
 
     public String getNombre() {

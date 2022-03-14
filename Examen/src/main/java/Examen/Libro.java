@@ -7,14 +7,14 @@ import java.util.GregorianCalendar;
 
 public class Libro {
     // Atributos de libro
-    private long isb;
+    private String isb;
     private String titulo;
     private GregorianCalendar fecha;
     private Genero genero;
     private int numPaginas;
     private Autor autor;
 
-    public Libro(long isb, String titulo, GregorianCalendar fecha, Genero genero, int numPaginas, Autor autor2) {
+    public Libro(String isb, String titulo, GregorianCalendar fecha, Genero genero, int numPaginas, Autor autor2) {
         this.isb = isb;
         this.titulo = titulo;
         this.fecha = fecha;

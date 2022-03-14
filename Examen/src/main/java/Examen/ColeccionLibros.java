@@ -6,34 +6,36 @@ import java.util.GregorianCalendar;
 import Util.Lib;
 
 public class ColeccionLibros {
-    private static final int INTIAL_BOOK_COUNT = 10;
+    private static final int INITIAL_BOOK_COUNT = 10;
     private static final int INITIAL_AUTHOR_COUNT = 10;
     private static final int GROW_FACTOR = 2;
 
+    // Creacion de atributos
     private Libro[] libros;
-    private int librosCount;
     private Autor[] autores;
+    private int librosCount;
     private int autoresCount;
 
     public ColeccionLibros() {
-        this(INTIAL_BOOK_COUNT, INITIAL_AUTHOR_COUNT);
+         this.libros[INITIAL_BOOK_COUNT];
+         this.autores[INITIAL_BOOK_COUNT];
+
     }
 
     private void ColeccionLibros(int numLibros, int numAutores) {
         libros = new Libro[numLibros];
         autores = new Autor[numAutores];
-        if (Main.DEBUG) {
+        if (Config.DEBUG) {
             crearDatosPrueba(numLibros, numAutores);
             System.out.println(Arrays.toString(libros));
 
         }
-
     }
 
     public void crearDatosPrueba(int numLibros, int numAutores){
         StringBuilder sb = new StringBuilder();
         assert numAutores >= INITIAL_AUTHOR_COUNT:
-//crear autores
+        //crear autores
         for(int i = 0; i < numAutores; i++) {
             sb.append("Nombre ").append(i);
             String nombre = "Autor" + i ;
@@ -55,11 +57,13 @@ public class ColeccionLibros {
             int mes = Lib.aleatorio(0,11);
             int dia = Lib.aleatorio(1,28);
             GregorianCalendar fechaPublicacion = new GregorianCalendar(anyo,mes,dia);
-            Libro.Genero[] generos= Libro.Genero.values();
-            Libro.Genero generos = generos[Lib.random(0,generos.length-1)];
+        //    Libro.Genero[] generos= Libro.Genero.values();
+        //    Libro.Genero generos = generos[Lib.random(0,generos.length-1)];
+                Genero genero = Genero.getRandom();
+
             int paginas = Lib.random(250,800);
             Autor autor = autores[Lib.random(0,numAutores -1)];
-            Libros[i] = new Libro(isbn,titulo,fechaPublicacion,genero,paginas,autor);
+            libros[i] = new Libro(isbn,titulo,fechaPublicacion,genero,paginas,autor);
             librosCount++;
         }
     }
@@ -93,11 +97,6 @@ public class ColeccionLibros {
         }
         return null;
     }
-
-
-
-
-
 
     public int cantidadLibrosEscritos() {
         int cantidad = 0;

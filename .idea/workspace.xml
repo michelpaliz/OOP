@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/TestWorlde/Dictionary/DictionaryManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/TestWorlde/Dictionary/Language.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/TestWorlde/Dictionary/WordleES.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/TestWorlde/Dictionary/WorldEn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/TestWorlde/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/TestWorlde/Dictionary/DictionaryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/TestWorlde/Dictionary/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/TestWorlde/Dictionary/WordleES.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/TestWorlde/Dictionary/WorldEn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/TestWorlde/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive/2.DESKTOP/Tbjo_Grupal" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
