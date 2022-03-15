@@ -231,37 +231,6 @@ public class Ejercicio6 {
             return;
         }
 
-            //**** */
-        Bicicleta bicicleta = tienda.buscarBicicletaPorReferencia(referencia);
-        if(bicicleta != null) {
-            System.out.println("La referencia " + referencia + " corresponde a: ");
-            System.out.println(bicicleta.toString());
-            System.out.println("** AÑADIR UNIDADES **");
-            System.out.println("Indique 0 para cancelar");
-            System.out.println("Unidades: ");
-            int unidades = Integer.parseInt(lector.nextLine());
-            validado = unidades >= 0 && unidades < 200;
-            if(validado) {
-                if(unidades != 0) {
-                    try{    
-                    if(tienda.anyadirStock(referencia, unidades) ) {
-                        System.out.println(unidades + " unidades añadidas correctamente al stock");
-                        System.out.println(bicicleta.toString());
-                    } else {
-                        System.out.println("No se han podido añadir las unidades indicadas");
-                    }
-                } catch(){
-                    else {
-                    System.out.println("Cancelado");
-                }
-
-
-            Lib.pause();
-            return;
-        }
-
-
-
         do {
             System.out.println("Marca: ");
             marca = lector.nextLine();
