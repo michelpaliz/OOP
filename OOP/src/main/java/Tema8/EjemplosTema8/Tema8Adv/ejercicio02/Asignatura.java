@@ -1,4 +1,4 @@
-package com.germangascon.tema08.ejercicio02;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio02;
 
 public class Asignatura {
     private final int codigo;

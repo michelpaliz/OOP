@@ -1,13 +1,16 @@
-package com.germangascon.tema08.ejercicio06;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio06;
 
-import com.germangascon.tema08.utils.Ansi;
-import com.germangascon.tema08.utils.Lib;
+// import com.germangascon.tema08.utils.Ansi;
+// import com.germangascon.tema08.utils.Lib;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+
+import Tema8.EjemplosTema8.Tema8Adv.utils.Ansi;
+import Tema8.EjemplosTema8.Tema8Adv.utils.Lib;
 
 public class Ejercicio6 {
     private final Scanner lector;
@@ -227,6 +230,37 @@ public class Ejercicio6 {
             Lib.pause();
             return;
         }
+
+            //**** */
+        Bicicleta bicicleta = tienda.buscarBicicletaPorReferencia(referencia);
+        if(bicicleta != null) {
+            System.out.println("La referencia " + referencia + " corresponde a: ");
+            System.out.println(bicicleta.toString());
+            System.out.println("** AÑADIR UNIDADES **");
+            System.out.println("Indique 0 para cancelar");
+            System.out.println("Unidades: ");
+            int unidades = Integer.parseInt(lector.nextLine());
+            validado = unidades >= 0 && unidades < 200;
+            if(validado) {
+                if(unidades != 0) {
+                    try{    
+                    if(tienda.anyadirStock(referencia, unidades) ) {
+                        System.out.println(unidades + " unidades añadidas correctamente al stock");
+                        System.out.println(bicicleta.toString());
+                    } else {
+                        System.out.println("No se han podido añadir las unidades indicadas");
+                    }
+                } catch(){
+                    else {
+                    System.out.println("Cancelado");
+                }
+
+
+            Lib.pause();
+            return;
+        }
+
+
 
         do {
             System.out.println("Marca: ");

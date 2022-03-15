@@ -1,4 +1,4 @@
-package com.germangascon.tema08.utils;
+package Tema8.EjemplosTema8.Tema8Adv.utils;
 
 import java.util.Random;
 import java.util.Scanner;

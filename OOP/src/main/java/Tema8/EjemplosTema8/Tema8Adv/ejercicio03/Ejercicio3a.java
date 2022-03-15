@@ -1,14 +1,17 @@
-package com.germangascon.tema08.ejercicio03;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio03;
 
 
-import com.germangascon.tema08.utils.Ansi;
-import com.germangascon.tema08.utils.Lib;
+// import com.germangascon.tema08.utils.Ansi;
+// import com.germangascon.tema08.utils.Lib;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+
+import Tema8.EjemplosTema8.Tema8Adv.utils.Ansi;
+import Tema8.EjemplosTema8.Tema8Adv.utils.Lib;
 
 /**
  * El ejercicio 3 podemos abordarlo con dos estrategias bien diferenciadas:

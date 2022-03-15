@@ -1,13 +1,6 @@
-package com.germangascon.tema08;
+package Tema8.EjemplosTema8.Tema8Adv;
 
-import com.germangascon.tema08.ejercicio01.Ejercicio1;
-import com.germangascon.tema08.ejercicio02.Ejercicio2;
-import com.germangascon.tema08.ejercicio03.Ejercicio3a;
-import com.germangascon.tema08.ejercicio03.Ejercicio3b;
-import com.germangascon.tema08.ejercicio04.Ejercicio4;
-import com.germangascon.tema08.ejercicio05.Ejercicio5;
-import com.germangascon.tema08.ejercicio06.Ejercicio6;
-import com.germangascon.tema08.ejercicio07.Ejercicio7;
+import Tema8.EjemplosTema8.Tema8Adv.ejercicio06.Ejercicio6;
 
 public class Main {
 

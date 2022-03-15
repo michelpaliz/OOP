@@ -1,6 +1,5 @@
 package OtrosEjercicios.Campeonato;
 
-
 //*Date
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -8,7 +7,8 @@ import java.util.Locale;
 //*Faker
 import com.github.javafaker.Faker;
 
-import Tema8.EjemplosTema8.Cajero.util.Bombo;
+import Util.Bombo;
+// import Tema8.EjemplosTema8.Cajero.util.Bombo;
 import Tema8.EjemplosTema8.utils.Lib;
 
 public class Equipo {

@@ -1,6 +1,8 @@
-package com.germangascon.tema08.ejercicio05;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio05;
 
-import com.germangascon.tema08.ejercicio04.Punto;
+import Tema8.EjemplosTema8.Tema8Adv.ejercicio04.Punto;
+
+// import com.germangascon.tema08.ejercicio04.Punto;
 
 public class Circulo {
     private Punto centro;

@@ -1,9 +1,14 @@
-package com.germangascon.tema08.ejercicio06;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio06;
 
-import com.germangascon.tema08.utils.Lib;
+// import com.germangascon.tema08.utils.Lib;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
+import javax.naming.NameNotFoundException;
+
+import Tema8.EjemplosTema8.Tema8Adv.ejercicio06.exeptions.NotFoundExeption;
+import Tema8.EjemplosTema8.Tema8Adv.utils.Lib;
 
 public class Tienda {
     private final Bicicleta[] bicicletas;
@@ -50,6 +55,16 @@ public class Tienda {
             return ResultadoOperacion.UPDATED;
         }
         return ResultadoOperacion.NOT_FOUND;
+    }
+
+    public boolean anyadirStock(String referencia, int unidades) throws NotFoundExeption {
+        Bicicleta bicicleta = buscarBicicletaPorReferencia(referencia);
+        // Si la referencia ya existe, incrementamos su stock
+        if(bicicleta != null) {
+            bicicleta.comprar(unidades);
+            return true;
+        }
+        throw new NameNotFoundException("La refenrencia no existe");
     }
 
     public ResultadoOperacion nuevaBicicleta(String referencia, String marca, String modelo, float peso, float tamanyo, boolean motor,

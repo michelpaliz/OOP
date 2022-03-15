@@ -1,4 +1,4 @@
-package com.germangascon.tema08.ejercicio04;
+package Tema8.EjemplosTema8.Tema8Adv.ejercicio04;
 
 public class Ejercicio4 {
 
