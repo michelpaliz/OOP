@@ -1,5 +1,7 @@
 package Tema9.EjerciciosTm9;
 
+import org.yaml.snakeyaml.error.MarkedYAMLException;
+
 import Util.Lib;
 
 public class Ejercicio8 {
@@ -18,16 +20,9 @@ public class Ejercicio8 {
         // else
         // System.out.println("NullPointerException thrown!");
         // *literal c
+        int[] myArray = { 897, 56, 78, 90, 12, 123, 75 };
+        indexOutBoundsExeption(myArray);
 
-        // TODO
-        // vamos anyadir una persona, la edad esta comprendida en estos parametros
-        // como tratamos si no cumple la condicion
-        // El metodo que esta solicitando este exepction tendra un throws al lado
-        // int userInt = Integer.parseInt(Lib.myInput.nextLine());
-        // int edad = userInt;
-        // if (edad < 0 && edad > 130) {
-        // throw new RangeNumberException("El reagno debe de estar entre");
-        // }
 
     }
 
@@ -48,22 +43,24 @@ public class Ejercicio8 {
     public static void nullPointerExeption(String x) {
 
         try {
-            System.out.println("First character: " + x.charAt(0));
+            System.out.println("First character: " + x.charAt(6));
         } catch (NullPointerException e) {
             System.out.println("NullPointerExeption throw!");
         }
 
     }
 
-    /**
-     * el extends sign es hija de rangenumberexpection
-     * keyword super lo que hace es llamar al constructor expecion que lo llama
-     */
-    public class RangeNumberException extends Exception {
-        public RangeNumberException(String message) {
-            super(message);
 
+    public static void indexOutBoundsExeption(int[] array) {
+        try {
+            System.out.println("Introduce el indice del elemento que quieras ver en el array");
+            int element = Integer.parseInt(Lib.myInput.nextLine());
+            System.out.println("El elemento dado esta en la posicion " + array[element]);
+        } catch (Exception e) {
+            System.out.println("The index you have entered is invalid");
+            System.out.println("Please enter an index number between 0 and 6");
         }
     }
 
+  
 }
