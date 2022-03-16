@@ -15,7 +15,8 @@ public class MainTm9 {
         // ejercicio5.Ejercicio5();
         // Ejercicio6.Ejercicio6();
         // Ejercicio7.Ejercicio7();
-        Ejercicio8.Ejercicio8();
+        // Ejercicio8.Ejercicio8();
+        Ejercicio10.Ejercicio10();
 
     }
 }
