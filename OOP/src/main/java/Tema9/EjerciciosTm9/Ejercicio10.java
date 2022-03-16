@@ -1,46 +1,45 @@
 package Tema9.EjerciciosTm9;
 
-import java.util.Calendar;
-
-import javax.naming.spi.DirStateFactory.Result;
-
 import Util.Lib;
 
 public class Ejercicio10 {
 
     public double userDouble;
-    public int userInt;
-    public boolean correct;
+    public static int userInt;
+    public static boolean correct;
 
     public static void Ejercicio10() {
+        menu();
 
     }
 
-    public void calculadoraManual() {
-
-        System.out.println("********** CALCULADORA ***********");
-        System.out.println("Introduce el primer numero");
-        userInt = Integer.parseInt(Lib.myInput.nextLine());
+    public static void calculadoraManual() {
         char operator;
         double num1, num2;
-        System.out.println("Enter the operator (+,-,*,/)");
-        operator = Lib.myInput.next().charAt(0);
-        System.out.println("Enteer the two numbers one by one");
-        num1 = Lib.myInput.nextDouble();
-        num2 = Lib.myInput.nextDouble();
 
+        do {
+            System.out.println("********** CALCULADORA ***********");
+
+            num1 = Double.parseDouble(Lib.myInput.nextLine());
+            System.out.println("Enter the operator (+,-,*,/)");
+            operator = Lib.myInput.next().charAt(0);
+            System.out.println("Introduce el primer numero");
+            System.out.println("Introduce el segundo numero");
+            num2 = Lib.myInput.nextDouble();
+
+        } while (!correct);
         switch (operator) {
             case '+':
-                System.out.printf("%f2.2 + %f2.2 = %f2.2", num1, num2, (num1 + num2));
+                System.out.printf("%.2f + %.2f = %.2f", num1, num2, (num1 + num2));
                 break;
             case '/':
-                System.out.printf("%f2.2 / %f2.2 = %f2.2", num1, num2, (num1 / num2));
+                System.out.printf("%.2f / %.2f = %.2f", num1, num2, (num1 / num2));
                 break;
             case '-':
-                System.out.printf("%f2.2 - %f2.2 = %f2.2", num1, num2, (num1 - num2));
+                System.out.printf("%.2f - %.2f = %.2f", num1, num2, (num1 - num2));
                 break;
             case '*':
-                System.out.printf("%f2.2 * %f2.2 = %f2.2", num1, num2, (num1 * num2));
+                System.out.printf("%.2f * %.2f = %.2f", num1, num2, (num1 * num2));
             default:
                 System.out.println("Enter a valid operator");
                 break;
@@ -48,7 +47,7 @@ public class Ejercicio10 {
 
     }
 
-    public void menu() {
+    public static void menu() {
 
         do {
             System.out.println("0.Salir");
