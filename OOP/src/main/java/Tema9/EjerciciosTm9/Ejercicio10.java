@@ -20,10 +20,10 @@ public class Ejercicio10 {
         do {
             System.out.println("********** CALCULADORA ***********");
 
-            num1 = Double.parseDouble(Lib.myInput.nextLine());
+            System.out.println("Introduce el primer numero");
+            num1 = Lib.myInput.nextDouble();
             System.out.println("Enter the operator (+,-,*,/)");
             operator = Lib.myInput.next().charAt(0);
-            System.out.println("Introduce el primer numero");
             System.out.println("Introduce el segundo numero");
             num2 = Lib.myInput.nextDouble();
 
@@ -40,12 +40,16 @@ public class Ejercicio10 {
                 break;
             case '*':
                 System.out.printf("%.2f * %.2f = %.2f", num1, num2, (num1 * num2));
+                break;
             default:
                 System.out.println("Enter a valid operator");
                 break;
         }
 
     }
+
+
+    
 
     public static void menu() {
 

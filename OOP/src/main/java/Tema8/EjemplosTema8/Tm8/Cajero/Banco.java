@@ -1,4 +1,4 @@
-package Tema8.EjemplosTema8.Cajero;
+package Tema8.EjemplosTema8.Tm8.Cajero;
 
 import Tema8.EjemplosTema8.Cajero.config.Config;
 import Tema8.EjemplosTema8.Cajero.util.Bombo;
