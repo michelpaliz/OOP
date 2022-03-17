@@ -26,11 +26,11 @@ public class Ejercicio10 {
             System.out.println("Enter the operator (+,-,*,/)");
             operator = Lib.myInput.next().charAt(0);
             System.out.println("Introduce el segundo numero");
-            // num2 = Lib.myInput.nextDouble();
+            num2 = Lib.myInput.nextDouble();
 
-            // for (int i = 0; i < 50; i++) {
-            // num2 = (alphabet.charAt(Lib.r.nextInt(alphabet.length())));
-            // }
+            for (int i = 0; i < 50; i++) {
+                num2 = (alphabet.charAt(Lib.r.nextInt(alphabet.length())));
+            }
 
         } while (!correct);
         switch (operator) {
