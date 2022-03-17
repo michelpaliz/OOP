@@ -18,6 +18,11 @@ public class Lib {
         return r.nextInt(max - min + 1) + min;
     }
 
+    public static double randomDouble(int min, int max) {
+        Random r = new Random();
+        return r.nextInt(max - min + 1) + min;
+    }
+
     public static void clearScreen() {
         System.out.println("\u000C");
     }

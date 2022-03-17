@@ -48,8 +48,37 @@ public class Ejercicio10 {
 
     }
 
+    public static void calculadoraAutomatica() {
+        char operator;
+        double num1, num2;
 
-    
+        do {
+            System.out.println("********** CALCULADORA ***********");
+            num1 = Lib.randomDouble(0, 100);
+            System.out.println("Enter the operator (+,-,*,/)");
+            operator = Lib.myInput.next().charAt(0);
+            num2 = Lib.randomDouble(0, 100);
+
+        } while (!correct);
+        switch (operator) {
+            case '+':
+                System.out.printf("%.2f + %.2f = %.2f", num1, num2, (num1 + num2));
+                break;
+            case '/':
+                System.out.printf("%.2f / %.2f = %.2f", num1, num2, (num1 / num2));
+                break;
+            case '-':
+                System.out.printf("%.2f - %.2f = %.2f", num1, num2, (num1 - num2));
+                break;
+            case '*':
+                System.out.printf("%.2f * %.2f = %.2f", num1, num2, (num1 * num2));
+                break;
+            default:
+                System.out.println("Enter a valid operator");
+                break;
+        }
+
+    }
 
     public static void menu() {
 
@@ -66,7 +95,7 @@ public class Ejercicio10 {
                 calculadoraManual();
                 break;
             case 2:
-
+                calculadoraAutomatica();
                 break;
             case 3:
         }
