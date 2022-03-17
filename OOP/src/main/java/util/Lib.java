@@ -6,6 +6,7 @@ import java.util.Random;
 public class Lib {
 
     public static Scanner myInput = new Scanner(System.in);
+    public static Random r = new Random();
     public static boolean correct;
 
     public static void pausa() {
