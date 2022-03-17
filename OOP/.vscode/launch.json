@@ -52,6 +52,13 @@
             "request": "launch",
             "mainClass": "Tema9.MainTm9",
             "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainTm10",
+            "request": "launch",
+            "mainClass": "Tema10.MainTm10",
+            "projectName": "OOP"
         }
       
     ]
