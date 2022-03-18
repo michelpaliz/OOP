@@ -1,5 +1,7 @@
 package Tema10.Explicacion;
 
+import Tema10.Explicacion.Strategies.StrategyMiddle;
+
 public class Player {
     private String nombre;
     private IStrategy strategy;
@@ -14,8 +16,16 @@ public class Player {
      * 
      * @return
      */
-    public int jugar() {
-        return strategy.jugar();
+    public int play() {
+        return strategy.play();
     }
+
+    public void onCheckNumber(Game.PlayResult playResult){
+        Strategy.onCheckNumber(playResult);
+
+    }
+
+
+    public void 
 
 }
