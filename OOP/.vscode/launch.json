@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
             "type": "java",
             "name": "Launch Current File",
@@ -59,7 +60,15 @@
             "request": "launch",
             "mainClass": "Tema10.Explicacion.MainTm10",
             "projectName": "OOP"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainTm10Ejer",
+            "request": "launch",
+            "mainClass": "Tema10.MainTm10Ejer",
+            "projectName": "OOP"
         }
+      
       
     ]
 }

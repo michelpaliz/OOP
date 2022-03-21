@@ -171,4 +171,14 @@ public class Lib {
         return array;
     }
 
+    // min y max numeros aleatorios a generar
+    public static void fillArrayRandom(int[] array, int min, int max) {
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = r.nextInt(max - min + 1) + min;
+
+        }
+
+    }
+
 }
