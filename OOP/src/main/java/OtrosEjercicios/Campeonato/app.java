@@ -30,9 +30,10 @@ public class App {
 
         switch (userInt) {
             case 1:
-
+                //Todo Crear Equipos y jugadores
                 break;
             case 2:
+                //Todo crear nuevo Jugador
                 break;
             case 3:
                 equipo.generarDatosAleatorios();
@@ -41,6 +42,7 @@ public class App {
                 equipo.mostrarDatosPrueba();
                 break;
             case 5:
+                //Todo Ver tabla de posiciones
                 break;
         }
     }
