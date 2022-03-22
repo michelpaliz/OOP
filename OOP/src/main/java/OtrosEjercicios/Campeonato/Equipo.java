@@ -9,7 +9,7 @@ import com.github.javafaker.Faker;
 
 import Util.Bombo;
 // import Tema8.EjemplosTema8.Cajero.util.Bombo;
-import Tema8.EjemplosTema8.utils.Lib;
+import Util.*;
 
 public class Equipo {
 
@@ -132,8 +132,8 @@ public class Equipo {
             String ciudad = faker.country().capital();
             // Samos los objetos de lo arrays de entrenador y jugador y se lo asignamos a
             // otras referencias que apuntaran a los punteros de los objetos
-            entrenador = entrenadores[Lib.aleatorio(entrenadores.length, numEntrenadores - 1)];
-            jugador = jugadores[Lib.aleatorio(jugadores.length, numJugadores - 1)];
+            entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
+            jugador = jugadores[Lib.random(0, numJugadores - 1)];
             equipos[i] = new Equipo(id, nombre, ciudad, entrenador, jugador);
             numEquipos++;
         }
