@@ -1,4 +1,4 @@
-package Tema10.Ejercicios.ejercicio02;
+package Tema10.Ejercicios.Clases.ejercicio02;
 
 import java.util.ArrayList;
 
@@ -6,22 +6,10 @@ public class ArrayListEstadisticas extends ArrayList<Double> implements IEstadis
     private ArrayList<Double> data;
 
     // Constructor
-    // public ArrayListEstadisticas(int initialCapacity) {
-    // data = new ArrayList<>(initialCapacity);
-    // }
 
-    public ArrayListEstadisticas(){
-        super();
+    public ArrayListEstadisticas(int initialCapacity) {
+    data = new ArrayList<>(initialCapacity);
     }
-
-    public ArrayListEstadisticas(int initialCapacity){
-        super(initialCapacity);
-    }
-
-    public ArrayListeEstaditicas(Collection<Double>){
-
-    }
-
 
     /*
      * Esto huele.

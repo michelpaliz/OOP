@@ -1,4 +1,4 @@
-package Tema10.Ejercicios.ejercicio02;
+package Tema10.Ejercicios.Clases.ejercicio02;
 
 public interface IEstadisticas {
     double minimo();

@@ -1,4 +1,4 @@
-package Tema10.Ejercicios.Ejercicio2;
+package Tema10.Ejercicios.Propios.Ejercicio2;
 
 public interface IEstadisticas {
 
