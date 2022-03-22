@@ -76,6 +76,7 @@ public class Equipo {
     public void generarDatosAleatorios() {
 
         generarEquipo();
+        System.out.println("Los equipos han sido creados exitosamente");
         App.menu();
 
     }
@@ -109,7 +110,8 @@ public class Equipo {
             String nombre = faker.name().firstName();
             String apellido = faker.name().lastName();
             Date edadEntrenadores = faker.date().birthday(40, 65);
-            edad1.setTime(edadEntrenadores);
+            // edad1.setTime(edadEntrenadores); los set son peligrosos por esto mismo cambia toda mi base de datos con este mismo valor para todos
+
             entrenadores[i] = new Entrenador(id, nombre, apellido, edad1); // esto printara la clase con el toString
             numEntrenadores++;
         }
