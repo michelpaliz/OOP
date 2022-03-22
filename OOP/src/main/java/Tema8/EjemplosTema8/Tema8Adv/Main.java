@@ -1,6 +1,6 @@
 package Tema8.EjemplosTema8.Tema8Adv;
 
-import Tema8.EjemplosTema8.Tema8Adv.ejercicio06.Ejercicio6;
+import Tema8.EjemplosTema8.Tema8Adv.Ejercicio6.Ejercicio6;
 
 public class Main {
 
