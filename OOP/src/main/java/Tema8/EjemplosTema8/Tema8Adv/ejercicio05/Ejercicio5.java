@@ -1,6 +1,8 @@
 package Tema8.EjemplosTema8.Tema8Adv.ejercicio05;
 
-import Tema8.EjemplosTema8.ejercicio04.Punto;
+import Tema8.EjerciciosTema8.Ejercicio4.Punto;
+
+// import Tema8.EjemplosTema8.ejercicio04.Punto;
 
 // import com.germangascon.tema08.ejercicio04.Punto;
 

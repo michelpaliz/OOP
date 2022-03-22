@@ -1,35 +1,40 @@
-package Tema8.EjemplosTema8.Tema8Adv.ejercicio01;
-
-import java.util.Calendar;
+package Tema8.EjemplosTema8.ejercicio01;
 
 public class Coche {
-    public enum TipoCoche {MINI, UTILITARIO, FAMILIAR, DEPORTIVO}
-    public enum ModalidadSeguro {TERCEROS, TODORIESGO}
+    public enum Tipo {
+        MINI, UTILITARIO, FAMILIAR, DEPORTIVO
+    }
     private String modelo;
-    private String color;
+    private Color color;
     private boolean metalizada;
     private String matricula;
-    private TipoCoche tipo;
-    private int anyo;
-    private ModalidadSeguro seguro;
+    private Tipo tipoCoche;
+    private int anyoFabricacion;
+    private ModalidadSeguro modalidadSeguro;
+
     public Coche() {
-        this.modelo = "Unknown";
-        this.color = "Blanco";
-        this.metalizada = false;
-        this.matricula = "Unknown";
-        this.tipo = TipoCoche.UTILITARIO;
-        this.anyo = Calendar.getInstance().get(Calendar.YEAR);
-        this.seguro = ModalidadSeguro.TERCEROS;
+        modelo = "SIN MODELO";
+        color = Color.BLANCO;
+        metalizada = false;
+        matricula = "SIN MATRICULA";
+        tipoCoche = Tipo.UTILITARIO;
+        anyoFabricacion = 2017;
+        modalidadSeguro = ModalidadSeguro.TERCEROS;
     }
 
-    public Coche(String modelo, String color, boolean metalizada, String matricula, TipoCoche tipo, int anyo, ModalidadSeguro seguro) {
+    public Coche(String modelo, String matricula) {
+        this.modelo = modelo;
+        this.matricula = matricula;
+    }
+
+    public Coche(String modelo, Color color, boolean metalizada, String matricula, Tipo tipoCoche, int anyoFabricacion, ModalidadSeguro modalidadSeguro) {
         this.modelo = modelo;
         this.color = color;
         this.metalizada = metalizada;
         this.matricula = matricula;
-        this.tipo = tipo;
-        this.anyo = anyo;
-        this.seguro = seguro;
+        this.tipoCoche = tipoCoche;
+        this.anyoFabricacion = anyoFabricacion;
+        this.modalidadSeguro = modalidadSeguro;
     }
 
     public String getModelo() {
@@ -40,11 +45,11 @@ public class Coche {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -64,33 +69,45 @@ public class Coche {
         this.matricula = matricula;
     }
 
-    public TipoCoche getTipo() {
-        return tipo;
+    public Tipo getTipoCoche() {
+        return tipoCoche;
     }
 
-    public void setTipo(TipoCoche tipo) {
-        this.tipo = tipo;
+    public void setTipoCoche(Tipo tipoCoche) {
+        this.tipoCoche = tipoCoche;
     }
 
-    public int getAnyo() {
-        return anyo;
+    public int getAnyoFabricacion() {
+        return anyoFabricacion;
     }
 
-    public void setAnyo(int anyo) {
-        this.anyo = anyo;
+    public void setAnyoFabricacion(int anyoFabricacion) {
+        this.anyoFabricacion = anyoFabricacion;
     }
 
-    public ModalidadSeguro getSeguro() {
-        return seguro;
+    public ModalidadSeguro getModalidadSeguro() {
+        return modalidadSeguro;
     }
 
-    public void setSeguro(ModalidadSeguro seguro) {
-        this.seguro = seguro;
+    public void setModalidadSeguro(ModalidadSeguro modalidadSeguro) {
+        this.modalidadSeguro = modalidadSeguro;
     }
 
-    public void imprimirCoche() {
-        System.out.println("Coche: " + modelo );
-        System.out.println("Color: " + color);
+    public String imprimirCoche() {
+        return "Modelo: " + modelo + ", Color: " + color;
+    }
 
+
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "modelo='" + modelo + '\'' +
+                ", color=" + color +
+                ", metalizada=" + metalizada +
+                ", matricula='" + matricula + '\'' +
+                ", tipoCoche=" + tipoCoche +
+                ", anyoFabricacion=" + anyoFabricacion +
+                ", modalidadSeguro=" + modalidadSeguro +
+                '}';
     }
 }

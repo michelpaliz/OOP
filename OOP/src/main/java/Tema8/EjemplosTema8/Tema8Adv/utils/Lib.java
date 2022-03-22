@@ -12,9 +12,9 @@ public class Lib {
         lector.nextLine();
     }
 
-    public static int random() {
-        return r.nextInt();
-    }
+    // public static int random() {
+    //     return r.nextInt();
+    // }
 
     public static int random(int min, int max) {
         return r.nextInt(max - min +1 ) + min;
