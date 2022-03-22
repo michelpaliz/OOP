@@ -5,7 +5,7 @@ package Tema8.EjemplosTema8.Tema8Adv.Ejercicio6;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-import Tema8.EjemplosTema8.Tema8Adv.utils.Ansi;
+import Util.Ansi;
 
 // import com.germangascon.tema08.utils.Ansi;
 

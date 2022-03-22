@@ -10,8 +10,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-import Tema8.EjemplosTema8.Tema8Adv.utils.Ansi;
 import Tema8.EjemplosTema8.Tema8Adv.utils.Lib;
+import Util.Ansi;
 
 /**
  * El ejercicio 3 podemos abordarlo con dos estrategias bien diferenciadas:
