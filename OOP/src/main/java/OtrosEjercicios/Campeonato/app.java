@@ -1,8 +1,5 @@
 package OtrosEjercicios.Campeonato;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -14,14 +11,14 @@ public class App {
     // User response
     private static int userInt;
     private String userStr;
-
-    // Constructor
-    public App() {
+    // para la creacion
+    public App(){
         menu();
     }
 
+    // Constructor
     // MENU DEL JUEGO
-    public static void menu() {
+    public void  menu() {
         System.out.println("*******MENU DATOS******");
         System.out.println("Elige una opcion");
         System.out.println("1.  Nuevo Equipo");
@@ -33,18 +30,26 @@ public class App {
         userInt = Integer.parseInt(myInput.nextLine());
 
         switch (userInt) {
+            case 0:
+                System.out.println("Hasta Luego");
+                menu();
+                break;
             case 1:
-                // Todo Crear Equipos y jugadores
-
+                // Todo Crear Equipos
+                
                 break;
             case 2:
                 // Todo crear nuevo Jugador
+                creacionJugador();
+                menu();
                 break;
             case 3:
                 equipo.generarDatosAleatorios();
+                menu();
                 break;
             case 4:
                 equipo.mostrarDatosPrueba();
+                menu();
                 break;
             case 5:
                 // Todo Ver tabla de posiciones
@@ -52,7 +57,9 @@ public class App {
         }
     }
 
-    public Jugador[] creacionJugador() {
+    
+    // Para la creacion de un jugador
+    public Jugador creacionJugador() {
 
         System.out.println("Vamos a crear un jugador");
         System.out.println("Introduce el id del jugador (Cuidado el id del jugador no puede estar ya escogido )");
@@ -61,22 +68,21 @@ public class App {
         String nombre = userStr = myInput.nextLine();
         System.out.println("Introduce el apellido de jugador");
         String apellido = userStr = myInput.nextLine();
-        ///---------
-        GregorianCalendar fechaNacimiento = new GregorianCalendar();
+        /// ---------
+        GregorianCalendar edad = new GregorianCalendar();
         System.out.println("Introduce el anyo de nacimiento del jugador");
-        int anyo = userInt = Integer.parseInt(myInput.nextLine());
+        int year = userInt = Integer.parseInt(myInput.nextLine());
         System.out.println("Introcde el mes de nacimiento");
-        int mes = userInt = Integer.parseInt(myInput.nextLine());
+        int month = userInt = Integer.parseInt(myInput.nextLine());
         System.out.println("Introduce el dia de nacimiento");
-        int dia =  userInt = Integer.parseInt(myInput.nextLine());
-        LocalDate  fechaDate = new LocalDate(anyo, mes, dia);
-        
-        
-
-        System.out.println("Introduece la posicion del jugador");
+        int date = userInt = Integer.parseInt(myInput.nextLine());
+        edad.set(year, month, date);
+        System.out.println("Introduce la posicion del jugador");
         Posicion pos = elegirPosicion();
-        
-
+        Jugador jugador = new Jugador(id, nombre, apellido, edad, pos);
+        System.out.println("Jugador creado");
+        System.out.println(jugador);
+        return jugador;
     }
 
     public Posicion elegirPosicion() {
@@ -88,7 +94,7 @@ public class App {
             System.out.println("3.Defensa");
             System.out.println("4.Portero");
             userInt = Integer.parseInt(myInput.nextLine());
-        } while (userInt <= 4 && userInt > 0);
+        } while (userInt >= 4 && userInt < 0);
         switch (userInt) {
             case 1:
                 pos = Posicion.DELANTERO;
@@ -106,4 +112,6 @@ public class App {
         return pos;
     }
 
+
+    
 }

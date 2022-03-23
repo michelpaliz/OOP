@@ -13,13 +13,6 @@
             "request": "launch",
             "mainClass": "${file}"
         },
-        {
-            "type": "java",
-            "name": "Launch Principal Campeonato",
-            "request": "launch",
-            "mainClass": "OtrosEjercicios.Campeonato.Principal",
-            "projectName": "OOP"
-        },
           {
             "type": "java",
             "name": "Launch MainOtros",
