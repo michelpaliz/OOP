@@ -41,6 +41,7 @@ public class App {
             case 2:
                 // Todo crear nuevo Jugador
                 creacionJugador();
+                
                 menu();
                 break;
             case 3:

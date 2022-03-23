@@ -18,14 +18,14 @@ public class Equipo {
     // variables constantes
     public static final int MAX_ENTRENADORES = 2;
     public static final int MIN_ENTRENADORES = 1;
-    public static final int MAX_JUGADORES = 150;
+    public static final int MAX_JUGADORES = 50;
     public static final int MIN_JUGADORES = 1;
-    public static final int MAX_EQUIPOS = 10;
+    public static final int MAX_EQUIPOS = 5;
     public static final int MIN_EQUIPOS = 1;
 
     // *Atributos de la clase equipo
     private final long id;
-    private final String nombre;
+    private final nomEquipo nombre;
     private final String ciudad;
     private Jugador jugador[];
     private Entrenador entrenador;
@@ -48,7 +48,7 @@ public class Equipo {
      * @param entrenador
      * @param jugador
      */
-    public Equipo(long id, String nombre, String ciudad, Entrenador entrenador, Jugador[] jugador) {
+    public Equipo(long id, nomEquipo nombre, String ciudad, Entrenador entrenador, Jugador[] jugador) {
         this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -56,7 +56,7 @@ public class Equipo {
         this.jugador = jugador;
         // INITIZAL_SIZE para cada array
         this.entrenadores = new Entrenador[MAX_ENTRENADORES];
-        this.jugadores = new Jugador[MAX_JUGADORES];
+        this.jugadores = new Jugador[MAX_JUGADORES / MAX_EQUIPOS];
         this.equipos = new Equipo[MAX_EQUIPOS];
     }
 
@@ -66,8 +66,9 @@ public class Equipo {
         this.nombre = null;
         this.ciudad = null;
         this.entrenadores = new Entrenador[MAX_ENTRENADORES];
-        this.jugadores = new Jugador[MAX_JUGADORES];
+        this.jugadores = new Jugador[MAX_JUGADORES / MAX_EQUIPOS];
         this.equipos = new Equipo[MAX_EQUIPOS];
+        // this.jugadores1 = new Jugador[jugadores.length / equipos.length];
     }
 
     /**
@@ -134,20 +135,14 @@ public class Equipo {
             // Datos de para llenar el constructor de equipos
             long id = bomboEquipos.extraerBola();
             String nombre = faker.team().name();
+            NombreEquipo nombre = 
             String ciudad = faker.country().capital();
             // Samos los objetos de lo arrays de entrenador y jugador y se lo asignamos a
             // otras referencias que apuntaran a los punteros de los objetos
-            // entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
-            // jugador = jugadores[Lib.random(0, numJugadores - 1)];
-            // for (int x = 0; x < entrenadores.length / equipos.length; x++) {
-            // entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
-            // }
-            entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
-            for (int j = 0; j < 2; j++) {
+            for (int j = 0; j < jugadores.length; j++) {
                 jugadores[j] = jugadores[Lib.random(0, numJugadores - 1)];
-
-                equipos[i] = new Equipo(id, nombre, ciudad, entrenador, jugadorPruebas);
             }
+            equipos[i] = new Equipo(id, nombre, ciudad, entrenador, jugadores);
             // numEquipos++;
         }
 
@@ -158,5 +153,7 @@ public class Equipo {
         return "Equipo [ciudad=" + ciudad + ", entrenador=" + entrenador + ", id=" + id + ", jugadores="
                 + Arrays.toString(jugador) + "]";
     }
+
+    // Anyadimos un nuevo jugador al equipo
 
 }
