@@ -2,14 +2,14 @@ package Tema10.Ejercicios.Propios.Ejercicio3;
 
 public interface ICola<T> {
 
-    T push(T e);
+    boolean push(T e);
 
-    T size();
+    T remove();
 
-    T pop();
+    int size();
 
-    T isFull();
+    T peek();
 
-    T isEmpty();
+    boolean isEmpty();
 
 }

@@ -1,5 +1,6 @@
 package OtrosEjercicios.Campeonato;
 
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -11,14 +12,15 @@ public class App {
     // User response
     private static int userInt;
     private String userStr;
+
     // para la creacion
-    public App(){
+    public App() {
         menu();
     }
 
     // Constructor
     // MENU DEL JUEGO
-    public void  menu() {
+    public void menu() {
         System.out.println("*******MENU DATOS******");
         System.out.println("Elige una opcion");
         System.out.println("1.  Nuevo Equipo");
@@ -36,12 +38,11 @@ public class App {
                 break;
             case 1:
                 // Todo Crear Equipos
-                
+
                 break;
             case 2:
                 // Todo crear nuevo Jugador
-                creacionJugador();
-                
+                System.out.println(Arrays.toString(equipo.nuevoEspacio(creacionJugador())));
                 menu();
                 break;
             case 3:
@@ -58,7 +59,6 @@ public class App {
         }
     }
 
-    
     // Para la creacion de un jugador
     public Jugador creacionJugador() {
 
@@ -113,6 +113,4 @@ public class App {
         return pos;
     }
 
-
-    
 }

@@ -27,7 +27,7 @@ public class Equipo {
     private final long id;
     private final nomEquipo nombre;
     private final String ciudad;
-    private Jugador jugador[];
+    private Jugador[] jugador;
     private Entrenador entrenador;
 
     // variables para la gestion de la base de datos de los equipos, esto no saldra
@@ -134,11 +134,12 @@ public class Equipo {
         for (int i = 0; i < equipos.length; i++) {
             // Datos de para llenar el constructor de equipos
             long id = bomboEquipos.extraerBola();
-            String nombre = faker.team().name();
-            NombreEquipo nombre = 
+            // String nombre = faker.team().name();
+            nomEquipo nombre = nomEquipo.getRandom();
             String ciudad = faker.country().capital();
             // Samos los objetos de lo arrays de entrenador y jugador y se lo asignamos a
             // otras referencias que apuntaran a los punteros de los objetos
+            entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
             for (int j = 0; j < jugadores.length; j++) {
                 jugadores[j] = jugadores[Lib.random(0, numJugadores - 1)];
             }
@@ -148,9 +149,52 @@ public class Equipo {
 
     }
 
+    /**
+     * 
+     * @param ref
+     * @return
+     */
+
+    public int buscarJugador(Jugador jugador) {
+        for (int i = 0; i < jugadores.length; i++) {
+            if (jugadores[i].getId() == jugador.getId()) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Jugador buscarPorID(Jugador jugador) {
+        int  pos = buscarJugador(jugador);
+        return pos < 0 ? null : jugadores[pos];
+    }
+
+    public Jugador[] nuevoEspacio(Jugador jugador) {
+
+        //si no esta vacio
+        if (buscarPorID(jugador) != null) {
+            return null;
+        }
+        // Si es null osea que no existe esa id pues creamos el jugador
+        if (numJugadores == jugadores.length) {
+            // creamos un nuevo array el doble del viejo
+            Jugador[] jugadoresAmpliado = new Jugador[(int) (numJugadores * 2)];
+            for (int i = 0; i < jugadores.length; i++) {
+                jugadoresAmpliado[i] = jugadores[i];
+            }
+            jugadores = jugadoresAmpliado;
+        }
+
+        Jugador nuevoJugador = new Jugador(jugador);
+        jugadores[numJugadores] = nuevoJugador;
+        numJugadores++;
+        return jugadores;
+    }
+
     @Override
     public String toString() {
-        return "Equipo [ciudad=" + ciudad + ", entrenador=" + entrenador + ", id=" + id + ", jugadores="
+        return "Equipo [ Equipo = " + nombre + " ciudad=" + ciudad + ", entrenador=" + entrenador + ", id=" + id
+                + ", jugadores="
                 + Arrays.toString(jugador) + "]";
     }
 

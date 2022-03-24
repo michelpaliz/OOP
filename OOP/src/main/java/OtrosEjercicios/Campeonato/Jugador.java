@@ -20,6 +20,14 @@ public class Jugador {
         this.posicion = posicion;
     }
 
+    public Jugador(Jugador j) {
+        this.id = j.id;
+        this.nombre =j.nombre;
+        this.apellido = j.apellido;
+        this.edad = j.edad;
+        this.posicion = j.posicion;
+    }
+
     public long getId() {
         return id;
     }
