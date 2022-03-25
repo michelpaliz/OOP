@@ -1,10 +1,19 @@
 package OtrosEjercicios.Game.main;
 
+import javax.swing.JFrame;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hola");
+        JFrame window = new JFrame();
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setResizable(false);
+        window.setTitle("2D Adventure");
+        window.setLocationRelativeTo(null);
+        window.pack();
+        GamePanel gamePanel = new GamePanel();
+        window.add(gamePanel);
 
     }
 

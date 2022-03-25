@@ -22,7 +22,7 @@
         "type": "java",
         "name": "MainTreasure",
         "request": "launch",
-        "mainClass": "OtrosEjercicios.Game.main",
+        "mainClass": "OtrosEjercicios.Game.main.Main",
         "projectName": "OOP"
         },
         {
