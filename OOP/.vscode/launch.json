@@ -5,8 +5,6 @@
     "version": "0.2.0",
     "configurations": [
 
-
-
         {
             "type": "java",
             "name": "Launch Current File",
@@ -19,6 +17,13 @@
             "request": "launch",
             "mainClass": "OtrosEjercicios.Main",
             "projectName": "OOP"
+        },
+        {
+        "type": "java",
+        "name": "MainTreasure",
+        "request": "launch",
+        "mainClass": "OtrosEjercicios.Game.main",
+        "projectName": "OOP"
         },
         {
             "type": "java",
