@@ -1,5 +1,4 @@
-package TestWorlde.Dictionary;
-
+package TestWorlde.Clase.Dictionary;
 
 public class DictionaryManager {
     //va recibir un idioma y el diccionario que se eencarga de es idioma

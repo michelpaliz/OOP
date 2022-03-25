@@ -1,4 +1,4 @@
-package TestWorlde.Dictionary;
+package TestWorlde.Clase.Dictionary;
 
 public class WordleES {
     // Clase que gestiona todos los diccionarios

@@ -2,8 +2,8 @@ package TestWorlde;
 
 import java.util.Dictionary;
 
-import TestWorlde.Dictionary.DictionaryManager;
-import TestWorlde.Dictionary.Language;
+import TestWorlde.Clase.Dictionary.DictionaryManager;
+import TestWorlde.Clase.Dictionary.Language;
 
 public class Main {
 
