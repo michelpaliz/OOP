@@ -2,9 +2,10 @@ package Tema10;
 
 import java.util.Arrays;
 
-import Tema10.Ejercicios.Ejercicio1;
+import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
+import Tema10.Ejercicios.Propios.Ejercicio6.Ejercicio6;
 import Tema10.Explicacion.Maps.*;
 
 public class MainTm10Ejer {
@@ -21,8 +22,10 @@ public class MainTm10Ejer {
         // Pila ejercicio3 = new Pila();
         // System.out.println((ejercicio3));
         // Explicacion
-        EjemploMap ejemplo = new EjemploMap();
-        System.out.println(ejemplo);
+        // EjemploMap ejemplo = new EjemploMap();
+        // System.out.println(ejemplo);
+        Ejercicio6 mon = new Ejercicio6();
+        System.out.println(mon);
 
     }
 
