@@ -10,10 +10,18 @@
             "request": "launch",
             "mainClass": "${file}"
         },
+        //*TESTING
+        {
+            "type": "java",
+            "name": "Testing",
+            "request": "launch",
+            "mainClass": "Testing.Main",
+            "projectName": "OOP"
+        },
         //*OTROS EJERCICIOS
           {
             "type": "java",
-            "name": "Launch MainOtros",
+            "name": "MainOtros",
             "request": "launch",
             "mainClass": "OtrosEjercicios.Main",
             "projectName": "OOP"
@@ -28,14 +36,14 @@
         //*EJERCICIOS TEMA 8
         {
             "type": "java",
-            "name": "Launch Principal Ejemplos",
+            "name": "Tme 8 ejemplos",
             "request": "launch",
             "mainClass": "Tema8.EjemplosTema8.Principal",
             "projectName": "OOP"
         },
         {
             "type": "java",
-            "name": "Launch Main",
+            "name": "Tm 8 ejer",
             "request": "launch",
             "mainClass": "Tema8.EjerciciosTema8.Main",
             "projectName": "OOP"
@@ -50,7 +58,7 @@
         //*EJERCICIOS TEMA 9
         {
             "type": "java",
-            "name": "Launch MainTm9",
+            "name": "MainTm9",
             "request": "launch",
             "mainClass": "Tema9.MainTm9",
             "projectName": "OOP"
@@ -58,14 +66,14 @@
         // *EJERCICIOS TEMA 10
         {
             "type": "java",
-            "name": "Launch MainTm10",
+            "name": "MainTm10",
             "request": "launch",
             "mainClass": "Tema10.Explicacion.MainTm10",
             "projectName": "OOP"
         },
         {
             "type": "java",
-            "name": "Launch MainTm10Ejer",
+            "name": "MainTm10Ejer",
             "request": "launch",
             "mainClass": "Tema10.MainTm10Ejer",
             "projectName": "OOP"

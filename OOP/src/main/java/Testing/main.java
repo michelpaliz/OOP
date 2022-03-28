@@ -1,5 +1,9 @@
 package Testing;
 
-public class main {
+public class Main {
     
+    public static void main(String[] args) {
+        Testing t1 = new Testing();
+
+    }
 }
