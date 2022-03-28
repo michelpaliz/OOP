@@ -2,6 +2,8 @@ package Tema10.Ejercicios.Propios.Ejercicio8;
 
 import java.util.HashMap;
 
+import Util.menu;
+
 public class Gestion {
 
     public HashMap<String, String> diccionario = new HashMap<>();
@@ -28,7 +30,7 @@ public class Gestion {
     public void addElement(String key, String value) {
         System.out
                 .println("First let's check out if the elements exits if not we would add the keyword and the meaning");
-        if (diccionario.containsKey(key) == true) {
+        if (diccionario.containsKey(key)) {
             System.out.println("The keyword exits so we will only add the value for the key");
             diccionario.put(key, value);
             System.out.println(diccionario);
@@ -37,7 +39,7 @@ public class Gestion {
                     "There is not any matching key in the dictionary so we're going to create it with the already elemments inserted");
             diccionario.put(key, value);
             System.out.println(diccionario);
-
+        
         }
     }
 
@@ -47,36 +49,20 @@ public class Gestion {
      * @param value
      */
 
-    public void replaceValue(String key, String value) {
-        if (diccionario.isEmpty()) {
-            if (diccionario.containsKey(key) == true) {
+    public void replace(String key, String value) {
+        if (diccionario.isEmpty() == false) {
+            if (diccionario.containsKey(key)) {
+                System.out.println("The key already exits so we have to add the value for it");
                 diccionario.replace(key, value);
-                System.out.println(diccionario.get(key));
+                System.out.println(diccionario);
             } else {
                 System.out.println(
-                        "There is no matching key in the dictioray, so for we've got to add a new key with its value");
+                        "There is no matching key for this word in the dictioray, so we've got to add a new key with its value");
                 diccionario.put(key, value);
-                System.out.println(diccionario.get(key));
-
+                System.out.println(diccionario);
             }
         } else {
             System.out.println("Error");
-        }
-
-    }
-
-    /**
-     * 
-     * @param key
-     * @param value
-     */
-
-    public void replaceKey(String key, String value) {
-
-        if (diccionario.remove(key) != null) {
-            System.out.println("The remove was completed sucessfully");
-        } else {
-            System.out.println("They key does not match with any other key");
         }
 
     }

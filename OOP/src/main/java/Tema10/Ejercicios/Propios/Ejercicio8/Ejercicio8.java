@@ -6,11 +6,12 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
 import Util.Lib;
+import Util.menu;
 
 public class Ejercicio8 {
 
     int userInt, opcion;
-    String userString;
+    String userString, key, value;
     boolean correct;
     Gestion word = new Gestion();
 
@@ -35,14 +36,22 @@ public class Ejercicio8 {
         switch (userInt) {
             case 1:
                 System.out.println("Introduce the keyword ");
-                String key = userString = Lib.myInput.nextLine();
+                key = userString = Lib.myInput.nextLine();
                 System.out.println("Now introduce the meaning for the keyword");
-                String value = userString = Lib.myInput.nextLine();
+                value = userString = Lib.myInput.nextLine();
                 word.addElement(key, value);
+                menu();
                 break;
             case 2:
+                System.out.println("Introduce the keyword");
+                key = userString = Lib.myInput.nextLine();
+                System.out.println("And now introduce the value that you want to replace");
+                value = userString = Lib.myInput.nextLine();
+                word.replace(key, value);
+                menu();
                 break;
             case 3:
+                menu();
                 break;
             case 4:
                 break;
