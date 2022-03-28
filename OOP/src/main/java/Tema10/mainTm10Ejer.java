@@ -5,8 +5,10 @@ import java.util.Arrays;
 import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
-import Tema10.Ejercicios.Propios.Ejercicio6.Ejercicio6;
+import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio6;
+import Tema10.Ejercicios.Propios.Ejercicio8.Ejercicio8;
 import Tema10.Explicacion.Maps.*;
+import Tema9.EjerciciosTm9.Ejercicio7;
 
 public class MainTm10Ejer {
 
@@ -24,8 +26,9 @@ public class MainTm10Ejer {
         // Explicacion
         // EjemploMap ejemplo = new EjemploMap();
         // System.out.println(ejemplo);
-        Ejercicio6 mon = new Ejercicio6();
-        System.out.println(mon);
+        // Ejercicio7 mon = new Ejercicio7();
+        // System.out.println(mon);
+        Ejercicio8 start = new Ejercicio8();
 
     }
 

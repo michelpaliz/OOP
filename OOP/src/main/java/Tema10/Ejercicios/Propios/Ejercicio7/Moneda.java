@@ -1,6 +1,8 @@
-package Tema10.Ejercicios.Propios.Ejercicio6;
+package Tema10.Ejercicios.Propios.Ejercicio7;
 
 import java.util.HashMap;
+
+import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 
 public class Moneda implements IMoneda {
 
@@ -22,13 +24,26 @@ public class Moneda implements IMoneda {
         return 0;
     }
 
+
+
     private boolean moneda(double moneda) {
         return cambio.get(moneda) == null;
     }
 
-    private double cambioMoneda(double monedaLocal, double diferenciaExtr) {
-        return monedaLocal * diferenciaExtr;
-
+    double cambioMoneda(double monedaLocal, double diferenciaExtr) {
+        double cambio, resultado;
+        cambio = monedaLocal * diferenciaExtr;;
+        return resultado =  cambio + monedaLocal;
     }
+
+    public Arraylist<String> getMonedas(){
+        return new ArrayLis();
+    }
+
+    public set<Map.Entry<String, double>> getEntrySet(){
+        
+    }
+
+
 
 }
