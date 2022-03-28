@@ -5,7 +5,7 @@ import java.util.Arrays;
 import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
-import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio6;
+import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio7;
 import Tema10.Ejercicios.Propios.Ejercicio8.Ejercicio8;
 import Tema10.Explicacion.Maps.*;
 import Tema9.EjerciciosTm9.Ejercicio7;
