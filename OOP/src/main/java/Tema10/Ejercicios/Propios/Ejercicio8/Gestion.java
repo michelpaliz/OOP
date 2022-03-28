@@ -39,7 +39,7 @@ public class Gestion {
                     "There is not any matching key in the dictionary so we're going to create it with the already elemments inserted");
             diccionario.put(key, value);
             System.out.println(diccionario);
-        
+
         }
     }
 
@@ -50,9 +50,9 @@ public class Gestion {
      */
 
     public void replace(String key, String value) {
-        if (diccionario.isEmpty() == false) {
+        if (diccionario.get(key).isEmpty() == false) {
             if (diccionario.containsKey(key)) {
-                System.out.println("The key already exits so we have to add the value for it");
+                System.out.println("The key already exits so we have only edit the value for it");
                 diccionario.replace(key, value);
                 System.out.println(diccionario);
             } else {
@@ -65,6 +65,31 @@ public class Gestion {
             System.out.println("Error");
         }
 
+    }
+
+    public void remove(String key) {
+        if (diccionario.get(key).isEmpty() == false) {
+            if (diccionario.containsKey(key)) {
+                diccionario.remove(key);
+                System.out.println(diccionario);
+            } else {
+                System.out.println("Keyword that you've inserted does not exists");
+            }
+        } else {
+            System.out.println("Error");
+        }
+    }
+
+    public void show(String key) {
+        if (diccionario.get(key).isEmpty() == false) {
+            if (diccionario.containsKey(key)) {
+                System.out.println(diccionario.get(key));
+            } else {
+                System.out.println("Keyword that you've inserted does not exists");
+            }
+        } else {
+            System.out.println("Error");
+        }
     }
 
     /**

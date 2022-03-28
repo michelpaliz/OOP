@@ -51,12 +51,20 @@ public class Ejercicio8 {
                 menu();
                 break;
             case 3:
+                System.out.println("Introduce the key that you want to delete");
+                key = userString = Lib.myInput.nextLine();
+                word.remove(key);
                 menu();
                 break;
             case 4:
+                System.out.println("Introduce the key that you want to delete");
+                key = userString = Lib.myInput.nextLine();
+                word.show(key);
+                menu();
                 break;
             case 5:
-
+                word.diccionario.keySet();
+                menu();
                 break;
         }
 
