@@ -63,7 +63,7 @@ public class Ejercicio8 {
                 menu();
                 break;
             case 5:
-                word.diccionario.keySet();
+                System.out.println(word.diccionario.keySet());
                 menu();
                 break;
         }
