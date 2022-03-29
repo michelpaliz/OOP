@@ -1,17 +1,11 @@
 package Tema10.Ejercicios.Propios.Ejercicio8;
 
-import java.util.HashMap;
-
-import com.github.javafaker.Faker;
-import com.github.javafaker.Name;
-
 import Util.Lib;
-import Util.menu;
 
 public class Ejercicio8 {
 
     int userInt, opcion;
-    String userString, key, value;
+    String key, value;
     boolean correct;
     Gestion word = new Gestion();
 
@@ -36,29 +30,29 @@ public class Ejercicio8 {
         switch (userInt) {
             case 1:
                 System.out.println("Introduce the keyword ");
-                key = userString = Lib.myInput.nextLine();
+                key = Lib.myInput.nextLine();
                 System.out.println("Now introduce the meaning for the keyword");
-                value = userString = Lib.myInput.nextLine();
+                value = Lib.myInput.nextLine();
                 word.addElement(key, value);
                 menu();
                 break;
             case 2:
                 System.out.println("Introduce the keyword");
-                key = userString = Lib.myInput.nextLine();
+                key = Lib.myInput.nextLine();
                 System.out.println("And now introduce the value that you want to replace");
-                value = userString = Lib.myInput.nextLine();
+                value  = Lib.myInput.nextLine();
                 word.replace(key, value);
                 menu();
                 break;
             case 3:
                 System.out.println("Introduce the key that you want to delete");
-                key = userString = Lib.myInput.nextLine();
+                key  = Lib.myInput.nextLine();
                 word.remove(key);
                 menu();
                 break;
             case 4:
                 System.out.println("Introduce the key that you want to delete");
-                key = userString = Lib.myInput.nextLine();
+                key  = Lib.myInput.nextLine();
                 word.show(key);
                 menu();
                 break;
