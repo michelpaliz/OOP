@@ -1,29 +1,23 @@
 package Testing.menu;
 
-import java.util.Arrays;
-
 public class Menu {
 
     public Menu() {
-        String[] sentences = { "Hello, bye, goodbye" };
         String title = "title";
-        menuFunction(title, sentences);
+        String[] sentences = { "Hello", "bye", "goodbye", "helloagain" };
+
+        System.out.println("This is the lenght of the array");
+        System.out.println(sentences.length);
+
+        menuGenerator(title, sentences);
     }
 
-    public void menuFunction(String title, String[] sentence) {
-        String con = "";
-        String var = "";
-        System.out.printf("*****%S********\n", title);
-
+    public void menuGenerator(String title, String[] sentence) {
+        System.out.printf("*****%S********\n\n", title);
         for (int i = 0; i < sentence.length; i++) {
-            // var = sentence[i];
-            var = sentence[0] + "\n";
-            // sentence[i] = String.format("%d %S\n", (i + 1), sentence[i]);
-            con = String.format("%d, %S ", (i + 1), var);
-            System.out.print(con);
-
+            sentence[i] = String.format("%d %S\n", (i + 1), sentence[i]);
+            System.out.println(sentence[i]);
         }
-        System.out.println();
     }
 
 }
