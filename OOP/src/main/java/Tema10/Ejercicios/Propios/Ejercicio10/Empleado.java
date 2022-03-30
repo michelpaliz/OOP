@@ -1,5 +1,6 @@
 package Tema10.Ejercicios.Propios.Ejercicio10;
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -44,9 +45,28 @@ public class Empleado {
         this.hijo = hijo;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Override
     public String toString() {
-        return "Empleado [empleados=" + empleados + "]";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "Empleado [apellido=" + apellido + " fechaNacimiento="
+                + sdf.format(fechaNacimiento.getTime()) +
+                ", hijo=" + hijo + ", id=" + id + ", nombre=" + nombre + ", sueldo=" + sueldo + "]";
     }
 
 }

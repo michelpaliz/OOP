@@ -2,10 +2,12 @@ package Tema10.Ejercicios.Propios.Ejercicio10;
 
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.github.javafaker.Faker;
 
@@ -16,10 +18,11 @@ public class Ejercicio10 {
 
     Empleado[] values;
     Empleado[] keys;
-    int numValues = 0;
+    int numValues;
     // HashMap<Empleado, Empleado> empleados;
     // List<Empleado> empleados = new ArrayList<Empleado>();
     List<Empleado> empleados = new ArrayList<Empleado>();
+    Map<Integer, String> map = new HashMap<Integer, String>();
 
     public Ejercicio10() {
         mostrarStockPrueba(10);
@@ -38,11 +41,18 @@ public class Ejercicio10 {
      * muestra el stock actual
      */
 
+    // public void mostarStock() {
+    // for (Empleado empleado : values) {
+    // empleados.add(empleado);
+    // }
+    // System.out.println(Arrays.toString(empleados));
+    // }
+
     public void mostarStock() {
         for (Empleado empleado : values) {
-            empleados.add(empleado);
+            map.put(empleado.getId(), empleado.getNombre());
         }
-        System.out.println(empleados);
+        System.out.println(map);
     }
 
     public void fakerEmpleado(int cantidad) {
@@ -61,8 +71,7 @@ public class Ejercicio10 {
             nacimiento.setTime(fecha);
             values[i] = new Empleado(ID, nombre, apellido, nacimiento, sueldo);
             numValues++;
-            mostarStock();
-
+            System.out.println(Arrays.toString(values));
         }
 
     }
