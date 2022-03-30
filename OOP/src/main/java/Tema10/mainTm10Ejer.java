@@ -3,6 +3,7 @@ package Tema10;
 import java.util.Arrays;
 
 import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
+import Tema10.Ejercicios.Propios.Ejercicio10.Ejercicio10;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
 import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio7;
@@ -29,7 +30,8 @@ public class MainTm10Ejer {
         // Ejercicio7 mon = new Ejercicio7();
         // System.out.println(mon);
         // Ejercicio8 start = new Ejercicio8();
-        Ejercicio9 start =  new Ejercicio9();
+        // Ejercicio9 start = new Ejercicio9();
+        Ejercicio10 start = new Ejercicio10();
 
     }
 
