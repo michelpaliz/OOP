@@ -23,6 +23,7 @@ public class Main {
         // System.out.println(t1.empIds);
         // System.out.println(t1.empIds.remove("Steve"));
 
+        System.out.println("Start menu");
         Menu start = new Menu();
 
         System.out.println(start);
