@@ -2,8 +2,6 @@ package Tema10.Ejercicios.Propios.Ejercicio8;
 
 import java.util.HashMap;
 
-import Util.menu;
-
 public class Gestion {
 
     public HashMap<String, String> diccionario = new HashMap<>();

@@ -64,15 +64,6 @@ public class Ejercicio8 {
 
     }
 
-    // public void faker(int numElements){
-    // Faker f = new Faker;
-    // for(int i = 0; i < numElements; i++) {
 
-    // String key = f.animal().name();
-    // String value = f.relationships().inLaw();
-
-    // }
-
-    // }
 
 }

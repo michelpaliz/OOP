@@ -8,7 +8,7 @@ import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
 import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio7;
 import Tema10.Ejercicios.Propios.Ejercicio8.Ejercicio8;
 import Tema10.Explicacion.Maps.*;
-import Tema9.EjerciciosTm9.Ejercicio7;
+import Tema9.EjerciciosTm9.Ejercicio9;
 
 public class MainTm10Ejer {
 
@@ -28,7 +28,8 @@ public class MainTm10Ejer {
         // System.out.println(ejemplo);
         // Ejercicio7 mon = new Ejercicio7();
         // System.out.println(mon);
-        Ejercicio8 start = new Ejercicio8();
+        // Ejercicio8 start = new Ejercicio8();
+        Ejercicio9 start =  new Ejercicio9();
 
     }
 

@@ -1,4 +1,4 @@
-package Tema10.Ejercicios.ClasesParticulares;
+package Tema10.Ejercicios.Particulares;
 
 import java.util.HashMap;
 
