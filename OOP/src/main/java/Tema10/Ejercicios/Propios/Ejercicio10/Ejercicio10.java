@@ -37,17 +37,6 @@ public class Ejercicio10 {
         }
     }
 
-    /**
-     * muestra el stock actual
-     */
-
-    // public void mostarStock() {
-    // for (Empleado empleado : values) {
-    // empleados.add(empleado);
-    // }
-    // System.out.println(Arrays.toString(empleados));
-    // }
-
     public void mostarStock() {
         for (Empleado empleado : values) {
             map.put(empleado.getId(), empleado.getNombre());

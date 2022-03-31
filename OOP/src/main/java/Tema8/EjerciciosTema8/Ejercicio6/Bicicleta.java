@@ -45,7 +45,7 @@ public class Bicicleta {
     }
 
     public double getDimensionRuedas() {
-        return dimensionRuedas;
+    return dimensionRuedas;
     }
 
     public String isMotor() {

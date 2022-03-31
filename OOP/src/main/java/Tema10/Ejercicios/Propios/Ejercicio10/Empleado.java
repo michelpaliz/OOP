@@ -37,13 +37,14 @@ public class Empleado {
         this.sueldo = sueldo;
     }
 
-    public Empleado(String nombre, String apellido, GregorianCalendar fechaNacimiento, Double sueldo, Hijo hijo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
-        this.sueldo = sueldo;
-        this.hijo = hijo;
-    }
+    // public Empleado(String nombre, String apellido, GregorianCalendar
+    // fechaNacimiento, Double sueldo, Hijo hijo) {
+    // this.nombre = nombre;
+    // this.apellido = apellido;
+    // this.fechaNacimiento = fechaNacimiento;
+    // this.sueldo = sueldo;
+    // this.hijo = hijo;
+    // }
 
     public Integer getId() {
         return id;
@@ -64,9 +65,9 @@ public class Empleado {
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return "Empleado [apellido=" + apellido + " fechaNacimiento="
+        return "Empleado [nombre =" + nombre + "apellido=" + apellido + " fechaNacimiento="
                 + sdf.format(fechaNacimiento.getTime()) +
-                ", hijo=" + hijo + ", id=" + id + ", nombre=" + nombre + ", sueldo=" + sueldo + "]";
+                ", hijo=" + hijo + ", id=" + id + ", sueldo=" + sueldo + "]" + "\n";
     }
 
 }
