@@ -33,10 +33,10 @@ public class MainTm10Ejer {
         // System.out.println(mon);
         // Ejercicio8 start = new Ejercicio8();
         // Ejercicio9 start = new Ejercicio9();
-        // Ejercicio10 start = new Ejercicio10();
-        System.out.println("Explicacion ");
+        Ejercicio10 start = new Ejercicio10();
+        // System.out.println("Explicacion ");
         // Example start = new Example();
-        App start = new App();
+        // App start = new App();
 
     }
 
