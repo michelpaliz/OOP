@@ -17,19 +17,25 @@ import Tema8.EjemplosTema8.Tema8Adv.Cajero.util.Lib;
 
 public class Ejercicio10 {
 
+    static List<Empleado> empleados;
     Empleado[] values;
-    // Empleado[] keys;
     int numValues;
-    // HashMap<Empleado, Empleado> empleados;
     // List<Empleado> empleados = new ArrayList<Empleado>();
-    List<Empleado> empleados;
-    Map<Integer, String> map = new HashMap<Integer, String>();
+    // Map<Integer, String> map = new HashMap<Integer, String>();
 
     public Ejercicio10() {
         fakerGenerator(10);
         System.out.println(Arrays.toString(empleados.toArray()));
 
     }
+
+        // public void mostarStock() {
+    // for (Empleado empleado : empleados) {
+    // map.put(empleado.getId(), empleado.getNombre());
+    // }
+    // System.out.println(map);
+    // }
+
 
     public void fakerGenerator(int min) {
         System.out.println("GENERACION DE STOCK RANDOM");
@@ -40,12 +46,6 @@ public class Ejercicio10 {
         }
     }
 
-    public void mostarStock() {
-        for (Empleado empleado : empleados) {
-            map.put(empleado.getId(), empleado.getNombre());
-        }
-        System.out.println(map);
-    }
 
     public void fakerEmpleado(int cantidad) {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
@@ -64,9 +64,15 @@ public class Ejercicio10 {
             values[i] = new Empleado(ID, nombre, apellido, nacimiento, sueldo);
             numValues++;
             empleados = Arrays.asList(values);
-            // System.out.println();
         }
 
     }
+
+
+
+
+
+
+
 
 }

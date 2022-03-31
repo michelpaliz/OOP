@@ -1,6 +1,5 @@
 package Tema10.Ejercicios.Propios.Ejercicio10;
 
-import java.util.HashMap;
 
 public class Hijo {
     private static final int INITIAL_SIZE = 10;
