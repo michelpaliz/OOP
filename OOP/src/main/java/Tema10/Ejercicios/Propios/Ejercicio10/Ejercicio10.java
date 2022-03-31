@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import com.github.javafaker.Faker;
@@ -17,18 +18,20 @@ import Tema8.EjemplosTema8.Tema8Adv.Cajero.util.Lib;
 public class Ejercicio10 {
 
     Empleado[] values;
-    Empleado[] keys;
+    // Empleado[] keys;
     int numValues;
     // HashMap<Empleado, Empleado> empleados;
     // List<Empleado> empleados = new ArrayList<Empleado>();
-    List<Empleado> empleados = new ArrayList<Empleado>();
+    List<Empleado> empleados;
     Map<Integer, String> map = new HashMap<Integer, String>();
 
     public Ejercicio10() {
-        mostrarStockPrueba(10);
+        fakerGenerator(10);
+        System.out.println(Arrays.toString(empleados.toArray()));
+
     }
 
-    public void mostrarStockPrueba(int min) {
+    public void fakerGenerator(int min) {
         System.out.println("GENERACION DE STOCK RANDOM");
         values = new Empleado[min];
         numValues = 0;
@@ -38,7 +41,7 @@ public class Ejercicio10 {
     }
 
     public void mostarStock() {
-        for (Empleado empleado : values) {
+        for (Empleado empleado : empleados) {
             map.put(empleado.getId(), empleado.getNombre());
         }
         System.out.println(map);
@@ -47,7 +50,7 @@ public class Ejercicio10 {
     public void fakerEmpleado(int cantidad) {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
         Date fechaMax = new GregorianCalendar().getTime();
-        Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("es"));
         Bombo bombo = new Bombo(cantidad, 0);
 
         for (int i = 0; i < cantidad; i++) {
@@ -60,7 +63,8 @@ public class Ejercicio10 {
             nacimiento.setTime(fecha);
             values[i] = new Empleado(ID, nombre, apellido, nacimiento, sueldo);
             numValues++;
-            System.out.println(Arrays.toString(values));
+            empleados = Arrays.asList(values);
+            // System.out.println();
         }
 
     }

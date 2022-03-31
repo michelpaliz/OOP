@@ -65,7 +65,7 @@ public class Empleado {
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return "Empleado [nombre =" + nombre + "apellido=" + apellido + " fechaNacimiento="
+        return "Empleado [nombre =" + nombre + " apellido=" + apellido + " fechaNacimiento="
                 + sdf.format(fechaNacimiento.getTime()) +
                 ", hijo=" + hijo + ", id=" + id + ", sueldo=" + sueldo + "]" + "\n";
     }
