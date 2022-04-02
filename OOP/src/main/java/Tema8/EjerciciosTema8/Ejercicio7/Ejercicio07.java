@@ -1,6 +1,6 @@
 package Tema8.EjerciciosTema8.Ejercicio7;
 
-import Util.Gestion;
+import Util.Control;
 
 public class Ejercicio07 {
     public static final boolean DEBUG = true;

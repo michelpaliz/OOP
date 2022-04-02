@@ -3,14 +3,15 @@ package Tema10;
 import java.util.Arrays;
 
 import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
-import Tema10.Ejercicios.Propios.Ejercicio10.Ejercicio10;
+import Tema10.Ejercicios.Propios.Ejercicio10.Empresa;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
 import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
 import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio7;
 import Tema10.Ejercicios.Propios.Ejercicio8.Ejercicio8;
 import Tema10.Explicacion.ForEach.Example;
+import Tema10.Ejercicios.Propios.Ejercicio10.App;
 import Tema10.Explicacion.Maps.*;
-import Tema10.Explicacion.comparable.App;
+// import Tema10.Explicacion.comparable.App;
 import Tema9.EjerciciosTm9.Ejercicio9;
 
 public class MainTm10Ejer {
@@ -33,7 +34,8 @@ public class MainTm10Ejer {
         // System.out.println(mon);
         // Ejercicio8 start = new Ejercicio8();
         // Ejercicio9 start = new Ejercicio9();
-        Ejercicio10 start = new Ejercicio10();
+        // Ejercicio10
+        App start = new App();
         // System.out.println("Explicacion ");
         // Example start = new Example();
         // App start = new App();

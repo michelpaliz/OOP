@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Wordle {
+    
     Random r = new Random();
     
     //Atributos
@@ -24,7 +25,7 @@ public class Wordle {
     }
 
 
-    public String[] getWords() {
+    public String[] getWords() {8
         return words;
     }
 

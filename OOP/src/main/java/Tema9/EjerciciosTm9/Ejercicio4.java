@@ -16,7 +16,21 @@ public class Ejercicio4 {
         try {
             int cont = 0;
             while (true) {
-                array[cont] = Lib.validarInt(message + (cont + 1));
+                int userInt = 0;
+                do {
+                    System.out.print(message + (cont + 1));
+                    try {
+                        userInt = Integer.parseInt(Lib.myInput.nextLine());
+                        Lib.correct = true;
+                        Lib.pausa();
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error: El input no es un integer");
+                        Lib.pausa();
+                        Lib.correct = false;
+                    }
+                
+                } while (!Lib.correct);
+                array[cont] = userInt;
                 cont++;
             }
 
@@ -37,7 +51,21 @@ public class Ejercicio4 {
         try {
             String message = ("Introduce un numero para el array");
             for (int i = 0; i < array.length; i++) {
-                array[i] = Lib.validarInt(message + (i + 1));
+                int userInt = 0;
+                do {
+                    System.out.print(message + (i + 1));
+                    try {
+                        userInt = Integer.parseInt(Lib.myInput.nextLine());
+                        Lib.correct = true;
+                        Lib.pausa();
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error: El input no es un integer");
+                        Lib.pausa();
+                        Lib.correct = false;
+                    }
+                
+                } while (!Lib.correct);
+                array[i] = userInt;
             }
 
             // estos errores no tendrian que estar controlados porque son evitables

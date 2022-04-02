@@ -9,6 +9,8 @@ public class App {
 
     public App() {
 
+        Empresa e = new Empresa();
+
     }
 
     public Empleado addEmpleado() {
@@ -16,15 +18,16 @@ public class App {
         userInt = Lib.myInput.nextInt();
         System.out.println("Inserte el nombre del empleado");
         userStr = Lib.myInput.nextLine();
+        System.out.println("Inserte el apellido del empleado");
+        userStr = Lib.myInput.nextLine();
+        System.out.println("Insert la fecha de nacimiento del empleado");
+
+        
 
         return null;
 
     }
 
-
-        //Logica del juego
-
-
-
+    // Logica del juego
 
 }

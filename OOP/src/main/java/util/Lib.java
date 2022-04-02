@@ -7,11 +7,15 @@ public class Lib {
 
     public static Scanner myInput = new Scanner(System.in);
     public static Random r = new Random();
-    public static boolean correct;
+    private static boolean correct;
 
     public static void pausa() {
         System.out.println("Pulsa intro para continuar ....");
         myInput.nextLine();
+    }
+
+    public static int randBetween(int start, int end) {
+        return start + (int) Math.round(Math.random() * (end - start));
     }
 
     public static int random(int min, int max) {
@@ -28,31 +32,6 @@ public class Lib {
         System.out.println("\u000C");
     }
 
-    // *VALIDAR USER INPUT
-    /**
-     * 
-     * @param userInt
-     * @return el dato valido en Int
-     */
-
-    public static int validarInt(String message) {
-        int userInt = 0;
-        do {
-            System.out.print(message);
-            try {
-                userInt = Integer.parseInt(Lib.myInput.nextLine());
-                correct = true;
-                Lib.pausa();
-            } catch (NumberFormatException e) {
-                System.out.println("Error: El input no es un integer");
-                Lib.pausa();
-                correct = false;
-            }
-
-        } while (!correct);
-        return userInt;
-    }
-
     /**
      * 
      * @param message
@@ -61,7 +40,7 @@ public class Lib {
      * @return
      */
 
-    public static int validarInt(String message, int min, int max) {
+    public static int validateInt(String message, int min, int max) {
         int userInt = 0;
         do {
             try {
@@ -85,7 +64,7 @@ public class Lib {
      * @param userDb
      * @return DOUBLE
      */
-    public static double validarDouble(String message) {
+    public static double validateDouble(String message) {
         double userInt = 0;
         do {
             try {
@@ -102,7 +81,7 @@ public class Lib {
         return userInt;
     }
 
-    public String validarString1(String userStr) {
+    public String validateString1(String userStr) {
         userStr = null;
         String compare = "";
         do {
@@ -128,7 +107,7 @@ public class Lib {
      * @return
      */
 
-    public static String validarStr0(String message, int minLenght, int maxLenght) {
+    public static String validateString2(String message, int minLenght, int maxLenght) {
         String userStr;
         // No se inicializa porque este
         // si data hubiera sido un atributo hubiese sido inicializado como null
@@ -150,7 +129,7 @@ public class Lib {
      * @return
      */
 
-    public static int[] validarArray() {
+    public static int[] validateArray() {
         System.out.println("***VALIDACION DE UN ARRAY DE ENTEROS***");
         System.out.println("Introduce la longitud  del array");
         int userInt;
@@ -159,7 +138,21 @@ public class Lib {
         try {
             String message = ("Introduce un numero para el array ");
             for (int i = 0; i < array.length; i++) {
-                userInt = Lib.validarInt(message);
+                int userInt1 = 0;
+                do {
+                    System.out.print(message);
+                    try {
+                        userInt1 = Integer.parseInt(Lib.myInput.nextLine());
+                        Lib.correct = true;
+                        Lib.pausa();
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error: El input no es un integer");
+                        Lib.pausa();
+                        Lib.correct = false;
+                    }
+
+                } while (!Lib.correct);
+                userInt = userInt1;
                 array[i] = (userInt + (i + 1));
             }
 
@@ -180,7 +173,5 @@ public class Lib {
         }
 
     }
-
-    
 
 }
