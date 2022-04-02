@@ -20,12 +20,12 @@ public class Empresa {
     private List<Empleado> empleados;
     Empleado[] values;
     int numValues;
+    Bombo bombo;
     // List<Empleado> empleados = new ArrayList<Empleado>();
     // Map<Integer, String> map = new HashMap<Integer, String>();
 
-    public Empresa() {
-        fakerGenerator(10);
-        System.out.println(Arrays.toString(empleados.toArray()));
+    public Empresa(int cantidad) {
+        fakerGenerator(cantidad);
 
     }
 
@@ -36,13 +36,14 @@ public class Empresa {
     // System.out.println(map);
     // }
 
-    private void fakerGenerator(int min) {
+    private void fakerGenerator(int cantidad) {
         System.out.println("GENERACION DE STOCK RANDOM");
         // here we initilzate the emplado's vector
-        values = new Empleado[min];
+        values = new Empleado[cantidad];
         numValues = 0;
         if (true) {
-            fakerEmpleado(min / 2);
+            fakerEmpleado(cantidad / 2);
+            System.out.println(Arrays.toString(empleados.toArray()));
         }
     }
 
@@ -50,7 +51,7 @@ public class Empresa {
         Date fechaMin = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
         Date fechaMax = new GregorianCalendar().getTime();
         Faker faker = new Faker(new Locale("es"));
-        Bombo bombo = new Bombo(cantidad, 1);
+        bombo = new Bombo(cantidad, 1);
 
         for (int i = 0; i < cantidad; i++) {
             Integer ID = bombo.extraerBola();
@@ -68,11 +69,22 @@ public class Empresa {
 
     }
 
-    public Empleado addEmpleado(Empleado empleado) {
+    public boolean addHijo(Empleado empleado, Hijo hijo) {
+        for (Empleado empleadoEncontrado : empleados) {
+            if (empleadoEncontrado.equals(empleado)) {
+                empleadoEncontrado.addHijo(hijo);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean addEmpleado(Empleado empleado) {
         if (empleado != null) {
             empleados.add(empleado);
+            return true;
         }
-        return null;
+        return false;
     }
 
 }

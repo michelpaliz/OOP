@@ -7,6 +7,11 @@ public class Hijo {
     private String nombre;
     private int edad;
 
+    public Hijo(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -23,7 +28,7 @@ public class Hijo {
         this.edad = edad;
     }
 
-    public Hijo getKey(Hijo hijo){
+    public Hijo getKey(Hijo hijo) {
         this.nombre = hijo.getNombre();
         return hijo;
     }
@@ -32,7 +37,7 @@ public class Hijo {
      * para crear un hijo
      * 
      * @param hijo
-     * @return un hijo con los otros valores secundarios 
+     * @return un hijo con los otros valores secundarios
      */
     public Hijo getValues(Hijo hijo) {
         this.edad = hijo.getEdad();

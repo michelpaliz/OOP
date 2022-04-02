@@ -23,7 +23,9 @@ public class Menu {
     // }
 
     public Menu() {
-        System.out.println(Control.birhtDate());
+        String message = "introduce your answer ";
+        char validate[] = { 's', 'n', 'o' };
+        System.out.println(Control.one(message, validate));
 
     }
 

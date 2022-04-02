@@ -99,4 +99,28 @@ public class Control {
 
     }
 
+    /**
+     * 
+     * @param message  introduce the message you want to ask to the user
+     * @param validate validate each one of your validated options
+     * @return true if it matches any asnwers and false if it does not.
+     */
+
+    public static boolean one(String message, char[] validate) {
+        int index = 0;
+        System.out.printf(message);
+        char c = Lib.myInput.nextLine().toLowerCase().charAt(index);
+        for (int i = 0; i < validate.length; i++) {
+            if (validate[i] == c) {
+                correct = true;
+            } else {
+                correct = false;
+            }
+        }
+        return correct;
+
+    }
+
+    
+
 }
