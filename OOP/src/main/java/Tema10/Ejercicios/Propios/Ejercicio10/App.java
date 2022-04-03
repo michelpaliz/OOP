@@ -25,8 +25,8 @@ public class App {
     public boolean addEmpleado() {
         Empleado nuevoEmpleado;
         System.out.println("El id se genera automaticamente ");
-        int cantidadElementos = cantidad++;
-        int valorMinimo = cantidad;
+        int cantidadElementos = (cantidad) + 1;
+        int valorMinimo = (cantidad) + 1;
         Bombo bombo = new Bombo(cantidadElementos, valorMinimo);
         int id = bombo.extraerBola();
         System.out.println("Inserte el nombre del empleado");

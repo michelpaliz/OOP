@@ -29,20 +29,13 @@ public class Empresa {
 
     }
 
-    // public void mostarStock() {
-    // for (Empleado empleado : empleados) {
-    // map.put(empleado.getId(), empleado.getNombre());
-    // }
-    // System.out.println(map);
-    // }
-
     private void fakerGenerator(int cantidad) {
         System.out.println("GENERACION DE STOCK RANDOM");
         // here we initilzate the emplado's vector
         values = new Empleado[cantidad];
         numValues = 0;
         if (true) {
-            fakerEmpleado(cantidad / 2);
+            fakerEmpleado(cantidad);
             System.out.println(Arrays.toString(empleados.toArray()));
         }
     }
@@ -64,24 +57,32 @@ public class Empresa {
             values[i] = new Empleado(ID, nombre, apellido, nacimiento, sueldo);
             numValues++;
             // we conver a vector into a List
-            empleados = Arrays.asList(values);
+            // empleados = Arrays.asList(values);
+            empleados = new ArrayList<>(Arrays.asList(values));
         }
 
     }
 
     public boolean addHijo(Empleado empleado, Hijo hijo) {
-        for (Empleado empleadoEncontrado : empleados) {
-            if (empleadoEncontrado.equals(empleado)) {
-                empleadoEncontrado.addHijo(hijo);
-                return true;
+        if (empleado != null) {
+            for (Empleado empleadoEncontrado : empleados) {
+                if (empleadoEncontrado.equals(empleado)) {
+                    empleadoEncontrado.addHijo(hijo);
+                    System.out.println(Arrays.toString(empleados.toArray()));
+                    return true;
+                }
+
             }
         }
+        System.out.println("Esta vacio");
         return false;
     }
 
     public boolean addEmpleado(Empleado empleado) {
         if (empleado != null) {
             empleados.add(empleado);
+            // empleados.addAll(empleadosAmpliado);
+            System.out.println("LLEGO AL TRUE");
             return true;
         }
         return false;

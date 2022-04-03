@@ -13,13 +13,13 @@ public class Empleado {
     private Double sueldo;
     private HashMap<Hijo, Hijo> hijos;
 
-    public Empleado() {
-        this(INITIAL_SIZE);
-    }
+    // public Empleado() {
+    // this(INITIAL_SIZE);
+    // }
 
-    public Empleado(Integer id2) {
-        this.id = id2;
-    }
+    // public Empleado(Integer id2) {
+    // this.id = id2;
+    // }
 
     public Empleado(Integer id, String nombre, String apellido, GregorianCalendar fechaNacimiento, Double sueldo) {
         this.id = id;
@@ -46,14 +46,6 @@ public class Empleado {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    @Override
-    public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return "Empleado [nombre =" + nombre + " apellido=" + apellido + " fechaNacimiento="
-                + sdf.format(fechaNacimiento.getTime()) +
-                ", hijo=" + hijos + ", id=" + id + ", sueldo=" + sueldo + "]" + "\n";
     }
 
     // util para saber las posciiones de los maps
@@ -85,14 +77,20 @@ public class Empleado {
 
     // now we're going to create functions to manage some actions
 
-
-
-    public  Hijo addHijo(Hijo hijo) {
+    public Hijo addHijo(Hijo hijo) {
         if (hijo != null) {
             return hijos.put(hijo.getKey(hijo), hijo.getValues(hijo));
         }
         return null;
 
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "Empleado [nombre =" + nombre + " apellido=" + apellido + " fechaNacimiento="
+                + sdf.format(fechaNacimiento.getTime()) +
+                ", hijo=" + hijos + ", id=" + id + ", sueldo=" + sueldo + "]" + "\n";
     }
 
 }
