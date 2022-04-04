@@ -1,0 +1,2 @@
+alumno, clase,profesor son modelos de datos
+el diseno debe ir por separado
