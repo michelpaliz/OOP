@@ -9,7 +9,8 @@ import Tema10.Ejercicios.Propios.Ejercicio3.Pila;
 import Tema10.Ejercicios.Propios.Ejercicio7.Ejercicio7;
 import Tema10.Ejercicios.Propios.Ejercicio8.Ejercicio8;
 import Tema10.Explicacion.ForEach.Example;
-import Tema10.Ejercicios.Propios.Ejercicio10.App;
+// import Tema10.Ejercicios.Propios.Ejercicio10.App;
+import Tema10.Ejercicios.Propios.Ejercicio11.App;
 import Tema10.Explicacion.Maps.*;
 // import Tema10.Explicacion.comparable.App;
 import Tema9.EjerciciosTm9.Ejercicio9;
@@ -35,10 +36,11 @@ public class MainTm10Ejer {
         // Ejercicio8 start = new Ejercicio8();
         // Ejercicio9 start = new Ejercicio9();
         // Ejercicio10
-        App start = new App();
+        App Ejercicio10 = new App();
         // System.out.println("Explicacion ");
         // Example start = new Example();
         // App start = new App();
+        App Ejercicio11 =  new App();
 
     }
 

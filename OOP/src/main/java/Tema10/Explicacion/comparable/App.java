@@ -21,6 +21,13 @@ public class App {
             System.out.println(e);
         }
 
+        empleados.sort(new Empleado.CompartorPorNombre()){
+                for (Empleado empleado : empleados) {
+                    
+                }
+        }
+    
+
     }
 
 }

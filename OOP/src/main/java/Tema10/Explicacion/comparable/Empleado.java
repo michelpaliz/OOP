@@ -1,5 +1,7 @@
 package Tema10.Explicacion.comparable;
 
+import java.util.Comparator;
+
 public class Empleado implements Comparable<Empleado> {
 
     private final String dni;
@@ -35,10 +37,33 @@ public class Empleado implements Comparable<Empleado> {
         }
         // return this.getEdad() - o.getEdad();
     }
+
+
     @Override
     public String toString() {
         return "Empleado [dni=" + dni + ", edad=" + edad + ", nombre=" + nombre + "]";
     }
+
+
+    static class ComparatorPorNombre implements Comparator<Empleado>{
+
+        @Override
+        public int compare(Empleado o1, Empleado o2) {
+            return o1.getNombre().compareTo(o2.getNombre());
+        }
+
+    }
+
+    static class ComparatorPorDNI implements Comparator<Empleado>{
+
+        @Override
+        public int compare(Empleado o1, Empleado o2) {
+            return o1.getDni().compareTo(o2.getDni());
+        }
+
+    }
+
+
 
 
 }
