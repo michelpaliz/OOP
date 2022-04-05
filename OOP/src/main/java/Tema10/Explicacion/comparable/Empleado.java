@@ -2,16 +2,25 @@ package Tema10.Explicacion.comparable;
 
 import java.util.Comparator;
 
-public class Empleado implements Comparable<Empleado> {
+import Tema10.Explicacion.ForEach.MyRandom;
+
+public class Empleado implements Comparable<Empleado>, Cloneable {
 
     private final String dni;
     private final String nombre;
     private final int edad;
+    private Direccion direccion;
 
-    public Empleado(String dni, String nombre, int edad) {
+    public Empleado(String dni, String nombre, int edad, String calle, String ciudad, int codigoPostal) {
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
+        this.direccion = new Direccion(calle, ciudad, codigoPostal);
+    }
+
+    // constructor de copia
+    public Empleado(Empleado e) {
+        this(e.dni, e.nombre, e.edad, e.direccion.getCalle(), e.direccion.getCiudad(), e.direccion.getCodigoPostal());
     }
 
     public String getDni() {
@@ -38,14 +47,12 @@ public class Empleado implements Comparable<Empleado> {
         // return this.getEdad() - o.getEdad();
     }
 
-
     @Override
     public String toString() {
         return "Empleado [dni=" + dni + ", edad=" + edad + ", nombre=" + nombre + "]";
     }
 
-
-    static class ComparatorPorNombre implements Comparator<Empleado>{
+    static class ComparatorPorNombre implements Comparator<Empleado> {
 
         @Override
         public int compare(Empleado o1, Empleado o2) {
@@ -54,7 +61,7 @@ public class Empleado implements Comparable<Empleado> {
 
     }
 
-    static class ComparatorPorDNI implements Comparator<Empleado>{
+    static class ComparatorPorDNI implements Comparator<Empleado> {
 
         @Override
         public int compare(Empleado o1, Empleado o2) {
@@ -63,7 +70,12 @@ public class Empleado implements Comparable<Empleado> {
 
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Empleado e = (Empleado) super.clone();
+        e.direccion = (Direccion) e.direccion.clone();
+        return e;
 
-
+    }
 
 }
