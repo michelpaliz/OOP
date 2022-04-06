@@ -42,7 +42,7 @@ public class Menu {
     public String validateDni(int dni) {
         String str = "TRWAGMYFPDXBNJZSQVHLCKE";
         char letra = 'a';
-        int result = dni % 23;
+        int result = dni % str.length();
         String dniStr = null;
         dniStr = String.valueOf(dni);
         if (REGEXP1.matcher(dniStr).matches()) {
