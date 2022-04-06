@@ -1,15 +1,22 @@
 package Util;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.regex.Pattern;
 
 public class Control {
 
     private static String userStr;
     private static int userInt;
     private static boolean correct;
+
+    private static final Pattern REGEXP = Pattern.compile("[0-9]{8}[A-Z]");
+    private static final Pattern REGEXP1 = Pattern.compile("[0-9]{8}");
+    private static final String DIGITO_CONTROL = "TRWAGMYFPDXBNJZSQVHLCKE";
+    private static final String[] INVALIDOS = new String[] { "00000000T", "00000001R", "99999999R" };
 
     public static void menuGenerator(String title, String[] sentence) {
         System.out.printf("*****%S********\n\n", title);
@@ -121,6 +128,39 @@ public class Control {
 
     }
 
-    
+    /**
+     * 
+     * @param dni introduce the 8 digits for your dni
+     * @return the correct char for your dni
+     */
+
+    public String DNIgenerator(int dni) {
+        String str = "TRWAGMYFPDXBNJZSQVHLCKE";
+        char letra = 'a';
+        int result = dni % 23;
+        String dniStr = null;
+        dniStr = String.valueOf(dni);
+        if (REGEXP1.matcher(dniStr).matches()) {
+            letra = str.charAt(result);
+
+        } else {
+            System.out.print("Dni invalido\n");
+            System.out.println("Presione enter para continuar...");
+            Lib.myInput.nextLine();
+        }
+        return dniStr + letra;
+    }
+
+    /**
+     * 
+     * @param dni validates your dni
+     * @return true if its correct and false otherwise
+     */
+
+    public boolean validateDNI(String dni) {
+        return Arrays.binarySearch(INVALIDOS, dni) < 0 // (1)
+                && REGEXP.matcher(dni).matches() // (2)
+                && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
+    }
 
 }
