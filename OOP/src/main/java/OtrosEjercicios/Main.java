@@ -3,6 +3,8 @@ package OtrosEjercicios;
 import OtrosEjercicios.Campeonato.App;
 import OtrosEjercicios.StackOverflow.Cola;
 import OtrosEjercicios.StackOverflow.Pila;
+import OtrosEjercicios.sql.Mysql;
+import OtrosEjercicios.sql.mysql;
 
 public class Main {
 
@@ -31,11 +33,13 @@ public class Main {
         // metodo.mostrar();
         // metodo.removeQueue();
 
-        //*TORNEO
+        // *TORNEO
 
-        App startGame = new App();
-        
+        // App startGame = new App();
 
+        // *SQL
+
+        Mysql start = new Mysql();
 
     }
 }
