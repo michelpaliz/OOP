@@ -4,7 +4,6 @@ import OtrosEjercicios.Campeonato.App;
 import OtrosEjercicios.StackOverflow.Cola;
 import OtrosEjercicios.StackOverflow.Pila;
 import OtrosEjercicios.sql.Mysql;
-import OtrosEjercicios.sql.mysql;
 
 public class Main {
 
@@ -40,6 +39,7 @@ public class Main {
         // *SQL
 
         Mysql start = new Mysql();
+        System.out.println(start);
 
     }
 }
