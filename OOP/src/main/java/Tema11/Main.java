@@ -1,8 +1,8 @@
 package Tema11;
 
-import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
+import Tema11.Propios.Ejercicio1;
 
-public class MainTm11Ejer {
+public class Main {
 
     public static void main(String[] args) {
 
