@@ -4,7 +4,8 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+
+
 
         {
             "type": "java",
@@ -79,9 +80,8 @@
             "request": "launch",
             "mainClass": "Tema10.MainTm10Ejer",
             "projectName": "OOP"
-        }
-        //*EJERCICIO TEMA 11
-        ,
+        },
+        //*EJERCICIOS TEMA 11
         {
             "type": "java",
             "name": "MainTm11Ejer",
