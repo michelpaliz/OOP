@@ -12,8 +12,8 @@ import java.util.Map;
 
 import com.github.javafaker.Faker;
 
-import Tema8.EjemplosTema8.Tema8Adv.Cajero.util.Bombo;
-import Tema8.EjemplosTema8.Tema8Adv.Cajero.util.Lib;
+import Tema08.EjemplosTema8.Tema8Adv.Cajero.util.Bombo;
+import Tema08.EjemplosTema8.Tema8Adv.Cajero.util.Lib;
 
 public class Empresa {
 

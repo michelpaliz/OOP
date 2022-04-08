@@ -1,6 +1,6 @@
 package Tema11;
 
-import Tema11.Propios.Ejercicio1;
+import Tema11.Propios.ejercicio1.Ejercicio1;
 
 public class Main {
 

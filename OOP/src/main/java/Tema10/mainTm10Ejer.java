@@ -2,6 +2,7 @@ package Tema10;
 
 import java.util.Arrays;
 
+import Tema09.EjerciciosTm9.Ejercicio9;
 import Tema10.Ejercicios.Propios.Ejercicio1.Ejercicio1;
 import Tema10.Ejercicios.Propios.Ejercicio10.Empresa;
 import Tema10.Ejercicios.Propios.Ejercicio2.ArrayLisEstadisticas;
@@ -12,8 +13,6 @@ import Tema10.Explicacion.ForEach.Example;
 // import Tema10.Ejercicios.Propios.Ejercicio10.App;
 import Tema10.Ejercicios.Propios.Ejercicio11.App;
 import Tema10.Explicacion.Maps.*;
-// import Tema10.Explicacion.comparable.App;
-import Tema9.EjerciciosTm9.Ejercicio9;
 
 public class MainTm10Ejer {
 
