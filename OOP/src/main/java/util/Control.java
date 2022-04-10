@@ -18,12 +18,31 @@ public class Control {
     private static final String DIGITO_CONTROL = "TRWAGMYFPDXBNJZSQVHLCKE";
     private static final String[] INVALIDOS = new String[] { "00000000T", "00000001R", "99999999R" };
 
-    public static void menuGenerator(String title, String[] sentence) {
-        System.out.printf("*****%S********\n\n", title);
+    /**
+     * @param tittle     for your menu
+     * @param sentence/s for your choices
+     * @returns the value of your choice
+     */
+
+    public static int menuGenerator(String tittle, String[] sentence) {
+        System.out.printf("*****%S********\n\n", tittle);
         for (int i = 0; i < sentence.length; i++) {
             sentence[i] = String.format("%d %S\n", (i + 1), sentence[i]);
             System.out.println(sentence[i]);
         }
+        System.out.println("Choose one option");
+        int option = Integer.parseInt(Lib.myInput.nextLine());
+        boolean correct = option > 0;
+        do {
+            if (option > sentence.length) {
+                return option;
+            } else {
+                System.out.println("Please your answer must be between the range");
+                option = -1;
+            }
+        } while (!correct);
+        return option;
+
     }
 
     public static int getEdad(GregorianCalendar edad) {
