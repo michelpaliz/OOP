@@ -1,5 +1,6 @@
 package Tema11.Propios.ejercicio3.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Car {
@@ -9,7 +10,7 @@ public class Car {
     private String licensePlate;
     private double currentSpeed;
     private int currentGear;
-    private int[] maxSpeed;
+    private ArrayList<Integer> maxSpeed;
 
     // 30 , 60 , 100 , 140, 195
 
@@ -17,17 +18,17 @@ public class Car {
         this.licensePlate = null;
         this.currentSpeed = 0;
         this.currentGear = 0;
-        this.maxSpeed = new int[MAX_SIZE];
+        this.maxSpeed = new ArrayList<Integer>(MAX_SIZE);
     }
 
-    public Car(String licensePlate, int[] speed) {
+    public Car(String licensePlate, ArrayList<Integer> SPEED) {
         this.licensePlate = licensePlate;
         this.currentSpeed = 0;
         this.currentGear = 0;
-        this.maxSpeed = speed;
+        this.maxSpeed = SPEED;
     }
 
-    public Car(String licensePlate, double currenSpeed, int currentGear, int[] maxSpeed) {
+    public Car(String licensePlate, double currenSpeed, int currentGear, ArrayList<Integer> maxSpeed) {
         this.licensePlate = licensePlate;
         this.currentSpeed = currenSpeed;
         this.currentGear = currentGear;
@@ -58,11 +59,11 @@ public class Car {
         this.currentGear = currentGear;
     }
 
-    public int[] getMaxSpeed() {
+    public ArrayList<Integer> getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(int[] maxSpeed) {
+    public void setMaxSpeed(ArrayList<Integer> maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
@@ -80,9 +81,21 @@ public class Car {
         return this.currentGear = value;
     }
 
+    protected double gear() {
+        for (int i = 0; i < maxSpeed.size(); i++) {
+            if (this.currentSpeed == maxSpeed.get(i)) {
+                setCurrentGear(maxSpeed.indexOf(i));
+            } else if (this.currentSpeed > maxSpeed.get(i) && this.currentSpeed <= maxSpeed.get(i)) {
+                setCurrentGear(maxSpeed.indexOf(i));
+            }
+        }
+        return this.currentSpeed;
+    }
+
     @Override
     public String toString() {
-        return "Car [MAX_SIZE=" + MAX_SIZE + ", currenSpeed=" + currentSpeed + ", currentGear=" + currentGear
+        return "Car [ CurrenSpeed=" + currentSpeed + ", currentGear="
+                + currentGear
                 + ", licensePlate=" + licensePlate + ", maxSpeed=" + Arrays.toString(maxSpeed) + "]";
     }
 

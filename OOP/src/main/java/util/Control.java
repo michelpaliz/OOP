@@ -27,7 +27,7 @@ public class Control {
     public static int menuGenerator(String tittle, String[] sentence) {
         System.out.printf("*****%S********\n\n", tittle);
         for (int i = 0; i < sentence.length; i++) {
-            sentence[i] = String.format("%d %S\n", (i + 1), sentence[i]);
+            sentence[i] = String.format("%d %S\n", (i), sentence[i]);
             System.out.println(sentence[i]);
         }
         System.out.println("Choose one option");
@@ -35,10 +35,10 @@ public class Control {
         boolean correct = option > 0;
         do {
             if (option > sentence.length) {
-                return option;
-            } else {
                 System.out.println("Please your answer must be between the range");
                 option = -1;
+            } else {
+                return option;
             }
         } while (!correct);
         return option;

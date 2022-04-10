@@ -1,27 +1,29 @@
 package Tema11.Propios.ejercicio3;
 
+import java.util.ArrayList;
+
 import Tema11.Propios.ejercicio3.model.Car;
 import Util.Control;
 import Util.Lib;
 
 public class App {
-    private final int[] SPEED = { 30, 60, 100, 140, 195 };
+    private final int[] SPEEDARRAY = { 30, 60, 100, 140, 195 };
+    private final ArrayList<Integer> SPEED = new ArrayList<Integer>();
     String userStr;
     int option, speed;
 
-    public App () {
-        
-        
-        String message = ("Is your car automatic or not? y/n");
-        userStr = Lib.myInput.nextLine();
-        char [] validate = {'y'};
-       boolean correct =  Control.one(message, validate );
+    
+
+    public App() {
+        String message = ("Is your car automatic or not? y/n ");
+        char[] validate = { 'y' };
+        boolean correct = Control.one(message, validate);
         if (correct) {
             System.out.println("Introduce your car's name");
-            String licensePlate =  userStr = Lib.myInput.nextLine();
+            String licensePlate = userStr = Lib.myInput.nextLine();
             Car car = new Car(licensePlate, SPEED);
             String tittle = "MANUAL CAR FUNCTIONALITIES";
-            String sentence[] = {"1.Speed up the car","2.Break the car's speed"};
+            String sentence[] = { "Exit", "Speed up the car", "Break the car's speed" };
             option = Control.menuGenerator(tittle, sentence);
             switch (option) {
                 case 0:
@@ -39,14 +41,13 @@ public class App {
                     car.breakSpeed(speed);
                     break;
             }
-            
 
         } else {
             String tittle = "AUTOMATIC CAR FUNCTIONALITIES";
-            String sentence[] = {"1.Speed up the car","2.Break the car's speed"};
-            Control.menuGenerator(tittle, sentence);   
+            String sentence[] = { "1.Speed up the car", "2.Break the car's speed" };
+            Control.menuGenerator(tittle, sentence);
         }
-        
+
     }
 
 }
