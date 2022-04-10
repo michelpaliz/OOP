@@ -38,6 +38,7 @@ public class Control {
                 System.out.println("Please your answer must be between the range");
                 option = -1;
             } else {
+                Ansi.clearScreen();
                 return option;
             }
         } while (!correct);

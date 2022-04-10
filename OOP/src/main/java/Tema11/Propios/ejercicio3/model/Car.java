@@ -87,6 +87,7 @@ public class Car {
                 return setCurrentGear(maxSpeed.indexOf(maxSpeed.get(i)));
             } else if (this.currentSpeed > (double) maxSpeed.get(i)) {
                 return setCurrentGear(maxSpeed.indexOf(maxSpeed.get(i)));
+            
             }
         }
         // return (int) this.currentSpeed;

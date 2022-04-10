@@ -26,7 +26,7 @@ public class App {
                 String tittle = "MANUAL CAR FUNCTIONALITIES";
                 String sentence[] = { "Exit", "Speed up the car", "Break the car's speed" };
                 option = Control.menuGenerator(tittle, sentence);
-    
+
                 switch (option) {
                     case 0:
                         System.out.println("See ya");
