@@ -110,4 +110,7 @@ public class Ansi {
         System.out.flush();
     }
 
+    public static void cleanScreen() {
+    }
+
 }

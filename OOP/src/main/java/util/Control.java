@@ -25,7 +25,7 @@ public class Control {
      */
 
     public static int menuGenerator(String tittle, String[] sentence) {
-        System.out.printf("*****%S********\n\n", tittle);
+        System.out.printf("\n\n*****%S********\n\n", tittle);
         for (int i = 0; i < sentence.length; i++) {
             sentence[i] = String.format("%d %S\n", (i), sentence[i]);
             System.out.println(sentence[i]);
@@ -41,6 +41,7 @@ public class Control {
                 return option;
             }
         } while (!correct);
+
         return option;
 
     }

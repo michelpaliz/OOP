@@ -1,7 +1,6 @@
 package Tema11.Propios.ejercicio3.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Car {
 
@@ -21,19 +20,20 @@ public class Car {
         this.maxSpeed = new ArrayList<Integer>(MAX_SIZE);
     }
 
-    public Car(String licensePlate, ArrayList<Integer> SPEED) {
+    public Car(String licensePlate, ArrayList<Integer> arrayList) {
         this.licensePlate = licensePlate;
         this.currentSpeed = 0;
         this.currentGear = 0;
-        this.maxSpeed = SPEED;
+        this.maxSpeed = arrayList;
     }
 
-    public Car(String licensePlate, double currenSpeed, int currentGear, ArrayList<Integer> maxSpeed) {
-        this.licensePlate = licensePlate;
-        this.currentSpeed = currenSpeed;
-        this.currentGear = currentGear;
-        this.maxSpeed = maxSpeed;
-    }
+    // public Car(String licensePlate, double currenSpeed, int currentGear,
+    // ArrayList<Object> maxSpeed) {
+    // this.licensePlate = licensePlate;
+    // this.currentSpeed = currenSpeed;
+    // this.currentGear = currentGear;
+    // this.maxSpeed = maxSpeed;
+    // }
 
     public String getLicensePlate() {
         return licensePlate;
@@ -44,7 +44,7 @@ public class Car {
     }
 
     public double getCurrenSpeed() {
-        return currentSpeed;
+        return this.currentSpeed;
     }
 
     public void setCurrenSpeed(double currenSpeed) {
@@ -55,8 +55,8 @@ public class Car {
         return currentGear;
     }
 
-    public void setCurrentGear(int currentGear) {
-        this.currentGear = currentGear;
+    public int setCurrentGear(int currentGear) {
+        return this.currentGear = currentGear;
     }
 
     public ArrayList<Integer> getMaxSpeed() {
@@ -81,22 +81,23 @@ public class Car {
         return this.currentGear = value;
     }
 
-    protected double gear() {
-        for (int i = 0; i < maxSpeed.size(); i++) {
-            if (this.currentSpeed == maxSpeed.get(i)) {
-                setCurrentGear(maxSpeed.indexOf(i));
-            } else if (this.currentSpeed > maxSpeed.get(i) && this.currentSpeed <= maxSpeed.get(i)) {
-                setCurrentGear(maxSpeed.indexOf(i));
+    protected int gear() {
+        for (int i = maxSpeed.size() - 1; i > 0; i--) {
+            if (this.currentSpeed == (double) maxSpeed.get(i)) {
+                return setCurrentGear(maxSpeed.indexOf(maxSpeed.get(i)));
+            } else if (this.currentSpeed > (double) maxSpeed.get(i)) {
+                return setCurrentGear(maxSpeed.indexOf(maxSpeed.get(i)));
             }
         }
-        return this.currentSpeed;
+        // return (int) this.currentSpeed;
+        return -1;
     }
 
     @Override
     public String toString() {
         return "Car [ CurrenSpeed=" + currentSpeed + ", currentGear="
-                + currentGear
-                + ", licensePlate=" + licensePlate + ", maxSpeed=" + Arrays.toString(maxSpeed) + "]";
+                + gear()
+                + ", licensePlate=" + licensePlate + ", maxSpeed=" + maxSpeed + "]";
     }
 
 }
