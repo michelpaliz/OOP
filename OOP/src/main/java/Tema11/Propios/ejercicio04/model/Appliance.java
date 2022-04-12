@@ -4,38 +4,42 @@ import Util.Control;
 
 // import Util.Ansi;
 
-public class Electrodomestico {
+public class Appliance {
+
+    // private static final String HashMap = null;
 
     private char[] color = { 'A', 'B', 'C', 'D', 'E', 'F' };
 
-    private double price;
+    private final double finalPrice = 0;
+
+    private double basePrice;
     // private Ansi color;
     private char electricalConsum;
     private double weight;
 
-    public Electrodomestico() {
-        this.price = 100;
+    public Appliance() {
+        this.basePrice = 100;
         this.electricalConsum = 'F';
         this.weight = 5;
     }
 
-    public Electrodomestico(double price, double weight) {
-        this.price = price;
+    public Appliance(double price, double weight) {
+        this.basePrice = price;
         this.weight = weight;
     }
 
-    public Electrodomestico(double price, char electricalConsum, double weight) {
-        this.price = price;
+    public Appliance(double price, char electricalConsum, double weight) {
+        this.basePrice = price;
         this.electricalConsum = electricalConsum;
         this.weight = weight;
     }
 
     public double getPrice() {
-        return price;
+        return basePrice;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.basePrice = price;
     }
 
     public char getElectricalConsum() {
@@ -63,29 +67,41 @@ public class Electrodomestico {
 
     }
 
-    public double checkPrice(char word, double weight) {
-
-        switch (word) {
+    // ahora puedo llamar el final price desde electrodomestico desde otras
+    // subclases.
+    public double finalPrice() {
+        double finalPrice = basePrice;
+        switch (electricalConsum) {
             case 'A':
-                this.price = 100;
+                finalPrice += 100;
                 break;
             case 'B':
-                this.price = 80;
+                finalPrice += 80;
                 break;
             case 'C':
-                this.price = 60;
+                finalPrice += 60;
                 break;
             case 'D':
-                this.price = 50;
+                finalPrice += 50;
                 break;
             case 'E':
-                this.price = 30;
+                finalPrice += 30;
                 break;
             case 'F':
-                this.price = 10;
+                finalPrice += 10;
         }
 
-        return electricalConsum;
+        if (weight <= 19) {
+            finalPrice += 10;
+        } else if (weight >= 20 && weight < 49) {
+            finalPrice += 50;
+        } else if (weight >= 50 && weight <= 79) {
+            finalPrice += 80;
+        } else if (weight > 80) {
+            finalPrice += 100;
+        }
+
+        return finalPrice;
 
     }
 
