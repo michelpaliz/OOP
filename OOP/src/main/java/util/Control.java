@@ -149,6 +149,21 @@ public class Control {
 
     }
 
+
+
+    public static boolean one(char[] validate, char election) {
+        for (int i = 0; i < validate.length; i++) {
+            if (validate[i] == election) {
+                correct = true;
+            } else {
+                correct = false;
+            }
+        }
+        return correct;
+
+    }
+
+
     /**
      * 
      * @param dni introduce the 8 digits for your dni

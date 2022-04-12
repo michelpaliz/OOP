@@ -1,7 +1,7 @@
 package Tema11;
 
-import Tema11.Propios.ejercicio1.Ejercicio1;
-import Tema11.Propios.ejercicio3.App;
+import Tema11.Propios.ejercicio01.Ejercicio1;
+import Tema11.Propios.ejercicio03.App;
 
 public class Main {
 

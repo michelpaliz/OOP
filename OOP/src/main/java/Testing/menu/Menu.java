@@ -39,6 +39,9 @@ public class Menu {
 
     }
 
+
+
+
     public String validateDni(int dni) {
         String str = "TRWAGMYFPDXBNJZSQVHLCKE";
         char letra = 'a';
