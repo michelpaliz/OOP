@@ -24,14 +24,16 @@ public class App {
         double charge, basePrice;
         Color color;
         char electricalConsum;
-        double weigth;
+        double weight;
 
         // now we create instances for Washingmachines
         for (int i = 0; i < 10; i++) {
-            charge = faker.number().numberBetween(0, 50);
+            charge = faker.number().randomDouble(2, 0, 100);
             basePrice = faker.number().randomDouble(2, 50, 100);
+            weight = faker.number().randomDouble(2, 20, 200);
             electricalConsum = (char) (Lib.r.nextInt(6) + 'a');
-            array[i] = (WashingMachine) new Appliance();
+            color = Color.getRandom();
+            array[i] = new WashingMachine(charge, color, electricalConsum, weight, basePrice);
         }
 
         Appliance e = new WashingMachine();

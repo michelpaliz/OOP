@@ -16,7 +16,7 @@ public class WashingMachine extends Appliance {
         this.charge = DEF_CAP;
     }
 
-    public WashingMachine(double charge, Color color, char electricalConsum, double weight, char price) {
+    public WashingMachine(double charge, Color color, char electricalConsum, double weight, double price) {
         super(price, color, electricalConsum, weight);
         this.charge = charge;
     }
