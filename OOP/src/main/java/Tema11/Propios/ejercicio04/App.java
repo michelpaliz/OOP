@@ -1,5 +1,6 @@
 package Tema11.Propios.ejercicio04;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import com.github.javafaker.Faker;
@@ -12,22 +13,28 @@ import Util.Lib;
 
 public class App {
 
-    public static void finalPrice(Appliance a) {
-        a.finalPrice();
+    double charge, basePrice;
+    Color color;
+    char electricalConsum;
+    double weight;
+    Faker faker = new Faker();
+    WashingMachine[] array = new WashingMachine[5];
+
+    public App() {
+        fakerData(5);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Final price: "+finalPrice(array[i]));
+        }
+
     }
 
-    public static void main(String[] args) {
+    public double finalPrice(Appliance a) {
+        return a.finalPrice();
+    }
 
-        Faker faker = new Faker();
-        WashingMachine[] array = (WashingMachine[]) new Appliance[5];
+    public void fakerData(int size) {
 
-        double charge, basePrice;
-        Color color;
-        char electricalConsum;
-        double weight;
-
-        // now we create instances for Washingmachines
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < size; i++) {
             charge = faker.number().randomDouble(2, 0, 100);
             basePrice = faker.number().randomDouble(2, 50, 100);
             weight = faker.number().randomDouble(2, 20, 200);
@@ -35,8 +42,8 @@ public class App {
             color = Color.getRandom();
             array[i] = new WashingMachine(charge, color, electricalConsum, weight, basePrice);
         }
-
-        Appliance e = new WashingMachine();
+        System.out.println("This is the array");
+        System.out.println(Arrays.toString(array));
 
     }
 

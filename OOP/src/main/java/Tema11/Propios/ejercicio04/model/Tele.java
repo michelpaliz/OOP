@@ -47,4 +47,8 @@ public class Tele extends Appliance {
 
     }
 
+    public String toString() {
+        return super.toString() + " ,resolution " + resolution + " ,smartTv " + smartTv + '}';
+    }
+
 }

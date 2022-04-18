@@ -1,4 +1,7 @@
 package Tema11.Propios.ejercicio04.model;
+
+import java.util.Arrays;
+
 import Util.Control;
 
 // import Util.Ansi;
@@ -94,10 +97,16 @@ public class Appliance {
         } else if (weight > 80) {
             finalPrice += 100;
         }
-
         return finalPrice;
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Appliance{" +
+                "basePrice=" + basePrice +
+                ", color=" + color +
+                ", electricalConsum=" + electricalConsum +
+                ", weight=" + weight;
+    }
 }

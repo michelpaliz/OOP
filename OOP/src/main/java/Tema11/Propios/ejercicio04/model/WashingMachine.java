@@ -25,17 +25,17 @@ public class WashingMachine extends Appliance {
         return charge;
     }
 
-    public void setCharge(double charge) {
-        this.charge = charge;
-    }
-
     @Override
     public double finalPrice() {
-        double precioFinal = getPrice();
+        double finalPrice = getPrice();
         if (this.charge > 30) {
-            precioFinal += (50);
+            finalPrice += (50);
         }
-        return precioFinal;
+        return finalPrice;
+    }
+
+    public String toString() {
+        return super.toString() + " ,charge " + charge + '}' + "\n";
     }
 
 }
