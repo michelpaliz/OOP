@@ -23,7 +23,7 @@ public class App {
     public App() {
         fakerData(5);
         for (int i = 0; i < array.length; i++) {
-            System.out.println("Final price: "+finalPrice(array[i]));
+            System.out.println("Final price: " + finalPrice(array[i]));
         }
 
     }
@@ -40,7 +40,7 @@ public class App {
             weight = faker.number().randomDouble(2, 20, 200);
             electricalConsum = (char) (Lib.r.nextInt(6) + 'a');
             color = Color.getRandom();
-            array[i] = new WashingMachine(charge, color, electricalConsum, weight, basePrice);
+            array[i] = new WashingMachine(charge, color, Character.toUpperCase(electricalConsum), weight, basePrice);
         }
         System.out.println("This is the array");
         System.out.println(Arrays.toString(array));
