@@ -1,5 +1,4 @@
 package Tema11.Propios.ejercicio04.model;
-
 import Util.Control;
 
 // import Util.Ansi;
@@ -8,28 +7,34 @@ public class Appliance {
 
     // private static final String HashMap = null;
 
-    private char[] color = { 'A', 'B', 'C', 'D', 'E', 'F' };
-
+    private char[] colorArr = { 'A', 'B', 'C', 'D', 'E', 'F' };
+    private final Color D_COLOR = Color.WHITE;
+    private final char D_CONSUM = 'F';
     private final double finalPrice = 0;
 
     private double basePrice;
-    // private Ansi color;
+    private Color color;
     private char electricalConsum;
     private double weight;
 
     public Appliance() {
         this.basePrice = 100;
-        this.electricalConsum = 'F';
+        this.color = D_COLOR;
+        this.electricalConsum = D_CONSUM;
         this.weight = 5;
     }
 
-    public Appliance(double price, double weight) {
-        this.basePrice = price;
+    public Appliance(double basePrice, double weight) {
+        this.basePrice = basePrice;
+        this.color = D_COLOR;
+        this.electricalConsum = D_CONSUM;
         this.weight = weight;
+
     }
 
-    public Appliance(double price, char electricalConsum, double weight) {
-        this.basePrice = price;
+    public Appliance(double basePrice, Color color, char electricalConsum, double weight) {
+        this.basePrice = basePrice;
+        this.color = color;
         this.electricalConsum = electricalConsum;
         this.weight = weight;
     }
@@ -38,31 +43,19 @@ public class Appliance {
         return basePrice;
     }
 
-    public void setPrice(double price) {
-        this.basePrice = price;
-    }
-
     public char getElectricalConsum() {
         return electricalConsum;
-    }
-
-    public void setElectricalConsum(char electricalConsum) {
-        this.electricalConsum = electricalConsum;
     }
 
     public double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
     public char checkElectricalConsum(char word) {
-        if (Control.one(color, word)) {
+        if (Control.one(Config.colorArr, word)) {
             return this.electricalConsum = word;
         } else {
-            return this.electricalConsum = 'F';
+            return this.electricalConsum = D_CONSUM;
         }
 
     }
@@ -89,9 +82,10 @@ public class Appliance {
                 break;
             case 'F':
                 finalPrice += 10;
+                break;
         }
 
-        if (weight <= 19) {
+        if (weight <= 19 && weight > 0) {
             finalPrice += 10;
         } else if (weight >= 20 && weight < 49) {
             finalPrice += 50;
@@ -104,5 +98,6 @@ public class Appliance {
         return finalPrice;
 
     }
+
 
 }

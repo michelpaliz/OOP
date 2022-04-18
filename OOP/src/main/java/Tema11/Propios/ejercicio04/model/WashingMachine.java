@@ -2,19 +2,22 @@ package Tema11.Propios.ejercicio04.model;
 
 public class WashingMachine extends Appliance {
 
+    private static final int DEF_CAP = 5;
+
     private double charge;
 
     public WashingMachine() {
-        this.charge = 5;
+        super();
+        this.charge = DEF_CAP;
     }
 
     public WashingMachine(double weight, char price) {
         super(price, weight);
-
+        this.charge = DEF_CAP;
     }
 
-    public WashingMachine(double charge, double weight, char price) {
-        super(price, weight);
+    public WashingMachine(double charge, Color color, char electricalConsum, double weight, char price) {
+        super(price, color, electricalConsum, weight);
         this.charge = charge;
     }
 

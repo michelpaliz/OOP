@@ -37,10 +37,8 @@ public class Menu {
         System.out.println(validateDni(dni));
         // System.out.println(validarDNI(dni));
 
+
     }
-
-
-
 
     public String validateDni(int dni) {
         String str = "TRWAGMYFPDXBNJZSQVHLCKE";

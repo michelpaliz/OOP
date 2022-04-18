@@ -1,8 +1,9 @@
 package Testing;
 
 import Testing.Hashmap.Testing;
+import Testing.menu.Arr;
 import Testing.menu.Menu;
-import Util.menu;
+// import Util.menu;
 
 public class Main {
 
@@ -23,9 +24,9 @@ public class Main {
         // System.out.println(t1.empIds);
         // System.out.println(t1.empIds.remove("Steve"));
 
-        System.out.println("Start menu");
-        Menu start = new Menu();
-
+        // System.out.println("Start menu");
+        // Menu start = new Menu();
+        Arr start = new Arr();
         System.out.println(start);
 
     }

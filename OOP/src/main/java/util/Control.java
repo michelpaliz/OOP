@@ -199,4 +199,7 @@ public class Control {
                 && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
     }
 
+
+    
+
 }
