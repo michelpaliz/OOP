@@ -5,7 +5,7 @@ import Testing.menu.Arr;
 import Testing.menu.Menu;
 // import Util.menu;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) {
         // Testing t1 = new Testing();
