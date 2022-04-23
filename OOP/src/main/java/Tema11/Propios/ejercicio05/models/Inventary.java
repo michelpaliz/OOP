@@ -1,17 +1,21 @@
 package Tema11.Propios.ejercicio05.models;
 
-public class Craft {
+public class Inventary {
 
     private int element;
 
     // in case we do not want to specify the retrivent of a number of elements
-    public Craft() {
+    public Inventary() {
         this.element = element + 1;
     }
 
     // this is to initilizate the element for each craft
-    public Craft(int element) {
+    public Inventary(int element) {
         this.element = element;
+    }
+
+    public <T> Inventary(T key, T value){
+            this.
     }
 
     public int getElement() {

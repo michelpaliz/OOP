@@ -2,7 +2,7 @@ package Tema11.Propios.ejercicio05.models;
 
 import Tema11.Propios.ejercicio05.Control.ControlMax;
 
-public class Rock extends Craft {
+public class Rock extends Inventary {
 
     public Rock() {
         super();

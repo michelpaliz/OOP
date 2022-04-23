@@ -2,14 +2,18 @@ package Tema11.Propios.ejercicio05.models;
 
 import Tema11.Propios.ejercicio05.Control.ControlMax;
 
-public class Perl extends Craft {
+public class Perl extends Inventary {
+
+    String name;
 
     public Perl() {
         super();
+        this.name= "Pearl";
     }
 
     public Perl(int element) {
         super(ControlMax.checkMax16(element));
+        this.name= "Pearl";
     }
 
     @Override
@@ -23,7 +27,7 @@ public class Perl extends Craft {
     }
 
     public String toString() {
-        return "Perl" + super.toString();
+        return name + super.toString();
     }
 
 }

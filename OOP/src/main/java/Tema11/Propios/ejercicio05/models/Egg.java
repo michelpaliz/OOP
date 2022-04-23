@@ -2,15 +2,18 @@ package Tema11.Propios.ejercicio05.models;
 
 import Tema11.Propios.ejercicio05.Control.ControlMax;
 
-public class Egg extends Craft {
+public class Egg extends Inventary {
     private int element = 0;
+    private String name;
 
     public Egg() {
         super();
+        this.name = "Egg";
     }
 
     public Egg(int element) {
         super(ControlMax.checkMax16(element));
+        this.name = "Egg";
     }
 
     @Override
@@ -30,7 +33,7 @@ public class Egg extends Craft {
 
     @Override
     public String toString() {
-        return "Egg" + super.toString();
+        return name + super.toString();
     }
 
 }

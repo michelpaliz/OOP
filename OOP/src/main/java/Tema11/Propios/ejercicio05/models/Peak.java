@@ -2,14 +2,18 @@ package Tema11.Propios.ejercicio05.models;
 
 import Tema11.Propios.ejercicio05.Control.ControlMax;
 
-public class Peak extends Craft {
+public class Peak extends Inventary {
+
+    String name;
 
     public Peak() {
         super();
+        this.name = "Peak";
     }
 
     public Peak(int element) {
         super(ControlMax.checkMax1(element));
+        this.name = "Peak";
     }
 
     @Override
