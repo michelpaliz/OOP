@@ -149,8 +149,6 @@ public class Control {
 
     }
 
-
-
     public static boolean one(char[] validate, char election) {
         for (int i = 0; i < validate.length; i++) {
             if (validate[i] == election) {
@@ -163,14 +161,13 @@ public class Control {
 
     }
 
-
     /**
      * 
-     * @param dni introduce the 8 digits for your dni
-     * @return the correct char for your dni
+     * @param dni introduce 8 digits for your dni
+     * @return the correct char for your dni (String)
      */
 
-    public String DNIgenerator(int dni) {
+    public static String DNIgeneratorChar(int dni) {
         String str = "TRWAGMYFPDXBNJZSQVHLCKE";
         char letra = 'a';
         int result = dni % str.length();
@@ -179,6 +176,32 @@ public class Control {
         if (REGEXP1.matcher(dniStr).matches()) {
             letra = str.charAt(result);
 
+        } else {
+            System.out.print("Dni invalido\n");
+            System.out.println("Presione enter para continuar...");
+            Lib.myInput.nextLine();
+        }
+        return dniStr + letra;
+    }
+
+    /**
+     * 
+     * @param dni introduce 8 digits for your dni
+     * @return the correct char for your dni (String)
+     */
+
+    public static String DNIgeneratorChar(String dni) {
+        String str = "TRWAGMYFPDXBNJZSQVHLCKE";
+        char letra = 'a';
+        // parsing the dni String to int in order to give us the correct mod for the
+        // calculation
+        int intDni = Integer.parseInt(dni);
+        int result = intDni % str.length();
+        String dniStr = null;
+        // parsing the dni int to String
+        dniStr = String.valueOf(dni);
+        if (REGEXP1.matcher(dniStr).matches()) {
+            letra = str.charAt(result);
         } else {
             System.out.print("Dni invalido\n");
             System.out.println("Presione enter para continuar...");
@@ -198,8 +221,5 @@ public class Control {
                 && REGEXP.matcher(dni).matches() // (2)
                 && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
     }
-
-
-    
 
 }

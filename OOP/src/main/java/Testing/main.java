@@ -26,8 +26,10 @@ public class main {
 
         // System.out.println("Start menu");
         // Menu start = new Menu();
-        Arr start = new Arr();
-        System.out.println(start);
+        // Arr start = new Arr();
+        // System.out.println(start);
+        // Testing for persons
+        Testing t = new Testing();
 
     }
 }

@@ -1,0 +1,3 @@
+HERE I AM GOING TO DOCUMENT SOME USEFUL RESOURCES FOR FAKER
+in this link you're going to fin lots of good rsc to know how to use random numbers, and digits with faker.
+http://makeseleniumeasy.com/2020/12/14/generate-random-numbers-using-javafaker-api-java/

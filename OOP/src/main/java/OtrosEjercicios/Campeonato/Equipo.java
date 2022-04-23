@@ -9,8 +9,6 @@ import java.util.Locale;
 //*Faker
 import com.github.javafaker.Faker;
 
-import Util.Bombo;
-// import Tema8.EjemplosTema8.Cajero.util.Bombo;
 import Util.*;
 
 public class Equipo {
