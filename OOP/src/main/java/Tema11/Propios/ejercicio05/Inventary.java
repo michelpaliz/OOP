@@ -12,6 +12,7 @@ public class Inventary {
     private double x;
     private double y;
     // we also need to create an array
+    Inventary[][] inventary = new Inventary[INITIALIZER_X][INITIALIZER_Y];
 
     public Inventary() {
         Egg egg = new Egg(80);
@@ -21,12 +22,14 @@ public class Inventary {
         System.out.println(peak);
     }
 
-    // egg.addElement(3);
-    // Let's generate objects
+    // public Craft[] dataBase(){
+    // for (int x = 0; x < inventary.length; x++) {
+    // for(int y = 0; y < inventary.length ; y++) {
+    // inventary[x][y] =
+    // }
+    // }
 
-    // Creating constructors
-    // public Inventary() {
-
+    // return null;
     // }
 
 }
