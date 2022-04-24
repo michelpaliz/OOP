@@ -1,5 +1,7 @@
 package Tema11.Propios.ejercicio05;
 
+import java.util.Arrays;
+
 import com.github.javafaker.Faker;
 
 import Tema11.Propios.ejercicio05.models.Inventary;
@@ -18,7 +20,7 @@ public class Play {
     private double x;
     private double y;
     // we also need to create an array
-    private Play[][] inventary = new Play[INITIALIZER_X][INITIALIZER_Y];
+    private Inventary[][] inventary = new Inventary[INITIALIZER_X][INITIALIZER_Y];
     private Egg egg;
     private Perl perl;
     private Peak peak;
@@ -33,7 +35,9 @@ public class Play {
     private Wood[] woods = new Wood[INITIALIZER_X];
 
     public Play() {
-
+        // System.out.println((dataBase()));
+        printArray2D(dataBase());
+        // System.out.println(Arrays.toString(dataBase()));
     }
 
     public Inventary[][] dataBase() {
@@ -48,14 +52,24 @@ public class Play {
             eggs[x] = egg;
             perls[x] = perl;
             peaks[x] = peak;
-            swords[x]= sword;
+            swords[x] = sword;
             rocks[x] = rock;
-            woods[x]= wood;
+            woods[x] = wood;
             for (int y = 0; y < inventary[0].length; y++) {
-                inventary[x][y] = new Play();
+                inventary[x][y] = new Inventary(eggs[x]);
             }
         }
-        return eggs;
+        System.out.println(Arrays.toString(eggs));
+        return inventary;
+    }
+
+    public <T> void printArray2D(T matrix[][]) {
+        for (int i = 0; i < matrix.length; i++) { // this equals to the row in our matrix.
+            for (int j = 0; j < matrix[i].length; j++) { // this equals to the column in each row.
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); // change line on console as row comes to end in the matrix.
+        }
     }
 
 }

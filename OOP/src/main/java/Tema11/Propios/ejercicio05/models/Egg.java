@@ -3,17 +3,19 @@ package Tema11.Propios.ejercicio05.models;
 import Tema11.Propios.ejercicio05.Control.ControlMax;
 
 public class Egg extends Inventary {
-    private int element = 0;
-    private String name;
+    // private final String name = "Egg";
+
+    private int element;
+    private String objName;
 
     public Egg() {
         super();
-        this.name = "Egg";
+        this.objName = "Egg";
     }
 
     public Egg(int element) {
         super(ControlMax.checkMax16(element));
-        this.name = "Egg";
+        this.objName = "Egg";
     }
 
     @Override
@@ -26,6 +28,11 @@ public class Egg extends Inventary {
 
     }
 
+    public String getName() {
+        super.name = objName;
+        return super.getName();
+    }
+
     @Override
     public int removeElement(int numElement) {
         return super.removeElement(numElement);
@@ -33,7 +40,7 @@ public class Egg extends Inventary {
 
     @Override
     public String toString() {
-        return name + super.toString();
+        return objName + super.toString();
     }
 
 }
