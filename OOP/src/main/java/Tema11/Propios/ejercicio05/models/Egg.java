@@ -38,6 +38,7 @@ public class Egg extends Inventary {
         return super.removeElement(numElement);
     }
 
+    // this toString only prints out the subclass in this case egg
     @Override
     public String toString() {
         return objName + super.toString();

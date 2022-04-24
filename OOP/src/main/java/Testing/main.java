@@ -3,6 +3,7 @@ package Testing;
 import Testing.Hashmap.Testing;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
+import Testing.array.Array;
 // import Util.menu;
 
 public class main {
@@ -29,7 +30,9 @@ public class main {
         // Arr start = new Arr();
         // System.out.println(start);
         // Testing for persons
-        Testing t = new Testing();
+        // Testing t = new Testing();
+        // Arrays
+        Array a = new Array();
 
     }
 }

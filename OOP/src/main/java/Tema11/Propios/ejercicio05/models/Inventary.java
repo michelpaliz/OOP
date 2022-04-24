@@ -41,7 +41,7 @@ public class Inventary {
 
     @Override
     public String toString() {
-        return "[" + getName() + element + "]";
+        return "[" + getName() + " " + element + "]";
     }
 
 }
