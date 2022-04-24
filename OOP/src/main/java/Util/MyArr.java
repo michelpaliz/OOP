@@ -10,7 +10,7 @@ public class MyArr {
      * @param implement the new array you want to merge with the previous one
      * @returns the new emerged array (int)
      */
-    public int[] mergeArray(int original[], int implement[]) {
+    public static int[] mergeArray(int original[], int implement[]) {
         int newLength = original.length + implement.length;
         int newArr[] = Arrays.copyOf(original, newLength);
         for (int i = 0; i < implement.length; i++) {
@@ -26,7 +26,7 @@ public class MyArr {
      * @param implement
      * @return the new implement obj array
      */
-    public <T> T[] mergeArray(T original[], T implement[]) {
+    public static <T> T[] mergeArray(T original[], T implement[]) {
         int newLength = original.length + implement.length;
         T[] newArr = Arrays.copyOf(original, newLength);
         for (int i = 0; i < implement.length; i++) {
@@ -41,13 +41,22 @@ public class MyArr {
      * @param arr
      * @return the random obj selected
      */
-    public <T> T getRndValueArr(T arr[]) {
+    public static <T> T getRndValueArr(T arr[]) {
         // Store the index in a variable
         // int rnd = (int) (Math.random() * arr.length);
         int rnd = (Lib.r).nextInt(arr.length);
         // Then access it using another variable
         T random = (arr[rnd]);
         return random;
+    }
+
+    public static <T> Object[] mergeObj(T original[], T implement[]) {
+        int newLength = original.length + implement.length;
+        T[] newArr = Arrays.copyOf(original, newLength);
+        for (int i = 0; i < implement.length; i++) {
+            newArr[original.length + i] = implement[i];
+        }
+        return newArr;
     }
 
 }

@@ -11,6 +11,7 @@ import Tema11.Propios.ejercicio05.models.Perl;
 import Tema11.Propios.ejercicio05.models.Rock;
 import Tema11.Propios.ejercicio05.models.Sword;
 import Tema11.Propios.ejercicio05.models.Wood;
+import Util.MyArr;
 
 public class Play {
 
@@ -33,14 +34,23 @@ public class Play {
     private Sword[] swords = new Sword[INITIALIZER_X];
     private Rock[] rocks = new Rock[INITIALIZER_X];
     private Wood[] woods = new Wood[INITIALIZER_X];
+    // we store the wided array in this variable in order to use it afterwards
+    private Object[] totalArr = new Object[8];
 
     public Play() {
         // System.out.println((dataBase()));
+        fillValues();
+        totalArr = MyArr.mergeObj(eggs, perls);
+        System.out.println(Arrays.toString(totalArr));
+        // totalArr = MyArr.mergeArray(totalArr, peaks);
+        // totalArr = MyArr.mergeArray(totalArr, swords);
+        // totalArr = MyArr.mergeArray(totalArr, rocks);
+        // totalArr = MyArr.mergeArray(totalArr, woods);
         printArray2D(dataBase());
         // System.out.println(Arrays.toString(dataBase()));
     }
 
-    public Inventary[][] dataBase() {
+    public void fillValues() {
         Faker faker = new Faker();
         for (int x = 0; x < inventary.length; x++) {
             egg = new Egg(faker.random().nextInt(1, 15));
@@ -55,11 +65,19 @@ public class Play {
             swords[x] = sword;
             rocks[x] = rock;
             woods[x] = wood;
+        }
+
+    }
+
+    public Inventary[][] dataBase() {
+
+        for (int x = 0; x < inventary.length; x++) {
             for (int y = 0; y < inventary[0].length; y++) {
-                inventary[x][y] = new Inventary(eggs[x]);
+                // inventary[x][y] = new Inventary(eggs[x]);
+                inventary[x][y] = new Inventary(MyArr.getRndValueArr(totalArr));
             }
         }
-        System.out.println(Arrays.toString(eggs));
+
         return inventary;
     }
 
