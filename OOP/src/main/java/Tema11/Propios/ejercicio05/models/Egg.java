@@ -13,25 +13,25 @@ public class Egg extends Inventary {
         this.objName = "Egg";
     }
 
-    public Egg(int element) {
-        super(ControlMax.checkMax16(element));
-        this.objName = "Egg";
-    }
+    // public Egg(int element) {
+    //     super(ControlMax.checkMax16(element));
+    //     this.objName = "Egg";
+    // }
 
-    @Override
-    public int addElement(int newElement) {
-        if (ControlMax.checkMax16(element) > 0) {
-            return super.addElement(newElement);
-        }
-        System.out.println("Error adding the elements, u cannot surpass the maximum value for this item");
-        return -1;
+    // @Override
+    // public int addElement(int newElement) {
+    //     if (ControlMax.checkMax16(element) > 0) {
+    //         return super.addElement(newElement);
+    //     }
+    //     System.out.println("Error adding the elements, u cannot surpass the maximum value for this item");
+    //     return -1;
 
-    }
+    // }
 
-    public String getName() {
-        super.name = objName;
-        return super.getName();
-    }
+    // public String getName() {
+    //     super.name = objName;
+    //     return super.getName();
+    // }
 
     @Override
     public int removeElement(int numElement) {

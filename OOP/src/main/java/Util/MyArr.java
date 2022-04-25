@@ -50,11 +50,15 @@ public class MyArr {
         return random;
     }
 
-    public static <T> Object[] mergeObj(T original[], T implement[]) {
-        int newLength = original.length + implement.length;
-        T[] newArr = Arrays.copyOf(original, newLength);
-        for (int i = 0; i < implement.length; i++) {
-            newArr[original.length + i] = implement[i];
+    public static <T> Object[] mergeObj(Object[] eggs, Object[] perls) {
+        int newLength = eggs.length + perls.length;
+        Object[] newArr = Arrays.copyOf(eggs, newLength);
+        try {
+            for (int i = 0; i < perls.length; i++) {
+                newArr[eggs.length + i] = perls[i];
+            }
+        } catch (ArrayStoreException ase) {
+            ase.printStackTrace();
         }
         return newArr;
     }

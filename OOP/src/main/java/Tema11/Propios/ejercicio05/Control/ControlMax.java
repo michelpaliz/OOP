@@ -1,9 +1,36 @@
 package Tema11.Propios.ejercicio05.Control;
 
-public class ControlMax {
+import Tema11.Propios.ejercicio05.models.Inventary;
+import Tema11.Propios.ejercicio05.models.objNames;
+
+public class ControlMax extends Inventary {
     static final int max1 = 1;
     static final int max16 = 16;
     static final int max64 = 64;
+
+
+    public  int addElement(objNames objName, int newElement) {
+        if ((objName.equalsIgnoreCase("perl")) || (objName.equalsIgnoreCase("egg"))) {
+            if (ControlMax.checkMax16(newElement) > 0) {
+                return super.addElement(objName, newElement);
+            }
+        }
+        if ((objName.equalsIgnoreCase("rock")) || (objName.equalsIgnoreCase("wood"))) {
+            if (ControlMax.checkMax64(newElement) > 0) {
+                return super.addElement(objName, newElement);
+            }
+        }
+
+        if ((objName.equalsIgnoreCase("sword")) || (objName.equalsIgnoreCase("peak"))) {
+            if (ControlMax.checkMax1(newElement) > 0) {
+                return super.addElement(objName, newElement);
+            }
+        }
+
+        System.out.println("Error adding the elements, u cannot surpass the maximum value for this item");
+        return -1;
+
+    }
 
     public static int checkMax16(int number) {
         try {

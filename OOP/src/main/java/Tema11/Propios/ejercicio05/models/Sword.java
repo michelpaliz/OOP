@@ -4,26 +4,41 @@ import Tema11.Propios.ejercicio05.Control.ControlMax;
 
 public class Sword extends Inventary {
 
+    private int element;
+    private String objName;
+
     public Sword() {
         super();
     }
 
-    public Sword(int element) {
-        super(ControlMax.checkMax1(element));
-    }
+    // public Sword(int element) {
+    // super(ControlMax.checkMax1(element));
+    // }
 
-    @Override
-    public int addElement(int newElement) {
-        return super.addElement(newElement);
-    }
+    // @Override
+    // public int addElement(int newElement) {
+    // if (ControlMax.checkMax1(element) > 0) {
+    // return super.addElement(newElement);
+    // }
+    // System.out.println("Error adding the elements, u cannot surpass the maximum
+    // value for this item");
+    // return -1;
+
+    // }
 
     @Override
     public int removeElement(int numElement) {
         return super.removeElement(numElement);
     }
 
+    // public String getName() {
+    // super.name = objName;
+    // return super.getName();
+    // }
+
+    @Override
     public String toString() {
-        return "Sword" + super.toString();
+        return objName + super.toString();
     }
 
 }

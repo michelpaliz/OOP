@@ -3,7 +3,7 @@ package Tema11.Propios.ejercicio05.models;
 public class Inventary {
 
     private int element;
-    protected String name;
+    protected objNames name;
 
     // in case we do not want to specify the retrivent of a number of elements
     public Inventary() {
@@ -12,18 +12,23 @@ public class Inventary {
     }
 
     // this is to initilizate the element for each craft
-    public Inventary(int element) {
+    public Inventary(objNames names, int element) {
         this.element = element;
-        this.name = getName();
+        this.name = names;
     }
 
     // this is the constructor to add the array's values to the 2d array
-    public <T> Inventary(T key) {
+    // public <T> Inventary(T key) {
+    // this.element = ((Inventary) key).getElement();
+    // this.name = ((Inventary) key).getName();
+    // }
+
+    public Inventary(Element key) {
         this.element = ((Inventary) key).getElement();
         this.name = ((Inventary) key).getName();
     }
 
-    protected String getName() {
+    protected objNames getName() {
         return name;
     }
 
@@ -35,7 +40,8 @@ public class Inventary {
         return element -= numElement;
     }
 
-    public int addElement(int newElement) {
+    public int addElement(objNames objName, int newElement) {
+        this.name = objName;
         return this.element += newElement;
     }
 
