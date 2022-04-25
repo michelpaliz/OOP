@@ -18,18 +18,18 @@ public class Element extends Inventary {
 
     @Override
     public int addElement(objNames objName, int newElement) {
-        if ((objName.equalsIgnoreCase("perl")) || (objName.equalsIgnoreCase("egg"))) {
+        if ((objName.equals(objNames.PERL)) || (objName.equals(objNames.EGG))) {
             if (ControlMax.checkMax16(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }
         }
-        if ((objName.equalsIgnoreCase("rock")) || (objName.equalsIgnoreCase("wood"))) {
+        if ((objName.equals(objNames.ROCK)) || (objName.equals(objNames.WOOD))) {
             if (ControlMax.checkMax64(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }
         }
 
-        if ((objName.equalsIgnoreCase("sword")) || (objName.equalsIgnoreCase("peak"))) {
+        if ((objName.equals(objNames.SWORD)) || (objName.equals(objNames.PEAK))) {
             if (ControlMax.checkMax1(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }

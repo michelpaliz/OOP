@@ -24,8 +24,8 @@ public class Inventary {
     // }
 
     public Inventary(Element key) {
-        this.element = ((Inventary) key).getElement();
-        this.name = ((Inventary) key).getName();
+        this.element = (key).getElement();
+        this.name = (key).getName();
     }
 
     protected objNames getName() {

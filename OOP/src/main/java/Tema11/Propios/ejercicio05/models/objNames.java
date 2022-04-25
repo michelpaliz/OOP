@@ -7,7 +7,7 @@ public enum objNames {
         return values()[(int) (Math.random() * values().length)];
     }
 
-    public boolean equalsIgnoreCase(String string) {
+    public boolean equals(String string) {
         return false;
     }
 

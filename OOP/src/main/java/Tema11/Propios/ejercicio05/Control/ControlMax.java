@@ -10,18 +10,18 @@ public class ControlMax extends Inventary {
 
 
     public  int addElement(objNames objName, int newElement) {
-        if ((objName.equalsIgnoreCase("perl")) || (objName.equalsIgnoreCase("egg"))) {
+        if ((objName.equals("perl")) || (objName.equals("egg"))) {
             if (ControlMax.checkMax16(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }
         }
-        if ((objName.equalsIgnoreCase("rock")) || (objName.equalsIgnoreCase("wood"))) {
+        if ((objName.equals("rock")) || (objName.equals("wood"))) {
             if (ControlMax.checkMax64(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }
         }
 
-        if ((objName.equalsIgnoreCase("sword")) || (objName.equalsIgnoreCase("peak"))) {
+        if ((objName.equals("sword")) || (objName.equals("peak"))) {
             if (ControlMax.checkMax1(newElement) > 0) {
                 return super.addElement(objName, newElement);
             }
