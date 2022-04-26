@@ -14,7 +14,7 @@ public class Multemedia {
     public Multemedia() {
         this.title = "My book";
         this.name = "MIchael";
-        this.format = format.BLUE_RAY;
+        this.format = Format.BLUE_RAY;
         this.launchDate = new GregorianCalendar(TimeZone.getTimeZone("GMT+5:30"));
     }
 
