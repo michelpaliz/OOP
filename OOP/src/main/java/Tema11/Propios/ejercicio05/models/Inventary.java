@@ -12,9 +12,9 @@ public class Inventary {
     }
 
     // this is to initilizate the element for each craft
-    public Inventary(objNames names, int element) {
+    public Inventary(objNames name, int element) {
         this.element = element;
-        this.name = names;
+        this.name = name;
     }
 
     // this is the constructor to add the array's values to the 2d array
@@ -47,7 +47,7 @@ public class Inventary {
 
     @Override
     public String toString() {
-        return "[" + getName() + " " + element + "]";
+        return "Inventary [element=" + element + ", name=" + name + "]";
     }
 
 }

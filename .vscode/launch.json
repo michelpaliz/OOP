@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "java",
       "name": "Launch Main",
@@ -64,6 +65,13 @@
       "name": "Launch MainWorlde",
       "request": "launch",
       "mainClass": "   TestWorlde.Main",
+      "projectName": "OOP"
+    },
+    {
+      "type": "java",
+      "name": "Launch Tema11",
+      "request": "launch",
+      "mainClass": "Tema11.Main",
       "projectName": "OOP"
     }
   ]

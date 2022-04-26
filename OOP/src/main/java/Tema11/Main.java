@@ -13,8 +13,8 @@ public class Main {
         // Ejercicio1 start = new Ejercicio1();
         // Ejericio3
         // App car = new App();
-       // App start = new App();
-        //EJercicio 05;
+        // App start = new App();
+        // EJercicio 05;
         Play inv = new Play();
 
     }

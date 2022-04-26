@@ -41,7 +41,7 @@ public class Element extends Inventary {
     }
 
     public objNames getName() {
-        super.name = objName;
+        // super.name = objName;
         return super.getName();
     }
 
