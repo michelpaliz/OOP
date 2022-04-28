@@ -127,6 +127,7 @@ public class Control {
 
     }
 
+
     /**
      * 
      * @param message  introduce the message you want to ask to the user
@@ -221,5 +222,7 @@ public class Control {
                 && REGEXP.matcher(dni).matches() // (2)
                 && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
     }
+
+
 
 }
