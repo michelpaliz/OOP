@@ -26,23 +26,6 @@ public class Multemedia {
     }
 
     @Override
-    public String toString() {
-        return "Multemedia [format=" + format + ", launchDate=" + launchDate + ", name=" + author + ", title=" + title
-                + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((format == null) ? 0 : format.hashCode());
-        result = prime * result + ((launchDate == null) ? 0 : launchDate.hashCode());
-        result = prime * result + ((author == null) ? 0 : author.hashCode());
-        result = prime * result + ((title == null) ? 0 : title.hashCode());
-        return result;
-    }
-
-    @Override
     public boolean equals(Object obj) {
         // returns a true if the title and the actor are the same as the paramether and
         // false otherwise.
@@ -66,6 +49,12 @@ public class Multemedia {
         // be careful bcs if our main obj is null and the paramether is null as well it
         // will lauchn a true value
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Multemedia [format=" + format + ", launchDate=" + launchDate + ", name=" + author + ", title=" + title
+                + "]";
     }
 
 }

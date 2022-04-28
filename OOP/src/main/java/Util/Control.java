@@ -102,11 +102,11 @@ public class Control {
 
     /**
      * 
-     * @return gregoriancalendar that the user has introduced
+     * @return gregoriancalendar formated () that the user has introduced
      */
 
     public static GregorianCalendar birthFormat() {
-        System.out.println("Fecha de fabricacion (dd-mm-yyyy)");
+        System.out.println(" Fecha (dd-mm-yyyy)");
         userStr = Lib.myInput.nextLine();
         SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
         GregorianCalendar birth = null;
@@ -127,6 +127,18 @@ public class Control {
 
     }
 
+    /**
+     * 
+     * @return gregoriancalendar formated () that the user has introduced
+     */
+
+    public static String birthFormat(GregorianCalendar yourDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
+
+        String dateFormatted = sdf.format(
+                yourDate.getTime());
+        return dateFormatted;
+    }
 
     /**
      * 
@@ -222,7 +234,5 @@ public class Control {
                 && REGEXP.matcher(dni).matches() // (2)
                 && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
     }
-
-
 
 }

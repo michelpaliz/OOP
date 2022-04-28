@@ -18,4 +18,6 @@ public class VideoGame extends Multemedia {
         return super.toString() + " VideoGame [platform=" + platform + "]";
     }
 
+    
+
 }
