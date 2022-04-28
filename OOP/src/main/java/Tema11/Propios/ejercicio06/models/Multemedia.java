@@ -1,4 +1,4 @@
-package Tema11.Propios.ejercicio06;
+package Tema11.Propios.ejercicio06.models;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
