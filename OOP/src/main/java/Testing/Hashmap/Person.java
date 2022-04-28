@@ -1,5 +1,7 @@
 package Testing.Hashmap;
 
+import Tema11.Propios.ejercicio05.models.objNames;
+
 public class Person {
 
     // Attributes
@@ -36,4 +38,14 @@ public class Person {
         return "Person [ID=" + ID + ", lastName=" + lastName + ", name=" + name + "]";
     }
 
+    @Override
+    public boolean equals(Object persona) {
+        if (this == persona)
+            return true;
+        if (persona == null || this.getClass() != persona.getClass())
+            return false;
+        Person p = (Person) persona;
+        return this.ID.equals(p.ID);
+
+    }
 }
