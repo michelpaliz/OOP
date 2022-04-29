@@ -235,4 +235,21 @@ public class Control {
                 && dni.charAt(8) == DIGITO_CONTROL.charAt(Integer.parseInt(dni.substring(0, 8)) % 23); // (3)
     }
 
+    /**
+     * 
+     * @param numStr
+     * @returns only digits from the inserted String
+     */
+
+    public int strToInt(String numStr) {
+        int num = 0;
+        try {
+            num = Integer.parseInt(numStr);
+        } catch (NumberFormatException ex) {
+            ex.printStackTrace();
+        }
+
+        return num;
+    }
+
 }

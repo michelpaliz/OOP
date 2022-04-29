@@ -1,6 +1,7 @@
 package Testing;
 
 import Testing.Hashmap.Testing;
+import Testing.String.Digit;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
 import Testing.array.Array;
@@ -34,8 +35,9 @@ public class main {
         // Testing t = new Testing();
         // Arrays
         // Array a = new Array();
-        //Date
+        // Date
         MyDate a = new MyDate();
+        // Digit d = new Digit();
 
     }
 }
