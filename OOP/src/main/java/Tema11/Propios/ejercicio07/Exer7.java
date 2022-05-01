@@ -1,21 +1,18 @@
 package Tema11.Propios.ejercicio07;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map.Entry;
-
-import com.github.javafaker.Faker;
+import java.util.List;
 
 import Tema11.Propios.ejercicio07.models.Match;
-import TestWorlde.Propio.main;
-import Testing.Hashmap.hashmap;
 import Util.Control;
 import Util.Lib;
 
 public class Exer7 {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
+    List<String> teamList = new ArrayList<String>();
+
     final int MAX_MATCHES = 5;
     HashMap<Integer, Match> matches = new HashMap<>();
     Match match;
@@ -23,6 +20,10 @@ public class Exer7 {
 
     public Exer7() {
         // Displaying HashMap
+        teamList.add("MADRID");
+        teamList.add("BARCELONA");
+        teamList.add("ATLETICO_MADRID");
+        teamList.add("VALENCIA");
         randomValues();
 
         // check element is present or not. if not loop will
@@ -34,17 +35,17 @@ public class Exer7 {
         String localTeam, awayTeam;
         LocalDate date;
         for (int i = 0; i < 16; i++) {
-            localTeam = getRandom();
-            awayTeam = getRandom();
+            localTeam = getRandomList();
+            awayTeam = getRandomList();
             date = Control.rndLocalDate();
-            match = new Match(localTeam, awayTeam, date);
+            match = new Match(i, localTeam, awayTeam, date);
             // matches.put(match.getMatchReference(), match);
             matches.put(i, match);
             // matches.putAll(matches);
 
         }
 
-        // System.out.println(matches);
+        // System.out.println(matches + "\n");
         for (Integer match : matches.keySet()) {
             System.out.println(match + " = " + matches.get(match));
         }
@@ -57,6 +58,21 @@ public class Exer7 {
             index = Lib.r.nextInt(teams.length);
             value = teams[index];
         }
+        return value;
+    }
+
+    public String getRandomList() {
+        String value = "";
+        int index;
+        do {
+            System.out.println(teamList.size());
+            for (int i = 0; i < teamList.size(); i++) {
+                index = Lib.r.nextInt(teamList.size());
+                value = teams[index];
+                teamList.remove(index);
+            }
+        } while (value == null);
+        System.out.println(teamList);
         return value;
     }
 

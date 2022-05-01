@@ -9,7 +9,7 @@ import Util.Control;
 import Util.Lib;
 
 public class Match implements Model {
-    private int matchReference;
+    private int matchReference = 0;
     private double basePrice;
     private Influence influence;
     private String localTeam;
@@ -22,15 +22,15 @@ public class Match implements Model {
         this.influence = Influence.LOW_INFLUENCE;
     }
 
-    public Match(String localTeam, String awayTeam, LocalDate date) {
-        this.matchReference += matchReference + 1;
+    public Match(int matchReference, String localTeam, String awayTeam, LocalDate date) {
+        this.matchReference = matchReference;
         this.localTeam = localTeam;
         this.awayTeam = awayTeam;
         this.date = date;
     }
 
     public Match(String localTeam, String awayTeam, double basePrice, Influence influence, LocalDate date) {
-        this.matchReference += matchReference + 1;
+        this.matchReference = matchReference + 1;
         this.localTeam = localTeam;
         this.awayTeam = awayTeam;
         this.basePrice = basePrice;
@@ -46,7 +46,7 @@ public class Match implements Model {
 
     @Override
     public String toString() {
-        return "Match [ Reference " + matchReference + " awayTeam= " + awayTeam + " localTeam= " + localTeam
+        return "Match [ Reference " + getMatchReference() + " awayTeam= " + awayTeam + " localTeam= " + localTeam
                 + " Date " + Lib.dateFrmYear(date) + "]";
     }
 
