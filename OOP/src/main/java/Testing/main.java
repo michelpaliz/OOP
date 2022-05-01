@@ -1,6 +1,7 @@
 package Testing;
 
 import Testing.Hashmap.Testing;
+import Testing.String.AlphaNumeric;
 import Testing.String.Digit;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
@@ -34,10 +35,11 @@ public class main {
         // Testing for persons
         // Testing t = new Testing();
         // Arrays
-        // Array a = new Array();
+        Array a = new Array();
         // Date
-        MyDate a = new MyDate();
+        // MyDate a = new MyDate();
         // Digit d = new Digit();
+        // AlphaNumeric a = new AlphaNumeric();
 
     }
 }

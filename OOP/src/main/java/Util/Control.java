@@ -272,7 +272,7 @@ public class Control {
      * @return generate a random localDate
      */
 
-    public LocalDate rndLocalDate() {
+    public static LocalDate rndLocalDate() {
         long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
         LocalDate lt = LocalDate.now();
         int maxDay = lt.getYear();
@@ -294,7 +294,5 @@ public class Control {
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;
     }
-
-    
 
 }

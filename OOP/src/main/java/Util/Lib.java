@@ -1,10 +1,9 @@
 package Util;
 
 import java.util.Scanner;
+import java.util.UUID;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Lib {
@@ -198,19 +197,20 @@ public class Lib {
      * @param date
      * @return date formatted only with year
      */
-    public String dateFrmYear(LocalDate date) {
+    public static String dateFrmYear(LocalDate date) {
         DateTimeFormatter dt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return dt.format(date);
     }
 
     /**
      * 
-     * @param LocalDate
-     * @return gregorianCalendar
+     * @return a class that represents an immutable universally unique identifier
+     *         (UUID). A UUID represents a 128-bit value.
      */
-    public static GregorianCalendar convertLDtoGre(LocalDate date) {
-        GregorianCalendar gc = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
-        return gc;
+
+    public static String generateString() {
+        String uuid = UUID.randomUUID().toString();
+        return uuid;
     }
 
 }

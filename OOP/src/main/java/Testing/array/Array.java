@@ -14,6 +14,8 @@ public class Array {
         int[] arr = mergeArray(newArr, implement);
         System.out.println(Arrays.toString(arr));
         String[] arrStr = { "hello", "bye", "how are you" };
+        System.out.println("GET random value");
+        System.out.println(Lib.r.nextInt(arrStr.length));
         String[] arrStr1 = { "hola", "chao", "como estas" };
         System.out.println(getRndValueArr(arrStr));
         String[] rnd = mergeArray(arrStr, arrStr1);
