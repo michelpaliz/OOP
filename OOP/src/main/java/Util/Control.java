@@ -1,10 +1,12 @@
 package Util;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Pattern;
 
 public class Control {
@@ -142,6 +144,19 @@ public class Control {
 
     /**
      * 
+     * @param <T>
+     * @param yourDate
+     * @return the formatted date
+     */
+    public static <T> String dateFormated(T yourDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
+        String dateFormatted = sdf.format(
+                ((Calendar) yourDate).getTime());
+        return dateFormatted;
+    }
+
+    /**
+     * 
      * @param message  introduce the message you want to ask to the user
      * @param validate validate each one of your validated options
      * @return true if it matches any asnwers and false if it does not.
@@ -251,5 +266,35 @@ public class Control {
 
         return num;
     }
+
+    /**
+     * 
+     * @return generate a random localDate
+     */
+
+    public LocalDate rndLocalDate() {
+        long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
+        LocalDate lt = LocalDate.now();
+        int maxDay = lt.getYear();
+        long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+        LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+        return randomDate;
+    }
+
+    /**
+     * 
+     * @param min the year you wanna put
+     * @return a random localDate
+     */
+    public LocalDate rndLocalDate(LocalDate min) {
+        long minDay = min.toEpochDay();
+        LocalDate lt = LocalDate.now();
+        int maxDay = lt.getYear();
+        long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+        LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+        return randomDate;
+    }
+
+    
 
 }

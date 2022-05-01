@@ -1,6 +1,10 @@
 package Util;
 
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Lib {
@@ -179,9 +183,34 @@ public class Lib {
 
     }
 
-    
-    
+    /**
+     * 
+     * @param date
+     * @return date formated with hour minute and seconds
+     */
+    public String dateFrmTime(LocalDate date) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        return dtf.format(date);
+    }
 
+    /**
+     * 
+     * @param date
+     * @return date formatted only with year
+     */
+    public String dateFrmYear(LocalDate date) {
+        DateTimeFormatter dt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dt.format(date);
+    }
 
+    /**
+     * 
+     * @param LocalDate
+     * @return gregorianCalendar
+     */
+    public static GregorianCalendar convertLDtoGre(LocalDate date) {
+        GregorianCalendar gc = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
+        return gc;
+    }
 
 }

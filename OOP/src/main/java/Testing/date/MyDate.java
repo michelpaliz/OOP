@@ -3,11 +3,17 @@ package Testing.date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Year;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.concurrent.ThreadLocalRandom;
+
+import javax.swing.FocusManager;
 
 import com.github.javafaker.Faker;
 
@@ -18,6 +24,8 @@ public class MyDate {
 
     public MyDate() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        // DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        DateTimeFormatter dt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDateTime localDateTimeObj = LocalDateTime.now();
         LocalDate localDateObj = LocalDate.now();
 
@@ -31,25 +39,59 @@ public class MyDate {
         // System.out.println("The code below is a gregorian calendar");
         // System.out.println(dtf.format((TemporalAccessor) gc));
         System.out.println("This is a random Gregorian calendar");
+        System.out.println(Control.birthFormat(convertLDtoGre(rndLocalDate())));
         // System.out.println(Control.birthFormat(rndBirth()));
-        System.out.println(Control.birthFormat(randGreg()));
+        // System.out.println(Control.birthFormat(randGreg()));
+        // System.out.println(Control.dateFrmYear(randGreg()));
         System.out.println("This is faker date");
         generateFaker();
-        // System.out.println(rndBirth());
+        System.out.println("This is random local Date");
+        System.out.println((rndLocalDate()));
+        System.out.println(dt.format(rndLocalDate()));
     }
+
+    public LocalDate rndLocalDate() {
+        // LocalDate today = LocalDate.now();
+        long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
+        // long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
+        LocalDate lt = LocalDate.now();
+        int maxDay = lt.getYear();
+        System.out.println("This is maxday " + maxDay);
+        long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+        LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+        return randomDate;
+    }
+
+    public String dateFrmTime(LocalDate date) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        return dtf.format(date);
+    }
+
+    public String dateFrmYear(LocalDate date) {
+        DateTimeFormatter dt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dt.format(date);
+    }
+
+    // public <T> String dateFormatter(T date){
+    // String dateEuPatter = "dd.MM.yyyy";
+    // DateTimeFormatter dateEuFormatter =
+    // DateTimeFormatter.ofPattern(dateEuPatter);
+    // String result = dateEuFormatter.format((date));
+    // }
 
     public GregorianCalendar rndBirth() {
         GregorianCalendar gc = new GregorianCalendar();
         // Creating an object of Calendar Class
-        Calendar cal = Calendar.getInstance();
-        int year = randBetween(1900, cal.getWeekYear());
+        // Calendar cal = Calendar.getInstance();
+        int currenYear = Year.now().getValue();
+        int year = randBetween(1900, currenYear);
 
-        gc.set(gc.YEAR, year);
-        int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+        // gc.set(gc.YEAR, year);
+        // int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
 
-        gc.set(gc.DAY_OF_YEAR, dayOfYear);
-        gc.set(gc.DAY_OF_MONTH, dayOfYear);
-        gc.set(gc.MONTH, dayOfYear);
+        gc.set(gc.DAY_OF_YEAR, year);
+        gc.set(gc.DAY_OF_MONTH, year);
+        gc.set(gc.MONTH, year);
 
         // System.out.println(gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" +
         // gc.get(gc.DAY_OF_MONTH));
@@ -57,8 +99,20 @@ public class MyDate {
         return gc;
     }
 
+    public static GregorianCalendar generarFechas(int minYear) {
+        int currentYear = new GregorianCalendar().get(Calendar.YEAR);
+        currentYear -= 18;
+        return new GregorianCalendar(Lib.random(minYear, currentYear),
+                Lib.random(Calendar.JANUARY, Calendar.DECEMBER), Lib.random(1, 28));
+    }
+
     public static int randBetween(int start, int end) {
         return start + (int) Math.round(Math.random() * (end - start));
+    }
+
+    public static GregorianCalendar convertLDtoGre(LocalDate date) {
+        GregorianCalendar gc = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
+        return gc;
     }
 
     // public GregorianCalendar rndBirth() {
