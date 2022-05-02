@@ -10,17 +10,32 @@ public class Ticket implements Zone {
     private int ticketNumber;
     private int matchNumber;
     private Zone zone;
+    private State state;
 
     public Ticket() {
-        this.ticketNumber += ticketNumber;
+        this.ticketNumber = +1;
         this.matchNumber = 0;
         // this.zone = zone;
     }
 
-    public Ticket(int ticketNumber, int matchNumber, Zone zone) {
+    public Ticket(int ticketNumber, int matchNumber, Zone zone, State state) {
         this.ticketNumber = ticketNumber;
         this.matchNumber = matchNumber;
         this.zone = zone;
+        this.state = state;
+    }
+
+    /**
+     * 
+     * @param st introduce the new State which is being sold
+     * @return reserved or free
+     */
+    public State sold(State st) {
+
+        if (State.FREE.equals(st)) {
+            return this.state = st;
+        }
+        return this.state = State.FREE;
     }
 
     @Override

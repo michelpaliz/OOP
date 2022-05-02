@@ -6,7 +6,7 @@ import Lib.Control;
 import Tema11.Propios.ejercicio07.models.Match;
 
 public class Exer7 {
-    DataBase db = new DataBase();
+    MatchesDB db = new MatchesDB();
     Match m = new Match();
     Scanner myInput = new Scanner(System.in);
     int usrInt;

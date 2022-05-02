@@ -11,8 +11,8 @@ public class VIP extends Ticket {
         alphaNumber = Util.generateString();
     }
 
-    public VIP(int ticketNumber, int matchNumber, Zone zone) {
-        super(ticketNumber, matchNumber, zone);
+    public VIP(int ticketNumber, int matchNumber, Zone zone, State state) {
+        super(ticketNumber, matchNumber, zone, state);
         alphaNumber = Util.generateString();
     }
 

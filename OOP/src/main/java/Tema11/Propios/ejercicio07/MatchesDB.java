@@ -9,7 +9,7 @@ import Lib.Control;
 import Lib.Util;
 import Tema11.Propios.ejercicio07.models.Match;
 
-public class DataBase {
+public class MatchesDB {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
 
     static ArrayList<String> teamList = new ArrayList<String>();
@@ -20,7 +20,7 @@ public class DataBase {
     String localTeam, awayTeam;
     // Match[] arrMatch = new Match[20];
 
-    public DataBase() {
+    public MatchesDB() {
         // Displaying HashMap
         teamList.add("MADRID");
         teamList.add("BARCELONA");

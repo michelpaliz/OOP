@@ -4,7 +4,7 @@ import Tema11.Propios.ejercicio01.Ejercicio1;
 // import Tema11.Propios.ejercicio03.App;
 import Tema11.Propios.ejercicio04.App;
 import Tema11.Propios.ejercicio05.Play;
-import Tema11.Propios.ejercicio07.DataBase;
+import Tema11.Propios.ejercicio07.MatchesDB;
 import Tema11.Propios.ejercicio07.Exer7;
 
 public class Main {

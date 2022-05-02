@@ -12,8 +12,8 @@ public class Normal extends Ticket {
         this.aleatoryNumb = Util.random(0, 100);
     }
 
-    public Normal(int ticketNumber, int matchNumber, Zone zone) {
-        super(ticketNumber, matchNumber, zone);
+    public Normal(int ticketNumber, int matchNumber, Zone zone, State state) {
+        super(ticketNumber, matchNumber, zone, state);
         this.aleatoryNumb = Util.random(0, 100);
     }
 
