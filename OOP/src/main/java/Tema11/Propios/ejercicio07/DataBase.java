@@ -3,7 +3,6 @@ package Tema11.Propios.ejercicio07;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
 
 import Lib.Control;
@@ -12,6 +11,7 @@ import Tema11.Propios.ejercicio07.models.Match;
 
 public class DataBase {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
+
     static ArrayList<String> teamList = new ArrayList<String>();
 
     final int MAX_MATCHES = 5;
@@ -28,10 +28,13 @@ public class DataBase {
         teamList.add("VALENCIA");
         // randomValues();
 
-        // check element is present or not. if not loop will
-        // break.
-
     }
+
+    /**
+     * 
+     * @param ref object number you want to get 
+     * @return the object that matches with the obj 
+     */
 
     public Match matchSelected(int ref) {
 
@@ -60,10 +63,6 @@ public class DataBase {
             matches.put(i, match);
         }
         System.out.println("Random data created");
-        // System.out.println(matches + "\n");
-        // for (Integer match : matches.keySet()) {
-        // System.out.println(match + " = " + matches.get(match));
-        // }
     }
 
     public void showDB() {
@@ -72,6 +71,7 @@ public class DataBase {
         }
     }
 
+
     public int getRandom(ArrayList<String> array) {
         int index = 0;
         index = Util.r.nextInt(array.size());
@@ -79,19 +79,6 @@ public class DataBase {
 
     }
 
-    public String getRandomList() {
-        String value = "";
-        int index;
-        do {
-            System.out.println(teamList.size());
-            for (int i = 0; i < teamList.size(); i++) {
-                index = Util.r.nextInt(teamList.size());
-                value = teams[index];
-                teamList.remove(index);
-            }
-        } while (value == null);
-        System.out.println(teamList);
-        return value;
-    }
+
 
 }

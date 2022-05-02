@@ -1,11 +1,24 @@
 package Tema11.Propios.ejercicio07.models.ticket;
 
-public class VIP extends Ticket{
+import Lib.Util;
+import Tema11.Propios.ejercicio07.interfaces.Zone;
+
+public class VIP extends Ticket {
     private String alphaNumber;
 
-    public VIP(){
-        alphaNumber = Control.
+    public VIP() {
+        super();
+        alphaNumber = Util.generateString();
     }
 
-    
+    public VIP(int ticketNumber, int matchNumber, Zone zone) {
+        super(ticketNumber, matchNumber, zone);
+        alphaNumber = Util.generateString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "VIP [alphaNumber=" + alphaNumber + "]";
+    }
+
 }
