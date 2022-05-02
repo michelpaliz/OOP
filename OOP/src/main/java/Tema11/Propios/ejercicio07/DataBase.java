@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import Tema11.Propios.ejercicio07.models.Match;
 import Util.Control;
@@ -29,6 +30,18 @@ public class DataBase {
 
         // check element is present or not. if not loop will
         // break.
+
+    }
+
+    public Match matchSelected(int ref) {
+
+        for (Entry<Integer, Match> entry : matches.entrySet()) {
+            Integer key = entry.getKey();
+            // Match value = entry.getValue();
+            if (ref == key)
+                return match = matches.get(key);
+        }
+        return null;
 
     }
 

@@ -53,8 +53,8 @@ public class Match implements Model {
             return true;
         if (match == null || this.getClass() != match.getClass())
             return false;
-        Match p = (Match) match;
-        return this.matchReference.equals(match.matchReference);
+        Match m = (Match) match;
+        return this.matchReference == m.matchReference;
 
     }
 

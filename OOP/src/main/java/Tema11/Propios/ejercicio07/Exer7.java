@@ -7,7 +7,9 @@ import Util.Control;
 
 public class Exer7 {
     DataBase db = new DataBase();
+    Match m = new Match();
     Scanner myInput = new Scanner(System.in);
+    int usrInt;
     boolean correct;
 
     public Exer7() {
@@ -22,7 +24,8 @@ public class Exer7 {
                 System.out.println("Select the match you want to buy a ticket");
                 db.randomValues();
                 db.showDB();
-
+                usrInt = Integer.parseInt(myInput.nextLine());
+                System.out.println(db.matchSelected(usrInt));
 
                 break;
             case 2:
@@ -31,7 +34,5 @@ public class Exer7 {
         }
 
     }
-
-
 
 }
