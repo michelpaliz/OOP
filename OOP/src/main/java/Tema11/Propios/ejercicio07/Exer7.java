@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 import Lib.Control;
 import Tema11.Propios.ejercicio07.models.Match;
+import Tema11.Propios.ejercicio07.models.ticket.Ticket;
 
 public class Exer7 {
     MatchesDB mDB = new MatchesDB();
     TicketDB tDB = new TicketDB();
     Match m = new Match();
+    Ticket t = new Ticket();
     Scanner myInput = new Scanner(System.in);
     int usrInt;
     boolean correct;
@@ -29,9 +31,13 @@ public class Exer7 {
                 m = mDB.matchSelected(usrInt);
                 System.out.println("This is the match that you selected " + m);
                 System.out.println("This is the minimum price base for all the matches " + m.getBasePrice());
+                System.out.println("These are the avaliable tickect for now, Select one");
                 tDB.rndTicket();
                 tDB.showDB();
-                
+                usrInt = Integer.parseInt(myInput.nextLine());
+                String t = tDB.matchSelected(usrInt);
+                System.out.println(t);
+
                 break;
             case 2:
 

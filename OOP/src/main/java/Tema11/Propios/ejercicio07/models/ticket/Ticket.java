@@ -30,12 +30,22 @@ public class Ticket implements Zone {
      * @param st introduce the new State which is being sold
      * @return reserved or free
      */
-    public State sold(State st) {
+    public boolean sold() {
 
-        if (State.FREE.equals(st)) {
-            return this.state = st;
+        if (State.FREE.equals(this.state)) {
+            return true;
         }
-        return this.state = State.FREE;
+        // this.state = State.RESERVED;
+        // setState(State.RESERVED);
+        return false;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
     @Override
@@ -49,7 +59,5 @@ public class Ticket implements Zone {
         return "Ticket [influence=" + influence + ", matchNumber=" + matchNumber + ", state=" + state
                 + ", ticketNumber=" + ticketNumber + "]";
     }
-
- 
 
 }
