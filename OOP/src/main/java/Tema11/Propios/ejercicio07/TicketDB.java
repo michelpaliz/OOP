@@ -17,11 +17,11 @@ public class TicketDB {
 
     }
 
-    public void rndTicket() {
+    public void rndTicket(int ref) {
 
         for (int i = 0; i < 10; i++) {
             Influence inf = Influence.getRandom();
-            ticket = new Ticket(i, i, inf, State.FREE);
+            ticket = new Ticket(i, ref, inf, State.FREE);
             tickets.put(i, ticket);
         }
         System.out.println("Random data created");

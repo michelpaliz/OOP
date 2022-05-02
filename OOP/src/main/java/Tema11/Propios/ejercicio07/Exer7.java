@@ -32,7 +32,7 @@ public class Exer7 {
                 System.out.println("This is the match that you selected " + m);
                 System.out.println("This is the minimum price base for all the matches " + m.getBasePrice());
                 System.out.println("These are the avaliable tickect for now, Select one");
-                tDB.rndTicket();
+                tDB.rndTicket(usrInt);
                 tDB.showDB();
                 usrInt = Integer.parseInt(myInput.nextLine());
                 String t = tDB.matchSelected(usrInt);

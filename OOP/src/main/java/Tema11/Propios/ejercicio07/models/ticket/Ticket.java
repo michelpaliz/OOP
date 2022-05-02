@@ -44,6 +44,10 @@ public class Ticket implements Zone {
         return state;
     }
 
+    public void setMatchNumber(int matchNumber) {
+        this.matchNumber = matchNumber;
+    }
+
     public void setState(State state) {
         this.state = state;
     }
