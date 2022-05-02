@@ -1,7 +1,6 @@
 package Tema11.Propios.ejercicio07.models.ticket;
 
 import Lib.Util;
-import Tema11.Propios.ejercicio07.interfaces.Zone;
 
 public class VIP extends Ticket {
     private String alphaNumber;
@@ -11,8 +10,8 @@ public class VIP extends Ticket {
         alphaNumber = Util.generateString();
     }
 
-    public VIP(int ticketNumber, int matchNumber, Zone zone, State state) {
-        super(ticketNumber, matchNumber, zone, state);
+    public VIP(int ticketNumber, int matchNumber, Influence influence, State state) {
+        super(ticketNumber, matchNumber, influence, state);
         alphaNumber = Util.generateString();
     }
 

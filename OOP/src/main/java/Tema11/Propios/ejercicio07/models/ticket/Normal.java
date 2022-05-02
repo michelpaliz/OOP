@@ -1,7 +1,6 @@
 package Tema11.Propios.ejercicio07.models.ticket;
 
 import Lib.Util;
-import Tema11.Propios.ejercicio07.interfaces.Zone;
 
 public class Normal extends Ticket {
 
@@ -12,8 +11,8 @@ public class Normal extends Ticket {
         this.aleatoryNumb = Util.random(0, 100);
     }
 
-    public Normal(int ticketNumber, int matchNumber, Zone zone, State state) {
-        super(ticketNumber, matchNumber, zone, state);
+    public Normal(int ticketNumber, int matchNumber, Influence influence, State state) {
+        super(ticketNumber, matchNumber, influence, state);
         this.aleatoryNumb = Util.random(0, 100);
     }
 

@@ -32,8 +32,8 @@ public class MatchesDB {
 
     /**
      * 
-     * @param ref object number you want to get 
-     * @return the object that matches with the obj 
+     * @param ref object number you want to get
+     * @return the object that matches with the obj
      */
 
     public Match matchSelected(int ref) {
@@ -71,14 +71,11 @@ public class MatchesDB {
         }
     }
 
-
     public int getRandom(ArrayList<String> array) {
         int index = 0;
         index = Util.r.nextInt(array.size());
         return index;
 
     }
-
-
 
 }

@@ -9,7 +9,7 @@ public class Ticket implements Zone {
     // private int[] maxCapacity = new int[MAX]; // MAX FOR TICKETS
     private int ticketNumber;
     private int matchNumber;
-    private Zone zone;
+    private Influence influence;
     private State state;
 
     public Ticket() {
@@ -18,10 +18,10 @@ public class Ticket implements Zone {
         // this.zone = zone;
     }
 
-    public Ticket(int ticketNumber, int matchNumber, Zone zone, State state) {
+    public Ticket(int ticketNumber, int matchNumber, Influence influence, State state) {
         this.ticketNumber = ticketNumber;
         this.matchNumber = matchNumber;
-        this.zone = zone;
+        this.influence = influence;
         this.state = state;
     }
 
@@ -46,7 +46,10 @@ public class Ticket implements Zone {
 
     @Override
     public String toString() {
-        return "Ticket [matchNumber= " + matchNumber + ", ticketNumber=" + ticketNumber + "]";
+        return "Ticket [influence=" + influence + ", matchNumber=" + matchNumber + ", state=" + state
+                + ", ticketNumber=" + ticketNumber + "]";
     }
+
+ 
 
 }
