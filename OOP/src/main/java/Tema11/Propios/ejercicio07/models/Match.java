@@ -9,7 +9,7 @@ import Util.Control;
 import Util.Lib;
 
 public class Match implements Model {
-    private int matchReference = 0;
+    private int matchReference;
     private double basePrice;
     private Influence influence;
     private String localTeam;
@@ -18,7 +18,7 @@ public class Match implements Model {
 
     public Match() {
         this.matchReference = matchReference + 1;
-        this.basePrice = 10;
+        this.basePrice = 50;
         this.influence = Influence.LOW_INFLUENCE;
     }
 
@@ -27,6 +27,7 @@ public class Match implements Model {
         this.localTeam = localTeam;
         this.awayTeam = awayTeam;
         this.date = date;
+        this.basePrice = 50;
     }
 
     public Match(String localTeam, String awayTeam, double basePrice, Influence influence, LocalDate date) {
@@ -40,6 +41,21 @@ public class Match implements Model {
 
     public int getMatchReference() {
         return matchReference;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    @Override
+    public boolean equals(Object match) {
+        if (this == match)
+            return true;
+        if (match == null || this.getClass() != match.getClass())
+            return false;
+        Match p = (Match) match;
+        return this.matchReference.equals(match.matchReference);
+
     }
 
     // TODO CONSTRUCTOR TO CREATE NEW MATCHES
