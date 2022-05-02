@@ -6,11 +6,14 @@ import java.util.Map.Entry;
 import Tema11.Propios.ejercicio07.models.ticket.Influence;
 import Tema11.Propios.ejercicio07.models.ticket.State;
 import Tema11.Propios.ejercicio07.models.ticket.Ticket;
+import Tema11.Propios.ejercicio07.models.ticket.VIP;
 
 public class TicketDB {
 
     static HashMap<Integer, Ticket> tickets = new HashMap<>();
+    static HashMap<Integer, Ticket> vips = new HashMap<>();
     Ticket ticket;
+    VIP vip;
     MatchesDB db = new MatchesDB();
 
     public TicketDB() {
@@ -22,7 +25,9 @@ public class TicketDB {
         for (int i = 0; i < 10; i++) {
             Influence inf = Influence.getRandom();
             ticket = new Ticket(i, ref, inf, State.FREE);
+            vip = new VIP(i, ref, inf, State.FREE);
             tickets.put(i, ticket);
+            vips.put(i, vip);
         }
         System.out.println("Random data created");
     }
@@ -30,6 +35,10 @@ public class TicketDB {
     public void showDB() {
         for (Integer match : tickets.keySet()) {
             System.out.println(match + " = " + tickets.get(match));
+        }
+        System.out.println("************VIP**************");
+        for (Integer match : vips.keySet()) {
+            System.out.println(match + " = " + vips.get(match));
         }
     }
 
