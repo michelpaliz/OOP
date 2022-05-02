@@ -1,5 +1,6 @@
 package Util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyArr {
@@ -61,6 +62,15 @@ public class MyArr {
             ase.printStackTrace();
         }
         return newArr;
+    }
+
+    public String getRandom(ArrayList<String> array) {
+        int index = 0;
+        index = Lib.r.nextInt(array.size());
+        System.out.println("This is the index " + index);
+        // array.remove(index);
+        return array.get(index);
+
     }
 
 }

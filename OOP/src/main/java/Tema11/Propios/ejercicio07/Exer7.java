@@ -11,11 +11,12 @@ import Util.Lib;
 
 public class Exer7 {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
-    List<String> teamList = new ArrayList<String>();
+    ArrayList<String> teamList = new ArrayList<String>();
 
     final int MAX_MATCHES = 5;
     HashMap<Integer, Match> matches = new HashMap<>();
     Match match;
+    String localTeam, awayTeam;
     // Match[] arrMatch = new Match[20];
 
     public Exer7() {
@@ -32,11 +33,18 @@ public class Exer7 {
     }
 
     public void randomValues() {
-        String localTeam, awayTeam;
+
         LocalDate date;
         for (int i = 0; i < 16; i++) {
-            localTeam = getRandomList();
-            awayTeam = getRandomList();
+
+            do {
+                localTeam = teamList.get(getRandom(teamList));
+                awayTeam = teamList.get(getRandom(teamList));
+            } while (localTeam == awayTeam);
+
+            // if (localTeam.equals(awayTeam)) {
+            // localTeam = teamList.get(getRandom(teamList));
+            // }
             date = Control.rndLocalDate();
             match = new Match(i, localTeam, awayTeam, date);
             // matches.put(match.getMatchReference(), match);
@@ -51,14 +59,14 @@ public class Exer7 {
         }
     }
 
-    public String getRandom() {
-        String value = "";
+    public int getRandom(ArrayList<String> array) {
         int index = 0;
-        for (int i = 0; i < teams.length; i++) {
-            index = Lib.r.nextInt(teams.length);
-            value = teams[index];
-        }
-        return value;
+        index = Lib.r.nextInt(array.size());
+        // System.out.println("This is the index " + index);
+        // array.remove(index);
+        // array.get(index);
+        return index;
+
     }
 
     public String getRandomList() {

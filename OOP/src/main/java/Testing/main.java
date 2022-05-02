@@ -1,11 +1,14 @@
 package Testing;
 
+import java.util.ArrayList;
+
 import Testing.Hashmap.Testing;
 import Testing.String.AlphaNumeric;
 import Testing.String.Digit;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
 import Testing.array.Array;
+import Testing.array.MyArrayLIst;
 // import Util.menu;
 import Testing.date.MyDate;
 
@@ -35,11 +38,12 @@ public class main {
         // Testing for persons
         // Testing t = new Testing();
         // Arrays
-        Array a = new Array();
+        // Array a = new Array();
         // Date
         // MyDate a = new MyDate();
         // Digit d = new Digit();
         // AlphaNumeric a = new AlphaNumeric();
+        MyArrayLIst a = new MyArrayLIst();
 
     }
 }

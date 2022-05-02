@@ -12,6 +12,11 @@ public class Array {
         System.out.println(Arrays.toString(mergeArray(original, implement)));
         int[] newArr = mergeArray(original, implement);
         int[] arr = mergeArray(newArr, implement);
+        String[] arrStr2 = { "1", "2", "3", "4", "5" };
+        System.out.println("Let's create a new array");
+        System.out.println(Arrays.toString(newArray(arrStr2)));
+        System.out.println("Let's get values without duplicates");
+
         System.out.println(Arrays.toString(arr));
         String[] arrStr = { "hello", "bye", "how are you" };
         System.out.println("GET random value");
@@ -63,4 +68,44 @@ public class Array {
         return random;
     }
 
+    public String[] newArray(String array[]) {
+        String value = "";
+        int index = 0;
+        // Create another array of size one less
+        String[] anotherArray = new String[array.length - 1];
+
+        for (int i = 0, k = 0; i < array.length - 1; i++) {
+            // do {
+            index = getRndIndex(array);
+            System.out.println("Index = " + index);
+            if (i == index) {
+                System.out.println("continue");
+                continue;
+            }
+            anotherArray[k++] = array[i];
+
+            // } while (anotherArray != null);
+
+        }
+        System.out.println("This is the copy");
+        return anotherArray;
+    }
+
+    public int getRndIndex(String array[]) {
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            index = Lib.r.nextInt(array.length);
+        }
+        return index;
+    }
+
+    public String getRandom(String array[]) {
+        String value = "";
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            index = Lib.r.nextInt(array.length);
+            value = array[index];
+        }
+        return value;
+    }
 }
