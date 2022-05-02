@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.GregorianCalendar;
 
 import Tema11.Propios.ejercicio07.interfaces.Model;
+import Tema11.Propios.ejercicio07.models.ticket.Influence;
 import Util.Control;
 import Util.Lib;
 
