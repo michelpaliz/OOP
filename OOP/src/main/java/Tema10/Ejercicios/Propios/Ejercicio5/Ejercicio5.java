@@ -1,6 +1,6 @@
 package Tema10.Ejercicios.Propios.Ejercicio5;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio5 {
 
@@ -12,10 +12,10 @@ public class Ejercicio5 {
     private void operationIntroducirPal(){
         Traducir trac = new Traducir();
         int times= 1;
-        times = Lib.readInt("Cue");
+        times = Util.readInt("Cue");
         for(int i = 0; i < times; i++) {
-            String palabraIng = Lib.askString();
-            String palabraVal = Lib.askString();
+            String palabraIng = Util.askString();
+            String palabraVal = Util.askString();
             trac.introducirPareja(palabraIng,palabraVal);
         }
     }

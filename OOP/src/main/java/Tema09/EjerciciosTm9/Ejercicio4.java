@@ -2,7 +2,7 @@ package Tema09.EjerciciosTm9;
 
 import java.util.Scanner;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio4 {
     public static Scanner myInput = new Scanner(System.in);
@@ -20,16 +20,16 @@ public class Ejercicio4 {
                 do {
                     System.out.print(message + (cont + 1));
                     try {
-                        userInt = Integer.parseInt(Lib.myInput.nextLine());
-                        Lib.correct = true;
-                        Lib.pausa();
+                        userInt = Integer.parseInt(Util.myInput.nextLine());
+                        Util.correct = true;
+                        Util.pausa();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Lib.pausa();
-                        Lib.correct = false;
+                        Util.pausa();
+                        Util.correct = false;
                     }
                 
-                } while (!Lib.correct);
+                } while (!Util.correct);
                 array[cont] = userInt;
                 cont++;
             }
@@ -55,16 +55,16 @@ public class Ejercicio4 {
                 do {
                     System.out.print(message + (i + 1));
                     try {
-                        userInt = Integer.parseInt(Lib.myInput.nextLine());
-                        Lib.correct = true;
-                        Lib.pausa();
+                        userInt = Integer.parseInt(Util.myInput.nextLine());
+                        Util.correct = true;
+                        Util.pausa();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Lib.pausa();
-                        Lib.correct = false;
+                        Util.pausa();
+                        Util.correct = false;
                     }
                 
-                } while (!Lib.correct);
+                } while (!Util.correct);
                 array[i] = userInt;
             }
 

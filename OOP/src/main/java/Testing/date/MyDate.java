@@ -17,8 +17,8 @@ import javax.swing.FocusManager;
 
 import com.github.javafaker.Faker;
 
-import Util.Control;
-import Util.Lib;
+import Lib.Control;
+import Lib.Util;
 
 public class MyDate {
 
@@ -102,8 +102,8 @@ public class MyDate {
     public static GregorianCalendar generarFechas(int minYear) {
         int currentYear = new GregorianCalendar().get(Calendar.YEAR);
         currentYear -= 18;
-        return new GregorianCalendar(Lib.random(minYear, currentYear),
-                Lib.random(Calendar.JANUARY, Calendar.DECEMBER), Lib.random(1, 28));
+        return new GregorianCalendar(Util.random(minYear, currentYear),
+                Util.random(Calendar.JANUARY, Calendar.DECEMBER), Util.random(1, 28));
     }
 
     public static int randBetween(int start, int end) {

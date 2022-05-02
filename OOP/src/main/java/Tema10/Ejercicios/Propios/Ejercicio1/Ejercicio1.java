@@ -3,7 +3,7 @@ package Tema10.Ejercicios.Propios.Ejercicio1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio1 {
     public final static int MAX_VALUE = 10;
@@ -11,7 +11,7 @@ public class Ejercicio1 {
     public Ejercicio1() {
         int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         int[] numbers = new int[10];
-        Lib.fillArrayRandom(numbers, 0, 10);
+        Util.fillArrayRandom(numbers, 0, 10);
 
         System.out.println(Arrays.toString(number));
         //

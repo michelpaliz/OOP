@@ -1,6 +1,6 @@
 package TestWorlde.Propio;
 
-import Util.Lib;
+import Lib.Util;
 
 public class main {
 
@@ -21,7 +21,7 @@ public class main {
             System.out.println("*********WORDLE *********");
             System.out.println("0.Salir");
             System.out.println("1.Nuevo Juego");
-            userInt = Integer.parseInt(Lib.myInput.nextLine());
+            userInt = Integer.parseInt(Util.myInput.nextLine());
             correct = userInt <= 1;
         } while (!correct);
         switch (userInt) {

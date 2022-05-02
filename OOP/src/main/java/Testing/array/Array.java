@@ -2,7 +2,7 @@ package Testing.array;
 
 import java.util.Arrays;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Array {
 
@@ -20,7 +20,7 @@ public class Array {
         System.out.println(Arrays.toString(arr));
         String[] arrStr = { "hello", "bye", "how are you" };
         System.out.println("GET random value");
-        System.out.println(Lib.r.nextInt(arrStr.length));
+        System.out.println(Util.r.nextInt(arrStr.length));
         String[] arrStr1 = { "hola", "chao", "como estas" };
         System.out.println(getRndValueArr(arrStr));
         String[] rnd = mergeArray(arrStr, arrStr1);
@@ -62,7 +62,7 @@ public class Array {
     public <T> T getRndValueArr(T arr[]) {
         // Store the index in a variable
         // int rnd = (int) (Math.random() * arr.length);
-        int rnd = (Lib.r).nextInt(arr.length);
+        int rnd = (Util.r).nextInt(arr.length);
         // Then access it using another variable
         T random = (arr[rnd]);
         return random;
@@ -94,7 +94,7 @@ public class Array {
     public int getRndIndex(String array[]) {
         int index = 0;
         for (int i = 0; i < array.length; i++) {
-            index = Lib.r.nextInt(array.length);
+            index = Util.r.nextInt(array.length);
         }
         return index;
     }
@@ -103,7 +103,7 @@ public class Array {
         String value = "";
         int index = 0;
         for (int i = 0; i < array.length; i++) {
-            index = Lib.r.nextInt(array.length);
+            index = Util.r.nextInt(array.length);
             value = array[index];
         }
         return value;

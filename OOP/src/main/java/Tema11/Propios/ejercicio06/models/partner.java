@@ -3,7 +3,7 @@ package Tema11.Propios.ejercicio06.models;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-import Util.Control;
+import Lib.Control;
 
 public class partner {
     private String ID;

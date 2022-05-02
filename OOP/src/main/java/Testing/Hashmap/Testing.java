@@ -1,11 +1,11 @@
 package Testing.Hashmap;
 
-import Util.Control;
-
 import java.util.Arrays;
 import java.util.HashMap;
 
 import com.github.javafaker.Faker;
+
+import Lib.Control;
 
 public class Testing {
     private final int INITIALITER = 4;

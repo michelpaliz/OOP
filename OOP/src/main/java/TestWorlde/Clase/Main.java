@@ -2,9 +2,9 @@ package TestWorlde.Clase;
 
 import java.util.Dictionary;
 
+import Lib.Util;
 import TestWorlde.Clase.Dictionary.DictionaryManager;
 import TestWorlde.Clase.Dictionary.Language;
-import Util.Lib;
 
 public class Main {
 
@@ -33,7 +33,7 @@ public class Main {
             System.out.println("-------------------");
             System.out.println(" Choose option: ");
             try {
-                option = Integer.parseInt(Lib.myInput.nextLine());
+                option = Integer.parseInt(Util.myInput.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("only numbers, please");
             }

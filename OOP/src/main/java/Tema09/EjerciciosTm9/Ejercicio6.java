@@ -1,13 +1,13 @@
 package Tema09.EjerciciosTm9;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio6 {
     // public static boolean correct;
 
     public static void Ejercicio6() {
         System.out.println("Vamo a dividir");
-        dividirEntreArray(Lib.validarArray(), -1);
+        dividirEntreArray(Util.validarArray(), -1);
 
     }
 

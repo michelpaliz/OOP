@@ -1,4 +1,4 @@
-package Util;
+package Lib;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,7 +45,7 @@ public class MyArr {
     public static <T> T getRndValueArr(T arr[]) {
         // Store the index in a variable
         // int rnd = (int) (Math.random() * arr.length);
-        int rnd = (Lib.r).nextInt(arr.length);
+        int rnd = (Util.r).nextInt(arr.length);
         // Then access it using another variable
         T random = (arr[rnd]);
         return random;
@@ -66,7 +66,7 @@ public class MyArr {
 
     public String getRandom(ArrayList<String> array) {
         int index = 0;
-        index = Lib.r.nextInt(array.size());
+        index = Util.r.nextInt(array.size());
         System.out.println("This is the index " + index);
         // array.remove(index);
         return array.get(index);

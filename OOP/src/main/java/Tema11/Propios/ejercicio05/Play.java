@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.github.javafaker.Faker;
 
+import Lib.MyArr;
 import Tema11.Propios.ejercicio05.models.Inventary;
 import Tema11.Propios.ejercicio05.models.Egg;
 import Tema11.Propios.ejercicio05.models.Element;
@@ -13,7 +14,6 @@ import Tema11.Propios.ejercicio05.models.Rock;
 import Tema11.Propios.ejercicio05.models.Sword;
 import Tema11.Propios.ejercicio05.models.Wood;
 import Tema11.Propios.ejercicio05.models.objNames;
-import Util.MyArr;
 
 public class Play {
 

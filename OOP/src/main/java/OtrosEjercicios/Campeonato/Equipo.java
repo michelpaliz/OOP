@@ -9,7 +9,7 @@ import java.util.Locale;
 //*Faker
 import com.github.javafaker.Faker;
 
-import Util.*;
+import Lib.*;
 
 public class Equipo {
 
@@ -86,7 +86,7 @@ public class Equipo {
         for (int i = 0; i < equipos.length; i++) {
             System.out.println(equipos[i] + "\n");
         }
-        Lib.pausa();
+        Util.pausa();
     }
 
     // +DE AQUI PARA ABAJO ES PARA LA CREACION DE LA BASE DE DATOS
@@ -137,9 +137,9 @@ public class Equipo {
             String ciudad = faker.country().capital();
             // Samos los objetos de lo arrays de entrenador y jugador y se lo asignamos a
             // otras referencias que apuntaran a los punteros de los objetos
-            entrenador = entrenadores[Lib.random(0, numEntrenadores - 1)];
+            entrenador = entrenadores[Util.random(0, numEntrenadores - 1)];
             for (int j = 0; j < jugadores.length; j++) {
-                jugadores[j] = jugadores[Lib.random(0, numJugadores - 1)];
+                jugadores[j] = jugadores[Util.random(0, numJugadores - 1)];
             }
             equipos[i] = new Equipo(id, nombre, ciudad, entrenador, jugadores);
             // numEquipos++;

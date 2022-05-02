@@ -2,7 +2,7 @@ package Testing.array;
 
 import java.util.ArrayList;
 
-import Util.Lib;
+import Lib.Util;
 
 public class MyArrayLIst {
     ArrayList<String> al = new ArrayList<String>();
@@ -37,7 +37,7 @@ public class MyArrayLIst {
 
     public String getRandom(ArrayList<String> array) {
         int index = 0;
-        index = Lib.r.nextInt(array.size());
+        index = Util.r.nextInt(array.size());
         System.out.println("This is the index " + index);
         // array.remove(index);
         return array.get(index);

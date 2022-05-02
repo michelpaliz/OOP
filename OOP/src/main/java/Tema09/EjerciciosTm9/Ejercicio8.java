@@ -2,7 +2,7 @@ package Tema09.EjerciciosTm9;
 
 import org.yaml.snakeyaml.error.MarkedYAMLException;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio8 {
 
@@ -54,7 +54,7 @@ public class Ejercicio8 {
     public static void indexOutBoundsExeption(int[] array) {
         try {
             System.out.println("Introduce el indice del elemento que quieras ver en el array");
-            int element = Integer.parseInt(Lib.myInput.nextLine());
+            int element = Integer.parseInt(Util.myInput.nextLine());
             System.out.println("El elemento dado esta en la posicion " + array[element]);
         } catch (Exception e) {
             System.out.println("The index you have entered is invalid");

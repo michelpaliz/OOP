@@ -1,6 +1,6 @@
 package Tema09.EjerciciosTm9.Ejercicio5;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio5 {
 
@@ -12,11 +12,11 @@ public class Ejercicio5 {
         String mgInt = "Introduce un numero";
         String mgStr = "Introduce el nombre del alumno";
         String mgDouble = "Introduce la altura del alumno";
-        Alumno alumno1 = new Alumno(Lib.validarStr0(mgStr, 1, 10), Lib.validarInt(mgInt, 1, 100),
-                Lib.validateDouble(mgDouble));
+        Alumno alumno1 = new Alumno(Util.validarStr0(mgStr, 1, 10), Util.validarInt(mgInt, 1, 100),
+                Util.validateDouble(mgDouble));
 
-        Alumno alumno2 = new Alumno(Lib.validarStr0(mgStr, 1, 10), Lib.validarInt(mgInt, 1, 100),
-                Lib.validateDouble(mgDouble));
+        Alumno alumno2 = new Alumno(Util.validarStr0(mgStr, 1, 10), Util.validarInt(mgInt, 1, 100),
+                Util.validateDouble(mgDouble));
         System.out.println("Sacamos el alumno mayor");
         System.out.println(compararObj(alumno1, alumno2));
 
@@ -45,24 +45,24 @@ public class Ejercicio5 {
 
 
     public void solicitarAlumno(){
-        String nombre = Lib.validarStr0("nombre", 0, 100);
+        String nombre = Util.validarStr0("nombre", 0, 100);
         int userInt = 0;
         do {
             try {
                 System.out.print("edad");
-                userInt = Integer.parseInt(Lib.myInput.nextLine());
-                Lib.correct = userInt >= 0 && userInt <= 100;
-                if (!Lib.correct) {
+                userInt = Integer.parseInt(Util.myInput.nextLine());
+                Util.correct = userInt >= 0 && userInt <= 100;
+                if (!Util.correct) {
                     System.out.println("El numero debe estar entre" + 0 + " y " + 100);
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Lib.pausa();
+                Util.pausa();
             }
         
-        } while (!Lib.correct);
+        } while (!Util.correct);
         int edad = userInt;
-        double altura = Lib.validateDouble("Altura");
+        double altura = Util.validateDouble("Altura");
         
         alumnos[alumnosCount++] = new Alumno(nombre, edad, altura);
     }
@@ -77,7 +77,7 @@ public class Ejercicio5 {
     public Alumno apartadoB(int nAlumno){
         Alumno mayor= null;
         for(int i = 0; i < nAlumno; i++) {
-         addAlumno("nombre" + i, Lib.random(6, 30), Lib.random(50, 200)); 
+         addAlumno("nombre" + i, Util.random(6, 30), Util.random(50, 200)); 
         }
         if(alumnos[alumnosCount-1].getEdad() > alumnos[alumnosCount-2].getEdad()){
             mayor =(alumnos[alumnosCount-1]);;

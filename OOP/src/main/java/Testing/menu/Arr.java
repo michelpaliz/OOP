@@ -1,6 +1,6 @@
 package Testing.menu;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Arr {
 
@@ -9,7 +9,7 @@ public class Arr {
     }
 
     public void main() {
-        char randomizedCharacter = (char) (Lib.r.nextInt(6) + 'a');
+        char randomizedCharacter = (char) (Util.r.nextInt(6) + 'a');
         System.out.println("Generated Random Character: " + randomizedCharacter);
 
     }

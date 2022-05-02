@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.github.javafaker.Faker;
 
-import Util.*;
+import Lib.*;
 
 public class Registro {
     // *VARIABLES GLOBALES
@@ -286,9 +286,9 @@ public class Registro {
             // long minDay = LocalDate.of(1970, 1, 1).toEpochDay();
             long minDay = LocalDate.of(2002, 1, 1).toEpochDay();
             long maxDay = LocalDate.of(2015, 12, 31).toEpochDay();
-            Config.hora = Lib.random(Config.MIN_HOUR, Config.MAX_HOUR);
-            Config.minuto = Lib.random(Config.MIN_MIN, Config.MAX_MIN);
-            Config.segundo = Lib.random(Config.MIN_SEGUNDO, Config.MAX_SEGUNDO);
+            Config.hora = Util.random(Config.MIN_HOUR, Config.MAX_HOUR);
+            Config.minuto = Util.random(Config.MIN_MIN, Config.MAX_MIN);
+            Config.segundo = Util.random(Config.MIN_SEGUNDO, Config.MAX_SEGUNDO);
 
             // Conversion LocalDate to GregorianCalendar
             long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
@@ -304,10 +304,10 @@ public class Registro {
             edadPaciente.setTime(edad);
 
             // Estos pacientes ya has estado atendidos asi que generamos valores aleatorios
-            Config.temp = Lib.random(Config.MIN_TEMP, Config.MAX_TEMP);
-            Config.ppm = Lib.random(Config.MIN_PPM, Config.MAX_PPM);
-            Config.tens = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
-            Config.temp = Lib.random(Config.MIN_TENS, Config.MAX_TENS);
+            Config.temp = Util.random(Config.MIN_TEMP, Config.MAX_TEMP);
+            Config.ppm = Util.random(Config.MIN_PPM, Config.MAX_PPM);
+            Config.tens = Util.random(Config.MIN_TENS, Config.MAX_TENS);
+            Config.temp = Util.random(Config.MIN_TENS, Config.MAX_TENS);
             // Creacion revision objeto del paciente
             PrevRevison revisonPrevia = new PrevRevison(Config.temp, Config.ppm, Config.tens, Config.temp);
             // Creacion de objeto paciente
@@ -336,7 +336,7 @@ public class Registro {
         for (int i = 0; i < numPaciente; i++) {
             System.out.println(pacientes[i]);
         }
-        Lib.pausa();
+        Util.pausa();
         menu();
     }
 

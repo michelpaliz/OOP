@@ -2,8 +2,8 @@ package Tema11.Propios.ejercicio07;
 
 import java.util.Scanner;
 
+import Lib.Control;
 import Tema11.Propios.ejercicio07.models.Match;
-import Util.Control;
 
 public class Exer7 {
     DataBase db = new DataBase();

@@ -3,8 +3,8 @@ package Tema08.EjerciciosTema8.Ejercicio6;
 //*IMPORT PARA OPERACIONES
 import com.github.javafaker.Faker;
 
-import Util.Bombo;
-import Util.Lib;
+import Lib.Bombo;
+import Lib.Util;
 
 //*IMPORT DATE PACKAGES
 import java.util.Calendar;
@@ -257,7 +257,7 @@ public class Tienda {
         bicicletas[pos] = bicicletas[numBicicleta - 1];
         bicicletas[numBicicleta - 1] = null;
         numBicicleta--;
-        Lib.pausa();
+        Util.pausa();
         menu();
         return true;
 
@@ -354,7 +354,7 @@ public class Tienda {
         for (int i = 0; i < numBicicleta; i++) {
             System.out.println(bicicletas[i]);
         }
-        Lib.pausa();
+        Util.pausa();
         menu();
     }
     // *TIENDA

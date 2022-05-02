@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
+import Lib.Control;
+import Lib.Util;
 import Tema11.Propios.ejercicio07.models.Match;
-import Util.Control;
-import Util.Lib;
 
 public class DataBase {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
@@ -74,7 +74,7 @@ public class DataBase {
 
     public int getRandom(ArrayList<String> array) {
         int index = 0;
-        index = Lib.r.nextInt(array.size());
+        index = Util.r.nextInt(array.size());
         return index;
 
     }
@@ -85,7 +85,7 @@ public class DataBase {
         do {
             System.out.println(teamList.size());
             for (int i = 0; i < teamList.size(); i++) {
-                index = Lib.r.nextInt(teamList.size());
+                index = Util.r.nextInt(teamList.size());
                 value = teams[index];
                 teamList.remove(index);
             }

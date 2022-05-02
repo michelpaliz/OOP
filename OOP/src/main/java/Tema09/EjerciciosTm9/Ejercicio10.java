@@ -1,6 +1,6 @@
 package Tema09.EjerciciosTm9;
 
-import Util.Lib;
+import Lib.Util;
 
 public class Ejercicio10 {
 
@@ -22,14 +22,14 @@ public class Ejercicio10 {
             System.out.println("********** CALCULADORA ***********");
 
             System.out.println("Introduce el primer numero");
-            num1 = Lib.myInput.nextDouble();
+            num1 = Util.myInput.nextDouble();
             System.out.println("Enter the operator (+,-,*,/)");
-            operator = Lib.myInput.next().charAt(0);
+            operator = Util.myInput.next().charAt(0);
             System.out.println("Introduce el segundo numero");
-            num2 = Lib.myInput.nextDouble();
+            num2 = Util.myInput.nextDouble();
 
             for (int i = 0; i < 50; i++) {
-                num2 = (alphabet.charAt(Lib.r.nextInt(alphabet.length())));
+                num2 = (alphabet.charAt(Util.r.nextInt(alphabet.length())));
             }
 
         } while (!correct);
@@ -61,10 +61,10 @@ public class Ejercicio10 {
 
             do {
                 System.out.println("********** CALCULADORA ***********");
-                num1 = Lib.randomDouble(0, 100);
+                num1 = Util.randomDouble(0, 100);
                 System.out.println("Enter the operator (+,-,*,/)");
-                operator = Lib.myInput.next().charAt(0);
-                num2 = Lib.randomDouble(0, 100);
+                operator = Util.myInput.next().charAt(0);
+                num2 = Util.randomDouble(0, 100);
 
             } while (!correct);
 
@@ -97,7 +97,7 @@ public class Ejercicio10 {
             System.out.println("0.Salir");
             System.out.println("1.Juego Manual");
             System.out.println("2.Juego Atumatico");
-            userInt = Integer.parseInt(Lib.myInput.nextLine());
+            userInt = Integer.parseInt(Util.myInput.nextLine());
             correct = userInt < 3;
         } while (!correct);
 

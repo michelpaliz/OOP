@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import Lib.Ansi;
 import Tema08.EjemplosTema8.Tema8Adv.utils.Lib;
-import Util.Ansi;
 
 public class Ejercicio6 {
     private final Scanner lector;

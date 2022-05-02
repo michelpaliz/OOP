@@ -3,8 +3,8 @@ package Testing.menu;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-import Util.Control;
-import Util.Lib;
+import Lib.Control;
+import Lib.Util;
 
 public class Menu {
 
@@ -52,7 +52,7 @@ public class Menu {
         } else {
             System.out.print("Dni invalido\n");
             System.out.println("Presione enter para continuar...");
-            Lib.myInput.nextLine();
+            Util.myInput.nextLine();
         }
         return dniStr + letra;
     }

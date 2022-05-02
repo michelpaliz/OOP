@@ -2,12 +2,12 @@ package Tema11.Propios.ejercicio03;
 
 import java.util.ArrayList;
 
+import Lib.Ansi;
+import Lib.Control;
+import Lib.Conversion;
+import Lib.Util;
 import Tema11.Propios.ejercicio03.model.Atomatic;
 import Tema11.Propios.ejercicio03.model.Car;
-import Util.Ansi;
-import Util.Control;
-import Util.Conversion;
-import Util.Lib;
 
 public class App {
     private final Integer[] SPEEDARRAY = { 30, 60, 100, 140, 195 };
@@ -21,7 +21,7 @@ public class App {
         boolean correct = Control.one(message, validate);
         if (correct) {
             System.out.println("Introduce your car's name");
-            String licensePlate = userStr = Lib.myInput.nextLine();
+            String licensePlate = userStr = Util.myInput.nextLine();
             // Car car = new Car(licensePlate, Conversion.arrToArrList(SPEEDARRAY));
             //Clase 
             // Atomatic car1 = new Atomatic(licensePlate,Conversion.arrToArrList(SPEEDARRAY));
@@ -43,13 +43,13 @@ public class App {
                         break;
                     case 1:
                         System.out.println("Let's speed up your car, How much would u like to speed it");
-                        speed = Integer.parseInt(Lib.myInput.nextLine());
+                        speed = Integer.parseInt(Util.myInput.nextLine());
                         car.speedUp(speed);
                         System.out.println(car);
                         break;
                     case 2:
                         System.out.println("Introduce the break amount you'd like to reduce the car's speed");
-                        speed = Integer.parseInt(Lib.myInput.nextLine());
+                        speed = Integer.parseInt(Util.myInput.nextLine());
                         car.breakSpeed(speed);
                         break;
                 }

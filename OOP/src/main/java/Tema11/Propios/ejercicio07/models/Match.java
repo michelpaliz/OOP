@@ -1,18 +1,13 @@
 package Tema11.Propios.ejercicio07.models;
 
-import java.sql.Date;
 import java.time.LocalDate;
-import java.util.GregorianCalendar;
 
+import Lib.Util;
 import Tema11.Propios.ejercicio07.interfaces.Model;
-import Tema11.Propios.ejercicio07.models.ticket.Influence;
-import Util.Control;
-import Util.Lib;
 
 public class Match implements Model {
     private int matchReference;
     private double basePrice;
-    private Influence influence;
     private String localTeam;
     private String awayTeam;
     private LocalDate date;
@@ -20,7 +15,6 @@ public class Match implements Model {
     public Match() {
         this.matchReference = matchReference + 1;
         this.basePrice = 50;
-        this.influence = Influence.LOW_INFLUENCE;
     }
 
     public Match(int matchReference, String localTeam, String awayTeam, LocalDate date) {
@@ -31,12 +25,11 @@ public class Match implements Model {
         this.basePrice = 50;
     }
 
-    public Match(String localTeam, String awayTeam, double basePrice, Influence influence, LocalDate date) {
+    public Match(String localTeam, String awayTeam, double basePrice, LocalDate date) {
         this.matchReference = matchReference + 1;
         this.localTeam = localTeam;
         this.awayTeam = awayTeam;
         this.basePrice = basePrice;
-        this.influence = influence;
         this.date = date;
     }
 
@@ -64,7 +57,7 @@ public class Match implements Model {
     @Override
     public String toString() {
         return "Match [ Reference " + getMatchReference() + " awayTeam= " + awayTeam + " localTeam= " + localTeam
-                + " Date " + Lib.dateFrmYear(date) + "]";
+                + " Date " + Util.dateFrmYear(date) + "]";
     }
 
 }

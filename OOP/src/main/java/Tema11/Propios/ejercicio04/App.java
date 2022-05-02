@@ -5,11 +5,11 @@ import java.util.HashMap;
 
 import com.github.javafaker.Faker;
 
+import Lib.Util;
 import Tema11.Propios.ejercicio04.model.Appliance;
 import Tema11.Propios.ejercicio04.model.Color;
 import Tema11.Propios.ejercicio04.model.Config;
 import Tema11.Propios.ejercicio04.model.WashingMachine;
-import Util.Lib;
 
 public class App {
 
@@ -38,7 +38,7 @@ public class App {
             charge = faker.number().randomDouble(2, 0, 100);
             basePrice = faker.number().randomDouble(2, 50, 100);
             weight = faker.number().randomDouble(2, 20, 200);
-            electricalConsum = (char) (Lib.r.nextInt(6) + 'a');
+            electricalConsum = (char) (Util.r.nextInt(6) + 'a');
             color = Color.getRandom();
             array[i] = new WashingMachine(charge, color, Character.toUpperCase(electricalConsum), weight, basePrice);
         }

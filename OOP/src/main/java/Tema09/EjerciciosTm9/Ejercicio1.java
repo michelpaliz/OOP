@@ -1,5 +1,5 @@
 package Tema09.EjerciciosTm9;
-import Util.*;
+import Lib.*;
 
 public class Ejercicio1 {
 
@@ -9,7 +9,7 @@ public class Ejercicio1 {
             System.out.println("Introduce un numero");
             try {
                 System.out.print(message);
-                userInt = Integer.parseInt(Lib.myInput.nextLine());
+                userInt = Integer.parseInt(Util.myInput.nextLine());
                 Config.correct = userInt > 0;
                 if (!Config.correct) {
                     System.out.println("Error solo se puede numeros positivos");
@@ -17,11 +17,11 @@ public class Ejercicio1 {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error: El input no es un integer");
-                Lib.pausa();
-                Lib.correct = false;
+                Util.pausa();
+                Util.correct = false;
             }
 
-        } while (!Lib.correct);
+        } while (!Util.correct);
         return userInt;
     }
 

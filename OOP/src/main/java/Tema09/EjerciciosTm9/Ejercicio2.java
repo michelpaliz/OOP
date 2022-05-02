@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import Util.*;
+import Lib.*;
 
 public class Ejercicio2 {
 
@@ -17,7 +17,7 @@ public class Ejercicio2 {
 
         do {
             System.out.println("Inserta un numero");
-            Config.userStr = Lib.myInput.next();
+            Config.userStr = Util.myInput.next();
             list.add(Config.userStr);
 
             try {
@@ -27,7 +27,7 @@ public class Ejercicio2 {
 
             } catch (Exception e) {
                 System.out.println("No es un integer");
-                Lib.pausa();
+                Util.pausa();
 
             }
 

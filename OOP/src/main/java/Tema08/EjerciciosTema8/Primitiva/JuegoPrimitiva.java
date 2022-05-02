@@ -4,7 +4,7 @@ package Tema08.EjerciciosTema8.Primitiva;
 import java.util.Scanner;
 import java.util.Set;
 
-import Util.Lib;
+import Lib.Util;
 
 import java.util.LinkedHashSet;
 import java.util.Random;

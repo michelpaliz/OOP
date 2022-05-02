@@ -1,6 +1,6 @@
 package Tema10.Ejercicios.Propios.Ejercicio10;
 
-import Util.Control;
+import Lib.Control;
 
 public class Hijo {
     private static final int INITIAL_SIZE = 10;

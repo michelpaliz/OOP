@@ -1,4 +1,4 @@
-package Util;
+package Lib;
 
 import java.util.Scanner;
 import java.util.UUID;
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
-public class Lib {
+public class Util {
 
     public static Scanner myInput = new Scanner(System.in);
     public static Random r = new Random();
@@ -53,14 +53,14 @@ public class Lib {
         do {
             try {
                 System.out.print(message);
-                userInt = Integer.parseInt(Lib.myInput.nextLine());
+                userInt = Integer.parseInt(Util.myInput.nextLine());
                 correct = userInt >= min && userInt <= max;
                 if (!correct) {
                     System.out.println("El numero debe estar entre" + min + " y " + max);
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Lib.pausa();
+                Util.pausa();
             }
 
         } while (!correct);
@@ -77,11 +77,11 @@ public class Lib {
         do {
             try {
                 System.out.print(message);
-                userInt = Double.parseDouble(Lib.myInput.nextLine());
+                userInt = Double.parseDouble(Util.myInput.nextLine());
                 correct = true;
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Lib.pausa();
+                Util.pausa();
                 correct = false;
             }
 
@@ -96,7 +96,7 @@ public class Lib {
             correct = userStr.equals(compare);
             System.out.print("Introduce un String ");
             try {
-                userStr = Lib.myInput.nextLine();
+                userStr = Util.myInput.nextLine();
 
             } catch (NumberFormatException e) {
                 System.out.println("Error: El input no es un String");
@@ -121,11 +121,11 @@ public class Lib {
         // si data hubiera sido un atributo hubiese sido inicializado como null
         do {
             System.out.print(message);
-            userStr = Lib.myInput.nextLine();
+            userStr = Util.myInput.nextLine();
             correct = userStr.length() >= minLenght && userStr.length() <= maxLenght;
             if (!correct) {
                 System.out.printf("Longitud minima %d, maxima %d \n", minLenght, maxLenght);
-                Lib.pausa();
+                Util.pausa();
             }
 
         } while (!correct);
@@ -150,16 +150,16 @@ public class Lib {
                 do {
                     System.out.print(message);
                     try {
-                        userInt1 = Integer.parseInt(Lib.myInput.nextLine());
-                        Lib.correct = true;
-                        Lib.pausa();
+                        userInt1 = Integer.parseInt(Util.myInput.nextLine());
+                        Util.correct = true;
+                        Util.pausa();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Lib.pausa();
-                        Lib.correct = false;
+                        Util.pausa();
+                        Util.correct = false;
                     }
 
-                } while (!Lib.correct);
+                } while (!Util.correct);
                 userInt = userInt1;
                 array[i] = (userInt + (i + 1));
             }

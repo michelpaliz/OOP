@@ -1,4 +1,4 @@
-package Util;
+package Lib;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -33,7 +33,7 @@ public class Control {
             System.out.println(sentence[i]);
         }
         System.out.println("Choose one option");
-        int option = Integer.parseInt(Lib.myInput.nextLine());
+        int option = Integer.parseInt(Util.myInput.nextLine());
         boolean correct = option > 0;
         do {
             if (option > sentence.length) {
@@ -86,11 +86,11 @@ public class Control {
         if (min < 1900) {
             System.out.println("The date needs to be greater than " + min);
         }
-        int year = Lib.randBetween(min, max);
+        int year = Util.randBetween(min, max);
         // we set the our own year to one gc YEAR
         gc.set(gc.YEAR, year);
         // get a random day of the year
-        int dayOfYear = Lib.randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+        int dayOfYear = Util.randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
         // then we obtain our last item
         gc.set(gc.DAY_OF_YEAR, dayOfYear);
         // print out an example(*we need to format this in order to print this
@@ -109,7 +109,7 @@ public class Control {
 
     public static GregorianCalendar birthFormat() {
         System.out.println(" Fecha (dd-mm-yyyy)");
-        userStr = Lib.myInput.nextLine();
+        userStr = Util.myInput.nextLine();
         SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
         GregorianCalendar birth = null;
         do {
@@ -165,7 +165,7 @@ public class Control {
     public static boolean one(String message, char[] validate) {
         int index = 0;
         System.out.printf(message);
-        char c = Lib.myInput.nextLine().toLowerCase().charAt(index);
+        char c = Util.myInput.nextLine().toLowerCase().charAt(index);
         for (int i = 0; i < validate.length; i++) {
             if (validate[i] == c) {
                 correct = true;
@@ -207,7 +207,7 @@ public class Control {
         } else {
             System.out.print("Dni invalido\n");
             System.out.println("Presione enter para continuar...");
-            Lib.myInput.nextLine();
+            Util.myInput.nextLine();
         }
         return dniStr + letra;
     }
@@ -233,7 +233,7 @@ public class Control {
         } else {
             System.out.print("Dni invalido\n");
             System.out.println("Presione enter para continuar...");
-            Lib.myInput.nextLine();
+            Util.myInput.nextLine();
         }
         return dniStr + letra;
     }
