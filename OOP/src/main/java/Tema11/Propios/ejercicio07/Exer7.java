@@ -25,7 +25,9 @@ public class Exer7 {
                 db.randomValues();
                 db.showDB();
                 usrInt = Integer.parseInt(myInput.nextLine());
-                System.out.println(db.matchSelected(usrInt));
+                m = db.matchSelected(usrInt);
+                System.out.println("This is the match that you selected " + m);
+                System.out.println("This is the minimum price base for all the matches " + m.getBasePrice());
 
                 break;
             case 2:
