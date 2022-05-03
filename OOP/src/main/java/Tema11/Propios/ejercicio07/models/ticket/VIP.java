@@ -15,6 +15,8 @@ public class VIP extends Ticket {
         alphaNumber = Util.generateString();
     }
 
+    
+
     @Override
     public String toString() {
         return super.toString() + "VIP [alphaNumber=" + alphaNumber + "]";

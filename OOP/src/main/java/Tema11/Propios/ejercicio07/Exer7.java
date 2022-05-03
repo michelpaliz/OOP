@@ -13,6 +13,7 @@ public class Exer7 {
     Ticket t = new Ticket();
     Scanner myInput = new Scanner(System.in);
     int usrInt;
+    String usrStr;
     boolean correct;
 
     public Exer7() {
@@ -32,11 +33,13 @@ public class Exer7 {
                 System.out.println("This is the match that you selected " + m);
                 System.out.println("This is the minimum price base for all the matches " + m.getBasePrice());
                 System.out.println("These are the avaliable tickect for now, Select one");
-                tDB.rndTicket(usrInt);
-                tDB.showDB();
-                usrInt = Integer.parseInt(myInput.nextLine());
-                String t = tDB.matchSelected(usrInt);
-                System.out.println(t);
+
+                correct = Control.one("Do you want a VIP ticket (y/n) ", 'y');
+                System.out.println(tDB.ticketSelected(usrInt, correct));
+                // tDB.rndTicket(usrInt);
+                // usrInt = Integer.parseInt(myInput.nextLine());
+                // String t = tDB.normalTiketSelected(usrInt);
+                // System.out.println(t);
 
                 break;
             case 2:

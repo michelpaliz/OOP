@@ -177,6 +177,23 @@ public class Control {
 
     }
 
+    /**
+     * 
+     * @param message  introduce the message you want to ask to the user
+     * @param validate validate each one of your validated options
+     * @return true if it matches any asnwers and false if it does not.
+     */
+
+    public static boolean one(String message, char validate) {
+        int index = 0;
+        System.out.printf(message);
+        char c = Util.myInput.nextLine().toLowerCase().charAt(index);
+        if (validate == c)
+            return true;
+        return false;
+
+    }
+
     public static boolean one(char[] validate, char election) {
         for (int i = 0; i < validate.length; i++) {
             if (validate[i] == election) {
@@ -294,7 +311,5 @@ public class Control {
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;
     }
-
-    
 
 }
