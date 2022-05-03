@@ -61,7 +61,7 @@ public class TicketDB {
         }
     }
 
-    public String normalTiketSelected(int ref) {
+    public Ticket normalTiketSelected(int ref) {
         Ticket selected = null;
         for (Entry<Integer, Ticket> entry : tickets.entrySet()) {
             Integer key = entry.getKey();
@@ -69,10 +69,10 @@ public class TicketDB {
                 selected = tickets.get(key);
                 if (selected.sold() == true) {
                     selected.setState(State.RESERVED);
-                    return "The ticket is now yours " + selected;
+                    System.out.println("The ticket is now yours" + selected);
+                    return selected;
                 } else {
-                    // ticket.setState(State.RESERVED);
-                    return "The ticket is not avaliable";
+                    System.out.println("The ticket is not avaliable");
                 }
             }
 
@@ -81,7 +81,7 @@ public class TicketDB {
 
     }
 
-    public <T> String ticketSelected(int ref, boolean choice) {
+    public <T> Ticket ticketSelected(int ref, boolean choice) {
         if (choice == true) {
             rndVIP(ref);
             showVIP();
@@ -95,10 +95,11 @@ public class TicketDB {
                     selected = (VIP) vips.get(key);
                     if (selected.sold() == true) {
                         selected.setState(State.RESERVED);
-                        return "The ticket is now yours " + selected;
+                        // return "The ticket is now yours " + selected;
+                        System.out.println("The ticket is now yours " + selected);
+                        return selected;
                     } else {
-                        // ticket.setState(State.RESERVED);
-                        return "The ticket is not avaliable";
+                        System.out.println("The ticket is not avaliable");
                     }
                 }
             }
@@ -114,9 +115,6 @@ public class TicketDB {
 
     }
 
-    public boolean checkState(Ticket t) {
-
-        return false;
-    }
+    // Now let's do the payments for our clients
 
 }

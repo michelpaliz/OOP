@@ -8,6 +8,8 @@ import java.util.Map.Entry;
 import Lib.Control;
 import Lib.Util;
 import Tema11.Propios.ejercicio07.models.Match;
+import Tema11.Propios.ejercicio07.models.ticket.Influence;
+import Tema11.Propios.ejercicio07.models.ticket.Ticket;
 
 public class MatchesDB {
     String[] teams = { "MADRID", "BARCELONA", "ATLETICO_MADRID", "VALENCIA" };
@@ -76,6 +78,15 @@ public class MatchesDB {
         index = Util.r.nextInt(array.size());
         return index;
 
+    }
+
+    public void summary(Match m, Ticket t) {
+        double result = m.getBasePrice();
+        Influence i = t.getInfluence();
+        // System.out.println("influence" + i);
+        // System.out.println("base price " + result);
+        result += t.zone(t.getInfluence(), m);
+        System.out.println("This is the total for your ticket " + result);
     }
 
 }

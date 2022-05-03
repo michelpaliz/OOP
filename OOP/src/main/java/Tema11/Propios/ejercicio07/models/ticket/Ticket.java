@@ -52,6 +52,10 @@ public class Ticket implements Zone {
         this.state = state;
     }
 
+    public Influence getInfluence() {
+        return influence;
+    }
+    
     @Override
     public double zone(Influence inf, Match m) {
         // TODO Auto-generated method stub

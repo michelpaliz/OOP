@@ -41,6 +41,10 @@ public class Match implements Model {
         return basePrice;
     }
 
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+
     @Override
     public boolean equals(Object match) {
         if (this == match)

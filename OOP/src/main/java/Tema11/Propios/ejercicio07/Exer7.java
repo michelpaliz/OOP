@@ -35,7 +35,10 @@ public class Exer7 {
                 System.out.println("These are the avaliable tickect for now, Select one");
 
                 correct = Control.one("Do you want a VIP ticket (y/n) ", 'y');
-                System.out.println(tDB.ticketSelected(usrInt, correct));
+                // System.out.println(tDB.ticketSelected(usrInt, correct));
+                t = (tDB.ticketSelected(usrInt, correct));
+                mDB.summary(m, t);
+
                 // tDB.rndTicket(usrInt);
                 // usrInt = Integer.parseInt(myInput.nextLine());
                 // String t = tDB.normalTiketSelected(usrInt);
