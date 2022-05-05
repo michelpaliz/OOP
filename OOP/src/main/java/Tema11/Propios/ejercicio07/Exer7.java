@@ -38,6 +38,9 @@ public class Exer7 {
                 // System.out.println(tDB.ticketSelected(usrInt, correct));
                 t = (tDB.ticketSelected(usrInt, correct));
                 mDB.summary(m, t);
+                System.out.println("Let's print out the type of  tickets");
+                tDB.type();
+                tDB.showDB();
 
                 // tDB.rndTicket(usrInt);
                 // usrInt = Integer.parseInt(myInput.nextLine());

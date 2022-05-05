@@ -9,6 +9,7 @@ import Testing.menu.Arr;
 import Testing.menu.Menu;
 import Testing.array.Array;
 import Testing.array.MyArrayLIst;
+import Testing.array.myHashMap;
 // import Util.menu;
 import Testing.date.MyDate;
 
@@ -43,7 +44,8 @@ public class main {
         // MyDate a = new MyDate();
         // Digit d = new Digit();
         // AlphaNumeric a = new AlphaNumeric();
-        MyArrayLIst a = new MyArrayLIst();
+        // MyArrayLIst a = new MyArrayLIst();
+        myHashMap a = new myHashMap();
 
     }
 }
