@@ -1,4 +1,4 @@
-package Testing.Hashmap;
+package Testing.objects.person;
 
 import Tema11.Propios.ejercicio05.models.objNames;
 

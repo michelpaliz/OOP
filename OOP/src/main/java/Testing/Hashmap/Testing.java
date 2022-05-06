@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.github.javafaker.Faker;
 
 import Lib.Control;
+import Testing.objects.person.Person;
 
 public class Testing {
     private final int INITIALITER = 4;

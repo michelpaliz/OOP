@@ -45,7 +45,8 @@ public class main {
         // Digit d = new Digit();
         // AlphaNumeric a = new AlphaNumeric();
         // MyArrayLIst a = new MyArrayLIst();
-        myHashMap a = new myHashMap();
+        // myHashMap a = new myHashMap();
+        
 
     }
 }

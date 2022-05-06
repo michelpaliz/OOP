@@ -1,5 +1,7 @@
 package Testing.Hashmap;
 
+import Testing.objects.person.Person;
+
 public class hashmap {
 
     public hashmap() {

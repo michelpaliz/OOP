@@ -2,6 +2,8 @@ package Testing.Hashmap;
 
 import java.util.HashMap;
 
+import Testing.objects.person.Person;
+
 public class PersonMap {
 
     // Attributes
