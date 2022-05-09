@@ -7,13 +7,19 @@ import Testing.String.AlphaNumeric;
 import Testing.String.Digit;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
+import Testing.objects.car.Vehicle;
 import Testing.array.Array;
 import Testing.array.MyArrayLIst;
 import Testing.array.myHashMap;
+import Testing.concepts.Inheritance.Car;
+import Testing.concepts.Inheritance.Inheritance;
+import Testing.concepts.MyInterface.Interface;
+import Testing.concepts.Polymorphism.MyPolymorphism;
+import Testing.concepts.collection.Collection;
 // import Util.menu;
 import Testing.date.MyDate;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         // Testing t1 = new Testing();
@@ -46,7 +52,10 @@ public class main {
         // AlphaNumeric a = new AlphaNumeric();
         // MyArrayLIst a = new MyArrayLIst();
         // myHashMap a = new myHashMap();
-        
+        // Inheritance i = new Inheritance();
+        // Interface i = new Interface();
+        // MyPolymorphism p = new MyPolymorphism();
+        Collection c = new Collection();
 
     }
 }

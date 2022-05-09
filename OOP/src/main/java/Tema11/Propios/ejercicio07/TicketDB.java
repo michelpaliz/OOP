@@ -16,6 +16,8 @@ public class TicketDB {
     int usr;
     static HashMap<Integer, Ticket> tickets = new HashMap<>();
     static HashMap<Integer, Ticket> vips = new HashMap<>();
+    static 
+
     Ticket ticket;
     VIP vip;
     MatchesDB db = new MatchesDB();
