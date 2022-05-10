@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Exer1",
+      "request": "launch",
+      "mainClass": "Tema12.Exer1",
+      "projectName": "OOP"
+    },
+    {
+      "type": "java",
       "name": "Launch Main",
       "request": "launch",
       "mainClass": "Tema12.Main",
