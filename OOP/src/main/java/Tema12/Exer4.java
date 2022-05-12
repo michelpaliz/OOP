@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Exer4 {
     public Exer4() {
@@ -27,7 +28,10 @@ public class Exer4 {
         SimpleDateFormat df2 = new SimpleDateFormat("EEE, MMM d, ''yy");
         SimpleDateFormat df3 = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
         long lastModified = file.lastModified();
+        GregorianCalendar gc = new GregorianCalendar();
+        long getDate = gc.getTimeInMillis();
         Date d = new Date(lastModified * 1000);
+        // System.out.println("Gregorian Calendar " + df2.format(gc));
         System.out.println("Date formated " + df2.format(d));
         System.out.println("Size of the file");
         System.out.println("Bytes " + file.length());

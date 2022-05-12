@@ -6,7 +6,8 @@ public class Main {
         // String path = "/home/michael/Desktop/Tema12";
         // Exer2 e2 = new Exer2(path);
         // Exer3 e3 = new Exer3();
-        Exer4 e4 = new Exer4();
+        // Exer4 e4 = new Exer4();
+        Exer5 e5 = new Exer5();
     }
 
 }
