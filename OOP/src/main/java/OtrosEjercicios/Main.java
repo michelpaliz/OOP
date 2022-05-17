@@ -1,6 +1,6 @@
 package OtrosEjercicios;
 
-import OtrosEjercicios.Campeonato.App;
+import OtrosEjercicios.Campeonato.Array.App;
 import OtrosEjercicios.StackOverflow.Cola;
 import OtrosEjercicios.StackOverflow.Pila;
 import OtrosEjercicios.sql.Mysql;

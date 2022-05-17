@@ -1,4 +1,4 @@
-package OtrosEjercicios.Campeonato;
+package OtrosEjercicios.Campeonato.Array;
 
 public enum nomEquipo {
     MADRID, BARCELONA, BAYERN, VALENCIA, ATLETICO_MADRID, VILLARREAL;

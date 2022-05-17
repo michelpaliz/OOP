@@ -1,4 +1,4 @@
-package OtrosEjercicios.Campeonato;
+package OtrosEjercicios.Campeonato.Array;
 
 public enum Posicion {
     DELANTERO, MEDIOCAMPISTA, DEFENSA, PORTERO;
