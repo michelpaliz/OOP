@@ -1,6 +1,7 @@
 package OtrosEjercicios;
 
 import OtrosEjercicios.Campeonato.Array.App;
+import OtrosEjercicios.Campeonato.Collection.Game;
 import OtrosEjercicios.StackOverflow.Cola;
 import OtrosEjercicios.StackOverflow.Pila;
 import OtrosEjercicios.sql.Mysql;
@@ -38,8 +39,10 @@ public class Main {
 
         // *SQL
 
-        Mysql start = new Mysql();
-        System.out.println(start);
+        // Mysql start = new Mysql();
+        // System.out.println(start);
+
+        Game g = new Game();
 
     }
 }
