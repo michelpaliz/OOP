@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class Control {
 
     private static String userStr;
-    private static int userInt;
+    private static int usrInt;
     private static boolean correct;
 
     private static final Pattern REGEXP = Pattern.compile("[0-9]{8}[A-Z]");
@@ -310,6 +310,25 @@ public class Control {
         long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;
+    }
+
+    /**
+     * 
+     * @param <T>
+     * @param values the enum you would like to loop
+     * @return the choice you made
+     */
+
+    public <T extends Enum<T>> int selectEnum1(T[] values) {
+        System.out.println("These are the options avaliable.\nPlease select one of these.");
+        for (int i = 0; i < values.length; i++) {
+            System.out.println(i + " " + values[i]);
+        }
+        usrInt = Integer.parseInt(Util.myInput.nextLine());
+        String message = "Select a number";
+        int choice = Util.validateInt(message, 0, values.length);
+        return choice;
+
     }
 
 }

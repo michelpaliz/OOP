@@ -13,7 +13,7 @@ public class Util {
     private static boolean correct;
 
     public static void pausa() {
-        System.out.println("Pulsa intro para continuar ....");
+        System.out.println("Press enter to retry again ....");
         myInput.nextLine();
     }
 
@@ -56,7 +56,7 @@ public class Util {
                 userInt = Integer.parseInt(Util.myInput.nextLine());
                 correct = userInt >= min && userInt <= max;
                 if (!correct) {
-                    System.out.println("El numero debe estar entre" + min + " y " + max);
+                    System.out.println("The number must be between" + min + " and " + max);
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error");
@@ -211,6 +211,24 @@ public class Util {
     public static String generateString() {
         String uuid = UUID.randomUUID().toString();
         return uuid;
+    }
+
+    public static String checkAnswer(String option1, String option2) {
+        String user = "";
+        do {
+            System.out.println("Please write these two avaliable options " + (option1) + " " + option2);
+            user = Util.myInput.nextLine();
+            if (user.equalsIgnoreCase(option1)) {
+                return option1;
+            } else if (user.equalsIgnoreCase(option2)) {
+                return option2;
+            } else {
+                System.out
+                        .println("Your answer must match with the avaliable options.\nPlease write again your option.");
+                correct = false;
+            }
+        } while (correct = true);
+        return "Error";
     }
 
 }

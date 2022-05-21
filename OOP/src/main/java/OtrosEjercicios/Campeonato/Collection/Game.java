@@ -28,7 +28,7 @@ public class Game {
 
     public Game() {
         String tittle = "START GAME";
-        String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW PLAYER", "CREATE NEW COACH", "EXIT" };
+        String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW", "SEARCH","GAME"};
         usrInt = Control.menuGenerator(tittle, sentence);
         switch (usrInt) {
             case 0:
@@ -36,13 +36,18 @@ public class Game {
                 break;
             case 1:
                 System.out.println("generate data");
-                // System.out.println(gnPlayer());
-                // System.out.println(gnCoach());
                 System.out.println(gnTeam());
                 break;
             case 2:
-                break;
+                 usr = Util.checkAnswer("Coach", "Player");
+                if (usr.equalsIgnoreCase("Coach")) {
+
+                } else {
+                    
+                }
+
             case 3:
+
                 break;
             case 4:
                 break;
@@ -51,6 +56,7 @@ public class Game {
         }
     }
 
+//*Generate Random DATA
     public List<Player> gnPlayer() {
         playerList = new ArrayList<>(maxPlayer);
         tPlayer tPlayer = OtrosEjercicios.Campeonato.Collection.numeric.tPlayer.DEFENSE;
@@ -97,5 +103,23 @@ public class Game {
         }
         return teamList;
     }
+
+//*Create a new player or coach
+public Coach createCoach(){
+    String id = Control.DNIgeneratorChar(fk.number().digits(8));
+    System.out.println("Write the name");
+    String name  = Util.myInput.nextLine();
+    System.out.println("Write the lastName");
+    String lastName =  Util.myInput.nextLine();
+    System.out.println("Write the age");
+    int age = Integer.parseInt(Util.myInput.nextLine());
+    System.out.println("Write the nacionality");
+    String nacionality = Util.myInput.nextLine();
+
+
+    c = new Coach(id, name, lastName, age, nacionality, tCoach)
+    return c;
+}
+
 
 }

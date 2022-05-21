@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Testing.Hashmap.Testing;
 import Testing.String.AlphaNumeric;
 import Testing.String.Digit;
+import Testing.String.myString;
 import Testing.menu.Arr;
 import Testing.menu.Menu;
 import Testing.objects.car.Vehicle;
@@ -55,7 +56,8 @@ public class Main {
         // Inheritance i = new Inheritance();
         // Interface i = new Interface();
         // MyPolymorphism p = new MyPolymorphism();
-        Collection c = new Collection();
+        myString m = new myString();
+        // Collection c = new Collection();
 
     }
 }
