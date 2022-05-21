@@ -319,17 +319,24 @@ public class Control {
      * @return the choice you made
      */
     public static <T extends Enum<T>> Enum<T> selectEnum(T[] values) {
-        System.out.println("These are the options avaliable.\nPlease select one of these.");
-        for (int i = 0; i < values.length; i++) {
-            System.out.println(i + " " + values[i]);
-        }
-        String message = "Select a number ";
-        int choice = Util.validateInt(message, 0, values.length);
-        for (int i = 0; i < values.length; i++) {
-            if (i == choice) {
-                return values[i];
+
+        do {
+            System.out.println("These are the options avaliable.\nPlease select one of these.");
+            for (int i = 0; i < values.length; i++) {
+                System.out.println(i + " " + values[i]);
             }
-        }
+            String message = "Select a number ";
+            int choice = Util.validateInt(message, 0, values.length);
+            for (int i = 0; i < values.length; i++) {
+                if (i == choice) {
+                    return values[i];
+                } else {
+                    correct = false;
+                }
+            }
+            System.out.println("Your choice must be between the range");
+        } while (correct);
+
         return null;
 
     }
