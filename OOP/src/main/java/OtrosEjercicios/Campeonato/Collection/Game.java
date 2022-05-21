@@ -25,6 +25,7 @@ public class Game {
     final int maxTeam = 2;
     String usr;
     int usrInt;
+    boolean correct;
 
     public Game() {
         mainMenu();
@@ -44,15 +45,12 @@ public class Game {
                 System.out.println(gnTeam());
                 break;
             case 2:
-                System.out.println("First introduce the id of the team where you want to add the new element");
-                t = seekTeam();
-                usr = Util.checkAnswer("Coach", "Player");
-                if (usr.equalsIgnoreCase("Coach")) {
-                    c = (createCoach());
-                    System.out.println(addElement(t, p, usr));
-                } else {
-                    p = (createPlayer());
-                    System.out.println(addElement(t, p, usr));
+                if (addElement() == false) {
+                    System.out.println("Do you want to try again ?");
+                    usr = Util.checkAnswer("Yes", "No");
+                    if (usr.equalsIgnoreCase("yes")) {
+                        addElement();
+                    }
                 }
                 break;
             case 3:
@@ -155,63 +153,85 @@ public class Game {
     // *Add the player or coach you've created to a specific team
 
     public Team seekTeam() {
-        System.out.println("Introduce the id of the team");
-        String id = Util.myInput.nextLine();
-        // List<Team> playerByTeam = new ArrayList<>();
-        for (Team team : teamList) {
-            if (team.getId().equalsIgnoreCase(id)) {
-                // playerByTeam.add(team);
-                System.out.println(team.getId());
-                return team;
+
+        do {
+            System.out.println("Introduce the id of the team");
+            String id = Util.myInput.nextLine();
+            for (Team team : teamList) {
+                if (team.getId().equalsIgnoreCase(id)) {
+                    System.out.println(team.getId());
+                    return team;
+                } else {
+                    correct = false;
+                }
             }
-        }
+            System.out.println("Introduce a valid id");
+        } while (correct = true);
+
         return null;
     }
 
     public Player seekPlayer(Team t) {
-        System.out.println("Introduce the id of the player");
-        String id = Util.myInput.nextLine();
-        for (Player p : t.getPlayers()) {
-            if (p.getId().equalsIgnoreCase(id)) {
-                return p;
+        do {
+            System.out.println("Introduce the id of the player");
+            String id = Util.myInput.nextLine();
+            for (Player p : t.getPlayers()) {
+                if (p.getId().equalsIgnoreCase(id)) {
+                    return p;
+                } else {
+                    correct = false;
+                }
             }
-        }
+            System.out.println("Introduce a valid id");
+        } while (correct);
+
         return null;
     }
 
     public Coach seekCoach(Team t) {
-        System.out.println("Introduce the id of the player");
-        String id = Util.myInput.nextLine();
-        for (Coach c : t.getCoaches()) {
-            if (c.getId().equalsIgnoreCase(id)) {
-                return c;
+        do {
+            System.out.println("Introduce the id of the player");
+            String id = Util.myInput.nextLine();
+            for (Coach c : t.getCoaches()) {
+                if (c.getId().equalsIgnoreCase(id)) {
+                    return c;
+                } else {
+                    correct = false;
+                }
             }
-        }
+            System.out.println("Introduce a valid id");
+        } while (correct);
+
         return null;
     }
 
-    public boolean addElement(Team t, Object x, String answer) {
-        if (answer.equalsIgnoreCase("player")) {
+    public boolean addElement() {
+        System.out.println("First introduce the id of the team where you want to add the new element");
+        t = seekTeam();
+        usr = Util.checkAnswer("Coach", "Player");
+        if (usr.equalsIgnoreCase("player")) {
             if (t.getPlayers().size() < maxPlayer) {
-                t.getPlayers().add((Player) x);
+                t.getPlayers().add((createPlayer()));
+                System.out.println("Player added successfully");
                 return true;
             } else {
                 System.out.println(
                         "The maximum number has been added.\nYou must remove a player in order to suscribe this one");
                 p = seekPlayer(t);
                 t.getPlayers().remove(p);
-                return true;
+                System.out.println("Player removed successfully");
+                return false;
             }
         } else {
             if (t.getCoaches().size() < maxPlayer) {
-                t.getCoaches().add((Coach) x);
+                t.getCoaches().add((createCoach()));
                 return true;
             } else {
                 System.out.println(
                         "The maximum number has been added.\nYou must remove a coach in order to suscribe this one");
                 c = seekCoach(t);
                 t.getCoaches().remove(c);
-                return true;
+                return false;
             }
         }
 
@@ -230,7 +250,7 @@ public class Game {
     // *Show DataBase
     public void showDB() {
         System.out.println("Show");
-        System.out.println(playerList);
+        System.out.println(teamList);
     }
 
 }
