@@ -318,16 +318,19 @@ public class Control {
      * @param values the enum you would like to loop
      * @return the choice you made
      */
-
-    public <T extends Enum<T>> int selectEnum1(T[] values) {
+    public <T extends Enum<T>> Enum<T> selectEnum(T[] values) {
         System.out.println("These are the options avaliable.\nPlease select one of these.");
         for (int i = 0; i < values.length; i++) {
             System.out.println(i + " " + values[i]);
         }
-        usrInt = Integer.parseInt(Util.myInput.nextLine());
-        String message = "Select a number";
+        String message = "Select a number ";
         int choice = Util.validateInt(message, 0, values.length);
-        return choice;
+        for (int i = 0; i < values.length; i++) {
+            if (i == choice) {
+                return values[i];
+            }
+        }
+        return null;
 
     }
 
