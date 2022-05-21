@@ -14,6 +14,9 @@ public class Person {
         this.age = age;
         this.nacionality = nacionality;
     }
+    public String getId() {
+        return id;
+    }
 
     @Override
     public String toString() {

@@ -336,7 +336,7 @@ public class Registro {
         for (int i = 0; i < numPaciente; i++) {
             System.out.println(pacientes[i]);
         }
-        Util.pausa();
+        Util.pause();
         menu();
     }
 

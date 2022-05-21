@@ -257,7 +257,7 @@ public class Tienda {
         bicicletas[pos] = bicicletas[numBicicleta - 1];
         bicicletas[numBicicleta - 1] = null;
         numBicicleta--;
-        Util.pausa();
+        Util.pause();
         menu();
         return true;
 
@@ -354,7 +354,7 @@ public class Tienda {
         for (int i = 0; i < numBicicleta; i++) {
             System.out.println(bicicletas[i]);
         }
-        Util.pausa();
+        Util.pause();
         menu();
     }
     // *TIENDA

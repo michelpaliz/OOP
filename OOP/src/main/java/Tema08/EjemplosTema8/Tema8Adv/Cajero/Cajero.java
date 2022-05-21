@@ -44,15 +44,15 @@ public class Cajero {
                     switch (opcion) {
                         case 1:
                             ingresar(numeroTarjeta);
-                            Util.pausa();
+                            Util.pause();
                             break;
                         case 2:
                             retirar(numeroTarjeta);
-                            Util.pausa();
+                            Util.pause();
                             break;
                         case 3:
                             consultarSaldo(numeroTarjeta);
-                            Util.pausa();
+                            Util.pause();
                             break;
                         case 4:
                             // TODO Implementar el método cambiarPin
@@ -60,14 +60,14 @@ public class Cajero {
                             // hay que invocar al método cambiarPin(String oldPin, String newPin)
                             // de la clase Tarjeta.
                             cambiarPin(numeroTarjeta);
-                            Util.pausa();
+                            Util.pause();
                             break;
                         case 0:
                             System.out.println("Hasta pronto");
                             break;
                         default:
                             System.out.println("Opción no válida");
-                            Util.pausa();
+                            Util.pause();
                             break;
                     }
                 } while (opcion != 0);

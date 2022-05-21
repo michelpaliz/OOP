@@ -86,7 +86,7 @@ public class Equipo {
         for (int i = 0; i < equipos.length; i++) {
             System.out.println(equipos[i] + "\n");
         }
-        Util.pausa();
+        Util.pause();
     }
 
     // +DE AQUI PARA ABAJO ES PARA LA CREACION DE LA BASE DE DATOS
@@ -163,13 +163,13 @@ public class Equipo {
     }
 
     public Jugador buscarPorID(Jugador jugador) {
-        int  pos = buscarJugador(jugador);
+        int pos = buscarJugador(jugador);
         return pos < 0 ? null : jugadores[pos];
     }
 
     public Jugador[] nuevoEspacio(Jugador jugador) {
 
-        //si no esta vacio
+        // si no esta vacio
         if (buscarPorID(jugador) != null) {
             return null;
         }

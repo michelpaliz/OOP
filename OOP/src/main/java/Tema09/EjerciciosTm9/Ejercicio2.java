@@ -27,7 +27,7 @@ public class Ejercicio2 {
 
             } catch (Exception e) {
                 System.out.println("No es un integer");
-                Util.pausa();
+                Util.pause();
 
             }
 

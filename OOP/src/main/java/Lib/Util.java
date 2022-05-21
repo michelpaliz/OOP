@@ -12,8 +12,8 @@ public class Util {
     public static Random r = new Random();
     private static boolean correct;
 
-    public static void pausa() {
-        System.out.println("Press enter to retry again ....");
+    public static void pause() {
+        System.out.println("Press enter to continue ....");
         myInput.nextLine();
     }
 
@@ -60,7 +60,7 @@ public class Util {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Util.pausa();
+                Util.pause();
             }
 
         } while (!correct);
@@ -81,7 +81,7 @@ public class Util {
                 correct = true;
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Util.pausa();
+                Util.pause();
                 correct = false;
             }
 
@@ -125,7 +125,7 @@ public class Util {
             correct = userStr.length() >= minLenght && userStr.length() <= maxLenght;
             if (!correct) {
                 System.out.printf("Longitud minima %d, maxima %d \n", minLenght, maxLenght);
-                Util.pausa();
+                Util.pause();
             }
 
         } while (!correct);
@@ -152,10 +152,10 @@ public class Util {
                     try {
                         userInt1 = Integer.parseInt(Util.myInput.nextLine());
                         Util.correct = true;
-                        Util.pausa();
+                        Util.pause();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Util.pausa();
+                        Util.pause();
                         Util.correct = false;
                     }
 

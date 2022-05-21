@@ -22,14 +22,10 @@ public class Ejercicio5 {
 
         alumnosCount = 0;
         alumnos = new Alumno[INITIAL_ALUMNOS_SIZE];
-        
 
         System.out.println(apartadoB(2));
 
-
     }
-
-
 
     public Alumno compararObj(Alumno alumno1, Alumno alumno2) {
         Alumno alumno = (null);
@@ -43,8 +39,7 @@ public class Ejercicio5 {
         return alumno;
     }
 
-
-    public void solicitarAlumno(){
+    public void solicitarAlumno() {
         String nombre = Util.validarStr0("nombre", 0, 100);
         int userInt = 0;
         do {
@@ -57,42 +52,40 @@ public class Ejercicio5 {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error");
-                Util.pausa();
+                Util.pause();
             }
-        
+
         } while (!Util.correct);
         int edad = userInt;
         double altura = Util.validateDouble("Altura");
-        
+
         alumnos[alumnosCount++] = new Alumno(nombre, edad, altura);
     }
 
-
-    public void addAlumno(String nombre, int edad, int altura){
-        alumnos[alumnosCount] = new Alumno(nombre,edad,altura);
+    public void addAlumno(String nombre, int edad, int altura) {
+        alumnos[alumnosCount] = new Alumno(nombre, edad, altura);
         alumnosCount++;
-        
+
     }
 
-    public Alumno apartadoB(int nAlumno){
-        Alumno mayor= null;
-        for(int i = 0; i < nAlumno; i++) {
-         addAlumno("nombre" + i, Util.random(6, 30), Util.random(50, 200)); 
+    public Alumno apartadoB(int nAlumno) {
+        Alumno mayor = null;
+        for (int i = 0; i < nAlumno; i++) {
+            addAlumno("nombre" + i, Util.random(6, 30), Util.random(50, 200));
         }
-        if(alumnos[alumnosCount-1].getEdad() > alumnos[alumnosCount-2].getEdad()){
-            mayor =(alumnos[alumnosCount-1]);;
-        }else{
-            mayor = (alumnos[alumnosCount-2]);
+        if (alumnos[alumnosCount - 1].getEdad() > alumnos[alumnosCount - 2].getEdad()) {
+            mayor = (alumnos[alumnosCount - 1]);
+            ;
+        } else {
+            mayor = (alumnos[alumnosCount - 2]);
         }
 
         return mayor;
     }
 
-    public void apartadoA(){
-        solicitarAlumno();;
+    public void apartadoA() {
+        solicitarAlumno();
+        ;
     }
-
-
-
 
 }

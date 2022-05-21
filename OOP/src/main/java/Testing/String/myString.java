@@ -30,6 +30,7 @@ public class myString {
         }
     }
 
+
     // public <T extends Enum<T>> int selectEnum1(T[] values) {
     // System.out.println("These are the options avaliable.\nPlease select one of
     // these.");

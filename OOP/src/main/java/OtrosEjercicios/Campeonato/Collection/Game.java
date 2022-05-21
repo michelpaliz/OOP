@@ -22,41 +22,56 @@ public class Game {
     Faker fk = new Faker();
     final int maxPlayer = 12;
     final int maxCoach = 3;
-    final int maxTeam = 4;
+    final int maxTeam = 2;
     String usr;
     int usrInt;
 
     public Game() {
+        mainMenu();
+
+    }
+
+    public boolean mainMenu() {
         String tittle = "START GAME";
-        String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW", "SEARCH","GAME"};
+        String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW", "SEARCH", "GAME", "SHOW DB" };
         usrInt = Control.menuGenerator(tittle, sentence);
         switch (usrInt) {
             case 0:
                 System.out.println("See you soon");
-                break;
+                return false;
             case 1:
                 System.out.println("generate data");
                 System.out.println(gnTeam());
                 break;
             case 2:
-                 usr = Util.checkAnswer("Coach", "Player");
+                System.out.println("First introduce the id of the team where you want to add the new element");
+                t = seekTeam();
+                usr = Util.checkAnswer("Coach", "Player");
                 if (usr.equalsIgnoreCase("Coach")) {
-
+                    c = (createCoach());
+                    System.out.println(addElement(t, p, usr));
                 } else {
-                    
+                    p = (createPlayer());
+                    System.out.println(addElement(t, p, usr));
                 }
-
+                break;
             case 3:
 
                 break;
             case 4:
                 break;
             case 5:
+                showDB();
                 break;
         }
+        Util.pause();
+        mainMenu();
+        // Util.cleanScreen();
+        return true;
+
     }
 
-//*Generate Random DATA
+    // *Generate Random DATA
     public List<Player> gnPlayer() {
         playerList = new ArrayList<>(maxPlayer);
         tPlayer tPlayer = OtrosEjercicios.Campeonato.Collection.numeric.tPlayer.DEFENSE;
@@ -93,33 +108,129 @@ public class Game {
         teamList = new ArrayList<>(maxTeam);
         tTeam tTeam = OtrosEjercicios.Campeonato.Collection.numeric.tTeam.ATLETICO_MADRID;
         for (int i = 0; i < maxTeam; i++) {
+            String id = "B" + (fk.number().digits(8));
             tTeam = tTeam.getRandom();
             LocalDate fundationDate = Control.rndLocalDate();
             String country = fk.country().name();
             String city = fk.country().capital();
-
-            t = new Team(tTeam, fundationDate, country, city, gnPlayer(), gnCoach());
+            t = new Team(id, tTeam, fundationDate, country, city, gnPlayer(), gnCoach());
             teamList.add(t);
         }
         return teamList;
     }
 
-//*Create a new player or coach
-public Coach createCoach(){
-    String id = Control.DNIgeneratorChar(fk.number().digits(8));
-    System.out.println("Write the name");
-    String name  = Util.myInput.nextLine();
-    System.out.println("Write the lastName");
-    String lastName =  Util.myInput.nextLine();
-    System.out.println("Write the age");
-    int age = Integer.parseInt(Util.myInput.nextLine());
-    System.out.println("Write the nacionality");
-    String nacionality = Util.myInput.nextLine();
+    // *Create a new player or coach
+    public Coach createCoach() {
+        String id = Control.DNIgeneratorChar(fk.number().digits(8));
+        System.out.println("Write the name");
+        String name = Util.myInput.nextLine();
+        System.out.println("Write the lastName");
+        String lastName = Util.myInput.nextLine();
+        System.out.println("Write the age");
+        int age = Integer.parseInt(Util.myInput.nextLine());
+        System.out.println("Write the nacionality");
+        String nacionality = Util.myInput.nextLine();
+        tCoach tCoach = (OtrosEjercicios.Campeonato.Collection.numeric.tCoach) Control
+                .selectEnum(OtrosEjercicios.Campeonato.Collection.numeric.tCoach.values());
+        c = new Coach(id, name, lastName, age, nacionality, tCoach);
+        return c;
+    }
 
+    public Player createPlayer() {
+        String id = Control.DNIgeneratorChar(fk.number().digits(8));
+        System.out.println("Write the name");
+        String name = Util.myInput.nextLine();
+        System.out.println("Write the lastName");
+        String lastName = Util.myInput.nextLine();
+        System.out.println("Write the age");
+        int age = Integer.parseInt(Util.myInput.nextLine());
+        System.out.println("Write the nacionality");
+        String nacionality = Util.myInput.nextLine();
+        tPlayer tPlayer = (OtrosEjercicios.Campeonato.Collection.numeric.tPlayer) Control
+                .selectEnum(OtrosEjercicios.Campeonato.Collection.numeric.tPlayer.values());
+        p = new Player(id, name, lastName, age, nacionality, tPlayer);
+        return p;
+    }
 
-    c = new Coach(id, name, lastName, age, nacionality, tCoach)
-    return c;
-}
+    // *Add the player or coach you've created to a specific team
 
+    public Team seekTeam() {
+        System.out.println("Introduce the id of the team");
+        String id = Util.myInput.nextLine();
+        // List<Team> playerByTeam = new ArrayList<>();
+        for (Team team : teamList) {
+            if (team.getId().equalsIgnoreCase(id)) {
+                // playerByTeam.add(team);
+                System.out.println(team.getId());
+                return team;
+            }
+        }
+        return null;
+    }
+
+    public Player seekPlayer(Team t) {
+        System.out.println("Introduce the id of the player");
+        String id = Util.myInput.nextLine();
+        for (Player p : t.getPlayers()) {
+            if (p.getId().equalsIgnoreCase(id)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public Coach seekCoach(Team t) {
+        System.out.println("Introduce the id of the player");
+        String id = Util.myInput.nextLine();
+        for (Coach c : t.getCoaches()) {
+            if (c.getId().equalsIgnoreCase(id)) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public boolean addElement(Team t, Object x, String answer) {
+        if (answer.equalsIgnoreCase("player")) {
+            if (t.getPlayers().size() < maxPlayer) {
+                t.getPlayers().add((Player) x);
+                return true;
+            } else {
+                System.out.println(
+                        "The maximum number has been added.\nYou must remove a player in order to suscribe this one");
+                p = seekPlayer(t);
+                t.getPlayers().remove(p);
+                return true;
+            }
+        } else {
+            if (t.getCoaches().size() < maxPlayer) {
+                t.getCoaches().add((Coach) x);
+                return true;
+            } else {
+                System.out.println(
+                        "The maximum number has been added.\nYou must remove a coach in order to suscribe this one");
+                c = seekCoach(t);
+                t.getCoaches().remove(c);
+                return true;
+            }
+        }
+
+    }
+
+    // public boolean addCoach(Team t, Coach c){
+    // if (t.getCoaches().size()<maxCoach) {
+    // t.getCoaches().add(c)
+    // }else{
+
+    // }
+
+    // return true;
+    // }
+
+    // *Show DataBase
+    public void showDB() {
+        System.out.println("Show");
+        System.out.println(playerList);
+    }
 
 }

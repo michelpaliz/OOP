@@ -12,11 +12,24 @@ public class Team extends Club {
     private final List<Player> players;
     private final List<Coach> coaches;
 
-    public Team(tTeam tTeam, LocalDate fundationDate, String country, String city, List<Player> players,
+    public Team(String id, tTeam tTeam, LocalDate fundationDate, String country, String city, List<Player> players,
             List<Coach> coaches) {
-        super(tTeam, fundationDate, country, city);
+        super(id, tTeam, fundationDate, country, city);
         this.players = players;
         this.coaches = coaches;
+    }
+
+    @Override
+    public String getId() {
+        return super.getId();
+    }
+
+    public List<Coach> getCoaches() {
+        return coaches;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
     }
 
     @Override

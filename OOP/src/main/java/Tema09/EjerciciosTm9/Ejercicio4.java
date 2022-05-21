@@ -22,13 +22,13 @@ public class Ejercicio4 {
                     try {
                         userInt = Integer.parseInt(Util.myInput.nextLine());
                         Util.correct = true;
-                        Util.pausa();
+                        Util.pause();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Util.pausa();
+                        Util.pause();
                         Util.correct = false;
                     }
-                
+
                 } while (!Util.correct);
                 array[cont] = userInt;
                 cont++;
@@ -42,7 +42,7 @@ public class Ejercicio4 {
 
     }
 
-    public static  void validarArray() {
+    public static void validarArray() {
         System.out.println("Validacion de un array de enteros");
         System.out.println("Introduce la longitud  del array");
 
@@ -57,13 +57,13 @@ public class Ejercicio4 {
                     try {
                         userInt = Integer.parseInt(Util.myInput.nextLine());
                         Util.correct = true;
-                        Util.pausa();
+                        Util.pause();
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El input no es un integer");
-                        Util.pausa();
+                        Util.pause();
                         Util.correct = false;
                     }
-                
+
                 } while (!Util.correct);
                 array[i] = userInt;
             }

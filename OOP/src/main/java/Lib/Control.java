@@ -318,7 +318,7 @@ public class Control {
      * @param values the enum you would like to loop
      * @return the choice you made
      */
-    public <T extends Enum<T>> Enum<T> selectEnum(T[] values) {
+    public static <T extends Enum<T>> Enum<T> selectEnum(T[] values) {
         System.out.println("These are the options avaliable.\nPlease select one of these.");
         for (int i = 0; i < values.length; i++) {
             System.out.println(i + " " + values[i]);

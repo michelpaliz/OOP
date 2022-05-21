@@ -56,7 +56,7 @@ public class Main {
         // Inheritance i = new Inheritance();
         // Interface i = new Interface();
         // MyPolymorphism p = new MyPolymorphism();
-        myString m = new myString();
+         myString m = new myString();
         // Collection c = new Collection();
 
     }

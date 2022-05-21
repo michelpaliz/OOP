@@ -1,4 +1,5 @@
 package Tema09.EjerciciosTm9;
+
 import Lib.*;
 
 public class Ejercicio1 {
@@ -17,7 +18,7 @@ public class Ejercicio1 {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error: El input no es un integer");
-                Util.pausa();
+                Util.pause();
                 Util.correct = false;
             }
 
