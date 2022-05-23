@@ -31,7 +31,7 @@ public class Game {
         mainMenu();
 
     }
-
+    System.out.println("\nIt took " + count + " flips to achieve three heads in a row");
     public boolean mainMenu() {
         String tittle = "START GAME";
         String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW", "SEARCH", "GAME", "SHOW DB" };
@@ -54,7 +54,8 @@ public class Game {
                 }
                 break;
             case 3:
-
+                System.out.println("What do you want to look forward?");
+                usr= Util.
                 break;
             case 4:
                 break;
@@ -151,7 +152,6 @@ public class Game {
     }
 
     // *Add the player or coach you've created to a specific team
-
     public Team seekTeam() {
 
         do {
@@ -205,6 +205,7 @@ public class Game {
         return null;
     }
 
+    // *Here you can add as coach or player as you'd like
     public boolean addElement() {
         System.out.println("First introduce the id of the team where you want to add the new element");
         t = seekTeam();
@@ -236,16 +237,6 @@ public class Game {
         }
 
     }
-
-    // public boolean addCoach(Team t, Coach c){
-    // if (t.getCoaches().size()<maxCoach) {
-    // t.getCoaches().add(c)
-    // }else{
-
-    // }
-
-    // return true;
-    // }
 
     // *Show DataBase
     public void showDB() {

@@ -36,7 +36,7 @@ public class Main {
         // // System.out.println(t1.empIds.replace(key, oldValue, newValue));
         // System.out.println(t1.empIds.putIfAbsent("Steve", 22222)); // returns null
         // // bcs it doens exists
-        // System.out.println(t1.empIds);
+        // System.out.printlnType safety: Unchecked cast from String to T(t1.empIds);
         // System.out.println(t1.empIds.remove("Steve"));
 
         // System.out.println("Start menu");

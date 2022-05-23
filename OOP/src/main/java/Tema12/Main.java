@@ -3,6 +3,9 @@ package Tema12;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import OtrosEjercicios.Campeonato.Collection.Game;
+import Tema12.TresRaya.ThreeHeads;
+
 public class Main {
     public static void main(String[] args) {
         // Exer1 e1 = new Exer1();
@@ -15,7 +18,8 @@ public class Main {
         // System.out.println(path1);
         // Exer6 e6 = new Exer6(path1);
         // Hex h = new Hex();
-        Exer10 e10 = new Exer10("Name", path);
+        // Exer10 e10 = new Exer10("Name", path);
+        ThreeHeads t = new ThreeHeads();
     }
 
 }
