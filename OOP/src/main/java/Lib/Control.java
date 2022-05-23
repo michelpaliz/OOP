@@ -341,4 +341,28 @@ public class Control {
 
     }
 
+    /**
+     * 
+     * @param <T>
+     * @param options you must to select
+     * @return the data that has matched with the input of the user; or null if it
+     *         doens't
+     */
+
+    public <T> T checkOptions(String[] option) {
+        do {
+            System.out.println("Introduce one answer for the avaliable options " + Arrays.toString(option));
+            String usr = Util.myInput.nextLine();
+            for (int i = 0; i < option.length; i++) {
+                if (option[i].equalsIgnoreCase(usr)) {
+                    return (T) usr;
+                } else {
+                    correct = false;
+                }
+            }
+            System.out.println("Please insert a valid option");
+        } while (!correct);
+        return null;
+    }
+
 }
