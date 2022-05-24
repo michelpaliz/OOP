@@ -304,9 +304,11 @@ public class Control {
      * @return a random localDate
      */
     public static LocalDate rndLocalDate(LocalDate min) {
-        long minDay = min.toEpochDay();
+        // long minDay = min.toEpochDay();
         LocalDate lt = LocalDate.now();
         int maxDay = lt.getYear();
+        int minDay = min.getYear();
+        // long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;

@@ -27,7 +27,7 @@ public class Match {
     @Override
     public String toString() {
         return "Match [awayTeam=" + awayTeam + ", date=" + date + ", id=" + id + ", localTeam=" + localTeam
-                + ", result=" + Arrays.toString(result) + ", number of season=" + season + "]";
+                + ", result=" + Arrays.toString(result) + ", number of season=" + season + "]\n";
     }
 
 }

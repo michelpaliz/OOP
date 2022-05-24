@@ -31,7 +31,8 @@ public class Game {
     boolean correct;
 
     public Game() {
-        mainMenu();
+        System.out.println(gntMatches());
+        // mainMenu();
 
     }
 
@@ -129,16 +130,19 @@ public class Game {
         return teamList;
     }
 
-    public void gntMatches() {
+    public List<Match> gntMatches() {
+        matchList = new ArrayList<>(maxTeam);
         tTeam localTeam, awayTeam;
         LocalDate date;
-        LocalDate minDate = LocalDate.of(2022, 1, 0);
+        LocalDate minDate = LocalDate.of(2021, 1, 01);
         for (int i = 0; i < maxMatch; i++) {
             String id = "M" + (fk.number().digits(4));
             int season = fk.random().nextInt(1, 3);
             do {
-                localTeam = (tTeam) Control.selectEnum(tTeam.values());
-                awayTeam = (tTeam) Control.selectEnum(tTeam.values());
+                localTeam = tTeam.getRandom();
+                awayTeam = tTeam.getRandom();
+                // localTeam = (tTeam) Control.selectEnum(tTeam.values());
+                // awayTeam = (tTeam) Control.selectEnum(tTeam.values());
             } while (localTeam == awayTeam);
             date = Control.rndLocalDate(minDate);
             int[] result = new int[] { fk.random().nextInt(0, 5), fk.random().nextInt(0, 5) };
@@ -148,6 +152,7 @@ public class Game {
             matchList.add(m);
         }
         System.out.println("Random data created");
+        return matchList;
     }
 
     // *Create a new player or coach
