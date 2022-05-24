@@ -303,7 +303,7 @@ public class Control {
      * @param min the year you wanna put
      * @return a random localDate
      */
-    public LocalDate rndLocalDate(LocalDate min) {
+    public static LocalDate rndLocalDate(LocalDate min) {
         long minDay = min.toEpochDay();
         LocalDate lt = LocalDate.now();
         int maxDay = lt.getYear();
@@ -349,7 +349,7 @@ public class Control {
      *         doens't
      */
 
-    public <T> T checkOptions(String[] option) {
+    public static <T> T checkOptions(String[] option) {
         do {
             System.out.println("Introduce one answer for the avaliable options " + Arrays.toString(option));
             String usr = Util.myInput.nextLine();

@@ -16,13 +16,16 @@ public class Game {
     Player p;
     Coach c;
     Team t;
+    Match m;
     List<Team> teamList;
     List<Player> playerList;
     List<Coach> coachList;
+    List<Match> matchList;
     Faker fk = new Faker();
     final int maxPlayer = 12;
     final int maxCoach = 3;
     final int maxTeam = 2;
+    final int maxMatch = 18;
     String usr;
     int usrInt;
     boolean correct;
@@ -31,7 +34,7 @@ public class Game {
         mainMenu();
 
     }
-    System.out.println("\nIt took " + count + " flips to achieve three heads in a row");
+
     public boolean mainMenu() {
         String tittle = "START GAME";
         String[] sentence = { "EXIT", "GENERATE NEW TEAM", "CREATE NEW", "SEARCH", "GAME", "SHOW DB" };
@@ -54,10 +57,18 @@ public class Game {
                 }
                 break;
             case 3:
-                System.out.println("What do you want to look forward?");
-                usr= Util.
+                System.out.println("What do you want to search?");
+                String[] options = { "Player", "Coach" };
+                String option = Control.checkOptions(options);
+                if (option.equalsIgnoreCase("Player")) {
+                    seekPlayer();
+                } else {
+                    createCoach();
+                }
                 break;
             case 4:
+                System.out.println("Generate Games");
+
                 break;
             case 5:
                 showDB();
@@ -118,6 +129,27 @@ public class Game {
         return teamList;
     }
 
+    public void gntMatches() {
+        tTeam localTeam, awayTeam;
+        LocalDate date;
+        LocalDate minDate = LocalDate.of(2022, 1, 0);
+        for (int i = 0; i < maxMatch; i++) {
+            String id = "M" + (fk.number().digits(4));
+            int season = fk.random().nextInt(1, 3);
+            do {
+                localTeam = (tTeam) Control.selectEnum(tTeam.values());
+                awayTeam = (tTeam) Control.selectEnum(tTeam.values());
+            } while (localTeam == awayTeam);
+            date = Control.rndLocalDate(minDate);
+            int[] result = new int[] { fk.random().nextInt(0, 5), fk.random().nextInt(0, 5) };
+
+            m = new Match(id, localTeam, awayTeam, date, result, season);
+
+            matchList.add(m);
+        }
+        System.out.println("Random data created");
+    }
+
     // *Create a new player or coach
     public Coach createCoach() {
         String id = Control.DNIgeneratorChar(fk.number().digits(8));
@@ -171,7 +203,9 @@ public class Game {
         return null;
     }
 
-    public Player seekPlayer(Team t) {
+    public Player seekPlayer() {
+        System.out.println("First introduce the id of the team where you want to add the new element");
+        t = seekTeam();
         do {
             System.out.println("Introduce the id of the player");
             String id = Util.myInput.nextLine();
@@ -188,7 +222,9 @@ public class Game {
         return null;
     }
 
-    public Coach seekCoach(Team t) {
+    public Coach seekCoach() {
+        System.out.println("First introduce the id of the team where you want to add the new element");
+        t = seekTeam();
         do {
             System.out.println("Introduce the id of the player");
             String id = Util.myInput.nextLine();
@@ -207,8 +243,7 @@ public class Game {
 
     // *Here you can add as coach or player as you'd like
     public boolean addElement() {
-        System.out.println("First introduce the id of the team where you want to add the new element");
-        t = seekTeam();
+        System.out.println("What would you like to create, Player or a Coach?");
         usr = Util.checkAnswer("Coach", "Player");
         if (usr.equalsIgnoreCase("player")) {
             if (t.getPlayers().size() < maxPlayer) {
@@ -218,7 +253,7 @@ public class Game {
             } else {
                 System.out.println(
                         "The maximum number has been added.\nYou must remove a player in order to suscribe this one");
-                p = seekPlayer(t);
+                p = seekPlayer();
                 t.getPlayers().remove(p);
                 System.out.println("Player removed successfully");
                 return false;
@@ -230,7 +265,7 @@ public class Game {
             } else {
                 System.out.println(
                         "The maximum number has been added.\nYou must remove a coach in order to suscribe this one");
-                c = seekCoach(t);
+                c = seekCoach();
                 t.getCoaches().remove(c);
                 return false;
             }
