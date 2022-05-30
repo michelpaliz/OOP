@@ -367,4 +367,19 @@ public class Control {
         return null;
     }
 
+    /**
+     * 
+     * @param min LocalDate you want to insert
+     * @param max LocalDate youw ant to insert
+     * @return random Date between the range
+     */
+
+    public static LocalDate rndLD(LocalDate min, LocalDate max) {
+        long minDay = LocalDate.of(min.getYear(), min.getMonth(), min.getDayOfMonth()).toEpochDay();
+        long maxDay = LocalDate.of(max.getYear(), max.getMonth(), max.getDayOfMonth()).toEpochDay();
+        long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+        LocalDate rnDate = LocalDate.ofEpochDay(randomDay);
+        return rnDate;
+    }
+
 }

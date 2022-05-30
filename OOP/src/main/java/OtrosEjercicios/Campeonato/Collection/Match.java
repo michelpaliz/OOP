@@ -24,6 +24,10 @@ public class Match {
         this.result = result;
     }
 
+    public int getSeason() {
+        return season;
+    }
+
     @Override
     public String toString() {
         return "Match [awayTeam=" + awayTeam + ", date=" + date + ", id=" + id + ", localTeam=" + localTeam

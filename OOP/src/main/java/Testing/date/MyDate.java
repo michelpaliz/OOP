@@ -31,6 +31,12 @@ public class MyDate {
 
         GregorianCalendar gc = GregorianCalendar.from(localDateObj.atStartOfDay(ZoneId.systemDefault()));
 
+        LocalDate min = LocalDate.of(2021, 1, 1);
+        LocalDate max = LocalDate.of(2021, 4, 1);
+        System.out.println("GENERATE MIN AND MAX DATES");
+        String date = Util.dateFrmYear(rndLD(min, max));
+        System.out.println(date);
+
         System.out.println("The code below is a localDateTime Obj");
         System.out.println(dtf.format(localDateTimeObj));
         // System.out.println("The code below is a localDate obj");
@@ -48,6 +54,14 @@ public class MyDate {
         System.out.println("This is random local Date");
         System.out.println((rndLocalDate()));
         System.out.println(dt.format(rndLocalDate()));
+    }
+
+    public LocalDate rndLD(LocalDate min, LocalDate max) {
+        long minDay = LocalDate.of(min.getYear(), min.getMonth(), min.getDayOfMonth()).toEpochDay();
+        long maxDay = LocalDate.of(max.getYear(), max.getMonth(), max.getDayOfMonth()).toEpochDay();
+        long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
+        LocalDate rnDate = LocalDate.ofEpochDay(randomDay);
+        return rnDate;
     }
 
     public LocalDate rndLocalDate() {

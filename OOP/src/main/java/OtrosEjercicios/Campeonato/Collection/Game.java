@@ -10,6 +10,7 @@ import Lib.Control;
 import Lib.Util;
 import OtrosEjercicios.Campeonato.Collection.numeric.tCoach;
 import OtrosEjercicios.Campeonato.Collection.numeric.tPlayer;
+import OtrosEjercicios.Campeonato.Collection.numeric.tSeason;
 import OtrosEjercicios.Campeonato.Collection.numeric.tTeam;
 
 public class Game {
@@ -32,6 +33,7 @@ public class Game {
 
     public Game() {
         System.out.println(gntMatches());
+        // sortSeason(1);
         // mainMenu();
 
     }
@@ -130,6 +132,8 @@ public class Game {
         return teamList;
     }
 
+    // let's generate some matches for the championship
+
     public List<Match> gntMatches() {
         matchList = new ArrayList<>(maxTeam);
         tTeam localTeam, awayTeam;
@@ -137,14 +141,14 @@ public class Game {
         LocalDate minDate = LocalDate.of(2021, 1, 01);
         for (int i = 0; i < maxMatch; i++) {
             String id = "M" + (fk.number().digits(4));
-            int season = fk.random().nextInt(1, 3);
             do {
                 localTeam = tTeam.getRandom();
                 awayTeam = tTeam.getRandom();
                 // localTeam = (tTeam) Control.selectEnum(tTeam.values());
                 // awayTeam = (tTeam) Control.selectEnum(tTeam.values());
             } while (localTeam == awayTeam);
-            date = Control.rndLocalDate(minDate);
+            date = Control.rndLD(minDate, LocalDate.now());
+            int season = giveSeason(date);
             int[] result = new int[] { fk.random().nextInt(0, 5), fk.random().nextInt(0, 5) };
 
             m = new Match(id, localTeam, awayTeam, date, result, season);
@@ -282,6 +286,35 @@ public class Game {
     public void showDB() {
         System.out.println("Show");
         System.out.println(teamList);
+    }
+
+    // * CREATING LOGIC FOR THE GAME
+    // sort games by seasons
+    public void sortSeason(int season) {
+        System.out.println("Sort by Season");
+        for (int i = 0; i < matchList.size(); i++) {
+            if (matchList.get(i).getSeason() == season) {
+                System.out.println(matchList.get(i));
+            }
+        }
+    }
+
+    public int giveSeason(LocalDate date) {
+        LocalDate s1 = LocalDate.of(2021, 9, 1);
+        LocalDate s2 = LocalDate.of(2022, 3, 1);
+        LocalDate s3 = LocalDate.of(2022, 6, 1);
+        int season = 0;
+
+        if (date.isBefore(s3)) {
+            season = 3;
+            return season;
+        } else if (date.isBefore(s2)) {
+            season = 2;
+            return season;
+        } else {
+            season = 1;
+            return season;
+        }
     }
 
 }

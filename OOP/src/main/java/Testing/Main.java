@@ -48,7 +48,7 @@ public class Main {
         // Arrays
         // Array a = new Array();
         // Date
-        // MyDate a = new MyDate();
+        MyDate a = new MyDate();
         // Digit d = new Digit();
         // AlphaNumeric a = new AlphaNumeric();
         // MyArrayLIst a = new MyArrayLIst();
@@ -56,7 +56,7 @@ public class Main {
         // Inheritance i = new Inheritance();
         // Interface i = new Interface();
         // MyPolymorphism p = new MyPolymorphism();
-         myString m = new myString();
+        // myString m = new myString();
         // Collection c = new Collection();
 
     }
