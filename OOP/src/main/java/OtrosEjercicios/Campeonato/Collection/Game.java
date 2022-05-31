@@ -10,7 +10,6 @@ import Lib.Control;
 import Lib.Util;
 import OtrosEjercicios.Campeonato.Collection.numeric.tCoach;
 import OtrosEjercicios.Campeonato.Collection.numeric.tPlayer;
-import OtrosEjercicios.Campeonato.Collection.numeric.tSeason;
 import OtrosEjercicios.Campeonato.Collection.numeric.tTeam;
 
 public class Game {
@@ -71,7 +70,8 @@ public class Game {
                 break;
             case 4:
                 System.out.println("Generate Games");
-
+                System.out.println("Generate points for the game");
+                
                 break;
             case 5:
                 showDB();
@@ -138,7 +138,7 @@ public class Game {
         matchList = new ArrayList<>(maxTeam);
         tTeam localTeam, awayTeam;
         LocalDate date;
-        LocalDate minDate = LocalDate.of(2021, 1, 01);
+        LocalDate minDate = LocalDate.of(2021, 9, 01);
         for (int i = 0; i < maxMatch; i++) {
             String id = "M" + (fk.number().digits(4));
             do {
@@ -299,16 +299,22 @@ public class Game {
         }
     }
 
+    /***
+     * @param date
+     * @return the correct season
+     */
+
     public int giveSeason(LocalDate date) {
-        LocalDate s1 = LocalDate.of(2021, 9, 1);
+
+        LocalDate s1 = LocalDate.of(2021, 12, 26);
         LocalDate s2 = LocalDate.of(2022, 3, 1);
         LocalDate s3 = LocalDate.of(2022, 6, 1);
         int season = 0;
 
-        if (date.isBefore(s3)) {
+        if (date.isBefore(s3) && date.isAfter(s2)) {
             season = 3;
             return season;
-        } else if (date.isBefore(s2)) {
+        } else if (date.isBefore(s2) && date.isAfter(s1)) {
             season = 2;
             return season;
         } else {

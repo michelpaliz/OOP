@@ -11,12 +11,14 @@ public class Team extends Club {
     // here comes the composition between this class to other classes;
     private final List<Player> players;
     private final List<Coach> coaches;
+    private int point;
 
     public Team(String id, tTeam tTeam, LocalDate fundationDate, String country, String city, List<Player> players,
-            List<Coach> coaches) {
+            List<Coach> coaches, int point) {
         super(id, tTeam, fundationDate, country, city);
         this.players = players;
         this.coaches = coaches;
+        this.point = point;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class Team extends Club {
 
     @Override
     public String toString() {
-        return "Team" + super.toString() + " [coaches=" + coaches + ", players=" + players + "] \n";
+        return "Team" + super.toString() + " [coaches=" + coaches + ", players=" + players +", point ="+  point"]+ \n";
     }
 
 }

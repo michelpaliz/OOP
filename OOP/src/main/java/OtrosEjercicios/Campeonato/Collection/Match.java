@@ -3,6 +3,8 @@ package OtrosEjercicios.Campeonato.Collection;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import Lib.Control;
+import Lib.Util;
 import OtrosEjercicios.Campeonato.Collection.numeric.tTeam;
 
 public class Match {
@@ -30,7 +32,8 @@ public class Match {
 
     @Override
     public String toString() {
-        return "Match [awayTeam=" + awayTeam + ", date=" + date + ", id=" + id + ", localTeam=" + localTeam
+        return "Match [awayTeam=" + awayTeam + ", date=" + date + ", id=" + id + ", localTeam="
+                + localTeam
                 + ", result=" + Arrays.toString(result) + ", number of season=" + season + "]\n";
     }
 
