@@ -14,4 +14,7 @@ public class Collection {
 
     }
 
+    public static void sort() {
+    }
+
 }
