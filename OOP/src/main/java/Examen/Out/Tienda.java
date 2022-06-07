@@ -31,7 +31,6 @@ public class Tienda {
                 System.out.println(i.listaMueble);
                 System.out.println("Escoge el id del catalogo ");
                 user = Util.myInput.nextInt();
-
                 venderMueble(i.c.getId());
 
                 break;
@@ -48,8 +47,7 @@ public class Tienda {
     }
 
     public void venderMueble(int id) {
-
-        Mueble m = c.getMuebles();
+        Mueble m = i.c.getMuebles();
         if (m.checkStock(m) != false) {
             i.listaCatalogo.remove(m.getCodigo());
             System.out.println("Mueble eliminado");
@@ -57,7 +55,5 @@ public class Tienda {
             System.out.println("No se ha podido eliminar el mueble stock vacio");
         }
     }
-
-
 
 }

@@ -1,10 +1,11 @@
 package Examen.Models;
 
+import java.util.Comparator;
 import java.util.List;
 
 import Examen.numeric.Enombre;
 
-public class Catalogo {
+public class Catalogo implements Comparator<Catalogo> {
     private int id;
     private Enombre nombre;
     private int anyo;
@@ -48,6 +49,7 @@ public class Catalogo {
         result = prime * result + ((m == null) ? 0 : m.hashCode());
         result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
         return result;
+
     }
 
     @Override
@@ -58,16 +60,28 @@ public class Catalogo {
         return true;
     }
 
-    public Catalogo getCatalogo(int id, List<Catalogo> lista) {
-        int id1;
+    // @Override
+    // public int compare(Catalogo c) {
+    // return Integer.valueOf(this.anyo).compareTo(c.getAnyo());
+    // }
 
-        for(int i = 0; i < lista.size(); i++) {
-            if (lista.get(index)) {
-                
-            }
-        }
+    // @Override
+    // public int compareTo(Catalogo c, Catalogo c1) {
+    // int salida = 0;
+    // if (c.getAnyo() == this.anyo) {
+    // salida = 0;
+    // } else if (c.getAnyo() > this.anyo) {
+    // salida = 1;
+    // } else {
+    // salida = -1;
+    // }
+    // return salida;
+    // }
 
+    @Override
+    public int compare(Catalogo arg0, Catalogo arg1) {
+        // TODO Auto-generated method stub
+        return 0;
     }
-
 
 }

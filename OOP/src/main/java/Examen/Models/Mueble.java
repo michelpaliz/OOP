@@ -65,11 +65,14 @@ public class Mueble implements Comparable<Mueble> {
 
     @Override
     public int compareTo(Mueble o) {
-        int salida = 0;
-        if (nombre.equals(o)) {
+        int salida;
+        if (o.getNombre().compareTo(this.nombre) == 0) {
             salida = 1;
+        } else {
+            salida = -1;
         }
         return salida;
+
     }
 
 }
