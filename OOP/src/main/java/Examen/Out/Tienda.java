@@ -9,12 +9,12 @@ import Lib.Util;
 import Testing.concepts.collection.Collection;
 
 public class Tienda {
-    Inventario i = new Inventario();
+    Inventario i;
     int user;
 
     public Tienda() {
         menu();
-
+        i = new Inventario();
     }
 
     public void menu() {
@@ -27,11 +27,11 @@ public class Tienda {
         switch (user) {
             case 1:
                 System.out.println("Vender Mueble");
-                Collections.sort(i.listaMueble);
-                System.out.println(i.listaMueble);
+                // Collections.sort(i.listaMueble);
+                // System.out.println(i.listaMueble);
                 System.out.println("Escoge el id del catalogo ");
                 user = Util.myInput.nextInt();
-                venderMueble(i.c.getId());
+                // venderMueble(i.c.getId());
 
                 break;
             case 2:
@@ -46,14 +46,14 @@ public class Tienda {
 
     }
 
-    public void venderMueble(int id) {
-        Mueble m = i.c.getMuebles();
-        if (m.checkStock(m) != false) {
-            i.listaCatalogo.remove(m.getCodigo());
-            System.out.println("Mueble eliminado");
-        } else {
-            System.out.println("No se ha podido eliminar el mueble stock vacio");
-        }
-    }
+    // public void venderMueble(int id) {
+    // Mueble m = i.c.getMuebles();
+    // if (m.checkStock(m) != false) {
+    // // i.listaCatalogo.remove(m.getCodigo());
+    // System.out.println("Mueble eliminado");
+    // } else {
+    // System.out.println("No se ha podido eliminar el mueble stock vacio");
+    // }
+    // }
 
 }

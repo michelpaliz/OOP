@@ -1,9 +1,9 @@
-package Tema11.Propios.ejercicio06.models;
+package Tema11.Propios.ejercicio06.numeric;
 
-public enum Platform {
+public enum Platforma {
     PLAYSTATION4, XBOX, NINTENDO, SWITCH;
 
-    public static Platform getRandom() {
+    public static Platforma getRandom() {
         return values()[(int) (Math.random() * values().length)];
     }
 

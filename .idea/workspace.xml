@@ -6,7 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Examen/Models/Catalogo.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Examen/Models/Catalogo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Examen/Models/Mueble.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Examen/Models/Mueble.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Examen/Out/Inventario.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Examen/Out/Inventario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Examen/Out/Tienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/Examen/Out/Tienda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/Film.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/Format.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/Multemedia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/Platform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/Tema11/Propios/ejercicio06/models/VideoGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Examen/Models/Catalogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Examen/Models/Catalogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Examen/Models/Mueble.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Examen/Models/Mueble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Examen/Out/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Examen/Out/Inventario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Examen/Out/Tienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/Examen/Out/Tienda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/Film.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/Multemedia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/Platform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/Shop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/Tema11/Propios/ejercicio06/models/VideoGame.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +85,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive/2.DESKTOP/Tbjo_Grupal" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EjerciciosTema8.Main" />

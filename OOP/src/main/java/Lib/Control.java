@@ -382,4 +382,15 @@ public class Control {
         return rnDate;
     }
 
+    /**
+     * 
+     * @param dni
+     * @return el dni
+     */
+    public static char letraNIF(int dni) {
+        String tabla = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int modulo = dni % 23;
+        return tabla.charAt(modulo);
+    }
+
 }

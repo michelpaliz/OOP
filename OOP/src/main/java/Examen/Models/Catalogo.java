@@ -6,6 +6,7 @@ import java.util.List;
 import Examen.numeric.Enombre;
 
 public class Catalogo implements Comparator<Catalogo> {
+    private static int cont;
     private int id;
     private Enombre nombre;
     private int anyo;
@@ -13,7 +14,7 @@ public class Catalogo implements Comparator<Catalogo> {
     // private final List<Mueble> muebles;
 
     public Catalogo(Enombre nombre, int anyo, Mueble mueble) {
-        this.id = id++;
+        this.id = ++cont;
         this.nombre = nombre;
         this.anyo = anyo;
         this.m = mueble;
@@ -60,23 +61,6 @@ public class Catalogo implements Comparator<Catalogo> {
         return true;
     }
 
-    // @Override
-    // public int compare(Catalogo c) {
-    // return Integer.valueOf(this.anyo).compareTo(c.getAnyo());
-    // }
-
-    // @Override
-    // public int compareTo(Catalogo c, Catalogo c1) {
-    // int salida = 0;
-    // if (c.getAnyo() == this.anyo) {
-    // salida = 0;
-    // } else if (c.getAnyo() > this.anyo) {
-    // salida = 1;
-    // } else {
-    // salida = -1;
-    // }
-    // return salida;
-    // }
 
     @Override
     public int compare(Catalogo arg0, Catalogo arg1) {

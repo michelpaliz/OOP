@@ -1,8 +1,8 @@
-package Tema11.Propios.ejercicio06.models;
+package Tema11.Propios.ejercicio06.numeric;
 
-public enum Format {
+public enum Formato {
     CD, DVD, BLUE_RAY, FOLDER;
-    public static Format getRandom() {
+    public static Formato getRandom() {
         return values()[(int) (Math.random() * values().length)];
     }
 

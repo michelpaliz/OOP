@@ -14,17 +14,19 @@ import TestWorlde.Propio.main;
 
 public class Inventario {
     Faker fk = new Faker();
-    int numMuebles = 20;
-    int numCatalogos = 10;
-    List<Mueble> listaMueble;
-    List<Catalogo> listaCatalogo;
-    Catalogo c;
-    Mueble m;
-    Mclasico mClasico;
-    String user;
+    private int numMuebles = 20;
+    private int numCatalogos = 10;
+    private List<Mueble> listaMueble;
+    private List<Catalogo> listaCatalogo;
+    private Catalogo c;
+    private Mueble m;
+    private Mclasico mClasico;
+    private String user;
 
     public Inventario() {
+        //crea nuevos muebles
         gnRandom();
+        //crea nuevos catalgos
         gnRandomC();
     }
 
@@ -80,6 +82,5 @@ public class Inventario {
         return listaMueble;
 
     }
-
 
 }

@@ -1,0 +1,20 @@
+----------------------------------------------------
+VideoClub esta compuesto por multimedia, autor, actor y socios.
+-----------------------------
+Multimedia esta compuesto por alquileres.
+Pelicula esta compuesto por actores y actrices.
+Videojuegos esta compuesto por consolas
+-----------------------------
+***CLASES A CREAR***
+-----------------
+autor: sus atributos
+actor: sus atributos
+--------------
+alquiler: tiene socios +  sus atributos
+recargo:  sus atributos 
+--------------
+socio: tiene recargos
+--------------
+Socio (solo pueden ser mayores de 18 anyos)
+Socio puede devolver un objeto multimedia (una consola) y no puede devolver nada si debe algo.
+
