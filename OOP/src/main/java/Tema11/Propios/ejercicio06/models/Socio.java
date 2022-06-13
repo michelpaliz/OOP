@@ -1,13 +1,12 @@
 package Tema11.Propios.ejercicio06.models;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
+import java.util.Comparator;
 import java.util.List;
-import java.util.TimeZone;
 
 import Lib.Control;
 
-public class Socio {
+public class Socio implements Comparable<Socio> {
     private static int N_SOCIOS = 0;
     private String nif;
     private String nombre;
@@ -73,14 +72,41 @@ public class Socio {
         this.recargos.add(new Recargo(alquiler, cantidadPagar));
     }
 
+    // Recorre los recargos que tiene el socio y comprueba si tiene recargos
     public boolean tieneRecargosPendientes() {
         for (Recargo recargo : recargos) {
             if (recargo.getFechaPago() == null) {
-                return true;
+                return true; // si tiene recargos pendientes
             }
         }
         return false;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Socio [edad=" + edad + ", nif=" + nif + ", nombre=" + nombre + ", poblacion=" + poblacion
+                + ", recargos=" + recargos + "]\n";
+    }
+
+    // Necesitamos implementatr este constructor para que funcione las demas.
+    @Override
+    public int compareTo(Socio o) {
+        return 0;
+    }
+
+    public static class ComparatorNombre implements Comparator<Socio> {
+        @Override
+        public int compare(Socio o1, Socio o2) {
+            return o1.nombre.compareTo(o2.nombre);
+        }
+    }
+
+    public static class ComparatorEdad implements Comparator<Socio> {
+        @Override
+        public int compare(Socio o1, Socio o2) {
+            return o1.getEdad() - o2.getEdad();
+        }
     }
 
 }

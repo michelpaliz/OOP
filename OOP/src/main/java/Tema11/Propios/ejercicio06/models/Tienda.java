@@ -57,7 +57,7 @@ public class Tienda {
                 String actor = fk.name().firstName();
                 String actriz = fk.name().firstName();
                 p = new Pelicula(duration, actor, actriz);
-                m = new Multimedia(title,name,formato,anyo,);
+                m = new Multimedia(title,name,formato,anyo);
             }
 
         }
