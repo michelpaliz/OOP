@@ -107,27 +107,27 @@ public class Control {
      * @return gregoriancalendar formated () that the user has introduced
      */
 
-    public static GregorianCalendar birthFormat() {
-        System.out.println(" Fecha (dd-mm-yyyy)");
-        userStr = Util.myInput.nextLine();
-        SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
-        GregorianCalendar birth = null;
-        do {
-            try {
-                Date date = sdf.parse(userStr);
-                birth = new GregorianCalendar();
-                birth.setTime(date);
-                correct = true;
-            } catch (Exception e) {
-                correct = false;
-                System.out.println("The format that you've introduced is not correct");
-            }
+    // public static GregorianCalendar birthFormat() {
+    // System.out.println(" Fecha (dd-mm-yyyy)");
+    // userStr = Util.myInput.nextLine();
+    // SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
+    // // GregorianCalendar birth = null;
+    // do {
+    // try {
+    // Date date = sdf.parse(userStr);
+    // birth = new GregorianCalendar();
+    // birth.setTime(date);
+    // correct = true;
+    // } catch (Exception e) {
+    // correct = false;
+    // System.out.println("The format that you've introduced is not correct");
+    // }
 
-        } while (!correct);
+    // } while (!correct);
 
-        return birth;
+    // return birth;
 
-    }
+    // }
 
     /**
      * 
@@ -312,8 +312,27 @@ public class Control {
         long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;
-    }
-
+    }    // public static GregorianCalendar birthFormat() {
+        //     System.out.println(" Fecha (dd-mm-yyyy)");
+        //     userStr = Util.myInput.nextLine();
+        //     SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
+        //     // GregorianCalendar birth = null;
+        //     do {
+        //         try {
+        //             Date date = sdf.parse(userStr);
+        //             birth = new GregorianCalendar();
+        //             birth.setTime(date);
+        //             correct = true;
+        //         } catch (Exception e) {
+        //             correct = false;
+        //             System.out.println("The format that you've introduced is not correct");
+        //         }
+    
+        //     } while (!correct);
+    
+        //     return birth;
+    
+        // }
     /**
      * 
      * @param <T>

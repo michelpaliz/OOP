@@ -1,24 +1,31 @@
 package Examen.Models;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 import Examen.numeric.Enombre;
 
 public class Catalogo implements Comparator<Catalogo> {
-    private static int cont;
-    private int id;
+    private static int cont = 0;
+    private final int id;
     private Enombre nombre;
     private int anyo;
-    private final Mueble m;
-    // private final List<Mueble> muebles;
+    private List<Mueble> muebles;
 
-    public Catalogo(Enombre nombre, int anyo, Mueble mueble) {
+    public Catalogo() {
         this.id = ++cont;
+        muebles = new ArrayList<>();
+    }
+
+
+    public Catalogo(Enombre nombre, int anyo, List<Mueble> muebles) {
+        this();
         this.nombre = nombre;
         this.anyo = anyo;
-        this.m = mueble;
+        this.muebles = muebles;
     }
+
 
     public int getId() {
         return id;
@@ -32,27 +39,18 @@ public class Catalogo implements Comparator<Catalogo> {
         return anyo;
     }
 
-    public Mueble getMuebles() {
-        return m;
+    public List<Mueble> getMuebles() {
+        return muebles;
     }
 
     @Override
     public String toString() {
-        return "Catalago [anyo=" + anyo + ", id=" + id + ", muebles=" + m + ", nombre=" + nombre + "]";
+        return "Catalago [ " + nombre + " = nombre " + " anyo = " + anyo + " id=" + id + " muebles=" + muebles
+                + "\n";
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + anyo;
-        result = prime * result + id;
-        result = prime * result + ((m == null) ? 0 : m.hashCode());
-        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-        return result;
-
-    }
-
+    // Para la app el mueble sera el mismo si el id es el mismo que el que le pasamo
+    // por parametro.
     @Override
     public boolean equals(Object obj) {
         Catalogo other = (Catalogo) obj;
@@ -61,11 +59,10 @@ public class Catalogo implements Comparator<Catalogo> {
         return true;
     }
 
-
+    // ordenar por anyo (Orden Descendente)
     @Override
-    public int compare(Catalogo arg0, Catalogo arg1) {
-        // TODO Auto-generated method stub
-        return 0;
+    public int compare(Catalogo c1, Catalogo c2) {
+        return c2.getAnyo() - c1.getAnyo();
     }
 
 }

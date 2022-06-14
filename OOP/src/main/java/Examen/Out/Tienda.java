@@ -22,10 +22,11 @@ public class Tienda {
         String tittle = "TIenda";
         String[] sentence = { "Salir", "Vender Mueble", "Busquedas", "Estadisticas" };
         user = Control.menuGenerator(tittle, sentence);
-        i.gnRandom();
-        i.gnRandomC();
         switch (user) {
             case 1:
+                System.out.println("Mostramos datos primero");
+                i.randomCatalogos();
+                System.out.println(i.listaMueble);
                 System.out.println("Vender Mueble");
                 // Collections.sort(i.listaMueble);
                 // System.out.println(i.listaMueble);
