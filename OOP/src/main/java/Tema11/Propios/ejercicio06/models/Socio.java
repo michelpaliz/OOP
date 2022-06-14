@@ -12,6 +12,7 @@ public class Socio implements Comparable<Socio> {
     private String nombre;
     private String poblacion;
     private int edad;
+    // El socio puede contener recargos
     private final List<Recargo> recargos;
 
     public Socio(String nif, String nombre, int edad, String poblacion) {
@@ -68,6 +69,17 @@ public class Socio implements Comparable<Socio> {
         return recargos;
     }
 
+    // METODOS A GENERAR
+    // 1. generarRecargo() == la cantidad del recargo
+    // 2.Solo pueden ser mayor de edad los socios;
+    // 3. Busquedas por nombre y por edad
+
+    /**
+     * EL RECARGO QUE PUEDE TENER EL SOCIO
+     * 
+     * @param alquiler
+     * @param cantidadPagar
+     */
     public void generarRecargo(Alquiler alquiler, double cantidadPagar) {
         this.recargos.add(new Recargo(alquiler, cantidadPagar));
     }
@@ -83,12 +95,7 @@ public class Socio implements Comparable<Socio> {
 
     }
 
-    @Override
-    public String toString() {
-        return "Socio [edad=" + edad + ", nif=" + nif + ", nombre=" + nombre + ", poblacion=" + poblacion
-                + ", recargos=" + recargos + "]\n";
-    }
-
+    // !PARA LAS BUSQUEDAS DE LOS SOCIOS
     // Necesitamos implementatr este constructor para que funcione las demas.
     @Override
     public int compareTo(Socio o) {
@@ -107,6 +114,12 @@ public class Socio implements Comparable<Socio> {
         public int compare(Socio o1, Socio o2) {
             return o1.getEdad() - o2.getEdad();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Socio [edad=" + edad + ", nif=" + nif + ", nombre=" + nombre + ", poblacion=" + poblacion
+                + ", recargos=" + recargos + "]\n";
     }
 
 }

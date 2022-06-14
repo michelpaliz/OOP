@@ -7,7 +7,7 @@ public class Actor {
     private final String nombre;
     private final String apellidos;
 
-    public Actor(int id, String nombre, String apellidos) {
+    public Actor(String nombre, String apellidos) {
         this.id = ++N_ACTORES;
         this.nombre = nombre;
         this.apellidos = apellidos;

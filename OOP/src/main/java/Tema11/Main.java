@@ -6,6 +6,7 @@ import Tema11.Propios.ejercicio04.App;
 import Tema11.Propios.ejercicio05.Play;
 import Tema11.Propios.ejercicio07.MatchesDB;
 import Tema11.Propios.ejercicio07.Exer7;
+import Tema11.Propios.ejercicio06.models.Tienda;
 
 public class Main {
 
@@ -16,9 +17,11 @@ public class Main {
         // Ejericio3
         // App car = new App();
         // App start = new App();
+        // Ejercicio 06
+        Tienda t = new Tienda();
         // EJercicio 05;
         // Play inv = new Play();
-        Exer7 a = new Exer7();
+        // Exer7 a = new Exer7();
 
     }
 

@@ -2,10 +2,10 @@
 ------------------------------------------------
 La tienda *(VIDEOCLUB) es como la base de datos o almacen, contiene listas de  (multimedias, socios, autores y actores) los tres objetos principales de la app..
 ----------------------------------------------------
-Tienda de videoclub alquila multimedias(videojuegos o peliculas) y aquila  a los socios.
+Tienda (VideoClub) arrienda multimedias(videojuegos o peliculas)  a los socios.
 VideoClub esta compuesto por listas de multimedia, autor, actor y socios.
 -----------------------------
-Multimedia esta compuesto o tiene listas de  alquileres --- es videojueog o pelicula tiene asignado socios por medio del alquiler.
+Multimedia tiene listas de alquileres --- es videojueog o pelicula tiene asignado socios por medio del alquiler.
     Hay dos tipos de multimedia que son las peliculas y los videojuegos.
 Alquiler: tiene una lista de socios +  sus atributos.
 -----------------------------
@@ -14,7 +14,7 @@ Videojuegos esta compuesto por consolas
 -----------------------------
 ***CLASES A SECUNDARIAS***
 -----------------
-socio: sirve para los alquileres  --- esta clase es muy importante 
+socio: sirve para los alquileres  y tiene una lista de recargos --- esta clase es muy importante 
 autor: sus atributos y sirve  para las peliculas
 actor: sus atributos y sirve para las peliculas (actor y actriz)
 --------------

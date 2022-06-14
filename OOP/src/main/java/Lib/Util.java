@@ -231,4 +231,31 @@ public class Util {
         return "Error";
     }
 
+
+    
+    public static char letraNIF(int dni) {
+        String tabla="TRWAGMYFPDXBNJZSQVHLCKE";
+        int modulo= dni % 23;
+        return tabla.charAt(modulo);
+    }
+
+    public static boolean validarNIF(String nif) {
+        if (nif != null && nif.length() >= 2) {
+            nif = nif.toUpperCase();
+            StringBuilder dniString = new StringBuilder();
+            // Cogemos como letra el último caracter del NIF
+            char letra = nif.charAt(nif.length() - 1);
+            char c;
+            for (int i = 0; i < nif.length(); i++) {
+                // Si es un dígito lo añadimos a dniString
+                c = nif.charAt(i);
+                if (Character.isDigit(c)) {
+                    dniString.append(c);
+                }
+            }
+            return !dniString.toString().equals("") && letra == letraNIF(Integer.parseInt(dniString.toString()));
+        }
+        return false;
+    }
+
 }
