@@ -18,14 +18,12 @@ public class Catalogo implements Comparator<Catalogo> {
         muebles = new ArrayList<>();
     }
 
-
     public Catalogo(Enombre nombre, int anyo, List<Mueble> muebles) {
         this();
         this.nombre = nombre;
         this.anyo = anyo;
         this.muebles = muebles;
     }
-
 
     public int getId() {
         return id;
@@ -45,8 +43,12 @@ public class Catalogo implements Comparator<Catalogo> {
 
     @Override
     public String toString() {
-        return "Catalago [ " + nombre + " = nombre " + " anyo = " + anyo + " id=" + id + " muebles=" + muebles
-                + "\n";
+        return "Catalogo{" +
+                "idCatalogo=" + id +
+                ", nombre=" + nombre +
+                ", anyo=" + anyo +
+                ", muebles=" + muebles +
+                '}' + "\n";
     }
 
     // Para la app el mueble sera el mismo si el id es el mismo que el que le pasamo

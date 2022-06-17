@@ -33,22 +33,6 @@ public class Inventario {
     }
 
     /**
-     * 
-     * @return una lista random de muebles
-     */
-    public List<Mueble> muebles() {
-        randomMuebles();// generamos muebles
-        List<Mueble> lista = new ArrayList<>(2);
-        for (int i = 0; i < 2; i++) {
-            m = listaMueble.get(Util.random(0, listaMueble.size()));
-            lista.add(m);
-        }
-        // System.out.println("ESTO ES LISTA");
-        // System.out.println(lista);
-        return lista;
-    }
-
-    /**
      * generado de catalogos
      */
 
@@ -60,6 +44,20 @@ public class Inventario {
         c = new Catalogo(nombre, anyo, muebles());
         listaCatalogo.add(c);
         return (listaCatalogo);
+    }
+
+    /**
+     * 
+     * @return una lista random de muebles
+     */
+    public List<Mueble> muebles() {
+        randomMuebles();// generamos los muebles
+        List<Mueble> lista = new ArrayList<>(2);
+        for (int i = 0; i < 2; i++) {// solo asignamos 2 muebles por catalogo
+            m = listaMueble.get(Util.random(0, listaMueble.size()));
+            lista.add(m);
+        }
+        return lista;
     }
 
     /**

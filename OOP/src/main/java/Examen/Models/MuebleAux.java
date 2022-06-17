@@ -18,7 +18,8 @@ public class MuebleAux extends Mueble {
 
     @Override
     public String toString() {
-        return "Auxiliar" + super.toString() + " color=" + color + "]";
+        return "MuebleAux{" + super.toString() +
+                "color='" + color + '\'' +
+                '}';
     }
-
 }

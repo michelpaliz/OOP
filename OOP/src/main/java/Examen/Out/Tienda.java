@@ -28,11 +28,9 @@ public class Tienda {
                 i.randomCatalogos();
                 System.out.println(i.listaMueble);
                 System.out.println("Vender Mueble");
-                // Collections.sort(i.listaMueble);
-                // System.out.println(i.listaMueble);
                 System.out.println("Escoge el id del catalogo ");
                 user = Util.myInput.nextInt();
-                // venderMueble(i.c.getId());
+
 
                 break;
             case 2:

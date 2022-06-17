@@ -60,10 +60,15 @@ public abstract class Mueble implements Comparable<Mueble> {
 
     @Override
     public String toString() {
-        return "[ Codigo = " + codigo + " alto=" + alto + ", ancho=" + ancho + ", codigo=" + codigo + ", nombre="
-                + nombre
-                + ", precio="
-                + precio + ", profundo=" + profundo + ", stock=" + stock + "\n";
+        return "Mueble{" +
+                "codigo_mueble=" + codigo +
+                ", nombre=" + nombre +
+                ", precio=" + precio +
+                ", alto=" + alto +
+                ", ancho=" + ancho +
+                ", profundo=" + profundo +
+                ", stock=" + stock +
+                '}';
     }
 
     @Override

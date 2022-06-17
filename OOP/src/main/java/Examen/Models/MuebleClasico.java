@@ -25,7 +25,9 @@ public class MuebleClasico extends Mueble {
 
     @Override
     public String toString() {
-        return "Clasico" + super.toString() + " peso=" + peso + ", tipoMadera=" + tipoMadera + "]\n";
+        return "MuebleClasico{" + super.toString() +
+                "peso=" + peso +
+                ", tipoMadera='" + tipoMadera + '\'' +
+                '}';
     }
-
 }
