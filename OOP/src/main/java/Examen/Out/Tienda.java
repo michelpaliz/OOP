@@ -23,15 +23,15 @@ public class Tienda {
         String[] sentence = { "Salir", "Vender Mueble", "Busquedas", "Estadisticas" };
         user = Control.menuGenerator(tittle, sentence);
         switch (user) {
+            case 0:
+                System.out.println("Adios");
+                break;
             case 1:
                 System.out.println("Mostramos datos primero");
-                i.randomCatalogos();
-                System.out.println(i.listaMueble);
+                System.out.println(i);
                 System.out.println("Vender Mueble");
                 System.out.println("Escoge el id del catalogo ");
                 user = Util.myInput.nextInt();
-
-
                 break;
             case 2:
                 break;

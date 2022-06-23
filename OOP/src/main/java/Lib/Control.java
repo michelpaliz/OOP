@@ -27,7 +27,9 @@ public class Control {
      */
 
     public static int menuGenerator(String tittle, String[] sentence) {
-        System.out.printf("\n\n*****%S********\n\n", tittle);
+        System.out.println("\n*****************");
+        System.out.printf("** %S **\n", tittle);
+        System.out.println("*****************\n");
         for (int i = 0; i < sentence.length; i++) {
             sentence[i] = String.format("%d %S\n", (i), sentence[i]);
             System.out.println(sentence[i]);
@@ -312,27 +314,27 @@ public class Control {
         long randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
         return randomDate;
-    }    // public static GregorianCalendar birthFormat() {
-        //     System.out.println(" Fecha (dd-mm-yyyy)");
-        //     userStr = Util.myInput.nextLine();
-        //     SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
-        //     // GregorianCalendar birth = null;
-        //     do {
-        //         try {
-        //             Date date = sdf.parse(userStr);
-        //             birth = new GregorianCalendar();
-        //             birth.setTime(date);
-        //             correct = true;
-        //         } catch (Exception e) {
-        //             correct = false;
-        //             System.out.println("The format that you've introduced is not correct");
-        //         }
-    
-        //     } while (!correct);
-    
-        //     return birth;
-    
-        // }
+    } // public static GregorianCalendar birthFormat() {
+      // System.out.println(" Fecha (dd-mm-yyyy)");
+      // userStr = Util.myInput.nextLine();
+      // SimpleDateFormat sdf = new SimpleDateFormat("DD-MM-YYYY");
+      // // GregorianCalendar birth = null;
+      // do {
+      // try {
+      // Date date = sdf.parse(userStr);
+      // birth = new GregorianCalendar();
+      // birth.setTime(date);
+      // correct = true;
+      // } catch (Exception e) {
+      // correct = false;
+      // System.out.println("The format that you've introduced is not correct");
+      // }
+
+    // } while (!correct);
+
+    // return birth;
+
+    // }
     /**
      * 
      * @param <T>

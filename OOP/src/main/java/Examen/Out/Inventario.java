@@ -21,11 +21,9 @@ public class Inventario {
     private List<Catalogo> listaCatalogo;
     private Catalogo c;
     private Mueble m;
-    private MuebleClasico mClasico;
-    private String user;
 
     public Inventario() {
-        // crea nuevos catalgos
+        // crea nuevos catalgos con el numero maximo de catalagos
         for (int i = 0; i < MAX_CATALAGOS; i++) {
             System.out.println(randomCatalogos());
         }
@@ -45,6 +43,8 @@ public class Inventario {
         listaCatalogo = new ArrayList<>(MAX_CATALAGOS);
         nombre = nombre.getRandom();
         int anyo = fk.random().nextInt(2000, 2022);
+        // creamos nuevos catalogos que tienes muebles en este caso asignamos el numero
+        // deseado de muebles para cada catalago. 
         c = new Catalogo(nombre, anyo, muebles());
         listaCatalogo.add(c);
         return (listaCatalogo);
@@ -78,7 +78,6 @@ public class Inventario {
             int stock = fk.random().nextInt(1, 10);
             double peso = fk.number().randomDouble(2, 10, 60);
             String tipoMadera = fk.animal().name();
-            String color = fk.color().name();
             m = new MuebleClasico(nombre, precio, alto, ancho, profundo, stock, peso, tipoMadera);
             listaMueble.add(m);
         }
@@ -89,8 +88,6 @@ public class Inventario {
             double ancho = fk.number().randomDouble(2, 50, 100);
             double profundo = fk.number().randomDouble(2, 50, 100);
             int stock = fk.random().nextInt(1, 10);
-            double peso = fk.number().randomDouble(2, 10, 60);
-            String tipoMadera = fk.animal().name();
             String color = fk.color().name();
             m = new MuebleAux(nombre, precio, alto, ancho, profundo, stock, color);
             listaMueble.add(m);
