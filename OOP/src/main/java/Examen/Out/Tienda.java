@@ -1,6 +1,7 @@
 package Examen.Out;
 
 import java.util.Collections;
+import java.util.List;
 
 import Examen.Models.Catalogo;
 import Examen.Models.Mueble;
@@ -11,10 +12,12 @@ import Testing.concepts.collection.Collection;
 public class Tienda {
     Inventario i;
     int user;
+    String userStr;
+    Catalogo c;
 
     public Tienda() {
-        menu();
         i = new Inventario();
+        menu();
     }
 
     public void menu() {
@@ -27,11 +30,8 @@ public class Tienda {
                 System.out.println("Adios");
                 break;
             case 1:
-                System.out.println("Mostramos datos primero");
-                System.out.println(i);
-                System.out.println("Vender Mueble");
-                System.out.println("Escoge el id del catalogo ");
-                user = Util.myInput.nextInt();
+                mostrarCatalogos();
+                mostrarMuebles();
                 break;
             case 2:
                 break;
@@ -45,14 +45,22 @@ public class Tienda {
 
     }
 
-    // public void venderMueble(int id) {
-    // Mueble m = i.c.getMuebles();
-    // if (m.checkStock(m) != false) {
-    // // i.listaCatalogo.remove(m.getCodigo());
-    // System.out.println("Mueble eliminado");
-    // } else {
-    // System.out.println("No se ha podido eliminar el mueble stock vacio");
-    // }
-    // }
+    public void mostrarCatalogos() {
+        System.out.println("Mostramos datos primero");
+        i.ordenarCatalagos(i.listaCatalogo);
+        System.out.println("Tenemos " + i.getCatalagos().size() + " catalogos");
+        System.out.println("Vender Mueble");
+        System.out.println("Escoge el id del catalogo ");
+        user = Util.myInput.nextInt();
+        i.setCatalogoSeleccionado(user);
+    }
+
+    public void mostrarMuebles() {
+        System.out.println("Ordenar los muebles del catalogo por los nombres");
+        i.ordenarMuebles(c.getMuebles());
+        System.out.println("Escoge el id del mueble");
+        user = Util.myInput.nextInt();
+        i.setMuebleSeleccionado(user);
+    }
 
 }

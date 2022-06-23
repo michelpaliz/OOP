@@ -6,7 +6,7 @@ import java.util.List;
 
 import Examen.numeric.Etipo;
 
-public class Catalogo implements Comparator<Catalogo> {
+public class Catalogo {
     private static int cont = 0;
     private final int id;
     private Etipo nombre;
@@ -53,18 +53,32 @@ public class Catalogo implements Comparator<Catalogo> {
 
     // Para la app el mueble sera el mismo si el id es el mismo que el que le pasamo
     // por parametro.
-    @Override
-    public boolean equals(Object obj) {
-        Catalogo other = (Catalogo) obj;
-        if (id != other.id)
-            return false;
-        return true;
+    // @Override
+    // public boolean equals(Object obj) {
+    // // Convertirmos el otro objeto en catalago
+    // Catalogo other = (Catalogo) obj;
+    // if (id != other.id)
+    // return false;
+    // return true;
+    // }
+
+    public static class CompararPorAnyo implements Comparator<Catalogo> {
+
+        @Override
+        public int compare(Catalogo c1, Catalogo c2) {
+            // orden descendente (menor a mayor)
+            return c1.getAnyo() - c2.getAnyo();
+            // orden ascendente (mayor a menor)
+            // return c2.getAnyo() - c1.getAnyo();
+        }
+
     }
 
-    // ordenar por anyo (Orden Descendente)
-    @Override
-    public int compare(Catalogo c1, Catalogo c2) {
-        return c2.getAnyo() - c1.getAnyo();
-    }
+    // @Override
+    // public int compare(Catalogo c1, Catalogo c2) {
+    // // orden Descendente
+    // // return c2.getAnyo() - c1.getAnyo();
+    // return c1.getAnyo() - c2.getAnyo();
+    // }
 
 }

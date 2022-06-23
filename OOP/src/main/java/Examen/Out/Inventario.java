@@ -18,20 +18,20 @@ public class Inventario {
     private final int MAX_MUEBLES = 20;
     private final int MAX_CATALAGOS = 3;
     protected List<Mueble> listaMueble;
-    private List<Catalogo> listaCatalogo;
-    private Catalogo c;
-    private Mueble m;
+    protected List<Catalogo> listaCatalogo;
+    private Catalogo catalogoActual;
+    private Mueble muebleActual;
 
     public Inventario() {
-        // crea nuevos catalgos con el numero maximo de catalagos
-        for (int i = 0; i < MAX_CATALAGOS; i++) {
-            System.out.println(randomCatalogos());
-        }
-
+        randomCatalogos();
     }
 
-    public void name() {
+    public List<Catalogo> getCatalagos() {
+        return listaCatalogo;
+    }
 
+    public List<Mueble> getListaMueble() {
+        return listaMueble;
     }
 
     /**
@@ -39,14 +39,17 @@ public class Inventario {
      */
 
     public List<Catalogo> randomCatalogos() {
-        Etipo nombre = Etipo.INVIERNO;
         listaCatalogo = new ArrayList<>(MAX_CATALAGOS);
-        nombre = nombre.getRandom();
-        int anyo = fk.random().nextInt(2000, 2022);
-        // creamos nuevos catalogos que tienes muebles en este caso asignamos el numero
-        // deseado de muebles para cada catalago. 
-        c = new Catalogo(nombre, anyo, muebles());
-        listaCatalogo.add(c);
+        Etipo nombre = Etipo.INVIERNO;
+        for (int i = 0; i < MAX_CATALAGOS; i++) {
+            nombre = nombre.getRandom();
+            int anyo = fk.random().nextInt(2000, 2022);
+            // creamos nuevos catalogos que tienes muebles en este caso asignamos el numero
+            // deseado de muebles para cada catalago.
+            catalogoActual = new Catalogo(nombre, anyo, muebles());
+            listaCatalogo.add(catalogoActual);
+        }
+
         return (listaCatalogo);
     }
 
@@ -58,8 +61,8 @@ public class Inventario {
         randomMuebles();// generamos los muebles
         List<Mueble> lista = new ArrayList<>(2);
         for (int i = 0; i < 2; i++) {// solo asignamos 2 muebles por catalogo
-            m = listaMueble.get(Util.random(0, listaMueble.size()));
-            lista.add(m);
+            muebleActual = listaMueble.get(Util.random(0, listaMueble.size()));
+            lista.add(muebleActual);
         }
         return lista;
     }
@@ -78,8 +81,8 @@ public class Inventario {
             int stock = fk.random().nextInt(1, 10);
             double peso = fk.number().randomDouble(2, 10, 60);
             String tipoMadera = fk.animal().name();
-            m = new MuebleClasico(nombre, precio, alto, ancho, profundo, stock, peso, tipoMadera);
-            listaMueble.add(m);
+            muebleActual = new MuebleClasico(nombre, precio, alto, ancho, profundo, stock, peso, tipoMadera);
+            listaMueble.add(muebleActual);
         }
         for (int i = 0; i < MAX_MUEBLES / 2; i++) {
             String nombre = fk.funnyName().name();
@@ -89,11 +92,58 @@ public class Inventario {
             double profundo = fk.number().randomDouble(2, 50, 100);
             int stock = fk.random().nextInt(1, 10);
             String color = fk.color().name();
-            m = new MuebleAux(nombre, precio, alto, ancho, profundo, stock, color);
-            listaMueble.add(m);
+            muebleActual = new MuebleAux(nombre, precio, alto, ancho, profundo, stock, color);
+            listaMueble.add(muebleActual);
         }
         return listaMueble;
 
     }
+
+    // *GESTION DEL STOCK
+
+    public void ordenarCatalagos(List<Catalogo> catalogos) {
+        catalogos.sort(new Catalogo.CompararPorAnyo());
+        System.out.println(catalogos);
+    }
+
+    public void ordenarMuebles(List<Mueble> muebles) {
+        muebles.sort(new Mueble.CompararPorNombre());
+        System.out.println(muebles);
+    }
+
+    public boolean setCatalogoSeleccionado(int id) {
+        catalogoActual = buscarCatalogo(id);
+        return catalogoActual != null;
+    }
+
+    public boolean setMuebleSeleccionado(int id) {
+        muebleActual = buscarMueble(id);
+        return muebleActual != null;
+    }
+
+    private Catalogo buscarCatalogo(int id) {
+        getListaMueble();
+        for (Catalogo c : getCatalagos()) {
+            if (c.getId() == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    private Mueble buscarMueble(int idMueble) {
+        for (Mueble m : catalogoActual.getMuebles()) {
+            if (m.getCodigo().equals(idMueble)) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+
+
+    // public boolean comprobarStock(int idMueble){
+    // Mueble mueble =
+    // }
 
 }
