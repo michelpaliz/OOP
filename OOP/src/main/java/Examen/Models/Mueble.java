@@ -1,21 +1,19 @@
 package Examen.Models;
 
-import Examen.numeric.Enombre;
-
 public abstract class Mueble implements Comparable<Mueble> {
 
     private static int cont = 0;
     private int codigo;
-    private Enombre nombre;
+    private String nombre;
     private double precio;
     private double alto;
     private double ancho;
     private double profundo;
     private int stock;
 
-    public Mueble(Enombre nombre, double precio, double alto, double ancho, double profundo, int stock) {
+    public Mueble(String nombre2, double precio, double alto, double ancho, double profundo, int stock) {
         this.codigo = ++cont;
-        this.nombre = nombre;
+        this.nombre = nombre2;
         this.precio = precio;
         this.alto = alto;
         this.ancho = ancho;
@@ -27,7 +25,7 @@ public abstract class Mueble implements Comparable<Mueble> {
         return codigo;
     }
 
-    public Enombre getNombre() {
+    public String getNombre() {
         return nombre;
     }
 

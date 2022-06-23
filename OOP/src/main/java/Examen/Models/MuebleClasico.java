@@ -1,13 +1,11 @@
 package Examen.Models;
 
-import Examen.numeric.Enombre;
-
 public class MuebleClasico extends Mueble {
 
     private double peso;
     private String tipoMadera;
 
-    public MuebleClasico(Enombre nombre, double precio, double alto, double ancho, double profundo, int stock,
+    public MuebleClasico(String nombre, double precio, double alto, double ancho, double profundo, int stock,
             double peso,
             String tipoMadera) {
         super(nombre, precio, alto, ancho, profundo, stock);
@@ -25,9 +23,9 @@ public class MuebleClasico extends Mueble {
 
     @Override
     public String toString() {
-        return "MuebleClasico{" + super.toString() +
+        return "MuebleClasico{" +
                 "peso=" + peso +
-                ", tipoMadera='" + tipoMadera + '\'' +
+                ", tipoMadera='" + tipoMadera + '\'' + super.toString() +
                 '}';
     }
 }

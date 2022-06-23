@@ -9,8 +9,8 @@ import com.github.javafaker.Faker;
 import Examen.Models.Catalogo;
 import Examen.Models.MuebleAux;
 import Examen.Models.MuebleClasico;
+import Examen.numeric.Etipo;
 import Examen.Models.Mueble;
-import Examen.numeric.Enombre;
 import Lib.Util;
 
 public class Inventario {
@@ -32,12 +32,16 @@ public class Inventario {
 
     }
 
+    public void name() {
+
+    }
+
     /**
-     * generado de catalogos
+     * generador de catalogos
      */
 
     public List<Catalogo> randomCatalogos() {
-        Enombre nombre = Enombre.INVIERNO;
+        Etipo nombre = Etipo.INVIERNO;
         listaCatalogo = new ArrayList<>(MAX_CATALAGOS);
         nombre = nombre.getRandom();
         int anyo = fk.random().nextInt(2000, 2022);
@@ -65,9 +69,8 @@ public class Inventario {
      */
     public List<Mueble> randomMuebles() {
         listaMueble = new ArrayList<>(MAX_MUEBLES);
-        Enombre nombre = Enombre.INVIERNO;
         for (int i = 0; i < MAX_MUEBLES / 2; i++) {
-            nombre = nombre.getRandom();
+            String nombre = fk.funnyName().name();
             double precio = fk.number().randomDouble(2, 50, 100);
             double alto = fk.number().randomDouble(2, 5, 50);
             double ancho = fk.number().randomDouble(2, 50, 100);
@@ -80,7 +83,7 @@ public class Inventario {
             listaMueble.add(m);
         }
         for (int i = 0; i < MAX_MUEBLES / 2; i++) {
-            nombre = nombre.getRandom();
+            String nombre = fk.funnyName().name();
             double precio = fk.number().randomDouble(2, 50, 100);
             double alto = fk.number().randomDouble(2, 5, 50);
             double ancho = fk.number().randomDouble(2, 50, 100);

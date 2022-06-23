@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import Examen.numeric.Enombre;
+import Examen.numeric.Etipo;
 
 public class Catalogo implements Comparator<Catalogo> {
     private static int cont = 0;
     private final int id;
-    private Enombre nombre;
+    private Etipo nombre;
     private int anyo;
     private List<Mueble> muebles;
 
@@ -18,7 +18,7 @@ public class Catalogo implements Comparator<Catalogo> {
         muebles = new ArrayList<>();
     }
 
-    public Catalogo(Enombre nombre, int anyo, List<Mueble> muebles) {
+    public Catalogo(Etipo nombre, int anyo, List<Mueble> muebles) {
         this();
         this.nombre = nombre;
         this.anyo = anyo;
@@ -29,7 +29,7 @@ public class Catalogo implements Comparator<Catalogo> {
         return id;
     }
 
-    public Enombre getNombre() {
+    public Etipo getNombre() {
         return nombre;
     }
 

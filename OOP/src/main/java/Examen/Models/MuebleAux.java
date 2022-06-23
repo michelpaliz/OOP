@@ -1,12 +1,12 @@
 package Examen.Models;
 
-import Examen.numeric.Enombre;
+
 
 public class MuebleAux extends Mueble {
 
     private String color;
 
-    public MuebleAux(Enombre nombre, double precio, double alto, double ancho, double profundo, int stock,
+    public MuebleAux(String nombre, double precio, double alto, double ancho, double profundo, int stock,
             String color) {
         super(nombre, precio, alto, ancho, profundo, stock);
         this.color = color;
@@ -18,8 +18,8 @@ public class MuebleAux extends Mueble {
 
     @Override
     public String toString() {
-        return "MuebleAux{" + super.toString() +
-                "color='" + color + '\'' +
+        return "MuebleAux{" +
+                "color='" + color + '\'' + super.toString() +
                 '}';
     }
 }
