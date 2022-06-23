@@ -101,14 +101,15 @@ public class Inventario {
 
     // *GESTION DEL STOCK
 
-    public void ordenarCatalagos(List<Catalogo> catalogos) {
-        catalogos.sort(new Catalogo.CompararPorAnyo());
-        System.out.println(catalogos);
+    public void ordenarCatalagos() {
+        listaCatalogo.sort(new Catalogo.CompararPorAnyo());
+        System.out.println(listaCatalogo);
     }
 
-    public void ordenarMuebles(List<Mueble> muebles) {
-        muebles.sort(new Mueble.CompararPorNombre());
-        System.out.println(muebles);
+    public void ordenarMuebles() {
+        catalogoActual.getMuebles().sort(new Mueble.CompararPorNombre());
+        System.out.println(catalogoActual);
+
     }
 
     public boolean setCatalogoSeleccionado(int id) {

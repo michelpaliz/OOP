@@ -47,7 +47,7 @@ public class Tienda {
 
     public void mostrarCatalogos() {
         System.out.println("Mostramos datos primero");
-        i.ordenarCatalagos(i.listaCatalogo);
+        i.ordenarCatalagos();
         System.out.println("Tenemos " + i.getCatalagos().size() + " catalogos");
         System.out.println("Vender Mueble");
         System.out.println("Escoge el id del catalogo ");
@@ -57,7 +57,7 @@ public class Tienda {
 
     public void mostrarMuebles() {
         System.out.println("Ordenar los muebles del catalogo por los nombres");
-        i.ordenarMuebles(c.getMuebles());
+        i.ordenarMuebles();
         System.out.println("Escoge el id del mueble");
         user = Util.myInput.nextInt();
         i.setMuebleSeleccionado(user);
