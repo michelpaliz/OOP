@@ -1,0 +1,8 @@
+Creacion de datos
+Listado de catalgos ordenados por anyo
+Y los muebles ordenados por nombre
+--------- Venta ---------
+Seleccionar el mueble que se quiere vender checkeando si hay stock, 
+despues se indicara los km a distancia hasta la casa del cliente el calculo es
+este precio de envio + importe.
+Decrementaremos el stock y lo registramos en un historico de ventas.
