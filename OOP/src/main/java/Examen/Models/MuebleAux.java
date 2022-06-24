@@ -1,7 +1,5 @@
 package Examen.Models;
 
-
-
 public class MuebleAux extends Mueble {
 
     private String color;
@@ -21,5 +19,10 @@ public class MuebleAux extends Mueble {
         return "MuebleAux{" +
                 "color='" + color + '\'' + super.toString() +
                 '}';
+    }
+
+    @Override
+    public double importeEnvio(double km) {
+        return super.getAlto() * super.getAncho() * super.getProfundo() * km;
     }
 }

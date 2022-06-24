@@ -1,10 +1,13 @@
 package Examen.Models;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public abstract class Mueble {
 
-    private static int cont = 0;
+    private static int cont = 1;
     private String codigo;
     private String nombre;
     private double precio;
@@ -13,14 +16,18 @@ public abstract class Mueble {
     private double profundo;
     private int stock;
 
+    private List<Venta> ventas;
+
     public Mueble(String nombre2, double precio, double alto, double ancho, double profundo, int stock) {
-        this.codigo = "C000" + cont;
+        ++cont;
+        this.codigo = "C00" + cont;
         this.nombre = nombre2;
         this.precio = precio;
         this.alto = alto;
         this.ancho = ancho;
         this.profundo = profundo;
         this.stock = stock;
+        ventas = new ArrayList<>();
     }
 
     public String getCodigo() {
@@ -51,8 +58,12 @@ public abstract class Mueble {
         return stock;
     }
 
-    public boolean checkStock(Mueble m) {
-        if (m.getStock() > 0) {
+    public List<Venta> getVentas() {
+        return ventas;
+    }
+
+    public boolean checkStock() {
+        if (stock > 0) {
             return true;
         }
         return false;
@@ -71,6 +82,21 @@ public abstract class Mueble {
                 '}';
     }
 
+    public abstract double importeEnvio(double km);
+
+    public double precioTotal(double km) {
+        return importeEnvio(km) + precio;
+    }
+
+    public boolean venderMueble() {
+        if (stock > 0) {
+            stock = stock - 1;
+            ventas.add(new Venta(this, new GregorianCalendar()));
+            return true;
+        }
+        return false;
+    }
+
     public static class CompararPorNombre implements Comparator<Mueble> {
 
         @Override
@@ -86,19 +112,18 @@ public abstract class Mueble {
 
     }
 
-    // @Override
-    // public boolean equals(Object obj) {
-    //     // Esto hace que delege este comparacion a este misma clase donde se encuentra
-    //     // el metodo
-    //     if (obj instanceof Mueble) {
-    //         Mueble otroMueble = (Mueble) obj;
-    //         if (this.codigo.equalsIgnoreCase(otroMueble.codigo)) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
-
-    
+    @Override
+    public boolean equals(Object obj) {
+        // Esto hace que delege este comparacion a este misma clase donde se
+        // encuentra
+        // el metodo
+        if (obj instanceof Mueble) {
+            Mueble otroMueble = (Mueble) obj;
+            if (this.codigo.equalsIgnoreCase(otroMueble.codigo)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

@@ -23,5 +23,12 @@ public class Venta {
         return diaCompra;
     }
 
-
+    @Override
+    public String toString() {
+        return "Venta{" +
+                "id=" + id +
+                ", mueble=" + mueble +
+                ", diaCompra=" + diaCompra +
+                '}';
+    }
 }

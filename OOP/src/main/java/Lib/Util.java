@@ -73,20 +73,19 @@ public class Util {
      * @return DOUBLE
      */
     public static double validateDouble(String message) {
-        double userInt = 0;
+        double userDouble = 0;
         do {
             try {
                 System.out.print(message);
-                userInt = Double.parseDouble(Util.myInput.nextLine());
+                userDouble = Double.parseDouble(Util.myInput.nextLine());
                 correct = true;
             } catch (NumberFormatException e) {
                 System.out.println("Error");
                 Util.pause();
-                correct = false;
             }
 
         } while (!correct);
-        return userInt;
+        return userDouble;
     }
 
     public String validateString1(String userStr) {
@@ -231,11 +230,9 @@ public class Util {
         return "Error";
     }
 
-
-    
     public static char letraNIF(int dni) {
-        String tabla="TRWAGMYFPDXBNJZSQVHLCKE";
-        int modulo= dni % 23;
+        String tabla = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int modulo = dni % 23;
         return tabla.charAt(modulo);
     }
 

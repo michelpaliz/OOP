@@ -1,19 +1,14 @@
 package Examen.Out;
 
-import java.util.Collections;
-import java.util.List;
-
-import Examen.Models.Catalogo;
 import Examen.Models.Mueble;
 import Lib.Control;
 import Lib.Util;
-import Testing.concepts.collection.Collection;
 
 public class Tienda {
-    Inventario i;
+    private Inventario i;
+    Mueble m;
     int user;
     String userStr;
-    Catalogo c;
 
     public Tienda() {
         i = new Inventario();
@@ -32,6 +27,7 @@ public class Tienda {
             case 1:
                 mostrarCatalogos();
                 mostrarMuebles();
+                venderMueble();
                 break;
             case 2:
                 break;
@@ -61,6 +57,24 @@ public class Tienda {
         System.out.println("Escoge el id del mueble");
         user = Util.myInput.nextInt();
         i.setMuebleSeleccionado(user);
+        System.out.println("Mueble seleccionado exitosamente");
+        System.out.println(i.getMuebleActual());
     }
 
+    public void importeTotal(int idMueble) {
+        double km = Util.validateDouble("Introduce los km de distancia que hay hasta su casa ");
+        System.out.println("Importe total =" + i.getMuebleActual().importeEnvio(km));
+
+        // i.getCatalogoActual().getMuebles().get(idMueble).venderMueble();
+    }
+
+    public void venderMueble() {
+        System.out.println("Venta del mueble");
+        if (i.getMuebleActual().venderMueble() == true) {
+            System.out.println("Mueble vendido exitosamente");
+            System.out.println(i.getMuebleActual().getVentas());
+        } else {
+            System.out.println("No hay suficiente stock para vender el mueble");
+        }
+    }
 }

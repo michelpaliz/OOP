@@ -16,7 +16,7 @@ public class MuebleClasico extends Mueble {
     public double getPeso() {
         return peso;
     }
-
+    
     public String getTipoMadera() {
         return tipoMadera;
     }
@@ -27,5 +27,10 @@ public class MuebleClasico extends Mueble {
                 "peso=" + peso +
                 ", tipoMadera='" + tipoMadera + '\'' + super.toString() +
                 '}';
+    }
+
+    @Override
+    public double importeEnvio(double km) {
+        return 0.10 * peso * km + 30;
     }
 }

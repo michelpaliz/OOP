@@ -26,6 +26,14 @@ public class Inventario {
         randomCatalogos();
     }
 
+    public Catalogo getCatalogoActual() {
+        return catalogoActual;
+    }
+
+    public Mueble getMuebleActual() {
+        return muebleActual;
+    }
+
     public List<Catalogo> getCatalagos() {
         return listaCatalogo;
     }
@@ -133,18 +141,24 @@ public class Inventario {
     }
 
     private Mueble buscarMueble(int idMueble) {
+
         for (Mueble m : catalogoActual.getMuebles()) {
-            if (m.getCodigo().equals(idMueble)) {
+            if (m.getCodigo().equalsIgnoreCase("C00" + idMueble)) {
                 return m;
             }
         }
         return null;
     }
 
-
-
-    // public boolean comprobarStock(int idMueble){
-    // Mueble mueble =
-    // }
+    public boolean checkStock(Mueble m) {
+        if (m.getStock() < 0) {
+            System.out.println("El mueble no tiene unidades para vender");
+            return false;
+        }
+        return true;
+        // catalogoActual.getMuebles().remove(m);
+        // System.out.println("El mueble ha sido vendido exitosamente.");
+    }
+    
 
 }
