@@ -105,6 +105,15 @@ public abstract class Mueble {
 
     }
 
+    public static class OrdenarPorCodigo implements Comparator<Mueble> {
+
+        @Override
+        public int compare(Mueble m1, Mueble m2) {
+            return m1.getCodigo().compareTo(m2.getCodigo());
+        }
+
+    }
+
     @Override
     public boolean equals(Object obj) {
         // Esto hace que delege este comparacion a este misma clase donde se

@@ -6,3 +6,6 @@ Seleccionar el mueble que se quiere vender checkeando si hay stock,
 despues se indicara los km a distancia hasta la casa del cliente el calculo es
 este precio de envio + importe.
 Decrementaremos el stock y lo registramos en un historico de ventas.
+-------------
+Clasificar la mercancia por el tipo y por stock
+para clasificar la mercancia tendira que recorrer todos los catalogos y obtener lso tipos de muebles despues.

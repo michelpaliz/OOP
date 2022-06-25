@@ -51,6 +51,39 @@ public class Control {
 
     }
 
+    /**
+     * 
+     * @param initializer
+     * @param tittle
+     * @param sentence
+     * @return
+     */
+
+    public static int menuGenerator(int initializer, String tittle, String[] sentence) {
+        System.out.println("\n*****************");
+        System.out.printf("** %S **\n", tittle);
+        System.out.println("*****************\n");
+        for (int i = initializer; i < sentence.length; i++) {
+            sentence[i] = String.format("%d %S\n", (i), sentence[i]);
+            System.out.println(sentence[i]);
+        }
+        System.out.println("Choose one option");
+        int option = Integer.parseInt(Util.myInput.nextLine());
+        boolean correct = option > 0;
+        do {
+            if (option > sentence.length) {
+                System.out.println("Please your answer must be between the range");
+                option = -1;
+            } else {
+                Ansi.clearScreen();
+                return option;
+            }
+        } while (!correct);
+
+        return option;
+
+    }
+
     public static int getEdad(GregorianCalendar edad) {
         int anyoNacimiento = edad.get(Calendar.YEAR);
         int mesNacimiento = edad.get(Calendar.MONTH) + 1; //

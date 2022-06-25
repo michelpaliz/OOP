@@ -1,5 +1,7 @@
 package Examen.Out;
 
+import java.util.List;
+
 import Examen.Models.Mueble;
 import Lib.Control;
 import Lib.Util;
@@ -30,6 +32,7 @@ public class Tienda {
                 venderMueble();
                 break;
             case 2:
+                subMenu();
                 break;
             case 3:
                 break;
@@ -73,4 +76,27 @@ public class Tienda {
             System.out.println("No hay suficiente stock para vender el mueble");
         }
     }
+
+    // SUBMENU
+    public void subMenu() {
+        String[] sentence = { "Volver al menu", "Clasificar por tipo", "Clasificar por stock" };
+        user = Control.menuGenerator("Submenu", sentence);
+        switch (user) {
+            case 0:
+                menu();
+                break;
+            case 1:
+                List<Mueble> muebles;
+                String[] sentence1 = { "Mueble clasico", "Muble Auxiliar" };
+                user = Control.menuGenerator(0, "Clasificar por tipo", sentence1);
+                muebles = i.clasificarTipo(user);
+                for (Mueble mueble : muebles) {
+                    System.out.println(muebles.toString());
+                }
+                break;
+            case 2:
+                break;
+        }
+    }
+
 }

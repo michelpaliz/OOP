@@ -150,15 +150,38 @@ public class Inventario {
         return null;
     }
 
-    public boolean checkStock(Mueble m) {
-        if (m.getStock() < 0) {
-            System.out.println("El mueble no tiene unidades para vender");
-            return false;
+    // public boolean checkStock(Mueble m) {
+    // if (m.getStock() < 0) {
+    // System.out.println("El mueble no tiene unidades para vender");
+    // return false;
+    // }
+    // return true;
+    // // catalogoActual.getMuebles().remove(m);
+    // // System.out.println("El mueble ha sido vendido exitosamente.");
+    // }
+
+    public List<Mueble> clasificarTipo(int tipo) {
+        List<Mueble> muebles = new ArrayList<>();
+        if (tipo == 0) {
+            for (int i = 0; i < listaCatalogo.size(); i++) {
+                for (int j = 0; j < listaMueble.size(); j++) {
+                    if (MuebleClasico.class == listaCatalogo.get(i).getMuebles().get(i).getClass()) {
+                        muebles.add(listaCatalogo.get(i).getMuebles().get(j));
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < listaCatalogo.size(); i++) {
+                for (int j = 0; j < listaMueble.size(); j++) {
+                    if (MuebleAux.class == listaCatalogo.get(i).getMuebles().get(i)
+                            .getClass()) {
+                        muebles.add(listaCatalogo.get(i).getMuebles().get(j));
+                    }
+                }
+            }
         }
-        return true;
-        // catalogoActual.getMuebles().remove(m);
-        // System.out.println("El mueble ha sido vendido exitosamente.");
+        muebles.sort(new Mueble.OrdenarPorCodigo());
+        return muebles;
     }
-    
 
 }
