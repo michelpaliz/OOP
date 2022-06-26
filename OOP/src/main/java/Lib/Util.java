@@ -10,7 +10,7 @@ public class Util {
 
     public static Scanner myInput = new Scanner(System.in);
     public static Random r = new Random();
-    private static boolean correct;
+    private static boolean correct = true;
 
     public static void pause() {
         System.out.println("Press enter to continue ....");
@@ -52,12 +52,16 @@ public class Util {
         int userInt = 0;
         do {
             try {
-                System.out.print(message);
-                userInt = Integer.parseInt(Util.myInput.nextLine());
-                correct = userInt >= min && userInt <= max;
-                if (!correct) {
+                System.out.println(message);
+                userInt = myInput.nextInt();
+                // userInt = Integer.parseInt(Util.myInput.nextLine());
+                if (correct = userInt >= min && userInt <= max) {
+                    correct = true;
+                } else {
                     System.out.println("The number must be between" + min + " and " + max);
+                    correct = false;
                 }
+
             } catch (NumberFormatException e) {
                 System.out.println("Error");
                 Util.pause();
@@ -76,8 +80,9 @@ public class Util {
         double userDouble = 0;
         do {
             try {
-                System.out.print(message);
-                userDouble = Double.parseDouble(Util.myInput.nextLine());
+                System.out.println(message);
+                userDouble = myInput.nextDouble();
+                // userDouble = Double.parseDouble(Util.myInput.nextLine());
                 correct = true;
             } catch (NumberFormatException e) {
                 System.out.println("Error");
@@ -93,10 +98,9 @@ public class Util {
         String compare = "";
         do {
             correct = userStr.equals(compare);
-            System.out.print("Introduce un String ");
+            System.out.println("Introduce un String ");
             try {
                 userStr = Util.myInput.nextLine();
-
             } catch (NumberFormatException e) {
                 System.out.println("Error: El input no es un String");
                 correct = false;
