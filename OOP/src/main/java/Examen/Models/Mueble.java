@@ -12,7 +12,8 @@ public abstract class Mueble {
     private double ancho;
     private double profundo;
     private int stock;
-
+    // Cada instancia creada del mueble siempre tendra una sombra de ventas por
+    // detras servira para el registro del mismo.
     private List<Venta> ventas;
 
     public Mueble(String nombre2, double precio, double alto, double ancho, double profundo, int stock) {
@@ -72,12 +73,16 @@ public abstract class Mueble {
                 '}';
     }
 
+    // Este metodo lo hacemos abstract para que se obligatorio para las demas hijas.
+    // Conste que abstract no puede llevar body.
     public abstract double importeEnvio(double km);
 
+    // El precio total depende de los km que hay de distancia.
     public double precioTotal(double km) {
         return importeEnvio(km) + precio;
     }
 
+    // vendemos el mueble siempre y cuando haya stock
     public boolean venderMueble() {
         if (stock > 0) {
             stock = stock - 1;
@@ -111,6 +116,15 @@ public abstract class Mueble {
 
     }
 
+    public static class ordenarPorStock implements Comparator<Mueble> {
+
+        @Override
+        public int compare(Mueble m1, Mueble m2) {
+            return m1.getStock() - m2.getStock();
+        }
+
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(codigo);
@@ -125,7 +139,7 @@ public abstract class Mueble {
             Mueble otroMueble = (Mueble) obj;
             if (this.codigo.equalsIgnoreCase(otroMueble.codigo)) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }

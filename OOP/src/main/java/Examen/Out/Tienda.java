@@ -34,6 +34,7 @@ public class Tienda {
                 subMenu();
                 break;
             case 3:
+                MostrarEstadisticas();
                 break;
         }
 
@@ -87,16 +88,41 @@ public class Tienda {
                 menu();
                 break;
             case 1:
-                List<Mueble> muebles = new ArrayList<>();
-                mostrarCatalogos();
-                String[] sentence1 = { "Mueble clasico", "Mueble Auxiliar" };
-                user = Control.menuGenerator(0, "Clasificar por tipo", sentence1);
-                muebles = i.clasificarTipo(user);
-                System.out.println(muebles);
+                porTipo();
                 break;
             case 2:
+                porStock();
                 break;
         }
+    }
+
+    public void porTipo() {
+        List<Mueble> muebles = new ArrayList<>();
+        mostrarCatalogos();
+        String[] sentence1 = { "Mueble clasico", "Mueble Auxiliar" };
+        user = Control.menuGenerator(0, "Clasificar por tipo", sentence1);
+        muebles = i.clasificarTipo(user);
+        System.out.println(muebles);
+    }
+
+    public void porStock() {
+        List<Mueble> muebles = i.totalMuebles();
+        muebles.sort(new Mueble.ordenarPorStock());
+        for (Mueble m : muebles) {
+            if (m.getStock() == 0) {
+                System.out.println("\u001b[31m" + m.toString());
+            } else if (m.getStock() <= 2) {
+                System.out.println("\u001b[36m" + m.toString());
+            } else if (m.getStock() > 2) {
+                System.out.println("\u001b[32m" + m.toString());
+            }
+
+        }
+    }
+
+    public void MostrarEstadisticas() {
+        System.out.println("Media de precio de los muebles" + i.mediaPrecioMuebles());
+        System.out.println("Muebles mas vendido" + i.muebleMasVendido());
     }
 
 }
