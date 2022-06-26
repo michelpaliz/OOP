@@ -154,16 +154,6 @@ public class Inventario {
         return null;
     }
 
-    // public boolean checkStock(Mueble m) {
-    // if (m.getStock() < 0) {
-    // System.out.println("El mueble no tiene unidades para vender");
-    // return false;
-    // }
-    // return true;
-    // // catalogoActual.getMuebles().remove(m);
-    // // System.out.println("El mueble ha sido vendido exitosamente.");
-    // }
-
     public List<Mueble> clasificarTipo(int tipo) {
         Set<Mueble> mueblesSet = new HashSet<Mueble>();
         List<Mueble> muebles = new ArrayList<>();
@@ -173,7 +163,7 @@ public class Inventario {
                 for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
                     if (MuebleClasico.class == listaCatalogo.get(i).getMuebles().get(j).getClass()) {
                         Mueble muebleEncontrado = listaCatalogo.get(i).getMuebles().get(j);
-                        mueblesSet.add(muebleEncontrado);
+                        mueblesSet.add(muebleEncontrado);// no admite duplicados
                     }
                 }
             }
@@ -182,12 +172,7 @@ public class Inventario {
                 for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
                     if (MuebleAux.class == listaCatalogo.get(i).getMuebles().get(j).getClass()) {
                         Mueble muebleEncontrado = listaCatalogo.get(i).getMuebles().get(j);
-                        System.out.println(muebleEncontrado);
-                        for (Mueble mueble : mueblesSet) {
-                            if (!muebleEncontrado.equals(mueble)) {
-                                mueblesSet.add(muebleEncontrado);
-                            }
-                        }
+                        mueblesSet.add(muebleEncontrado);// no admite duplicados
                     }
                 }
             }
