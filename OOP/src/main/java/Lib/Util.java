@@ -2,8 +2,12 @@ package Lib;
 
 import java.util.Scanner;
 import java.util.UUID;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Util {
@@ -201,8 +205,28 @@ public class Util {
      * @return date formatted only with year
      */
     public static String dateFrmYear(LocalDate date) {
-        DateTimeFormatter dt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        DateTimeFormatter dt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return dt.format(date);
+    }
+
+    /**
+     * 
+     * @param date
+     * @return date formatted only with year
+     */
+    public static String dateFrmYear(Date date) {
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+        return dt.format(date);
+    }
+
+    /**
+     * 
+     * @param Gregorian calendar
+     * @return date formatted only with year
+     */
+    public static String dateFrmYear(GregorianCalendar date) {
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+        return dt.format(date.getTime());
     }
 
     /**

@@ -1,6 +1,11 @@
 package Examen.Models;
 
+import java.time.LocalTime;
 import java.util.*;
+
+import com.github.javafaker.Faker;
+
+import Examen.Config.Config;
 
 public abstract class Mueble {
 
@@ -84,10 +89,14 @@ public abstract class Mueble {
 
     // vendemos el mueble siempre y cuando haya stock
     // Creamos un metodo de venta por defecto.
+    // Este metodo lo utilizo mas para generar datos aleatorios de fechas para las
+    // ventas.
     public boolean venderMueble() {
+        Date d1 = new Date(); // obtenemos la fecha actual
+        Date d2 = new GregorianCalendar(2000, Calendar.FEBRUARY, 11).getTime();
         if (stock > 0) {
             stock = stock - -1;
-            ventas.add(new Venta(this, new GregorianCalendar()));
+            ventas.add(new Venta(this, Config.fk.date().between(d2, d1)));
             return true;
         }
         return false;
@@ -95,9 +104,10 @@ public abstract class Mueble {
 
     // vendemos el mueble siempre y cuando haya stock
     public boolean venderMueble(int cantidad) {
+        Date d1 = new Date();// fecha actual de la venta
         if (stock > 0 && stock > cantidad) {
             stock = stock - cantidad;
-            ventas.add(new Venta(this, new GregorianCalendar()));
+            ventas.add(new Venta(this, d1));
             return true;
         }
         return false;

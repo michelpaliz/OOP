@@ -21,7 +21,7 @@ public class Tienda {
     public void menu() {
 
         String tittle = "TIenda";
-        String[] sentence = { "Salir", "Vender Mueble", "Busquedas", "Estadisticas" };
+        String[] sentence = { "Salir", "Vender Mueble", "Busquedas", "Estadisticas", "Registro Ventas" };
         user = Control.menuGenerator(tittle, sentence);
         switch (user) {
             case 0:
@@ -34,7 +34,10 @@ public class Tienda {
                 subMenu();
                 break;
             case 3:
-                MostrarEstadisticas();
+                mostrarEstadisticas();
+                break;
+            case 4:
+                mostrarVentas();
                 break;
         }
 
@@ -48,6 +51,11 @@ public class Tienda {
     public void mostrarMuebles() {
         System.out.println("Ordenar los muebles del catalogo seleccionado por los nombres");
         i.ordenarMuebles();
+    }
+
+    public void mostrarVentas() {
+        System.out.println("Ordenar registros de ventas por anyo");
+        i.ordenarVentas();
     }
 
     public void importeTotal(int idMueble) {
@@ -123,7 +131,7 @@ public class Tienda {
         }
     }
 
-    public void MostrarEstadisticas() {
+    public void mostrarEstadisticas() {
         System.out.println("Media de precio de los muebles" + i.mediaPrecioMuebles());
         System.out.println("Muebles mas vendido" + i.muebleMasVendido());
     }

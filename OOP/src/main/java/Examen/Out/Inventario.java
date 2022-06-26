@@ -11,6 +11,7 @@ import Examen.Interface.IEstadisticas;
 import Examen.Models.Catalogo;
 import Examen.Models.MuebleAux;
 import Examen.Models.MuebleClasico;
+import Examen.Models.Venta;
 import Examen.numeric.Etipo;
 import Examen.Models.Mueble;
 import Lib.Util;
@@ -27,6 +28,7 @@ public class Inventario implements IEstadisticas {
     // Las variables que voy a utilizar son el core de mi aplicacion.
     protected List<Mueble> listaMueble;
     protected List<Catalogo> listaCatalogo;
+    protected List<Venta> listaVentas;
     private Catalogo catalogoActual;
     private Mueble muebleActual;
 
@@ -55,12 +57,20 @@ public class Inventario implements IEstadisticas {
         return listaMueble;
     }
 
+    public List<Venta> getListaVentas() {
+        return listaVentas;
+    }
+
     private void ventasRandom(int cantidad) {
+        listaVentas = new ArrayList<>();
+        List<Venta> todasLasVentas = new ArrayList<>();
         for (int i = 0; i < listaCatalogo.size(); i++) {
             for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
-                listaCatalogo.get(i).getMuebles().get(j).venderMueble();
+                listaCatalogo.get(i).getMuebles().get(j).venderMueble();// vendemos los muebles
+                // obtenemos todas la ventas que hemos hecho
+                todasLasVentas = listaCatalogo.get(i).getMuebles().get(j).getVentas();
+                listaVentas.addAll(todasLasVentas);// anyadimos nuestras ventas
             }
-
         }
     }
 
@@ -167,6 +177,11 @@ public class Inventario implements IEstadisticas {
         catalogoActual.getMuebles().sort(new Mueble.CompararPorNombre());
         System.out.println(catalogoActual);
 
+    }
+
+    public void ordenarVentas() {
+        getListaVentas().sort(new Venta.ordenarVentasPorAnyo());
+        System.out.println(listaVentas);
     }
 
     public boolean setCatalogoSeleccionado(int id) {
