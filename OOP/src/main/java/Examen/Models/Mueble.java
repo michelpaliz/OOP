@@ -83,9 +83,20 @@ public abstract class Mueble {
     }
 
     // vendemos el mueble siempre y cuando haya stock
+    // Creamos un metodo de venta por defecto.
     public boolean venderMueble() {
         if (stock > 0) {
-            stock = stock - 1;
+            stock = stock - -1;
+            ventas.add(new Venta(this, new GregorianCalendar()));
+            return true;
+        }
+        return false;
+    }
+
+    // vendemos el mueble siempre y cuando haya stock
+    public boolean venderMueble(int cantidad) {
+        if (stock > 0 && stock > cantidad) {
+            stock = stock - cantidad;
             ventas.add(new Venta(this, new GregorianCalendar()));
             return true;
         }

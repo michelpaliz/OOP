@@ -22,6 +22,7 @@ public class Inventario implements IEstadisticas {
     private static Faker fk = new Faker();
     private final int MAX_MUEBLES = 20;
     private final int MAX_CATALAGOS = 3;
+    private final int MAX_VENTAS = 3;
     private final boolean DEBUG = true;
     // Las variables que voy a utilizar son el core de mi aplicacion.
     protected List<Mueble> listaMueble;
@@ -34,6 +35,7 @@ public class Inventario implements IEstadisticas {
         // funciones para ello.
         if (DEBUG) {
             randomCatalogos(MAX_CATALAGOS, MAX_MUEBLES);
+            ventasRandom(MAX_VENTAS);
         }
     }
 
@@ -51,6 +53,15 @@ public class Inventario implements IEstadisticas {
 
     public List<Mueble> getListaMueble() {
         return listaMueble;
+    }
+
+    private void ventasRandom(int cantidad) {
+        for (int i = 0; i < listaCatalogo.size(); i++) {
+            for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
+                listaCatalogo.get(i).getMuebles().get(j).venderMueble();
+            }
+
+        }
     }
 
     /**

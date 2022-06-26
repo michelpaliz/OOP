@@ -71,7 +71,8 @@ public class Tienda {
         user = Util.myInput.nextInt();
         i.setCatalogoSeleccionado(user);
         System.out.println("Venta del mueble");
-        if (i.getMuebleActual().venderMueble() == true) {
+        if (i.getMuebleActual().venderMueble(Util.validateInt("Introduce las unidades que quieres comprar", 0,
+                i.getMuebleActual().getStock())) == true) {
             System.out.println("Mueble vendido exitosamente");
             System.out.println(i.getMuebleActual().getVentas());
         } else {
