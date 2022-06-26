@@ -46,30 +46,32 @@ public class Tienda {
     }
 
     public void mostrarMuebles() {
-        System.out.println("Ordenar los muebles del catalogo por los nombres");
+        System.out.println("Ordenar los muebles del catalogo seleccionado por los nombres");
         i.ordenarMuebles();
-        System.out.println("Escoge el id del mueble");
-        user = Util.myInput.nextInt();
-        i.setMuebleSeleccionado(user);
-        System.out.println("Mueble seleccionado exitosamente");
-        System.out.println(i.getMuebleActual());
     }
 
     public void importeTotal(int idMueble) {
         double km = Util.validateDouble("Introduce los km de distancia que hay hasta su casa ");
         System.out.println("Importe total =" + i.getMuebleActual().importeEnvio(km));
-
         // i.getCatalogoActual().getMuebles().get(idMueble).venderMueble();
     }
 
     public void venderMueble() {
-        mostrarCatalogos();
-        mostrarMuebles();
         System.out.println("Tenemos " + i.getCatalagos().size() + " catalogos");
+        mostrarCatalogos();
         System.out.println("Vender Mueble");
         System.out.println("Escoge el id del catalogo ");
         user = Util.myInput.nextInt();
         i.setCatalogoSeleccionado(user);
+        System.out.println("Catalogo seleccionado exitosamente");
+        System.out.println("-------------------");
+        System.out.println("Escoge el id del mueble");
+        mostrarMuebles();
+        user = Util.myInput.nextInt();
+        i.setMuebleSeleccionado(user);
+        System.out.println("Mueble seleccionado exitosamente");
+        System.out.println(i.getMuebleActual());
+
         System.out.println("Venta del mueble");
         if (i.getMuebleActual().venderMueble(Util.validateInt("Introduce las unidades que quieres comprar", 0,
                 i.getMuebleActual().getStock())) == true) {
