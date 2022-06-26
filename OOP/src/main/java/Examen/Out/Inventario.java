@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 import com.github.javafaker.Faker;
 
 import Examen.Interface.IEstadisticas;
@@ -214,7 +213,7 @@ public class Inventario implements IEstadisticas {
     public double mediaPrecioMuebles() {
         double costeTotal = 0;
         List<Mueble> muebles = totalMuebles();
-        for (int i = 0; i < listaMueble.size(); i++) {
+        for (int i = 0; i < muebles.size(); i++) {
             costeTotal += muebles.get(i).getPrecio();
         }
         return costeTotal / muebles.size();
