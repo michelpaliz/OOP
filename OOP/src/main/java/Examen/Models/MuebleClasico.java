@@ -16,7 +16,7 @@ public class MuebleClasico extends Mueble {
     public double getPeso() {
         return peso;
     }
-    
+
     public String getTipoMadera() {
         return tipoMadera;
     }

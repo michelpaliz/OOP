@@ -1,9 +1,6 @@
 package Examen.Models;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.GregorianCalendar;
-import java.util.List;
+import java.util.*;
 
 public abstract class Mueble {
 
@@ -115,6 +112,11 @@ public abstract class Mueble {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    @Override
     public boolean equals(Object obj) {
         // Esto hace que delege este comparacion a este misma clase donde se
         // encuentra
@@ -123,6 +125,8 @@ public abstract class Mueble {
             Mueble otroMueble = (Mueble) obj;
             if (this.codigo.equalsIgnoreCase(otroMueble.codigo)) {
                 return true;
+            }else{
+                return false;
             }
         }
         return false;

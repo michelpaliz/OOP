@@ -2,7 +2,10 @@ package Examen.Out;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import com.github.javafaker.Faker;
 
@@ -23,7 +26,7 @@ public class Inventario {
     private Mueble muebleActual;
 
     public Inventario() {
-        randomCatalogos();
+        randomCatalogos(MAX_CATALAGOS, MAX_MUEBLES);
     }
 
     public Catalogo getCatalogoActual() {
@@ -46,15 +49,16 @@ public class Inventario {
      * generador de catalogos
      */
 
-    public List<Catalogo> randomCatalogos() {
-        listaCatalogo = new ArrayList<>(MAX_CATALAGOS);
+    public List<Catalogo> randomCatalogos(int cantidadCatalogo, int cantidadMueble) {
+        listaCatalogo = new ArrayList<>(cantidadCatalogo);
         Etipo nombre = Etipo.INVIERNO;
-        for (int i = 0; i < MAX_CATALAGOS; i++) {
+        for (int i = 0; i < cantidadCatalogo; i++) {
             nombre = nombre.getRandom();
             int anyo = fk.random().nextInt(2000, 2022);
-            // creamos nuevos catalogos que tienes muebles en este caso asignamos el numero
-            // deseado de muebles para cada catalago.
-            catalogoActual = new Catalogo(nombre, anyo, muebles());
+            // creamos nuevos catalogos que tienes mueblesDuplicados en este caso asignamos
+            // el numero
+            // deseado de mueblesDuplicados para cada catalago.
+            catalogoActual = new Catalogo(nombre, anyo, mueblesDuplicados(cantidadMueble));
             listaCatalogo.add(catalogoActual);
         }
 
@@ -63,12 +67,12 @@ public class Inventario {
 
     /**
      * 
-     * @return una lista random de muebles
+     * @return una lista random de mueblesDuplicados
      */
-    public List<Mueble> muebles() {
-        randomMuebles();// generamos los muebles
+    public List<Mueble> mueblesDuplicados(int cantidad) {
+        randomMuebles(cantidad);// generamos los mueblesDuplicados
         List<Mueble> lista = new ArrayList<>(2);
-        for (int i = 0; i < 2; i++) {// solo asignamos 2 muebles por catalogo
+        for (int i = 0; i < 2; i++) {// solo asignamos 2 mueblesDuplicados por catalogo
             muebleActual = listaMueble.get(Util.random(0, listaMueble.size()));
             lista.add(muebleActual);
         }
@@ -78,9 +82,9 @@ public class Inventario {
     /**
      * generador de Muebles
      */
-    public List<Mueble> randomMuebles() {
-        listaMueble = new ArrayList<>(MAX_MUEBLES);
-        for (int i = 0; i < MAX_MUEBLES / 2; i++) {
+    public List<Mueble> randomMuebles(int cantidad) {
+        listaMueble = new ArrayList<>(cantidad);
+        for (int i = 0; i < cantidad / 2; i++) {
             String nombre = fk.funnyName().name();
             double precio = fk.number().randomDouble(2, 50, 100);
             double alto = fk.number().randomDouble(2, 5, 50);
@@ -161,26 +165,38 @@ public class Inventario {
     // }
 
     public List<Mueble> clasificarTipo(int tipo) {
+        Set<Mueble> mueblesSet = new HashSet<Mueble>();
         List<Mueble> muebles = new ArrayList<>();
+        // Iterator<Mueble> iterator = mueblesSet.iterator();
         if (tipo == 0) {
             for (int i = 0; i < listaCatalogo.size(); i++) {
-                for (int j = 0; j < listaMueble.size(); j++) {
-                    if (MuebleClasico.class == listaCatalogo.get(i).getMuebles().get(i).getClass()) {
-                        muebles.add(listaCatalogo.get(i).getMuebles().get(j));
+                for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
+                    if (MuebleClasico.class == listaCatalogo.get(i).getMuebles().get(j).getClass()) {
+                        Mueble muebleEncontrado = listaCatalogo.get(i).getMuebles().get(j);
+                        mueblesSet.add(muebleEncontrado);
                     }
                 }
             }
         } else {
             for (int i = 0; i < listaCatalogo.size(); i++) {
-                for (int j = 0; j < listaMueble.size(); j++) {
-                    if (MuebleAux.class == listaCatalogo.get(i).getMuebles().get(i)
-                            .getClass()) {
-                        muebles.add(listaCatalogo.get(i).getMuebles().get(j));
+                for (int j = 0; j < listaCatalogo.get(i).getMuebles().size(); j++) {
+                    if (MuebleAux.class == listaCatalogo.get(i).getMuebles().get(j).getClass()) {
+                        Mueble muebleEncontrado = listaCatalogo.get(i).getMuebles().get(j);
+                        System.out.println(muebleEncontrado);
+                        for (Mueble mueble : mueblesSet) {
+                            if (!muebleEncontrado.equals(mueble)) {
+                                mueblesSet.add(muebleEncontrado);
+                            }
+                        }
                     }
                 }
             }
         }
+        for (Mueble mueble : mueblesSet) {
+            muebles.add(mueble);
+        }
         muebles.sort(new Mueble.OrdenarPorCodigo());
+        System.out.println(muebles.size());
         return muebles;
     }
 

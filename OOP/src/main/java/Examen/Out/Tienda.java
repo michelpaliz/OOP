@@ -1,5 +1,6 @@
 package Examen.Out;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Examen.Models.Mueble;
@@ -27,8 +28,6 @@ public class Tienda {
                 System.out.println("Adios");
                 break;
             case 1:
-                mostrarCatalogos();
-                mostrarMuebles();
                 venderMueble();
                 break;
             case 2:
@@ -43,11 +42,6 @@ public class Tienda {
     public void mostrarCatalogos() {
         System.out.println("Mostramos datos primero");
         i.ordenarCatalagos();
-        System.out.println("Tenemos " + i.getCatalagos().size() + " catalogos");
-        System.out.println("Vender Mueble");
-        System.out.println("Escoge el id del catalogo ");
-        user = Util.myInput.nextInt();
-        i.setCatalogoSeleccionado(user);
     }
 
     public void mostrarMuebles() {
@@ -68,6 +62,13 @@ public class Tienda {
     }
 
     public void venderMueble() {
+        mostrarCatalogos();
+        mostrarMuebles();
+        System.out.println("Tenemos " + i.getCatalagos().size() + " catalogos");
+        System.out.println("Vender Mueble");
+        System.out.println("Escoge el id del catalogo ");
+        user = Util.myInput.nextInt();
+        i.setCatalogoSeleccionado(user);
         System.out.println("Venta del mueble");
         if (i.getMuebleActual().venderMueble() == true) {
             System.out.println("Mueble vendido exitosamente");
@@ -86,13 +87,12 @@ public class Tienda {
                 menu();
                 break;
             case 1:
-                List<Mueble> muebles;
-                String[] sentence1 = { "Mueble clasico", "Muble Auxiliar" };
+                List<Mueble> muebles = new ArrayList<>();
+                mostrarCatalogos();
+                String[] sentence1 = { "Mueble clasico", "Mueble Auxiliar" };
                 user = Control.menuGenerator(0, "Clasificar por tipo", sentence1);
                 muebles = i.clasificarTipo(user);
-                for (Mueble mueble : muebles) {
-                    System.out.println(muebles.toString());
-                }
+                System.out.println(muebles);
                 break;
             case 2:
                 break;
