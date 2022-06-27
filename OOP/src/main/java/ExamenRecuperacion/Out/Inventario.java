@@ -49,6 +49,7 @@ public class Inventario implements IEstadisticas {
     }
 
     public void randomConductor(int cantidadConductores, int cantidadVehiculos) {
+        listaConductores = new ArrayList<>();
         listaVehiculos = new ArrayList<>();
         Date d1 = new Date(); // obtenemos la fecha actual
         Date fechaNacimientoMInima = new GregorianCalendar(2000, Calendar.FEBRUARY, 11).getTime();
@@ -189,16 +190,18 @@ public class Inventario implements IEstadisticas {
     }
 
     // public void devolverVehiculo(){
-    //     for (int i = 0; i < listaConductores.size(); i++) {
-    //         for (int j = 0; j < listaConductores.get(i).getVehiculoAlquilado().size(); j++) {
-    //             if (Autocaravana.class == listaConductores.get(i).getVehiculoAlquilado().get(j).getClass()) {
-    //                 Vehiculo vehiculoEncontrado = listaConductores.get(i).getVehiculoAlquilado().get(j);
-    //                 vehiculoSet.add(vehiculoEncontrado);// no admite duplicados
-    //             }
-    //         }
-    //     }
+    // for (int i = 0; i < listaConductores.size(); i++) {
+    // for (int j = 0; j < listaConductores.get(i).getVehiculoAlquilado().size();
+    // j++) {
+    // if (Autocaravana.class ==
+    // listaConductores.get(i).getVehiculoAlquilado().get(j).getClass()) {
+    // Vehiculo vehiculoEncontrado =
+    // listaConductores.get(i).getVehiculoAlquilado().get(j);
+    // vehiculoSet.add(vehiculoEncontrado);// no admite duplicados
     // }
-
+    // }
+    // }
+    // }
 
     @Override
     public Vehiculo vehiculoMasAlquilado() {

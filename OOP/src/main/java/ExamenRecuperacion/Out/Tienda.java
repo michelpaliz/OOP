@@ -10,6 +10,7 @@ public class Tienda {
 
     public Tienda() {
         i = new Inventario();
+        menu();
     }
 
     public void menu() {
@@ -24,7 +25,7 @@ public class Tienda {
             case 1:
                 alquilarVehiculo();
                 break;
-            case 2: 
+            case 2:
 
                 break;
             case 3:
@@ -64,15 +65,14 @@ public class Tienda {
 
     }
 
-    public void devolverVehiculo(){
+    public void devolverVehiculo() {
         System.out.println("Ingresa la matricula del vehiculo");
         userInt = Util.myInput.nextInt();
         i.setVehiculoSeleccionado(userInt);
         i.setVehiculoSeleccionado(userInt);
         System.out.println("Vehiculo seleccionado exitosamente");
-      
-    }
 
+    }
 
     public void mostrarEstadisticas() {
         System.out.println("El vehiculo mas alquilado es " + i.vehiculoMasAlquilado());
