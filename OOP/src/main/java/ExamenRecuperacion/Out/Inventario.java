@@ -115,13 +115,10 @@ public class Inventario implements IEstadisticas {
         return null;
     }
 
-    private Vehiculo buscarVehiculo(int idMueble) {
+    private Vehiculo buscarVehiculo(String matricula) {
 
-        for (Vehiculo v : conductorActual.getVehiculoAlquilado()) {
-            // esto lo pongo asi porque me da pereza escribir todo el string porque
-            // simplemente lloamando la clase override de equals bastaria y fuese mas
-            // entendible.
-            if (v.getMatricula().equalsIgnoreCase("C00" + idMueble)) {
+        for (Vehiculo v : getConductorActual().getVehiculoAlquilado()) {
+            if (v.getMatricula().equals(matricula)) {
                 return v;
             }
         }
@@ -133,7 +130,7 @@ public class Inventario implements IEstadisticas {
         return conductorActual != null;
     }
 
-    public boolean setVehiculoSeleccionado(int id) {
+    public boolean setVehiculoSeleccionado(String id) {
         vehiculoActual = buscarVehiculo(id);
         return vehiculoActual != null;
     }

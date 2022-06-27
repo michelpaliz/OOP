@@ -44,7 +44,7 @@ public class Tienda {
 
     public void mostrarConductores() {
         System.out.println("Mostramos datos primero");
-        i.getListaConductores();
+        System.out.println(i.getListaConductores());
     }
 
     public void alquilarVehiculo() {
@@ -55,11 +55,14 @@ public class Tienda {
         i.getConductorActual();
         System.out.println("Conductor seleccionado exitosamentes");
         System.out.println("Escoge el vehiculo del conductor ");
-        mostrarVehiculos();
+        // mostrarVehiculos();
+        System.out.println(i.getConductorActual().getVehiculoAlquilado());
         System.out.println("Ingresa la matricula del vehiculo");
-        userInt = Util.myInput.nextInt();
-        i.setVehiculoSeleccionado(userInt);
+        user = Util.myInput.nextLine();
+        i.setVehiculoSeleccionado(user);
         System.out.println("Vehiculo seleccionado exitosamente");
+        System.out.println("El vehiculo actual es");
+        System.out.println(i.getVehiculoActual());
         i.getVehiculoActual().alquilarVehiculo(i.getConductorActual());
         System.out.println("Vehiculo alquilado exitosamente");
 
@@ -67,9 +70,8 @@ public class Tienda {
 
     public void devolverVehiculo() {
         System.out.println("Ingresa la matricula del vehiculo");
-        userInt = Util.myInput.nextInt();
-        i.setVehiculoSeleccionado(userInt);
-        i.setVehiculoSeleccionado(userInt);
+        user = Util.myInput.nextLine();
+        i.setVehiculoSeleccionado(user);
         System.out.println("Vehiculo seleccionado exitosamente");
 
     }

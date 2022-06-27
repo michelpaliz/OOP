@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Models/Alquiler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Models/Autocaravana.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Models/Coche.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Models/Conductor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Models/Vehiculo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/Inventario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/numeric/NCombustible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Models/Alquiler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Models/Autocaravana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Models/Coche.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Models/Conductor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Models/Vehiculo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/Inventario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/numeric/NCombustible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
