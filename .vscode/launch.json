@@ -8,6 +8,13 @@
       "type": "java",
       "name": "Launch App",
       "request": "launch",
+      "mainClass": "ExamenRecuperacion.Out.App",
+      "projectName": "OOP"
+    },
+    {
+      "type": "java",
+      "name": "Launch App",
+      "request": "launch",
       "mainClass": "Examen.Out.App",
       "projectName": "OOP"
     },
