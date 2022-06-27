@@ -63,9 +63,8 @@ public class Tienda {
         System.out.println("Vehiculo seleccionado exitosamente");
         System.out.println("El vehiculo actual es");
         System.out.println(i.getVehiculoActual());
-        i.getVehiculoActual().alquilarVehiculo(i.getConductorActual());
         System.out.println("Vehiculo alquilado exitosamente");
-
+        System.out.println(i.getVehiculoActual().alquilarVehiculo(i.getConductorActual()));
     }
 
     public void devolverVehiculo() {
