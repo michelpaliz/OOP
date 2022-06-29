@@ -15,7 +15,7 @@ public abstract class Vehiculo {
     private double precioAlquilerDiario;
     private double precioKmRealizado;
     private NCombustible tipoCombustible;
-    // vamos ha crear un historia de los alquileres
+    // vamos ha crear un historia de los alquileres por vehiculo.
     private List<Alquiler> alquileres;
 
     public Vehiculo(String marca, String modelo, double precioAlquilerDiario,
@@ -58,16 +58,10 @@ public abstract class Vehiculo {
         return alquileres;
     }
 
+    // necesitamos saber el conductor para alquilar el vehiculo
     public boolean alquilarVehiculo(Conductor conductor) {
         Date fechaAlquiler = new Date();
         Date fechaDevolucion = null;
-        alquileres.add(new Alquiler(fechaAlquiler, conductor, this, fechaDevolucion, 0, 0));
-        return true;
-    }
-
-    public boolean devolverVehiculo(Conductor conductor, Date fechaDevolucion, double kmRealizados,
-            double importePagar) {
-        Date fechaAlquiler = new Date();
         alquileres.add(new Alquiler(fechaAlquiler, conductor, this, fechaDevolucion, 0, 0));
         return true;
     }
@@ -78,8 +72,9 @@ public abstract class Vehiculo {
     // necesitamos saber que conductor es para aplicar los descuentos
     public abstract double descuento(Conductor conductor);
 
-    public double precioTotal(double kmRealizado, Conductor conductor) {
-        return (getPrecioAlquilerDiario()) + (getPrecioKmRealizado() * kmRealizado) + suplemento()
+    public double precioTotal(Alquiler alquiler, double kmRealizado, Conductor conductor) {
+        return (alquiler.diasAlquilado() * getPrecioAlquilerDiario()) + (getPrecioKmRealizado() * kmRealizado)
+                + suplemento()
                 - descuento(conductor);
     }
 

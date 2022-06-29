@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import Lib.Control;
+import Lib.Util;
 
 public class Conductor {
     private String dni;
@@ -59,8 +60,8 @@ public class Conductor {
         return "Conductor{" +
                 "dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", fechaLicenciaConducir=" + fechaLicenciaConducir +
+                ", fechaNacimiento=" + Util.dateFrmYear(fechaNacimiento) +
+                ", fechaLicenciaConducir=" + Util.dateFrmYear(fechaLicenciaConducir) +
                 ", vehiculoAlquilado=" + vehiculoAlquilado +
                 '}';
     }

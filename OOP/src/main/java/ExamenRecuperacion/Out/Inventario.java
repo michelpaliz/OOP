@@ -10,8 +10,8 @@ import java.util.Set;
 
 import com.github.javafaker.Faker;
 
-import Examen.Models.MuebleAux;
 import ExamenRecuperacion.Interface.IEstadisticas;
+import ExamenRecuperacion.Models.Alquiler;
 import ExamenRecuperacion.Models.Autocaravana;
 import ExamenRecuperacion.Models.Coche;
 import ExamenRecuperacion.Models.Conductor;
@@ -25,8 +25,10 @@ public class Inventario implements IEstadisticas {
     private final int MAX_VEHICULOS = 20;
     private List<Conductor> listaConductores;
     private List<Vehiculo> listaVehiculos;
+    private List<Alquiler> listaAlquileres;
     private Conductor conductorActual;
     private Vehiculo vehiculoActual;
+    private Alquiler alquilerActual;
 
     public Inventario() {
         randomConductor(MAX_CONDUCTORES, MAX_VEHICULOS);
@@ -46,6 +48,14 @@ public class Inventario implements IEstadisticas {
 
     public Vehiculo getVehiculoActual() {
         return vehiculoActual;
+    }
+
+    public Alquiler getAlquilerActual() {
+        return alquilerActual;
+    }
+
+    public List<Alquiler> getListaAlquileres() {
+        return listaAlquileres;
     }
 
     public void randomConductor(int cantidadConductores, int cantidadVehiculos) {
@@ -106,6 +116,15 @@ public class Inventario implements IEstadisticas {
         return listaVehiculos;
     }
 
+    private Alquiler buscarAlquiler(int id) {
+        for (Alquiler a : getVehiculoActual().getAlquileres()) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
+    }
+
     private Conductor buscarConductor(String dni) {
         for (Conductor c : listaConductores) {
             if (c.getDni().equals(dni)) {
@@ -116,13 +135,16 @@ public class Inventario implements IEstadisticas {
     }
 
     private Vehiculo buscarVehiculo(String matricula) {
-
         for (Vehiculo v : getConductorActual().getVehiculoAlquilado()) {
             if (v.getMatricula().equals(matricula)) {
                 return v;
             }
         }
         return null;
+    }
+
+    public void setAlquilerActual(int id) {
+        this.alquilerActual = buscarAlquiler(id);
     }
 
     public boolean setConductorSeleccionado(String dni) {
@@ -186,19 +208,27 @@ public class Inventario implements IEstadisticas {
         return vehiculo;
     }
 
-    // public void devolverVehiculo(){
-    // for (int i = 0; i < listaConductores.size(); i++) {
-    // for (int j = 0; j < listaConductores.get(i).getVehiculoAlquilado().size();
-    // j++) {
-    // if (Autocaravana.class ==
-    // listaConductores.get(i).getVehiculoAlquilado().get(j).getClass()) {
-    // Vehiculo vehiculoEncontrado =
-    // listaConductores.get(i).getVehiculoAlquilado().get(j);
-    // vehiculoSet.add(vehiculoEncontrado);// no admite duplicados
-    // }
-    // }
-    // }
-    // }
+    public boolean devolverVehiculo(double kmRecorridos) {
+        // cogemos el alquiler en caso que este no devuelto
+        if (getAlquilerActual().isAlquilado() == true) {
+            alquilerActual.setKmRecorridos(kmRecorridos);
+            alquilerActual.setFechaDevolucion();
+            System.out.println("Alquiler exitosamente devuelto");
+            return true;
+        } else {
+            System.out.println("El alquiler ya esta devuelto en la fecha = " + alquilerActual.getFechaDevolucion());
+            return false;
+        }
+        // for (int i = 0; i < vehiculoActual.getAlquileres().size(); i++) {
+        // // queremos devolver un vehiculo
+        // // sabiendo el vehiculo que queremos devolver prodriamos devolverlo.
+        // if (vehiculoActual.getAlquileres().get(i).isAlquilado() == true) {
+        // } else {
+        // System.out.println("El alquiler esta devuelto");
+        // }
+        // }
+        // return false;
+    }
 
     @Override
     public Vehiculo vehiculoMasAlquilado() {
