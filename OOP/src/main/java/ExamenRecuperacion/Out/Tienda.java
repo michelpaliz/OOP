@@ -51,7 +51,11 @@ public class Tienda {
     public void alquilarVehiculo() {
         preguntarDatos();
         System.out.println(i.getVehiculoActual().alquilarVehiculo(i.getConductorActual()));
+        System.out.println("Muestras");
+        System.out.println(i.getVehiculoActual().getAlquileres());
+        i.setAlquilerActual();
         System.out.println("Vehiculo alquilado exitosamente");
+
         menu();
     }
 
@@ -67,7 +71,11 @@ public class Tienda {
 
     public void mostrarAlquileres() {
         System.out.println("Mostrar Alquieres");
-        System.out.println(i.getVehiculoActual().getAlquileres());
+        if (i.getAlquilerActual().isAlquilado() == false) {
+            System.out.println("El vehiculo no tiene alquileres");
+        } else {
+            System.out.println(i.getVehiculoActual().getAlquileres());
+        }
 
     }
 

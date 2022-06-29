@@ -116,9 +116,9 @@ public class Inventario implements IEstadisticas {
         return listaVehiculos;
     }
 
-    private Alquiler buscarAlquiler(int id) {
+    private Alquiler buscarAlquiler() {
         for (Alquiler a : getVehiculoActual().getAlquileres()) {
-            if (a.getId() == id) {
+            if (a.getFechaDevolucion() == null) {
                 return a;
             }
         }
@@ -143,8 +143,8 @@ public class Inventario implements IEstadisticas {
         return null;
     }
 
-    public void setAlquilerActual(int id) {
-        this.alquilerActual = buscarAlquiler(id);
+    public void setAlquilerActual() {
+        this.alquilerActual = buscarAlquiler();
     }
 
     public boolean setConductorSeleccionado(String dni) {

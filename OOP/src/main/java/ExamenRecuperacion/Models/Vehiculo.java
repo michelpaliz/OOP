@@ -3,6 +3,7 @@ package ExamenRecuperacion.Models;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import ExamenRecuperacion.numeric.NCombustible;
@@ -60,9 +61,9 @@ public abstract class Vehiculo {
 
     // necesitamos saber el conductor para alquilar el vehiculo
     public boolean alquilarVehiculo(Conductor conductor) {
-        Date fechaAlquiler = new Date();
-        Date fechaDevolucion = null;
-        alquileres.add(new Alquiler(fechaAlquiler, conductor, this, fechaDevolucion, 0, 0));
+        // Date fechaAlquiler = new Date();
+        // Date fechaDevolucion = null;
+        alquileres.add(new Alquiler(new GregorianCalendar(), conductor, this, null, 0, 0));
         return true;
     }
 
@@ -72,11 +73,7 @@ public abstract class Vehiculo {
     // necesitamos saber que conductor es para aplicar los descuentos
     public abstract double descuento(Conductor conductor);
 
-    public double precioTotal(Alquiler alquiler, double kmRealizado, Conductor conductor) {
-        return (alquiler.diasAlquilado() * getPrecioAlquilerDiario()) + (getPrecioKmRealizado() * kmRealizado)
-                + suplemento()
-                - descuento(conductor);
-    }
+   
 
     @Override
     public String toString() {
@@ -87,6 +84,7 @@ public abstract class Vehiculo {
                 ", precioAlquilerDiario=" + precioAlquilerDiario +
                 ", precioKmRealizado=" + precioKmRealizado +
                 ", tipoCombustible=" + tipoCombustible +
+                ", Registro de alquiler =" + alquileres +
                 '}';
     }
 

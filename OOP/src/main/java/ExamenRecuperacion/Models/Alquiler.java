@@ -1,23 +1,24 @@
 package ExamenRecuperacion.Models;
 
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.time.temporal.ChronoUnit;
+import java.util.GregorianCalendar;
 
 import Lib.Util;
 
 public class Alquiler {
     private static int NUM_ALQUILER = 0;
     private final int id;
-    private Date fechaAlquiler;
+    private GregorianCalendar fechaAlquiler;
     private Conductor conductor;
     private Vehiculo vehiculo;
-    private Date fechaDevolucion;
+    private GregorianCalendar fechaDevolucion;
     private double kmRecorridos;
     private double importePagar;
 
     // En mi implementacion un vehiculo puede tener varios regristros de alquileres,
     // con varias fechas de alquiler y de devolucion.
-    public Alquiler(Date fechaAlquiler, Conductor conductor, Vehiculo vehiculo, Date fechaDevolucion,
+    public Alquiler(GregorianCalendar fechaAlquiler, Conductor conductor, Vehiculo vehiculo,
+            GregorianCalendar fechaDevolucion,
             double kmRecorridos, double importePagar) {
         this.id = ++NUM_ALQUILER;
         this.fechaAlquiler = fechaAlquiler;
@@ -25,18 +26,18 @@ public class Alquiler {
         this.vehiculo = vehiculo;
         this.fechaDevolucion = fechaDevolucion;
         this.kmRecorridos = kmRecorridos;
-        this.importePagar = vehiculo.precioTotal(this, kmRecorridos, this.conductor);
+        this.importePagar = precioTotal();
     }
 
     public int getId() {
         return id;
     }
 
-    public Date getFechaAlquiler() {
+    public GregorianCalendar getFechaAlquiler() {
         return fechaAlquiler;
     }
 
-    public Date getFechaDevolucion() {
+    public GregorianCalendar getFechaDevolucion() {
         return fechaDevolucion;
     }
 
@@ -53,7 +54,7 @@ public class Alquiler {
 
     // creamos set para la devolucion del alquiler
     public void setFechaDevolucion() {
-        Date fechaDevolucion = new Date();// cogemos la fecha de devolucion actual;
+        GregorianCalendar fechaDevolucion = new GregorianCalendar();// cogemos la fecha de devolucion actual;
         this.fechaDevolucion = fechaDevolucion;
     }
 
@@ -61,20 +62,30 @@ public class Alquiler {
         this.kmRecorridos = kmRecorridos;
     }
 
-    public int diasAlquilado() {
+    public double precioTotal() {
+        return (diasAlquilado() * vehiculo.getPrecioAlquilerDiario()) + (vehiculo.getPrecioKmRealizado() * kmRecorridos)
+                + vehiculo.suplemento()
+                - vehiculo.descuento(conductor);
+    }
+
+    public long diasAlquilado() {
         if (!isAlquilado()) {
             return 0;
         }
-        long timeDiff = Math.abs(fechaAlquiler.getTime() - fechaDevolucion.getTime());
-        long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
-        return (int) daysDiff;
+        long dias = ChronoUnit.DAYS.between(this.fechaAlquiler.toInstant(), this.fechaDevolucion.toInstant());
+        // long difference = (fechaAlquiler.getTime() - fechaDevolucion.getTime()) |
+        // 86400000;
+        // long timeDiff = Math.abs(fechaAlquiler.getTime() -
+        // fechaDevolucion.getTime());
+        // long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
+        return dias;
     }
 
     @Override
     public String toString() {
         return "Alquiler{" +
                 "id=" + id +
-                ", fechaAlquiler=" + fechaAlquiler +
+                ", fechaAlquiler=" + Util.dateFrmYear(fechaAlquiler) +
                 ", conductor=" + conductor +
                 ", vehiculo=" + vehiculo +
                 ", fechaDevolucion=" + Util.dateFrmYear(fechaDevolucion) +

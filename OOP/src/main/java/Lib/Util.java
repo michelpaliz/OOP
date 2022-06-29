@@ -225,8 +225,11 @@ public class Util {
      * @return date formatted only with year
      */
     public static String dateFrmYear(GregorianCalendar date) {
-        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
-        return dt.format(date.getTime());
+        if (date != null) {
+            SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+            return dt.format(date.getTime());
+        }
+        return null;
     }
 
     /**

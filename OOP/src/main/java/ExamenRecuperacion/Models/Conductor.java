@@ -23,7 +23,8 @@ public class Conductor {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaLicenciaConducir = fechaLicenciaConducir;
-
+        // creamos una lista de vehiculos en caso que el conductor tenga mas de un
+        // vehiculo alquilado
         this.vehiculoAlquilado = new ArrayList<>();
     }
 
