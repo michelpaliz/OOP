@@ -67,7 +67,7 @@ public class Tienda {
 
     public void mostrarAlquileres() {
         System.out.println("Mostrar Alquieres");
-        i.getVehiculoActual().getAlquileres();
+        System.out.println(i.getVehiculoActual().getAlquileres());
 
     }
 
