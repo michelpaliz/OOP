@@ -49,7 +49,7 @@ public class Tienda {
     }
 
     public void alquilarVehiculo() {
-        seleccionarDatos();
+        preguntarDatos();
         System.out.println(i.getVehiculoActual().alquilarVehiculo(i.getConductorActual()));
         System.out.println("Vehiculo alquilado exitosamente");
     }

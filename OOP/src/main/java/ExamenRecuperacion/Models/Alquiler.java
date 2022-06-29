@@ -62,6 +62,9 @@ public class Alquiler {
     }
 
     public int diasAlquilado() {
+        if (!isAlquilado()) {
+            return 0;
+        }
         long timeDiff = Math.abs(fechaAlquiler.getTime() - fechaDevolucion.getTime());
         long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
         return (int) daysDiff;
