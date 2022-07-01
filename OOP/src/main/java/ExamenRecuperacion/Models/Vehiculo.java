@@ -63,7 +63,9 @@ public abstract class Vehiculo {
     public boolean alquilarVehiculo(Conductor conductor) {
         // Date fechaAlquiler = new Date();
         // Date fechaDevolucion = null;
-        alquileres.add(new Alquiler(new GregorianCalendar(), conductor, this, null, 0, 0));
+        this.getAlquileres().add(new Alquiler(new GregorianCalendar(), conductor, this, null,
+                0, 0));
+
         return true;
     }
 
@@ -72,8 +74,6 @@ public abstract class Vehiculo {
 
     // necesitamos saber que conductor es para aplicar los descuentos
     public abstract double descuento(Conductor conductor);
-
-   
 
     @Override
     public String toString() {
@@ -84,7 +84,7 @@ public abstract class Vehiculo {
                 ", precioAlquilerDiario=" + precioAlquilerDiario +
                 ", precioKmRealizado=" + precioKmRealizado +
                 ", tipoCombustible=" + tipoCombustible +
-                ", Registro de alquiler =" + alquileres +
+                ", alquileres=" + alquileres +
                 '}';
     }
 

@@ -48,6 +48,8 @@ public class Alquiler {
         return true;
     }
 
+    // necesitamos saber el conductor para alquilar el vehiculo
+
     public double getImportePagar() {
         return importePagar;
     }
