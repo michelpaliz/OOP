@@ -1,51 +1,44 @@
 package ExamenRecuperacion.Models;
 
 import java.time.temporal.ChronoUnit;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 import Lib.Util;
 
 public class Alquiler {
     private static int NUM_ALQUILER = 0;
     private final int id;
-    private GregorianCalendar fechaAlquiler;
+    private Date fechaAlquiler;
     private Conductor conductor;
     private Vehiculo vehiculo;
-    private GregorianCalendar fechaDevolucion;
+    private Date fechaDevolucion;
     private double kmRecorridos;
     private double importePagar;
 
     // En mi implementacion un vehiculo puede tener varios regristros de alquileres,
     // con varias fechas de alquiler y de devolucion.
-    public Alquiler(GregorianCalendar fechaAlquiler, Conductor conductor, Vehiculo vehiculo,
-            GregorianCalendar fechaDevolucion,
-            double kmRecorridos, double importePagar) {
+    public Alquiler(Date fechaAlquiler, Conductor conductor, Vehiculo vehiculo,
+            Date fechaDevolucion,
+            double kmRecorrido) {
         this.id = ++NUM_ALQUILER;
         this.fechaAlquiler = fechaAlquiler;
         this.conductor = conductor;
         this.vehiculo = vehiculo;
         this.fechaDevolucion = fechaDevolucion;
-        this.kmRecorridos = kmRecorridos;
-        this.importePagar = precioTotal();
+        this.kmRecorridos = kmRecorrido;
+        // this.importePagar = precioTotal();
     }
 
     public int getId() {
         return id;
     }
 
-    public GregorianCalendar getFechaAlquiler() {
+    public Date getFechaAlquiler() {
         return fechaAlquiler;
     }
 
-    public GregorianCalendar getFechaDevolucion() {
+    public Date getFechaDevolucion() {
         return fechaDevolucion;
-    }
-
-    public boolean isAlquilado() {
-        if (getFechaDevolucion() == null) {
-            return false;
-        }
-        return true;
     }
 
     // necesitamos saber el conductor para alquilar el vehiculo
@@ -56,7 +49,7 @@ public class Alquiler {
 
     // creamos set para la devolucion del alquiler
     public void setFechaDevolucion() {
-        GregorianCalendar fechaDevolucion = new GregorianCalendar();// cogemos la fecha de devolucion actual;
+        Date fechaDevolucion = new Date();// cogemos la fecha de devolucion actual;
         this.fechaDevolucion = fechaDevolucion;
     }
 
@@ -64,10 +57,11 @@ public class Alquiler {
         this.kmRecorridos = kmRecorridos;
     }
 
-    public double precioTotal() {
-        return (diasAlquilado() * vehiculo.getPrecioAlquilerDiario()) + (vehiculo.getPrecioKmRealizado() * kmRecorridos)
-                + vehiculo.suplemento()
-                - vehiculo.descuento(conductor);
+    public boolean isAlquilado() {
+        if (this.fechaDevolucion == null) {
+            return false;
+        }
+        return true;
     }
 
     public long diasAlquilado() {
@@ -83,16 +77,22 @@ public class Alquiler {
         return dias;
     }
 
+    public double precioTotal() {
+        return (diasAlquilado() * vehiculo.getPrecioAlquilerDiario()) + (vehiculo.getPrecioKmRealizado() * kmRecorridos)
+                + vehiculo.suplemento()
+                - vehiculo.descuento(conductor);
+    }
+
     @Override
     public String toString() {
         return "Alquiler{" +
                 "id=" + id +
                 ", fechaAlquiler=" + Util.dateFrmYear(fechaAlquiler) +
-                ", conductor=" + conductor +
-                ", vehiculo=" + vehiculo +
+                ", conductor=" + conductor.getDni() +
+                ", vehiculo=" + vehiculo.getMatricula() +
                 ", fechaDevolucion=" + Util.dateFrmYear(fechaDevolucion) +
                 ", kmRecorridos=" + kmRecorridos +
-                ", importePagar=" + importePagar +
+                ", importePagar=" + precioTotal() +
                 '}';
     }
 

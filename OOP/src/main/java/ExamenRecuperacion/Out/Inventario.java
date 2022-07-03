@@ -23,6 +23,7 @@ public class Inventario implements IEstadisticas {
     private static Faker fk = new Faker();
     private final int MAX_CONDUCTORES = 3;
     private final int MAX_VEHICULOS = 20;
+    private final int MAX_ALQUILERES = 20;
     private List<Conductor> listaConductores;
     private List<Vehiculo> listaVehiculos;
     private List<Alquiler> listaAlquileres;
@@ -83,7 +84,7 @@ public class Inventario implements IEstadisticas {
         randomVehiculo(cantidad);// generamos los mueblesDuplicados
         List<Vehiculo> lista = new ArrayList<>(2);
         for (int i = 0; i < 2; i++) {// solo asignamos 2 mueblesDuplicados por catalogo
-            vehiculoActual = listaVehiculos.get(Util.random(0, listaVehiculos.size()));
+            vehiculoActual = listaVehiculos.get(Util.random(0, listaVehiculos.size() - 1));
             lista.add(vehiculoActual);
         }
         // nos devuelve que los conductores tienen 2 vehiculos alquilados
@@ -102,6 +103,7 @@ public class Inventario implements IEstadisticas {
             vehiculoActual = new Autocaravana(marca, modelo, precioAlquiler, precioKm, tipoCombustible, placasSolares);
             listaVehiculos.add(vehiculoActual);
         }
+
         for (int i = 0; i < cantidad / 2; i++) {
             String marca = fk.funnyName().name();
             String modelo = fk.funnyName().name();
@@ -115,6 +117,40 @@ public class Inventario implements IEstadisticas {
         }
         return listaVehiculos;
     }
+
+    // private List<Alquiler> alquileresAsignado(int cantidad) {
+    // randomAlquileres(cantidad);
+    // List<Alquiler> lista = new ArrayList<>(2);
+    // for (int i = 0; i < 2; i++) {// solo asignamos 2 mueblesDuplicados por
+    // catalogo
+    // alquilerActual = listaAlquileres.get(Util.random(0, listaAlquileres.size()));
+    // lista.add(alquilerActual);
+    // }
+    // // nos devuelve que los conductores tienen 2 vehiculos alquilados
+    // return lista;
+    // }
+
+    // public List<Alquiler> randomAlquileres(int cantidad) {
+    // listaAlquileres = new ArrayList<>();
+    // Date d1 = new GregorianCalendar(2000, Calendar.FEBRUARY, 11).getTime();
+    // Date d2 = new Date();
+    // GregorianCalendar fechaAlquiler = new GregorianCalendar();
+    // GregorianCalendar fechaDevolucion = new GregorianCalendar();
+    // for (int i = 0; i < cantidad; i++) {
+    // Date fecha = fk.date().between(d1, d2);
+    // conductorActual = listaConductores.get(Util.randBetween(0,
+    // listaConductores.size()));
+    // fechaAlquiler.setTime(fecha);
+    // vehiculoActual = listaVehiculos.get(Util.randBetween(0,
+    // listaVehiculos.size()));
+    // fechaDevolucion.setTime(fecha);
+    // double km = fk.number().randomDouble(2, 10, 100);
+    // alquilerActual = new Alquiler(fechaAlquiler, conductorActual, vehiculoActual,
+    // fechaDevolucion, km);
+    // listaAlquileres.add(alquilerActual);
+    // }
+    // return listaAlquileres;
+    // }
 
     private Alquiler buscarAlquiler() {
         for (Alquiler a : getVehiculoActual().getAlquileres()) {
@@ -229,6 +265,18 @@ public class Inventario implements IEstadisticas {
         // }
         // return false;
     }
+
+    // public boolean alquilarVehiculo() {
+    //     // GregorianCalendar fechaAlquiler = new GregorianCalendar();
+    //     Date fechaAlquiler = new Date();
+
+    //     if (getConductorActual().vehiculoActual.getAlquileres()
+    //             .add(new Alquiler(fechaAlquiler, conductorActual, vehiculoActual, null,
+    //                     0))) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     @Override
     public Vehiculo vehiculoMasAlquilado() {

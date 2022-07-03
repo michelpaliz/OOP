@@ -215,8 +215,11 @@ public class Util {
      * @return date formatted only with year
      */
     public static String dateFrmYear(Date date) {
-        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
-        return dt.format(date);
+        if (date != null) {
+            SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+            return dt.format(date);
+        }
+        return null;
     }
 
     /**
@@ -226,9 +229,15 @@ public class Util {
      */
     public static String dateFrmYear(GregorianCalendar date) {
         if (date != null) {
-            SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
-            return dt.format(date.getTime());
+            try {
+                SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+                dt.setCalendar(date);
+                return dt.format(date.getTime());
+            } catch (StackOverflowError sf) {
+                sf.printStackTrace();
+            }
         }
+
         return null;
     }
 

@@ -28,7 +28,7 @@ public abstract class Vehiculo {
         this.precioAlquilerDiario = precioAlquilerDiario;
         this.precioKmRealizado = precioKmRealizado;
         this.tipoCombustible = tipoCombustible;
-        alquileres = new ArrayList<>();
+        alquileres = new ArrayList<Alquiler>();
     }
 
     public String getMarca() {
@@ -59,14 +59,15 @@ public abstract class Vehiculo {
         return alquileres;
     }
 
-    // necesitamos saber el conductor para alquilar el vehiculo
     public boolean alquilarVehiculo(Conductor conductor) {
-        // Date fechaAlquiler = new Date();
+        Date fechaAlquiler = new Date();
         // Date fechaDevolucion = null;
-        this.getAlquileres().add(new Alquiler(new GregorianCalendar(), conductor, this, null,
-                0, 0));
-
-        return true;
+        if (alquileres.add(new Alquiler(fechaAlquiler, conductor, this, null,
+                0))) {
+            System.out.println(this);
+            return true;
+        }
+        return false;
     }
 
     // ABSTRACT
@@ -84,7 +85,7 @@ public abstract class Vehiculo {
                 ", precioAlquilerDiario=" + precioAlquilerDiario +
                 ", precioKmRealizado=" + precioKmRealizado +
                 ", tipoCombustible=" + tipoCombustible +
-                ", alquileres=" + alquileres +
+                ", alquileres=" + getAlquileres() +
                 '}';
     }
 
