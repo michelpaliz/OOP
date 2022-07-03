@@ -57,15 +57,21 @@ public class Alquiler {
         this.kmRecorridos = kmRecorridos;
     }
 
+    // si no tiene fecha de devolucion significa que todavia esta siendo alquilado
+    /**
+     * 
+     * @return false si ya no esta alquilado (tiene fecha de devolucion)
+     */
     public boolean isAlquilado() {
         if (this.fechaDevolucion == null) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public long diasAlquilado() {
-        if (!isAlquilado()) {
+        // si todavia esta alquilado dame 0
+        if (isAlquilado()) {
             return 0;
         }
         long dias = ChronoUnit.DAYS.between(this.fechaAlquiler.toInstant(), this.fechaDevolucion.toInstant());
@@ -91,8 +97,8 @@ public class Alquiler {
                 ", conductor=" + conductor.getDni() +
                 ", vehiculo=" + vehiculo.getMatricula() +
                 ", fechaDevolucion=" + Util.dateFrmYear(fechaDevolucion) +
-                ", kmRecorridos=" + kmRecorridos +
-                ", importePagar=" + precioTotal() +
+                ", kmRecorridos=" + kmRecorridos + " km" +
+                ", importePagar=" + precioTotal() + " €" +
                 '}';
     }
 

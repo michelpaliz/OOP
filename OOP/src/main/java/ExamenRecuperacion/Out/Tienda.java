@@ -60,34 +60,34 @@ public class Tienda {
 
     public void devolverVehiculo() {
         seleccionarDatos();
+        i.setAlquilerActual();
         System.out.println("Devolver Vehiculo");
         System.out.println("Introduce los km recorridos ");
-        userInt = Util.myInput.nextInt();
-        i.devolverVehiculo(userInt);
+        user = Util.myInput.nextLine();
+        double km = Double.parseDouble(user);
+        i.devolverVehiculo(km);
         // volvemos al menu
         menu();
     }
 
     public void mostrarAlquileres() {
-        System.out.println("Mostrar Alquieres");
-        if (i.getAlquilerActual().isAlquilado() == false) {
-            System.out.println("El vehiculo no tiene alquileres");
-        } else {
-            System.out.println(i.getVehiculoActual().getAlquileres());
-        }
-
+        System.out.println("Mostrar registro de Alquileres");
+        System.out.println(i.getVehiculoActual().getAlquileres());
     }
 
     public void mostrarEstadisticas() {
         System.out.println("El vehiculo mas alquilado es " + i.vehiculoMasAlquilado());
     }
 
-    public void seleccionarDatos() {
+    public boolean seleccionarDatos() {
         char si = 'Y';
         boolean correct = Control.one("Quieres seguir utilizando los datos anteriores Y/N", si);
         if (!correct) {
             preguntarDatos();
+            return false;
         }
+        System.out.println("Utilizamos los datos anteriores");
+        return true;
     }
 
     public void preguntarDatos() {

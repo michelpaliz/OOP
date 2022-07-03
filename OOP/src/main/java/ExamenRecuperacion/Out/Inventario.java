@@ -154,8 +154,10 @@ public class Inventario implements IEstadisticas {
 
     private Alquiler buscarAlquiler() {
         for (Alquiler a : getVehiculoActual().getAlquileres()) {
-            if (a.getFechaDevolucion() == null) {
+            if (a.isAlquilado()) {
                 return a;
+            } else {
+                System.out.println("El alquiler ya esta devuelto");
             }
         }
         return null;
@@ -267,15 +269,15 @@ public class Inventario implements IEstadisticas {
     }
 
     // public boolean alquilarVehiculo() {
-    //     // GregorianCalendar fechaAlquiler = new GregorianCalendar();
-    //     Date fechaAlquiler = new Date();
+    // // GregorianCalendar fechaAlquiler = new GregorianCalendar();
+    // Date fechaAlquiler = new Date();
 
-    //     if (getConductorActual().vehiculoActual.getAlquileres()
-    //             .add(new Alquiler(fechaAlquiler, conductorActual, vehiculoActual, null,
-    //                     0))) {
-    //         return true;
-    //     }
-    //     return false;
+    // if (getConductorActual().vehiculoActual.getAlquileres()
+    // .add(new Alquiler(fechaAlquiler, conductorActual, vehiculoActual, null,
+    // 0))) {
+    // return true;
+    // }
+    // return false;
     // }
 
     @Override

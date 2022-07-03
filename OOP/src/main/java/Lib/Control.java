@@ -215,13 +215,16 @@ public class Control {
     /**
      * 
      * @param message  introduce the message you want to ask to the user
-     * @param validate validate each one of your validated options
+     * @param validate validate the option you want to compare if it is equal to
+     *                 other one.
      * @return true if it matches any asnwers and false if it does not.
      */
 
     public static boolean one(String message, char validate) {
         int index = 0;
-        System.out.printf(message);
+        System.out.println(message);
+        String validateStr = validate + "";
+        validate = validateStr.toLowerCase().charAt(index);
         char c = Util.myInput.nextLine().toLowerCase().charAt(index);
         if (validate == c)
             return true;
