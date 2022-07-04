@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij" />
+    <list default="true" id="ec7f1303-5df8-48ee-922c-283649591270" name="Changes" comment="Changes made on intellij">
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/Inventario.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/Inventario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/Tienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/bin/main/ExamenRecuperacion/Out/Tienda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/Inventario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/Tienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/ExamenRecuperacion/Out/Tienda.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

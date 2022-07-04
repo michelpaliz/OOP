@@ -72,7 +72,8 @@ public class Tienda {
 
     public void mostrarAlquileres() {
         System.out.println("Mostrar registro de Alquileres");
-        System.out.println(i.getVehiculoActual().getAlquileres());
+        System.out.println(i.mostrarAlquileres());
+        menu();
     }
 
     public void mostrarEstadisticas() {

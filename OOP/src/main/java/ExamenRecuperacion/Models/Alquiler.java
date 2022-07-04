@@ -2,6 +2,7 @@ package ExamenRecuperacion.Models;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Objects;
 
 import Lib.Util;
 
@@ -102,4 +103,16 @@ public class Alquiler {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alquiler alquiler = (Alquiler) o;
+        return id == alquiler.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

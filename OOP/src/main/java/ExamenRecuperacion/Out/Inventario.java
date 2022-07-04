@@ -268,6 +268,36 @@ public class Inventario implements IEstadisticas {
         // return false;
     }
 
+    /**
+     * 
+     * @return la lista de los alquileres disponibles que hay.
+     */
+    public List<Alquiler> mostrarAlquileres() {
+        // Creamos una lista nueva;
+        Set<Alquiler> alquilerSet = new HashSet<Alquiler>();
+        List<Alquiler> lista = new ArrayList<>();
+        // cogeriamos todos los vehiculos en la lista de vehiculos para obtener los
+        // alquileres de los mismos vehiculos;
+
+        for (int i = 0; i < listaVehiculos.size(); i++) {
+            // entramos por cada clase que encontramos de los vehiculos y recorremos sus
+            // listas de alquileres asi que cogemos el numero de alquileres que hay en
+            // total.
+            for (int j = 0; j < listaVehiculos.get(i).getAlquileres().size(); j++) {
+                // cogemos los alquileres actuales
+                alquilerActual = listaVehiculos.get(i).getAlquileres().get(j);
+                if (alquilerActual.isAlquilado()) {
+                    alquilerSet.add(alquilerActual);
+                }
+            }
+        }
+        for (Alquiler alquiler : alquilerSet) {
+            lista.add(alquiler);
+        }
+
+        return lista;
+    }
+
     // public boolean alquilarVehiculo() {
     // // GregorianCalendar fechaAlquiler = new GregorianCalendar();
     // Date fechaAlquiler = new Date();
